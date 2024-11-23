@@ -2198,7 +2198,6 @@
     "SB_CARRY": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
         "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:228.1-260.10"
       },
       "ports": {
@@ -2302,9 +2301,8 @@
     },
     "SB_DFFE": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_flop": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:303.1-347.10"
       },
       "ports": {
@@ -3392,9 +3390,8 @@
     },
     "SB_DFFSR": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_flop": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:350.1-397.10"
       },
       "ports": {
@@ -4295,6 +4292,7 @@
     "SB_IO": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
         "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:17.1-121.10"
       },
       "parameter_default_values": {
@@ -5027,9 +5025,8 @@
     },
     "SB_LUT4": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_lut": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:177.1-225.10"
       },
       "parameter_default_values": {
@@ -9645,1782 +9642,2334 @@
       "attributes": {
         "hdlname": "\\main",
         "top": "00000000000000000000000000000001",
-        "src": "main.v:6.1-13.10"
+        "src": "main.v:6.1-24.10"
       },
       "ports": {
+        "vclk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "v0658ae": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "v09bf32": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
         "vinit": {
           "direction": "output",
           "upto": 1,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0" ]
+          "bits": [ "0", "0", "0", "0", "0", "0", "0" ]
         }
       },
       "cells": {
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:72.18-76.3|main.v:92.2-94.14|main.v:44.10-48.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 4 ],
+            "E": [ 5 ],
+            "Q": [ 3 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 6 ],
+            "I2": [ 7 ],
+            "I3": [ 8 ],
+            "O": [ 5 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 9 ],
+            "I1": [ 10 ],
+            "I2": [ 11 ],
+            "I3": [ 12 ],
+            "O": [ 8 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0001000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 13 ],
+            "I1": [ 14 ],
+            "I2": [ 15 ],
+            "I3": [ 16 ],
+            "O": [ 7 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 17 ],
+            "I1": [ 18 ],
+            "I2": [ 19 ],
+            "I3": [ 20 ],
+            "O": [ 6 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2_I0_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 21 ],
+            "I1": [ 22 ],
+            "I2": [ 23 ],
+            "I3": [ 24 ],
+            "O": [ 20 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2_I0_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 25 ],
+            "I2": [ 26 ],
+            "I3": [ 27 ],
+            "O": [ 19 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2_I0_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000001"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 28 ],
+            "I1": [ 29 ],
+            "I2": [ 30 ],
+            "I3": [ 31 ],
+            "O": [ 18 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2_I0_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 32 ],
+            "I1": [ 33 ],
+            "I2": [ 34 ],
+            "I3": [ 35 ],
+            "O": [ 17 ]
+          }
+        },
+        "vb4c970.v042045.vc72c4d.q_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 3 ],
+            "O": [ 4 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_CI": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 33 ],
+            "CO": [ 36 ],
+            "I0": [ "0" ],
+            "I1": [ 34 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 37 ],
+            "CO": [ 38 ],
+            "I0": [ "0" ],
+            "I1": [ 14 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 39 ],
+            "CO": [ 37 ],
+            "I0": [ "0" ],
+            "I1": [ 25 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_10": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 40 ],
+            "CO": [ 41 ],
+            "I0": [ "0" ],
+            "I1": [ 12 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_11": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 42 ],
+            "CO": [ 40 ],
+            "I0": [ "0" ],
+            "I1": [ 31 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_12": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 43 ],
+            "CO": [ 42 ],
+            "I0": [ "0" ],
+            "I1": [ 11 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_13": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 44 ],
+            "CO": [ 43 ],
+            "I0": [ "0" ],
+            "I1": [ 10 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_14": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 45 ],
+            "CO": [ 44 ],
+            "I0": [ "0" ],
+            "I1": [ 9 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_15": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 46 ],
+            "CO": [ 45 ],
+            "I0": [ "0" ],
+            "I1": [ 30 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_16": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 47 ],
+            "CO": [ 46 ],
+            "I0": [ "0" ],
+            "I1": [ 29 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_17": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 48 ],
+            "CO": [ 47 ],
+            "I0": [ "0" ],
+            "I1": [ 28 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_18": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 49 ],
+            "CO": [ 48 ],
+            "I0": [ "0" ],
+            "I1": [ 27 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_19": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 38 ],
+            "CO": [ 49 ],
+            "I0": [ "0" ],
+            "I1": [ 26 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 50 ],
+            "CO": [ 39 ],
+            "I0": [ "0" ],
+            "I1": [ 13 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 51 ],
+            "CO": [ 50 ],
+            "I0": [ "0" ],
+            "I1": [ 24 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 52 ],
+            "CO": [ 51 ],
+            "I0": [ "0" ],
+            "I1": [ 23 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 53 ],
+            "CO": [ 52 ],
+            "I0": [ "0" ],
+            "I1": [ 22 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 54 ],
+            "CO": [ 53 ],
+            "I0": [ "0" ],
+            "I1": [ 21 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 36 ],
+            "CO": [ 54 ],
+            "I0": [ "0" ],
+            "I1": [ 35 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_8": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 55 ],
+            "CO": [ 56 ],
+            "I0": [ "0" ],
+            "I1": [ 32 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_CARRY_I1_9": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 41 ],
+            "CO": [ 55 ],
+            "I0": [ "0" ],
+            "I1": [ 15 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 57 ],
+            "Q": [ 16 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 58 ],
+            "Q": [ 32 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_10": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 59 ],
+            "Q": [ 28 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_11": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 60 ],
+            "Q": [ 27 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_12": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 61 ],
+            "Q": [ 26 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_13": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 62 ],
+            "Q": [ 14 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_14": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 63 ],
+            "Q": [ 25 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_15": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 64 ],
+            "Q": [ 13 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_16": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 65 ],
+            "Q": [ 24 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_17": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 66 ],
+            "Q": [ 23 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_18": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 67 ],
+            "Q": [ 22 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_19": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 68 ],
+            "Q": [ 21 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 69 ],
+            "Q": [ 15 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_20": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 70 ],
+            "Q": [ 35 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_21": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 71 ],
+            "Q": [ 34 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_22": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 72 ],
+            "Q": [ 33 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 73 ],
+            "Q": [ 12 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 74 ],
+            "Q": [ 31 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 75 ],
+            "Q": [ 11 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 76 ],
+            "Q": [ 10 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 77 ],
+            "Q": [ 9 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_8": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 78 ],
+            "Q": [ 30 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do_SB_DFFSR_Q_9": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:262.2-263.15|main.v:205.10-209.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 79 ],
+            "Q": [ 29 ],
+            "R": [ 5 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 26 ],
+            "I3": [ 38 ],
+            "O": [ 61 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 14 ],
+            "I3": [ 37 ],
+            "O": [ 62 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_10": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 32 ],
+            "I3": [ 55 ],
+            "O": [ 58 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_11": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 15 ],
+            "I3": [ 41 ],
+            "O": [ 69 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_12": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 34 ],
+            "I3": [ 33 ],
+            "O": [ 71 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_13": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 12 ],
+            "I3": [ 40 ],
+            "O": [ 73 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_14": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 31 ],
+            "I3": [ 42 ],
+            "O": [ 74 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_15": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 11 ],
+            "I3": [ 43 ],
+            "O": [ 75 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_16": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 10 ],
+            "I3": [ 44 ],
+            "O": [ 76 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_17": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 9 ],
+            "I3": [ 45 ],
+            "O": [ 77 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_18": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 30 ],
+            "I3": [ 46 ],
+            "O": [ 78 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_19": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 29 ],
+            "I3": [ 47 ],
+            "O": [ 79 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 25 ],
+            "I3": [ 39 ],
+            "O": [ 63 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_20": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 28 ],
+            "I3": [ 48 ],
+            "O": [ 59 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_21": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 27 ],
+            "I3": [ 49 ],
+            "O": [ 60 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_22": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 33 ],
+            "O": [ 72 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 13 ],
+            "I3": [ 50 ],
+            "O": [ 64 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_4": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 24 ],
+            "I3": [ 51 ],
+            "O": [ 65 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_5": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 23 ],
+            "I3": [ 52 ],
+            "O": [ 66 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_6": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 22 ],
+            "I3": [ 53 ],
+            "O": [ 67 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_7": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 21 ],
+            "I3": [ 54 ],
+            "O": [ 68 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_8": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 35 ],
+            "I3": [ 36 ],
+            "O": [ 70 ]
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_9": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 16 ],
+            "I3": [ 56 ],
+            "O": [ 57 ]
+          }
+        }
       },
       "netnames": {
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.cfgreg_do": {
+        "v0658ae": {
           "hide_name": 0,
-          "bits": [ "x", "x", "0", "0", "x", "x", "0", "0", "x", "x", "0", "0", "0", "0", "0", "0", "x", "x", "x", "x", "x", "x", "x", "0", "0", "0", "0", "0", "0", "0", "0", "x" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea cfgreg_do",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6345.16-6345.25|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "src": "main.v:8.9-8.16"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.cfgreg_we": {
+        "v09bf32": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea cfgreg_we",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6325.14-6325.23|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "src": "main.v:9.9-9.16"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.config_cont": {
+        "vb4c970.v042045.v81c666": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea config_cont",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6396.13-6396.24|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 v042045 v81c666",
+            "src": "main.v:19.10-22.3|main.v:64.9-64.16|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.config_ddr": {
+        "vb4c970.v042045.vbc5f1e": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea config_ddr",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6394.13-6394.23|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 v042045 vbc5f1e",
+            "src": "main.v:19.10-22.3|main.v:62.8-62.15|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.config_dummy": {
+        "vb4c970.v042045.vc72c4d.clk": {
           "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea config_dummy",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6397.13-6397.25|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 v042045 vc72c4d clk",
+            "src": "main.v:19.10-22.3|main.v:72.18-76.3|main.v:86.8-86.11|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.config_en": {
+        "vb4c970.v042045.vc72c4d.q": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea config_en",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6393.13-6393.22|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 v042045 vc72c4d q",
+            "src": "main.v:19.10-22.3|main.v:72.18-76.3|main.v:88.9-88.10|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.config_qspi": {
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_D": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 4 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea config_qspi",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6395.13-6395.24|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "src": "main.v:19.10-22.3|main.v:72.18-76.3|main.v:94.11-94.13|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.flash_csb": {
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 5 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea flash_csb",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6339.9-6339.18|main.v:6235.18-6270.3|main.v:216.4-226.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v5dc4ea.flash_io0_oe": {
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 6, 7, 8 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v5dc4ea flash_io0_oe",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6341.9-6341.21|main.v:6235.18-6270.3|main.v:216.4-226.3"
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v610d99.v8800c6.v00a92d": {
+        "vb4c970.v042045.vc72c4d.q_SB_DFFE_Q_E_SB_LUT4_O_I1_SB_LUT4_O_2_I0": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 17, 18, 19, 20 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v610d99 v8800c6 v00a92d",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:3457.4-3459.3|main.v:3471.15-3471.22|main.v:6307.10-6309.3|main.v:216.4-226.3"
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v610d99.v8800c6.v465065.k": {
+        "vb4c970.v042045.w1": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v610d99 v8800c6 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:3457.4-3459.3|main.v:3492.15-3492.16|main.v:3478.4-3480.3|main.v:6307.10-6309.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 v042045 w1",
+            "src": "main.v:19.10-22.3|main.v:67.7-67.9|main.v:44.10-48.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v610d99.v8800c6.w0": {
+        "vb4c970.v042045.w2": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "vb4c970 v042045 w2",
+            "src": "main.v:19.10-22.3|main.v:68.7-68.9|main.v:44.10-48.3"
+          }
+        },
+        "vb4c970.v4542ee": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "vb4c970 v4542ee",
+            "src": "main.v:19.10-22.3|main.v:33.8-33.15"
+          }
+        },
+        "vb4c970.v945519": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "vb4c970 v945519",
+            "src": "main.v:19.10-22.3|main.v:34.9-34.16"
+          }
+        },
+        "vb4c970.veb069a.v372c39.v8c0a46.o": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a v372c39 v8c0a46 o",
+            "src": "main.v:19.10-22.3|main.v:116.10-118.3|main.v:182.16-182.17|main.v:170.18-172.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.v372c39.vcd68b6": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a v372c39 vcd68b6",
+            "src": "main.v:19.10-22.3|main.v:116.10-118.3|main.v:166.16-166.23|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.v372c39.w0": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v610d99 v8800c6 w0",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:3457.4-3459.3|main.v:3474.13-3474.15|main.v:6307.10-6309.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a v372c39 w0",
+            "src": "main.v:19.10-22.3|main.v:116.10-118.3|main.v:168.14-168.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v610d99.va50a91": {
+        "vb4c970.veb069a.v91f0c0.v2c7e2b": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v610d99 va50a91",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:3450.15-3450.22|main.v:6307.10-6309.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a v91f0c0 v2c7e2b",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:133.15-133.22|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v610d99.w1": {
+        "vb4c970.veb069a.v91f0c0.v8a4e43.a": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a v91f0c0 v8a4e43 a",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:157.15-157.16|main.v:143.18-147.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.v91f0c0.v8a4e43.b": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a v91f0c0 v8a4e43 b",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:158.15-158.16|main.v:143.18-147.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.v91f0c0.vddca7d": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a v91f0c0 vddca7d",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:134.15-134.22|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.v91f0c0.w1": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v610d99 w1",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:3453.13-3453.15|main.v:6307.10-6309.3|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a v91f0c0 w1",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:138.14-138.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v0e0ee1.v285423.v64ca2e.v248807": {
+        "vb4c970.veb069a.v91f0c0.w2": {
           "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v64ca2e v248807",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6917.8-6917.15|main.v:6301.10-6306.3|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.v64ca2e.v43ad2d.oe": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v64ca2e v43ad2d oe",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6930.18-6935.3|main.v:6945.8-6945.10|main.v:6301.10-6306.3|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.v64ca2e.w0": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 v64ca2e w0",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6922.7-6922.9|main.v:6301.10-6306.3|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.vf34c0c": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 vf34c0c",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6178.9-6178.16|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.w0": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 w0",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6182.7-6182.9|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.w15": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 w15",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6197.7-6197.10|main.v:216.4-226.3"
-          }
-        },
-        "vda1ada.v0e0ee1.v285423.w4": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v285423 w4",
-            "src": "main.v:9.10-11.3|main.v:6116.10-6127.3|main.v:6186.13-6186.15|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a v91f0c0 w2",
+            "src": "main.v:19.10-22.3|main.v:111.10-115.3|main.v:139.14-139.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v0e0ee1.v9b4033": {
+        "vb4c970.veb069a.vc331d9": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 v9b4033",
-            "src": "main.v:9.10-11.3|main.v:6057.9-6057.16|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a vc331d9",
+            "src": "main.v:19.10-22.3|main.v:100.8-100.15|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v0e0ee1.w6": {
+        "vb4c970.veb069a.vc85945.v0471c9.v0ac853": {
           "hide_name": 0,
-          "bits": [ "x" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "attributes": {
-            "hdlname": "vda1ada v0e0ee1 w6",
-            "src": "main.v:9.10-11.3|main.v:6067.7-6067.9|main.v:216.4-226.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 v0ac853",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:234.16-234.23|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v1314aa.v3023dc.v9fb85f": {
+        "vb4c970.veb069a.vc85945.v0471c9.va31c0f": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v1314aa v3023dc v9fb85f",
-            "src": "main.v:9.10-11.3|main.v:5940.10-5942.3|main.v:267.9-267.16|main.v:210.10-212.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 va31c0f",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:232.8-232.15|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v1314aa.v3023dc.vb2eccd.q": {
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.clk": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v1314aa v3023dc vb2eccd q",
-            "src": "main.v:9.10-11.3|main.v:5940.10-5942.3|main.v:283.9-283.10|main.v:271.18-273.3|main.v:210.10-212.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 va6d58d clk",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:256.8-256.11|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v1314aa.v3023dc.w0": {
+        "vb4c970.veb069a.vc85945.v0471c9.va6d58d.do": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "attributes": {
-            "hdlname": "vda1ada v1314aa v3023dc w0",
-            "src": "main.v:9.10-11.3|main.v:5940.10-5942.3|main.v:269.7-269.9|main.v:210.10-212.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 va6d58d do",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:242.18-246.3|main.v:258.16-258.18|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v1314aa.v9d4f65.v27dec4": {
+        "vb4c970.veb069a.vc85945.v0471c9.w0": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v1314aa v9d4f65 v27dec4",
-            "src": "main.v:9.10-11.3|main.v:5949.4-5954.3|main.v:3703.8-3703.15|main.v:210.10-212.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 w0",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:236.7-236.9|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v1314aa.v9d4f65.v56c60e.set": {
+        "vb4c970.veb069a.vc85945.v0471c9.w1": {
           "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v1314aa v9d4f65 v56c60e set",
-            "src": "main.v:9.10-11.3|main.v:5949.4-5954.3|main.v:3736.8-3736.11|main.v:3718.4-3723.3|main.v:210.10-212.3"
-          }
-        },
-        "vda1ada.v1314aa.v9d4f65.w0": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v1314aa v9d4f65 w0",
-            "src": "main.v:9.10-11.3|main.v:5949.4-5954.3|main.v:3708.7-3708.9|main.v:210.10-212.3"
-          }
-        },
-        "vda1ada.v1314aa.w4": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v1314aa w4",
-            "src": "main.v:9.10-11.3|main.v:5926.7-5926.9|main.v:210.10-212.3"
-          }
-        },
-        "vda1ada.v447d62.v4b1d09.v4d0636.i1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v447d62 v4b1d09 v4d0636 i1",
-            "src": "main.v:9.10-11.3|main.v:5432.10-5437.3|main.v:5592.15-5592.17|main.v:5577.18-5582.3|main.v:189.10-198.3"
-          }
-        },
-        "vda1ada.v447d62.v4b1d09.v95bea5": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v447d62 v4b1d09 v95bea5",
-            "src": "main.v:9.10-11.3|main.v:5432.10-5437.3|main.v:5564.15-5564.22|main.v:189.10-198.3"
-          }
-        },
-        "vda1ada.v447d62.v4b1d09.w3": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v447d62 v4b1d09 w3",
-            "src": "main.v:9.10-11.3|main.v:5432.10-5437.3|main.v:5572.14-5572.16|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v0471c9 w1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:237.14-237.16|main.v:205.10-209.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vde5edd.v7c9bd8": {
+        "vb4c970.veb069a.vc85945.v1f5ab0.v0142e9": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 vde5edd v7c9bd8",
-            "src": "main.v:9.10-11.3|main.v:5438.10-5440.3|main.v:810.16-810.23|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 v0142e9",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:345.15-345.22|main.v:217.10-222.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vde5edd.v9f49e7.v465065.k": {
+        "vb4c970.veb069a.vc85945.v1f5ab0.v5c9fa2": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 vde5edd v9f49e7 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:5438.10-5440.3|main.v:838.4-840.3|main.v:852.16-852.17|main.v:817.4-819.3|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 v5c9fa2",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:346.15-346.22|main.v:217.10-222.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vde5edd.v9f49e7.vbc97e4": {
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 vde5edd v9f49e7 vbc97e4",
-            "src": "main.v:9.10-11.3|main.v:5438.10-5440.3|main.v:831.16-831.23|main.v:817.4-819.3|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 ve4e0df i0",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:358.18-363.3|main.v:373.15-373.17|main.v:217.10-222.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vde5edd.v9f49e7.w1": {
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i0_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", 33, 36, 54, 53, 52, 51, 50, 39, 37, 38, 49, 48, 47, 46, 45, 44, 43, 42, 40, 41, 55, 56 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:291.13-291.18|main.v:210.10-213.3|main.v:49.10-52.3|/home/jose/.icestudio/apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.ve4e0df.i1": {
+          "hide_name": 0,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 ve4e0df i1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:358.18-363.3|main.v:374.15-374.17|main.v:217.10-222.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v1f5ab0.w1": {
+          "hide_name": 0,
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v447d62 vde5edd v9f49e7 w1",
-            "src": "main.v:9.10-11.3|main.v:5438.10-5440.3|main.v:834.14-834.16|main.v:817.4-819.3|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 w1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:351.14-351.16|main.v:217.10-222.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vde5edd.w1": {
+        "vb4c970.veb069a.vc85945.v1f5ab0.w2": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v447d62 vde5edd w1",
-            "src": "main.v:9.10-11.3|main.v:5438.10-5440.3|main.v:813.14-813.16|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v1f5ab0 w2",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:352.14-352.16|main.v:217.10-222.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vec88a9": {
+        "vb4c970.veb069a.vc85945.v588a4e.vb05b2d.v465065.k": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 vec88a9",
-            "src": "main.v:9.10-11.3|main.v:5388.8-5388.15|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v588a4e vb05b2d v465065 k",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:304.4-306.3|main.v:339.16-339.17|main.v:325.4-327.3|main.v:214.10-216.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vfd598f.v4407ca.i3": {
+        "vb4c970.veb069a.vc85945.v588a4e.vb05b2d.vcd68b6": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 vfd598f v4407ca i3",
-            "src": "main.v:9.10-11.3|main.v:5424.10-5431.3|main.v:5543.8-5543.10|main.v:5526.18-5533.3|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v588a4e vb05b2d vcd68b6",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:304.4-306.3|main.v:318.16-318.23|main.v:214.10-216.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.vfd598f.v78af34": {
+        "vb4c970.veb069a.vc85945.v588a4e.vb05b2d.w1": {
           "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v447d62 vfd598f v78af34",
-            "src": "main.v:9.10-11.3|main.v:5424.10-5431.3|main.v:5507.8-5507.15|main.v:189.10-198.3"
-          }
-        },
-        "vda1ada.v447d62.vfd598f.w2": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v447d62 vfd598f w2",
-            "src": "main.v:9.10-11.3|main.v:5424.10-5431.3|main.v:5516.7-5516.9|main.v:189.10-198.3"
-          }
-        },
-        "vda1ada.v447d62.w12": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v447d62 w12",
-            "src": "main.v:9.10-11.3|main.v:5406.14-5406.17|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v588a4e vb05b2d w1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:304.4-306.3|main.v:321.14-321.16|main.v:214.10-216.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v447d62.w6": {
+        "vb4c970.veb069a.vc85945.v588a4e.vb821ae": {
           "hide_name": 0,
-          "bits": [ "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "hdlname": "vda1ada v447d62 w6",
-            "src": "main.v:9.10-11.3|main.v:5400.7-5400.9|main.v:189.10-198.3"
+            "hdlname": "vb4c970 veb069a vc85945 v588a4e vb821ae",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:297.16-297.23|main.v:214.10-216.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v52b6dd.v9fb85f": {
+        "vb4c970.veb069a.vc85945.v588a4e.w1": {
           "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v52b6dd v9fb85f",
-            "src": "main.v:9.10-11.3|main.v:267.9-267.16|main.v:125.10-127.3"
-          }
-        },
-        "vda1ada.v52b6dd.vb2eccd.q": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v52b6dd vb2eccd q",
-            "src": "main.v:9.10-11.3|main.v:271.18-273.3|main.v:283.9-283.10|main.v:125.10-127.3"
-          }
-        },
-        "vda1ada.v52b6dd.w0": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v52b6dd w0",
-            "src": "main.v:9.10-11.3|main.v:269.7-269.9|main.v:125.10-127.3"
-          }
-        },
-        "vda1ada.v62d839.v29fe33": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 v29fe33",
-            "src": "main.v:9.10-11.3|main.v:956.15-956.22|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.v3fb302.raddr1": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 v3fb302 raddr1",
-            "src": "main.v:9.10-11.3|main.v:993.18-1002.3|main.v:1034.14-1034.20|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.v3fb302.raddr2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 v3fb302 raddr2",
-            "src": "main.v:9.10-11.3|main.v:993.18-1002.3|main.v:1035.14-1035.20|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.v3fb302.waddr": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 v3fb302 waddr",
-            "src": "main.v:9.10-11.3|main.v:993.18-1002.3|main.v:1033.14-1033.19|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.cpuregs_raddr1": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e cpuregs_raddr1",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1072.15-1072.29|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.cpuregs_raddr2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e cpuregs_raddr2",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1073.15-1073.29|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.cpuregs_waddr": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e cpuregs_waddr",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1071.15-1071.28|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.decoded_rs": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e decoded_rs",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:2278.27-2278.37|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.decoded_rs1": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e decoded_rs1",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1629.39-1629.50|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.decoded_rs2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e decoded_rs2",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1629.52-1629.63|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.irq": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e irq",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1054.15-1054.18|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.latched_rd": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e latched_rd",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:2180.27-2180.37|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.mem_la_firstword": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e mem_la_firstword",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1336.8-1336.24|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.mem_la_firstword_xfer": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e mem_la_firstword_xfer",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1337.8-1337.29|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.mem_la_use_prefetched_high_word": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e mem_la_use_prefetched_high_word",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1346.8-1346.39|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_div_rd": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_div_rd",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1062.15-1062.26|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_div_ready": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_div_ready",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1064.8-1064.22|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_div_wait": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_div_wait",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1063.8-1063.21|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_div_wr": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_div_wr",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1061.8-1061.19|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_int_rd": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_int_rd",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1264.14-1264.25|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_int_ready": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_int_ready",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1266.14-1266.28|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_int_wait": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_int_wait",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1265.14-1265.27|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_int_wr": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_int_wr",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1263.14-1263.25|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_mul_rd": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_mul_rd",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1058.15-1058.26|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_mul_ready": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_mul_ready",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1060.8-1060.22|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_mul_wait": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_mul_wait",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1059.8-1059.21|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.vf1da6e.pcpi_mul_wr": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v62d839 vf1da6e pcpi_mul_wr",
-            "src": "main.v:9.10-11.3|main.v:1003.18-1021.3|main.v:1057.8-1057.19|main.v:160.10-169.3"
-          }
-        },
-        "vda1ada.v62d839.w14": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v62d839 w14",
-            "src": "main.v:9.10-11.3|main.v:977.13-977.16|main.v:160.10-169.3"
+            "hdlname": "vb4c970 veb069a vc85945 v588a4e w1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:300.14-300.16|main.v:214.10-216.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v62d839.w15": {
+        "vb4c970.veb069a.vc85945.v95cbc1.v9ec4e7": {
           "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 v9ec4e7",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:268.16-268.23|main.v:210.10-213.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v95cbc1.va30991": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 va30991",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:267.15-267.22|main.v:210.10-213.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v95cbc1.va480e1.i": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 va480e1 i",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:287.15-287.16|main.v:210.10-213.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v95cbc1.va480e1.o": {
+          "hide_name": 0,
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 va480e1 o",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:274.18-277.3|main.v:288.16-288.17|main.v:210.10-213.3|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.v95cbc1.w0": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v62d839 w15",
-            "src": "main.v:9.10-11.3|main.v:978.13-978.16|main.v:160.10-169.3"
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 w0",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:270.14-270.16|main.v:210.10-213.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v62d839.w16": {
+        "vb4c970.veb069a.vc85945.v95cbc1.w1": {
           "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "x", "0" ],
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v62d839 w16",
-            "src": "main.v:9.10-11.3|main.v:979.13-979.16|main.v:160.10-169.3"
+            "hdlname": "vb4c970 veb069a vc85945 v95cbc1 w1",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:271.14-271.16|main.v:210.10-213.3|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v62d839.w9": {
+        "vb4c970.veb069a.vc85945.v9e2649": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 v9e2649",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:190.8-190.15|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.vda621c": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
+          "attributes": {
+            "hdlname": "vb4c970 veb069a vc85945 vda621c",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:192.16-192.23|main.v:49.10-52.3"
+          }
+        },
+        "vb4c970.veb069a.vc85945.w0": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v62d839 w9",
-            "src": "main.v:9.10-11.3|main.v:972.14-972.16|main.v:160.10-169.3"
+            "hdlname": "vb4c970 veb069a vc85945 w0",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:194.14-194.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.v70047a.v7c9bd8": {
+        "vb4c970.veb069a.vc85945.w2": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa v70047a v7c9bd8",
-            "src": "main.v:9.10-11.3|main.v:499.10-501.3|main.v:810.16-810.23|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.v70047a.v9f49e7.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa v70047a v9f49e7 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:499.10-501.3|main.v:838.4-840.3|main.v:852.16-852.17|main.v:817.4-819.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.v70047a.v9f49e7.vbc97e4": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa v70047a v9f49e7 vbc97e4",
-            "src": "main.v:9.10-11.3|main.v:499.10-501.3|main.v:831.16-831.23|main.v:817.4-819.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.v70047a.v9f49e7.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v72b9aa v70047a v9f49e7 w1",
-            "src": "main.v:9.10-11.3|main.v:499.10-501.3|main.v:834.14-834.16|main.v:817.4-819.3|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a vc85945 w2",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:196.14-196.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.v70047a.w1": {
+        "vb4c970.veb069a.vc85945.w3": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 72, 71, 70, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 79, 78, 77, 76, 75, 74, 73, 69, 58, 57 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v72b9aa v70047a w1",
-            "src": "main.v:9.10-11.3|main.v:499.10-501.3|main.v:813.14-813.16|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a vc85945 w3",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:197.14-197.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vb9eeab.v20a2cd": {
+        "vb4c970.veb069a.vc85945.w4": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v20a2cd",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:560.15-560.22|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a vc85945 w4",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:198.7-198.9|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vb9eeab.v7323f5.cfg_divider": {
+        "vb4c970.veb069a.vc85945.w6": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v7323f5 cfg_divider",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:626.13-626.24|main.v:590.18-603.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.v7323f5.reg_div_di": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v7323f5 reg_div_di",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:620.15-620.25|main.v:590.18-603.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.v7323f5.reg_div_do": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v7323f5 reg_div_do",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:622.16-622.26|main.v:590.18-603.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.v7323f5.reg_div_we": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v7323f5 reg_div_we",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:616.14-616.24|main.v:590.18-603.3|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.v8e9021": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab v8e9021",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:556.14-556.21|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.vc35967": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab vc35967",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:562.16-562.23|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.vb9eeab.w4": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab w4",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:570.13-570.15|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a vc85945 w6",
+            "src": "main.v:19.10-22.3|main.v:119.10-123.3|main.v:200.14-200.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vb9eeab.w8": {
+        "vb4c970.veb069a.w0": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "0", "1", "1", "1", "0", "1", "1", "0", "1" ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab w8",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:574.14-574.16|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a w0",
+            "src": "main.v:19.10-22.3|main.v:103.14-103.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vb9eeab.w9": {
+        "vb4c970.veb069a.w2": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ 33, 34, 35, 21, 22, 23, 24, 13, 25, 14, 26, 27, 28, 29, 30, 9, 10, 11, 31, 12, 15, 32, 16 ],
           "upto": 1,
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vb9eeab w9",
-            "src": "main.v:9.10-11.3|main.v:457.10-469.3|main.v:575.14-575.16|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a w2",
+            "src": "main.v:19.10-22.3|main.v:105.14-105.16|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vf00bfe.v76a485.v1ef182": {
+        "vb4c970.veb069a.w3": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vf00bfe v76a485 v1ef182",
-            "src": "main.v:9.10-11.3|main.v:502.10-504.3|main.v:881.15-881.22|main.v:867.4-869.3|main.v:140.4-151.3"
+            "hdlname": "vb4c970 veb069a w3",
+            "src": "main.v:19.10-22.3|main.v:106.7-106.9|main.v:49.10-52.3"
           }
         },
-        "vda1ada.v72b9aa.vf00bfe.v76a485.v465065.k": {
+        "vb4c970.w0": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 3 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vf00bfe v76a485 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:502.10-504.3|main.v:888.4-890.3|main.v:902.15-902.16|main.v:867.4-869.3|main.v:140.4-151.3"
+            "hdlname": "vb4c970 w0",
+            "src": "main.v:19.10-22.3|main.v:36.7-36.9"
           }
         },
-        "vda1ada.v72b9aa.vf00bfe.v76a485.w1": {
+        "vb4c970.w1": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vf00bfe v76a485 w1",
-            "src": "main.v:9.10-11.3|main.v:502.10-504.3|main.v:884.13-884.15|main.v:867.4-869.3|main.v:140.4-151.3"
+            "hdlname": "vb4c970 w1",
+            "src": "main.v:19.10-22.3|main.v:37.7-37.9"
           }
         },
-        "vda1ada.v72b9aa.vf00bfe.v919d0f": {
+        "vb4c970.w3": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vf00bfe v919d0f",
-            "src": "main.v:9.10-11.3|main.v:502.10-504.3|main.v:860.15-860.22|main.v:140.4-151.3"
+            "hdlname": "vb4c970 w3",
+            "src": "main.v:19.10-22.3|main.v:39.7-39.9"
           }
         },
-        "vda1ada.v72b9aa.vf00bfe.w1": {
+        "vclk": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
+          "bits": [ 2 ],
           "attributes": {
-            "hdlname": "vda1ada v72b9aa vf00bfe w1",
-            "src": "main.v:9.10-11.3|main.v:502.10-504.3|main.v:863.13-863.15|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.w11": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa w11",
-            "src": "main.v:9.10-11.3|main.v:416.14-416.17|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v72b9aa.w12": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v72b9aa w12",
-            "src": "main.v:9.10-11.3|main.v:417.13-417.16|main.v:140.4-151.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.v285646": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e v285646",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3415.14-3415.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.v9a2a06.i1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e v9a2a06 i1",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3439.14-3439.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.v9a2a06.o": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e v9a2a06 o",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3441.15-3441.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.va191ad": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e va191ad",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3417.15-3417.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e w1",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3420.13-3420.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v05a94e.w2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v05a94e w2",
-            "src": "main.v:9.10-11.3|main.v:3238.10-3242.3|main.v:3421.13-3421.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v1399d2.vcd5251": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v1399d2 vcd5251",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:3770.8-3770.15|main.v:3602.10-3608.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v1399d2.vf7e02c.rst": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v1399d2 vf7e02c rst",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:3791.4-3797.3|main.v:3810.8-3810.11|main.v:3602.10-3608.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v1399d2.w3": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v1399d2 w3",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:3781.7-3781.9|main.v:3602.10-3608.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v8f020a.v9fb85f": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v8f020a v9fb85f",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:267.9-267.16|main.v:3586.10-3588.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v8f020a.vb2eccd.q": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v8f020a vb2eccd q",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:271.18-273.3|main.v:283.9-283.10|main.v:3586.10-3588.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.v8f020a.w0": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d v8f020a w0",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:269.7-269.9|main.v:3586.10-3588.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v065438.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v065438 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4719.4-4721.3|main.v:4733.15-4733.16|main.v:4570.4-4572.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v065438.vfc34be": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v065438 vfc34be",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4712.15-4712.22|main.v:4570.4-4572.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v065438.w1": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v065438 w1",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4715.13-4715.15|main.v:4570.4-4572.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v95f509.v7b3e89": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v95f509 v7b3e89",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4678.14-4678.21|main.v:4563.10-4567.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v95f509.vd75681.a": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v95f509 vd75681 a",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4688.18-4692.3|main.v:4702.14-4702.15|main.v:4563.10-4567.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.v95f509.w2": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd v95f509 w2",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4684.13-4684.15|main.v:4563.10-4567.3|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.vedba67.v3c84bd.w9": {
-          "hide_name": 0,
-          "bits": [ "1", "1", "1", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d vedba67 v3c84bd w9",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:4158.4-4165.3|main.v:4498.13-4498.15|main.v:3631.4-3639.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v0fb61d.w8": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v0fb61d w8",
-            "src": "main.v:9.10-11.3|main.v:3245.4-3252.3|main.v:3521.7-3521.9|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.v062092": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b v062092",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3340.14-3340.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.v21e136": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b v21e136",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3339.14-3339.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.v30db33": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b v30db33",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3337.14-3337.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.v3d1227": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b v3d1227",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3341.14-3341.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.vbdd51f": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b vbdd51f",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3338.14-3338.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.ve4e0df.i0": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b ve4e0df i0",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3393.14-3393.16|main.v:3365.18-3376.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.ve4e0df.i1": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b ve4e0df i1",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3392.14-3392.16|main.v:3365.18-3376.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.ve4e0df.i2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b ve4e0df i2",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3391.14-3391.16|main.v:3365.18-3376.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.ve4e0df.i3": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b ve4e0df i3",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3390.14-3390.16|main.v:3365.18-3376.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.ve4e0df.i4": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b ve4e0df i4",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3389.14-3389.16|main.v:3365.18-3376.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.w1": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b w1",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3346.13-3346.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.w3": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b w3",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3348.13-3348.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.w4": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b w4",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3349.13-3349.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.w5": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b w5",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3350.13-3350.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v386d4b.w6": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v386d4b w6",
-            "src": "main.v:9.10-11.3|main.v:3211.10-3219.3|main.v:3351.13-3351.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.v285646": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 v285646",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3415.14-3415.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.v766044": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 v766044",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3416.14-3416.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.v9a2a06.i0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 v9a2a06 i0",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3440.14-3440.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.v9a2a06.i1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 v9a2a06 i1",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3439.14-3439.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.v9a2a06.o": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 v9a2a06 o",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3441.15-3441.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.va191ad": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 va191ad",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3417.15-3417.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.w0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 w0",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3419.13-3419.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 w1",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3420.13-3420.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v3cc599.w2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v3cc599 w2",
-            "src": "main.v:9.10-11.3|main.v:3233.10-3237.3|main.v:3421.13-3421.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45980d.vd976a7.q": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45980d vd976a7 q",
-            "src": "main.v:9.10-11.3|main.v:3290.10-3295.3|main.v:5225.15-5225.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45980d.vd976a7.qi": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45980d vd976a7 qi",
-            "src": "main.v:9.10-11.3|main.v:3290.10-3295.3|main.v:5232.14-5232.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45980d.ve6fa88": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45980d ve6fa88",
-            "src": "main.v:9.10-11.3|main.v:3290.10-3295.3|main.v:5192.15-5192.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45980d.w4": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45980d w4",
-            "src": "main.v:9.10-11.3|main.v:3290.10-3295.3|main.v:5198.13-5198.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.v285646": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db v285646",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3415.14-3415.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.v766044": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db v766044",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3416.14-3416.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.v9a2a06.i0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db v9a2a06 i0",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3440.14-3440.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.v9a2a06.i1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db v9a2a06 i1",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3439.14-3439.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.v9a2a06.o": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db v9a2a06 o",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3441.15-3441.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.va191ad": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db va191ad",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3417.15-3417.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.w0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db w0",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3419.13-3419.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db w1",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3420.13-3420.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v45c2db.w2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v45c2db w2",
-            "src": "main.v:9.10-11.3|main.v:3220.10-3224.3|main.v:3421.13-3421.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.v285646": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f v285646",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3415.14-3415.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.v766044": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f v766044",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3416.14-3416.21|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.v9a2a06.i0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f v9a2a06 i0",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3440.14-3440.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.v9a2a06.i1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f v9a2a06 i1",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3439.14-3439.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.v9a2a06.o": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f v9a2a06 o",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3441.15-3441.16|main.v:3425.18-3429.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.va191ad": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f va191ad",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3417.15-3417.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.w0": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f w0",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3419.13-3419.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f w1",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3420.13-3420.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v50448f.w2": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v50448f w2",
-            "src": "main.v:9.10-11.3|main.v:3228.10-3232.3|main.v:3421.13-3421.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v79330b.vd976a7.q": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v79330b vd976a7 q",
-            "src": "main.v:9.10-11.3|main.v:3272.10-3277.3|main.v:5225.15-5225.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v79330b.vd976a7.qi": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v79330b vd976a7 qi",
-            "src": "main.v:9.10-11.3|main.v:3272.10-3277.3|main.v:5232.14-5232.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v79330b.ve6fa88": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v79330b ve6fa88",
-            "src": "main.v:9.10-11.3|main.v:3272.10-3277.3|main.v:5192.15-5192.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.v79330b.w4": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 v79330b w4",
-            "src": "main.v:9.10-11.3|main.v:3272.10-3277.3|main.v:5198.13-5198.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v03d8cb.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v03d8cb v465065 k",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5054.4-5056.3|main.v:5068.15-5068.16|main.v:4972.4-4974.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v03d8cb.v95ded6": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v03d8cb v95ded6",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5047.15-5047.22|main.v:4972.4-4974.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v03d8cb.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v03d8cb w1",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5050.13-5050.15|main.v:4972.4-4974.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v8f26c8.v2e7398": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v8f26c8 v2e7398",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5013.14-5013.21|main.v:4965.10-4969.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v8f26c8.vd75681.a": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v8f26c8 vd75681 a",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5023.18-5027.3|main.v:5037.14-5037.15|main.v:4965.10-4969.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.v8f26c8.w2": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 v8f26c8 w2",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:5019.13-5019.15|main.v:4965.10-4969.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.ve70865.w9": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "1" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 ve70865 w9",
-            "src": "main.v:9.10-11.3|main.v:3255.4-3263.3|main.v:4906.13-4906.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec171a.v26dbdb": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec171a v26dbdb",
-            "src": "main.v:9.10-11.3|main.v:3208.4-3210.3|main.v:3307.15-3307.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec171a.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec171a v465065 k",
-            "src": "main.v:9.10-11.3|main.v:3208.4-3210.3|main.v:3328.15-3328.16|main.v:3314.4-3316.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec171a.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec171a w1",
-            "src": "main.v:9.10-11.3|main.v:3208.4-3210.3|main.v:3310.13-3310.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec6754.v8800c6.v00a92d": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec6754 v8800c6 v00a92d",
-            "src": "main.v:9.10-11.3|main.v:3225.10-3227.3|main.v:3471.15-3471.22|main.v:3457.4-3459.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec6754.v8800c6.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec6754 v8800c6 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:3225.10-3227.3|main.v:3478.4-3480.3|main.v:3492.15-3492.16|main.v:3457.4-3459.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec6754.v8800c6.w0": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec6754 v8800c6 w0",
-            "src": "main.v:9.10-11.3|main.v:3225.10-3227.3|main.v:3474.13-3474.15|main.v:3457.4-3459.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec6754.va50a91": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec6754 va50a91",
-            "src": "main.v:9.10-11.3|main.v:3225.10-3227.3|main.v:3450.15-3450.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vec6754.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vec6754 w1",
-            "src": "main.v:9.10-11.3|main.v:3225.10-3227.3|main.v:3453.13-3453.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vf1da33.vd976a7.q": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vf1da33 vd976a7 q",
-            "src": "main.v:9.10-11.3|main.v:3278.10-3283.3|main.v:5225.15-5225.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vf1da33.vd976a7.qi": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vf1da33 vd976a7 qi",
-            "src": "main.v:9.10-11.3|main.v:3278.10-3283.3|main.v:5232.14-5232.16|main.v:5205.4-5210.3|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vf1da33.ve6fa88": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vf1da33 ve6fa88",
-            "src": "main.v:9.10-11.3|main.v:3278.10-3283.3|main.v:5192.15-5192.22|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.vf1da33.w4": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 vf1da33 w4",
-            "src": "main.v:9.10-11.3|main.v:3278.10-3283.3|main.v:5198.13-5198.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w11": {
-          "hide_name": 0,
-          "bits": [ "0", "1", "1", "0", "1", "1", "1", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w11",
-            "src": "main.v:9.10-11.3|main.v:3109.13-3109.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w20": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w20",
-            "src": "main.v:9.10-11.3|main.v:3118.13-3118.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w21": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w21",
-            "src": "main.v:9.10-11.3|main.v:3119.13-3119.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w22": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w22",
-            "src": "main.v:9.10-11.3|main.v:3120.13-3120.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w23": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w23",
-            "src": "main.v:9.10-11.3|main.v:3121.13-3121.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w24": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w24",
-            "src": "main.v:9.10-11.3|main.v:3122.13-3122.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w37": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w37",
-            "src": "main.v:9.10-11.3|main.v:3134.13-3134.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w41": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w41",
-            "src": "main.v:9.10-11.3|main.v:3138.13-3138.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w42": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w42",
-            "src": "main.v:9.10-11.3|main.v:3139.13-3139.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w43": {
-          "hide_name": 0,
-          "bits": [ "x", "x", "x", "x", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w43",
-            "src": "main.v:9.10-11.3|main.v:3140.13-3140.16|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w8": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w8",
-            "src": "main.v:9.10-11.3|main.v:3106.13-3106.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v7b9433.w9": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada v7b9433 w9",
-            "src": "main.v:9.10-11.3|main.v:3107.13-3107.15|main.v:170.10-177.3"
-          }
-        },
-        "vda1ada.v97f0aa": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada v97f0aa",
-            "src": "main.v:9.10-11.3|main.v:30.9-30.16"
-          }
-        },
-        "vda1ada.vcd95a5.v38acc0.v465065.k": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada vcd95a5 v38acc0 v465065 k",
-            "src": "main.v:9.10-11.3|main.v:301.4-303.3|main.v:336.16-336.17|main.v:322.4-324.3|main.v:128.10-130.3"
-          }
-        },
-        "vda1ada.vcd95a5.v38acc0.v751a1b": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada vcd95a5 v38acc0 v751a1b",
-            "src": "main.v:9.10-11.3|main.v:301.4-303.3|main.v:315.16-315.23|main.v:128.10-130.3"
-          }
-        },
-        "vda1ada.vcd95a5.v38acc0.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada vcd95a5 v38acc0 w1",
-            "src": "main.v:9.10-11.3|main.v:301.4-303.3|main.v:318.14-318.16|main.v:128.10-130.3"
-          }
-        },
-        "vda1ada.vcd95a5.v9b328c": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "hdlname": "vda1ada vcd95a5 v9b328c",
-            "src": "main.v:9.10-11.3|main.v:294.16-294.23|main.v:128.10-130.3"
-          }
-        },
-        "vda1ada.vcd95a5.w1": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada vcd95a5 w1",
-            "src": "main.v:9.10-11.3|main.v:297.14-297.16|main.v:128.10-130.3"
-          }
-        },
-        "vda1ada.w0": {
-          "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "upto": 1,
-          "attributes": {
-            "hdlname": "vda1ada w0",
-            "src": "main.v:9.10-11.3|main.v:39.14-39.16"
-          }
-        },
-        "vda1ada.w5": {
-          "hide_name": 0,
-          "bits": [ "x" ],
-          "attributes": {
-            "hdlname": "vda1ada w5",
-            "src": "main.v:9.10-11.3|main.v:44.7-44.9"
-          }
-        },
-        "vda1ada.w8": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "hdlname": "vda1ada w8",
-            "src": "main.v:9.10-11.3|main.v:45.7-45.9"
+            "src": "main.v:7.8-7.12"
           }
         },
         "vinit": {
           "hide_name": 0,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "bits": [ "0", "0", "0", "0", "0", "0", "0" ],
           "upto": 1,
           "attributes": {
-            "src": "main.v:7.15-7.20"
+            "src": "main.v:10.15-10.20"
+          }
+        },
+        "w0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "main.v:12.7-12.9"
+          }
+        },
+        "w1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "main.v:13.7-13.9"
+          }
+        },
+        "w2": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "main.v:14.7-14.9"
           }
         }
-      }
-    },
-    "vdccd52": {
-      "attributes": {
-        "blackbox": "00000000000000000000000000000001",
-        "hdlname": "\\vdccd52",
-        "src": "main.v:907.1-910.10"
-      },
-      "ports": {
-      },
-      "cells": {
-      },
-      "netnames": {
       }
     }
   }
