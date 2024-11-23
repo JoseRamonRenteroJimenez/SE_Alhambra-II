@@ -1,5 +1,11 @@
-#Ignorar carpeta RISC-V-FPGA/
-RISC-V-FPGA/
-
 #Ignorar carpeta tool chain
-risv-gnu-toolchain/
+riscv-gnu-toolchain/
+
+#Ignorar apuntes
+/*.txt
+
+#Ignorar programa
+icestudio-0.12-linux64.AppImage
+
+#Ignorar marketplace formato zip (sigue estándo presente en formato 7z, un formato más pequeño)
+RISC-V-FPGA/makespace-17.zip
