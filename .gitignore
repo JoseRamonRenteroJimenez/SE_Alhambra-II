@@ -1,6 +1,9 @@
 #Ignorar carpeta tool chain
 riscv-gnu-toolchain/
 
+#Ignorar carpeta procesador
+RISC-V-FPGA/
+
 #Ignorar apuntes
 /*.txt
 
