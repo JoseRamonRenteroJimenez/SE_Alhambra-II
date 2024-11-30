@@ -4,11 +4,15 @@ riscv-gnu-toolchain/
 #Ignorar apuntes
 /*.txt
 
-#Ignorar programa
-icestudio-0.12-linux64.AppImage
+#Ignorar programas
+/*.AppImage
 
 #Ignorar marketplace formato zip (sigue estándo presente en formato 7z, un formato más pequeño)
-RISC-V-FPGA/makespace-17.zip
+Recursos/makespace-17.zip
 
 #Ignorar carpeta de colección
-RISC-V-FPGA/makespace-17/
+Recursos/makespace-17/
+
+
+#Ignorar icerock
+iceRok
