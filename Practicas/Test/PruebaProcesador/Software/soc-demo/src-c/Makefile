@@ -1,5 +1,5 @@
 ##-- Riscv toolchain path
-FIRMWARE = test
+FIRMWARE = leds-on
 RISCV=/usr/bin
 
 

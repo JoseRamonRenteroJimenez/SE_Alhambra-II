@@ -61,7 +61,7 @@ void menu()
 	print("\n");
 	print("  ____  _          ____         ____\n");
 	print(" |  _ \\(_) ___ ___/ ___|  ___  / ___|\n");
-	print(" | |_)aaaaaaaaaaaaaaaaaaaaa | |/ __/ _ \\___ \\ / _ \\| |\n");
+	print(" | |_) | |/ __/ _ \\___ \\ / _ \\| |\n");
 	print(" |  __/| | (_| (_) |__) | (_) | |___\n");
 	print(" |_|   |_|\\___\\___/____/ \\___/ \\____|\n");
 	print("\nRunning on the Alhambra II board :-)\n");

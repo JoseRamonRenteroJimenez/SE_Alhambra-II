@@ -65,6 +65,8 @@ void menu()
 	print(" |  __/| | (_| (_) |__) | (_) | |___\n");
 	print(" |_|   |_|\\___\\___/____/ \\___/ \\____|\n");
 	print("\nRunning on the Alhambra II board :-)\n");
+	print("Autores: Javier Daza Justo y José Ramón Rentero Jiménez\n");
+	print("Tutores: Juan Carlos Fabero Jiménez y Hortensia Mecha López\n");
 	print("\n");
 }
 

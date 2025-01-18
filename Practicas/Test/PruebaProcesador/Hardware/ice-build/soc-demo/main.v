@@ -20,7 +20,8 @@ module main #(
  output v55f1ca,
  output v97f0aa,
  output v5ec250,
- output v5100fa
+ output v5100fa,
+ output [0:0] vinit
 );
  localparam p6 = vafbbea;
  localparam p7 = v8c97ba;
@@ -257,6 +258,7 @@ module main #(
   .v202123(w53),
   .vbe14dd(w55)
  );
+ assign vinit = 1'b0;
 endmodule
 
 //---- Top entity

@@ -8,7 +8,7 @@
 void main()
 {
     //-- Turn on all the LEDs
-	LEDs = 0xF2;
+	LEDs = 0xF5;
 	
 	while (1);
 
