@@ -32,6 +32,21 @@ void putchar(char c) {
     reg_uart_data = c;
 }
 
+void limpiar_buffer() {
+    while (reg_uart_data != -1) {
+        // Leer y descartar caracteres residuales
+    }
+}
+
+void actualizar_leds_y_pantalla(int valor) {
+    char numStr[3];
+    mini_sprintf(numStr, "%X", valor);
+    print("Resultado: ");
+    print2(numStr);
+    print("\n");
+    reg_leds = (reg_leds & 0xFF00) | valor;
+}
+
 void print(const char *p) {
     while (*p)
         putchar(*(p++));
@@ -43,6 +58,7 @@ void print2(char *p) {
 }
 
 char getchar_prompt(char *prompt) {
+
     // Declaración de variables
     int32_t c = -1; // Variable para almacenar el carácter leído
     int32_t count = 0; // Contador para el número de ciclos
@@ -79,6 +95,7 @@ char getchar_prompt(char *prompt) {
 }
 
 char getchar() {
+    limpiar_buffer();
     return getchar_prompt(0);
 }
 
@@ -100,7 +117,6 @@ void menu() {
 // --------------------------------------------------------
 
 void p1a() {
-    print("Práctica 1.a\n");
     /**
      * @brief Este método lee un dato introducido por teclado (del 0 al 9) a través del puerto serie
      * y lo visualiza en los LEDs de la FPGA.
@@ -124,13 +140,15 @@ void p1a() {
         }
     }
 
-    num1 = mini_atoi(&aux);
+    //num1 = mini_atoi(&aux);
+
+    num1 = aux - '0'; // Se pasa a su valor numérico
 
     if (num1 > 9)
         num1 = 9;
 
     print("Número introducido: ");
-    char numStr[2];
+    char numStr[3];
     mini_sprintf(numStr, "%X", num1);
     print2(numStr);
 
@@ -157,11 +175,12 @@ void p1b() {
      * caso el resultado de la lectura o de la operación se visualiza en la pantalla y se muestra en los leds.
      */
 
-    int num1, num2, result;
+    int num1, num2, result = 0;
     int salida = 0;
+    int check = 0;
     char aux;
     char hexStr;
-    char numStr[2];
+    char numStr[3];
 
     print("Menú ejercicio 2\n");
     print("a.- Introducir primer operando y visualizarlo en los leds y en la pantalla.\n");
@@ -173,10 +192,12 @@ void p1b() {
     print("Introduce una opción: ");
     aux = getchar();
 
-    while (aux < 97 && aux > 101) {
-        if (aux < 97 && aux > 101) {
+    while (check == 0) {
+        if (aux < 'a' || aux > 'e') {
             print("Introduce una opción válida: ");
             aux = getchar();
+        }else{
+            check = 1;
         }
     }
 
@@ -193,7 +214,7 @@ void p1b() {
                     }
                 }
 
-                num1 = mini_atoi(&aux);
+                num1 = aux - '0';
 
                 if (num1 > 9)
                     num1 = 9;
@@ -220,7 +241,7 @@ void p1b() {
                     }
                 }
 
-                num2 = mini_atoi(&aux);
+                num2 = aux - '0';
 
                 if (num2 > 9)
                     num2 = 9;
@@ -290,7 +311,7 @@ void main() {
 
     int aa= 0;
 
-    for (int i = 0; i < 200000; i++)
+    for (int i = 0; i < 100000; i++)
     {
         if(i % 2 == 0){
             aa++;
