@@ -12,26 +12,6 @@
     "graph": {
       "blocks": [
         {
-          "id": "5c7f9d1a-1e9b-4916-918c-46f9809e9d02",
-          "type": "basic.input",
-          "data": {
-            "name": "rst",
-            "virtual": true,
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ],
-            "clock": false
-          },
-          "position": {
-            "x": 1112,
-            "y": 392
-          }
-        },
-        {
           "id": "c122a147-47d0-45ac-aa32-21535868bcbc",
           "type": "basic.input",
           "data": {
@@ -47,8 +27,85 @@
             "clock": true
           },
           "position": {
-            "x": 232,
-            "y": 632
+            "x": 632,
+            "y": -208
+          }
+        },
+        {
+          "id": "e58b1495-bc15-455d-912d-5754086c3eb6",
+          "type": "basic.input",
+          "data": {
+            "name": "rst",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ],
+            "clock": false
+          },
+          "position": {
+            "x": 584,
+            "y": -144
+          }
+        },
+        {
+          "id": "db40ebef-95f8-452a-a679-d086266acde2",
+          "type": "basic.output",
+          "data": {
+            "name": "conv_ale",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 1040,
+            "y": -16
+          }
+        },
+        {
+          "id": "f2f05e31-68ae-4b55-b5af-b135e7660bb1",
+          "type": "basic.output",
+          "data": {
+            "name": "conv_start",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 952,
+            "y": 16
+          }
+        },
+        {
+          "id": "c870949d-ad6a-440e-b3f3-13c79c691b7f",
+          "type": "basic.output",
+          "data": {
+            "name": "conv_oe",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 1064,
+            "y": 48
           }
         },
         {
@@ -78,17 +135,28 @@
             "clock": false
           },
           "position": {
-            "x": 416,
-            "y": 800
+            "x": 536,
+            "y": 48
           }
         },
         {
-          "id": "c870949d-ad6a-440e-b3f3-13c79c691b7f",
+          "id": "59880b22-c422-437d-9b4e-b6c175aa21d4",
           "type": "basic.output",
           "data": {
-            "name": "conv_eoc",
+            "name": "conv_addr",
             "virtual": true,
+            "range": "[2:0]",
             "pins": [
+              {
+                "index": "2",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "1",
+                "name": "NULL",
+                "value": "NULL"
+              },
               {
                 "index": "0",
                 "name": "NULL",
@@ -97,8 +165,8 @@
             ]
           },
           "position": {
-            "x": 1512,
-            "y": 832
+            "x": 976,
+            "y": 80
           }
         },
         {
@@ -117,16 +185,71 @@
             "clock": false
           },
           "position": {
-            "x": 432,
-            "y": 880
+            "x": 632,
+            "y": 80
           }
         },
         {
-          "id": "44dadfea-f1ea-4fed-8892-3370cfbd66f5",
+          "id": "6ea0c6a0-ad3c-4117-a134-e57b22e690db",
+          "type": "basic.output",
+          "data": {
+            "name": "data_out",
+            "virtual": true,
+            "range": "[7:0]",
+            "pins": [
+              {
+                "index": "7",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "6",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "5",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "4",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "3",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "2",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "1",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 1064,
+            "y": 112
+          }
+        },
+        {
+          "id": "45bca482-db06-4679-8ed9-8dff22b72522",
           "type": "basic.input",
           "data": {
-            "name": "a",
-            "virtual": false,
+            "name": "conv_eoc",
+            "virtual": true,
             "pins": [
               {
                 "index": "0",
@@ -137,16 +260,91 @@
             "clock": false
           },
           "position": {
-            "x": 544,
-            "y": 1136
+            "x": 504,
+            "y": 112
+          }
+        },
+        {
+          "id": "d3661d7f-c90d-46ff-9ee2-8572255b8486",
+          "type": "basic.output",
+          "data": {
+            "name": "data_valid",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 944,
+            "y": 144
+          }
+        },
+        {
+          "id": "ba21ffc3-1b13-4d69-b57b-91fd36968b44",
+          "type": "basic.input",
+          "data": {
+            "name": "conv_data",
+            "virtual": true,
+            "range": "[7:0]",
+            "pins": [
+              {
+                "index": "7",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "6",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "5",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "4",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "3",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "2",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "1",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ],
+            "clock": false
+          },
+          "position": {
+            "x": 592,
+            "y": 144
           }
         },
         {
           "id": "882ad631-afb2-4458-afa8-9021daae0b74",
           "type": "cb884d9e0d497c0fc91d3158ab9c9837be22c64d",
           "position": {
-            "x": 728,
-            "y": 704
+            "x": 776,
+            "y": -224
           },
           "size": {
             "width": 96,
@@ -157,113 +355,16 @@
           "id": "d06b4951-74bf-4fa5-a584-53b761ae3304",
           "type": "e1690ffd4edbd7da18a3541788eeaf20cc92f8f7",
           "position": {
-            "x": 1152,
-            "y": 704
+            "x": 784,
+            "y": 0
           },
           "size": {
             "width": 96,
-            "height": 224
-          }
-        },
-        {
-          "id": "a99a7806-3133-402a-9a83-b8e4746e93be",
-          "type": "basic.code",
-          "data": {
-            "ports": {
-              "in": [
-                {
-                  "name": "conv_eoc"
-                },
-                {
-                  "name": "conv_data",
-                  "range": "[7:0]",
-                  "size": 8
-                }
-              ],
-              "out": [
-                {
-                  "name": "conv_clk"
-                },
-                {
-                  "name": "conv_ale"
-                },
-                {
-                  "name": "conv_start"
-                },
-                {
-                  "name": "conv_addr"
-                },
-                {
-                  "name": "conv_oe"
-                }
-              ]
-            },
-            "params": [],
-            "code": "// Señal de reloj a 640 kHz\n    wire clk_640K;\n\n    // Instancia del divisor de frecuencia\n    divisor640K div_clk (\n        .clk_in(clk), \n        .rst(rst), \n        .clk_out(clk_640K)\n    );\n\n    // Instancia del controlador ADC0808\n    adc0808 adc (\n        .clk(clk_640K), \n        .rst(rst), \n        .addr_in(channel), \n        .start(start), \n        .conv_clk(conv_clk), \n        .conv_eoc(conv_eoc), \n        .conv_ale(conv_ale), \n        .conv_start(conv_start), \n        .conv_addr(conv_addr), \n        .conv_oe(conv_oe), \n        .conv_data(conv_data), \n        .data_out(data_out), \n        .data_valid(data_valid)\n    );"
-          },
-          "position": {
-            "x": 600,
-            "y": -112
-          },
-          "size": {
-            "width": 696,
-            "height": 480
+            "height": 192
           }
         }
       ],
       "wires": [
-        {
-          "source": {
-            "block": "5c7f9d1a-1e9b-4916-918c-46f9809e9d02",
-            "port": "out"
-          },
-          "target": {
-            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
-            "port": "c3213c93-55c5-4254-8d00-53c8660c35fb"
-          }
-        },
-        {
-          "source": {
-            "block": "5c7f9d1a-1e9b-4916-918c-46f9809e9d02",
-            "port": "out"
-          },
-          "target": {
-            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
-            "port": "0b3d5f1d-d35e-470f-8ef4-48bd379052cb"
-          },
-          "vertices": [
-            {
-              "x": 528,
-              "y": 512
-            }
-          ]
-        },
-        {
-          "source": {
-            "block": "c122a147-47d0-45ac-aa32-21535868bcbc",
-            "port": "out"
-          },
-          "target": {
-            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
-            "port": "162cc068-dbb0-471b-9242-9cf1342bd4da"
-          },
-          "vertices": [
-            {
-              "x": 472,
-              "y": 584
-            }
-          ]
-        },
-        {
-          "source": {
-            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
-            "port": "f89c8be6-8513-4aff-ba79-4804f03990e7"
-          },
-          "target": {
-            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
-            "port": "8ba402ca-5b5b-4819-8954-8c685b54287b"
-          }
-        },
         {
           "source": {
             "block": "f1dd288e-8915-42b9-aa3d-baa2c465a857",
@@ -287,6 +388,68 @@
         },
         {
           "source": {
+            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
+            "port": "f89c8be6-8513-4aff-ba79-4804f03990e7"
+          },
+          "target": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "8ba402ca-5b5b-4819-8954-8c685b54287b"
+          },
+          "vertices": [
+            {
+              "x": 824,
+              "y": -88
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "c122a147-47d0-45ac-aa32-21535868bcbc",
+            "port": "out"
+          },
+          "target": {
+            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
+            "port": "162cc068-dbb0-471b-9242-9cf1342bd4da"
+          }
+        },
+        {
+          "source": {
+            "block": "e58b1495-bc15-455d-912d-5754086c3eb6",
+            "port": "out"
+          },
+          "target": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "c3213c93-55c5-4254-8d00-53c8660c35fb"
+          },
+          "vertices": [
+            {
+              "x": 744,
+              "y": -32
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "e58b1495-bc15-455d-912d-5754086c3eb6",
+            "port": "out"
+          },
+          "target": {
+            "block": "882ad631-afb2-4458-afa8-9021daae0b74",
+            "port": "0b3d5f1d-d35e-470f-8ef4-48bd379052cb"
+          }
+        },
+        {
+          "source": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "07e61d47-d911-4ce3-991c-2e3000cc2470"
+          },
+          "target": {
+            "block": "db40ebef-95f8-452a-a679-d086266acde2",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
             "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
             "port": "b42317e7-c1e7-4c58-ba91-20454bc5071e"
           },
@@ -294,6 +457,69 @@
             "block": "c870949d-ad6a-440e-b3f3-13c79c691b7f",
             "port": "in"
           }
+        },
+        {
+          "source": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "47418195-68a9-426e-babc-d12b66cc0c4a"
+          },
+          "target": {
+            "block": "59880b22-c422-437d-9b4e-b6c175aa21d4",
+            "port": "in"
+          },
+          "size": 3
+        },
+        {
+          "source": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "9f5da39b-15c1-46c7-93f2-eeb26de10199"
+          },
+          "target": {
+            "block": "f2f05e31-68ae-4b55-b5af-b135e7660bb1",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "28573003-6619-40f7-b422-4223307ee7e1"
+          },
+          "target": {
+            "block": "6ea0c6a0-ad3c-4117-a134-e57b22e690db",
+            "port": "in"
+          },
+          "size": 8
+        },
+        {
+          "source": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "2654a3f2-9ea0-4d1f-bd3b-ff7c5055eff0"
+          },
+          "target": {
+            "block": "d3661d7f-c90d-46ff-9ee2-8572255b8486",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "45bca482-db06-4679-8ed9-8dff22b72522",
+            "port": "out"
+          },
+          "target": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "a954764c-7e88-4d70-8569-0cfdef34a779"
+          }
+        },
+        {
+          "source": {
+            "block": "ba21ffc3-1b13-4d69-b57b-91fd36968b44",
+            "port": "out"
+          },
+          "target": {
+            "block": "d06b4951-74bf-4fa5-a584-53b761ae3304",
+            "port": "269dd418-fba9-4a0e-956a-488570123cda"
+          },
+          "size": 8
         }
       ]
     }
@@ -319,7 +545,7 @@
               },
               "position": {
                 "x": 448,
-                "y": 320
+                "y": 336
               }
             },
             {
@@ -329,8 +555,8 @@
                 "name": "clk_out"
               },
               "position": {
-                "x": 1240,
-                "y": 384
+                "x": 1232,
+                "y": 416
               }
             },
             {
@@ -342,7 +568,7 @@
               },
               "position": {
                 "x": 448,
-                "y": 440
+                "y": 488
               }
             },
             {
@@ -382,15 +608,15 @@
                     "name": "Count_Limit"
                   }
                 ],
-                "code": "reg [7:0] count; // Contador para dividir la frecuencia\n\nalways @(posedge clk_in or posedge rst) begin\n    if (rst) begin\n        count <= 0;\n        clk_out <= 0;\n    end else begin\n        count <= count + 1;\n        if (count == Count_Limit) begin \n            count <= 0;\n            clk_out <= ~clk_out; // Invertir el clock de salida\n        end\n    end\nend"
+                "code": "reg clk_reg;           // Registro auxiliar\nreg [7:0] count; // Contador para dividir la frecuencia\n\nalways @(posedge clk or posedge rst) begin\n    if (rst) begin\n        count <= 0;\n        clk_reg <= 0;\n    end else begin\n        if (count >= Count_Limit) begin \n            count <= 0;\n            clk_reg <= ~clk_reg; // Invertir el clock de salida\n        end else begin\n            count <= count + 1;\n        end\n    end\nend\n\nassign clk_out = clk_reg; // Asignar clk_reg a clk_out\n"
               },
               "position": {
                 "x": 576,
                 "y": 288
               },
               "size": {
-                "width": 608,
-                "height": 248
+                "width": 600,
+                "height": 312
               }
             },
             {
@@ -467,14 +693,14 @@
         "graph": {
           "blocks": [
             {
-              "id": "caa614a7-1fcc-4c98-83a4-b60bddea0155",
+              "id": "07e61d47-d911-4ce3-991c-2e3000cc2470",
               "type": "basic.output",
               "data": {
-                "name": "conv_clk"
+                "name": "conv_ale"
               },
               "position": {
-                "x": 1648,
-                "y": 392
+                "x": 1600,
+                "y": 248
               }
             },
             {
@@ -485,19 +711,19 @@
                 "clock": true
               },
               "position": {
-                "x": 424,
-                "y": 400
+                "x": 536,
+                "y": 248
               }
             },
             {
-              "id": "07e61d47-d911-4ce3-991c-2e3000cc2470",
+              "id": "9f5da39b-15c1-46c7-93f2-eeb26de10199",
               "type": "basic.output",
               "data": {
-                "name": "conv_ale"
+                "name": "conv_start"
               },
               "position": {
-                "x": 1648,
-                "y": 472
+                "x": 1608,
+                "y": 408
               }
             },
             {
@@ -508,58 +734,8 @@
                 "clock": false
               },
               "position": {
-                "x": 424,
-                "y": 496
-              }
-            },
-            {
-              "id": "9f5da39b-15c1-46c7-93f2-eeb26de10199",
-              "type": "basic.output",
-              "data": {
-                "name": "conv_start"
-              },
-              "position": {
-                "x": 1648,
-                "y": 552
-              }
-            },
-            {
-              "id": "decc1039-b8a3-44b5-a6c3-c900cc8a2981",
-              "type": "basic.input",
-              "data": {
-                "name": "conv_eoc",
-                "clock": false
-              },
-              "position": {
-                "x": 424,
-                "y": 584
-              }
-            },
-            {
-              "id": "47418195-68a9-426e-babc-d12b66cc0c4a",
-              "type": "basic.output",
-              "data": {
-                "name": "conv_addr",
-                "range": "[2:0]",
-                "size": 3
-              },
-              "position": {
-                "x": 1648,
-                "y": 632
-              }
-            },
-            {
-              "id": "6cab0eba-91aa-4fbd-ab85-14aa4e7795ee",
-              "type": "basic.input",
-              "data": {
-                "name": "conv_data",
-                "range": "[7:0]",
-                "clock": false,
-                "size": 8
-              },
-              "position": {
-                "x": 424,
-                "y": 680
+                "x": 544,
+                "y": 408
               }
             },
             {
@@ -569,8 +745,8 @@
                 "name": "conv_oe"
               },
               "position": {
-                "x": 1648,
-                "y": 712
+                "x": 1592,
+                "y": 560
               }
             },
             {
@@ -583,21 +759,21 @@
                 "size": 3
               },
               "position": {
-                "x": 424,
-                "y": 776
+                "x": 496,
+                "y": 560
               }
             },
             {
-              "id": "6763beb1-ed97-4bd7-884b-c34373246796",
+              "id": "47418195-68a9-426e-babc-d12b66cc0c4a",
               "type": "basic.output",
               "data": {
-                "name": "data_out",
-                "range": "[7:0]",
-                "size": 8
+                "name": "conv_addr",
+                "range": "[2:0]",
+                "size": 3
               },
               "position": {
-                "x": 1648,
-                "y": 792
+                "x": 1632,
+                "y": 720
               }
             },
             {
@@ -608,19 +784,158 @@
                 "clock": false
               },
               "position": {
-                "x": 424,
-                "y": 864
+                "x": 544,
+                "y": 720
               }
             },
             {
-              "id": "e01abd5d-7676-49bf-bd57-1f30383e8a9b",
+              "id": "28573003-6619-40f7-b422-4223307ee7e1",
               "type": "basic.output",
               "data": {
-                "name": "data_valid"
+                "name": "data_out",
+                "virtual": true,
+                "range": "[7:0]",
+                "pins": [
+                  {
+                    "index": "7",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "6",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "5",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "4",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "3",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "2",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "1",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ]
               },
               "position": {
-                "x": 1648,
-                "y": 872
+                "x": 1624,
+                "y": 880
+              }
+            },
+            {
+              "id": "a954764c-7e88-4d70-8569-0cfdef34a779",
+              "type": "basic.input",
+              "data": {
+                "name": "conv_eoc",
+                "virtual": true,
+                "pins": [
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ],
+                "clock": false
+              },
+              "position": {
+                "x": 512,
+                "y": 880
+              }
+            },
+            {
+              "id": "2654a3f2-9ea0-4d1f-bd3b-ff7c5055eff0",
+              "type": "basic.output",
+              "data": {
+                "name": "data_valid",
+                "virtual": true,
+                "pins": [
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ]
+              },
+              "position": {
+                "x": 1600,
+                "y": 1032
+              }
+            },
+            {
+              "id": "269dd418-fba9-4a0e-956a-488570123cda",
+              "type": "basic.input",
+              "data": {
+                "name": "conv_data",
+                "virtual": true,
+                "range": "[7:0]",
+                "pins": [
+                  {
+                    "index": "7",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "6",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "5",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "4",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "3",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "2",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "1",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ],
+                "clock": false
+              },
+              "position": {
+                "x": 480,
+                "y": 1032
               }
             },
             {
@@ -636,26 +951,23 @@
                       "name": "rst"
                     },
                     {
-                      "name": "conv_eoc"
-                    },
-                    {
-                      "name": "conv_data",
-                      "range": "[7:0]",
-                      "size": 8
-                    },
-                    {
                       "name": "addr_in",
                       "range": "[2:0]",
                       "size": 3
                     },
                     {
                       "name": "start"
+                    },
+                    {
+                      "name": "conv_eoc"
+                    },
+                    {
+                      "name": "conv_data",
+                      "range": "[7:0]",
+                      "size": 8
                     }
                   ],
                   "out": [
-                    {
-                      "name": "conv_clk"
-                    },
                     {
                       "name": "conv_ale"
                     },
@@ -663,12 +975,12 @@
                       "name": "conv_start"
                     },
                     {
+                      "name": "conv_oe"
+                    },
+                    {
                       "name": "conv_addr",
                       "range": "[2:0]",
                       "size": 3
-                    },
-                    {
-                      "name": "conv_oe"
                     },
                     {
                       "name": "data_out",
@@ -681,15 +993,15 @@
                   ]
                 },
                 "params": [],
-                "code": "reg [1:0] state; // Máquina de estados\n\nalways @(posedge clk or posedge rst) begin\n    if (rst) begin\n        state <= 0;\n        conv_start <= 0;\n        conv_ale <= 0;\n        conv_oe <= 0;\n        conv_addr <= 3'b000;\n        data_valid <= 0;\n    end else begin\n        case (state)\n            0: begin\n                conv_ale <= 1; // Capturar la dirección del canal\n                conv_addr <= addr_in; // Seleccionar canal\n                state <= 1;\n            end\n            1: begin\n                conv_ale <= 0;\n                conv_start <= 1;\n                state <= 2;\n            end\n            2: begin\n                conv_start <= 0;\n                if (conv_eoc) begin // Esperar a que termine la conversión\n                    conv_oe <= 1; // Habilitar salida de datos\n                    data_out <= conv_data; // Guardar valor digitalizado\n                    data_valid <= 1; // Indicar que el dato es válido\n                    conv_oe <= 0;\n                    state <= 0;\n                end\n            end\n        endcase\n    end\nend"
+                "code": "// Máquina de estados\nreg [1:0] state; // Estados: 0 = IDLE, 1 = ALE, 2 = START, 3 = READ DATA\n\n// Registros intermedios\nreg conv_start_reg;\nreg conv_ale_reg;\nreg conv_oe_reg;\nreg [2:0] conv_addr_reg;\nreg [7:0] data_out_reg;\nreg data_valid_reg;\n\n// Asignar registros a las salidas\nassign conv_start = conv_start_reg;\nassign conv_ale = conv_ale_reg;\nassign conv_oe = conv_oe_reg;\nassign conv_addr = conv_addr_reg;\nassign data_out = data_out_reg;\nassign data_valid = data_valid_reg;\n\nalways @(posedge clk or posedge rst) begin\n    if (rst) begin\n        state <= 0;\n        conv_start_reg <= 0;\n        conv_ale_reg <= 0;\n        conv_oe_reg <= 0;\n        conv_addr_reg <= 3'b000;\n        data_valid_reg <= 0;\n        data_out_reg <= 8'b00000000;\n    end else begin\n        case (state)\n            0: begin\n                conv_ale_reg <= 1; // Capturar la dirección del canal\n                conv_addr_reg <= addr_in; // Seleccionar canal\n                data_valid_reg <= 0; // Asegurar que no haya datos viejos\n                state <= 1;\n            end\n            1: begin\n                conv_ale_reg <= 0;\n                conv_start_reg <= 1; // Iniciar conversión\n                state <= 2;\n            end\n            2: begin\n                conv_start_reg <= 0;\n                if (conv_eoc) begin // Esperar fin de conversión\n                    conv_oe_reg <= 1; // Habilitar salida de datos\n                    state <= 3;\n                end\n            end\n            3: begin\n                data_out_reg <= conv_data; // Capturar dato digitalizado\n                data_valid_reg <= 1; // Dato listo\n                conv_oe_reg <= 0; // Deshabilitar salida del ADC\n                state <= 0; // Reiniciar\n            end\n        endcase\n    end\nend\n"
               },
               "position": {
-                "x": 680,
-                "y": 384
+                "x": 672,
+                "y": 200
               },
               "size": {
-                "width": 872,
-                "height": 560
+                "width": 864,
+                "height": 944
               }
             }
           ],
@@ -716,27 +1028,6 @@
             },
             {
               "source": {
-                "block": "decc1039-b8a3-44b5-a6c3-c900cc8a2981",
-                "port": "out"
-              },
-              "target": {
-                "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
-                "port": "conv_eoc"
-              }
-            },
-            {
-              "source": {
-                "block": "6cab0eba-91aa-4fbd-ab85-14aa4e7795ee",
-                "port": "out"
-              },
-              "target": {
-                "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
-                "port": "conv_data"
-              },
-              "size": 8
-            },
-            {
-              "source": {
                 "block": "7396ae91-8170-4b4c-acbe-591325b96602",
                 "port": "out"
               },
@@ -754,16 +1045,6 @@
               "target": {
                 "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
                 "port": "start"
-              }
-            },
-            {
-              "source": {
-                "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
-                "port": "conv_clk"
-              },
-              "target": {
-                "block": "caa614a7-1fcc-4c98-83a4-b60bddea0155",
-                "port": "in"
               }
             },
             {
@@ -813,7 +1094,7 @@
                 "port": "data_out"
               },
               "target": {
-                "block": "6763beb1-ed97-4bd7-884b-c34373246796",
+                "block": "28573003-6619-40f7-b422-4223307ee7e1",
                 "port": "in"
               },
               "size": 8
@@ -824,9 +1105,30 @@
                 "port": "data_valid"
               },
               "target": {
-                "block": "e01abd5d-7676-49bf-bd57-1f30383e8a9b",
+                "block": "2654a3f2-9ea0-4d1f-bd3b-ff7c5055eff0",
                 "port": "in"
               }
+            },
+            {
+              "source": {
+                "block": "a954764c-7e88-4d70-8569-0cfdef34a779",
+                "port": "out"
+              },
+              "target": {
+                "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
+                "port": "conv_eoc"
+              }
+            },
+            {
+              "source": {
+                "block": "269dd418-fba9-4a0e-956a-488570123cda",
+                "port": "out"
+              },
+              "target": {
+                "block": "1f648f4f-0f29-48bf-89dd-1d9446bd1ece",
+                "port": "conv_data"
+              },
+              "size": 8
             }
           ]
         }
