@@ -12,66 +12,68 @@ module main #(
  input v87d16b,
  input [31:0] v976ab6,
  output vc51198,
- output [31:0] v235119,
  output vc84d54,
+ output [31:0] v235119,
  output [0:7] vinit,
  inout va7280c,
  inout vd14cf6
 );
- localparam p0 = v31c48c;
- wire w1;
- wire [0:7] w2;
- wire w3;
- wire [0:6] w4;
- wire [0:7] w5;
+ localparam p1 = v31c48c;
+ wire w0;
+ wire w2;
+ wire [0:7] w3;
+ wire w4;
+ wire [0:6] w5;
  wire [0:7] w6;
  wire w7;
  wire w8;
  wire w9;
  wire w10;
- wire w11;
- wire [0:31] w12;
+ wire [0:31] w11;
+ wire w12;
  wire [0:31] w13;
- wire w14;
- assign vc51198 = w7;
- assign w8 = v537510;
- assign w9 = v6f1ced;
- assign w11 = vd14cf6;
- assign w12 = v976ab6;
- assign w13 = v775e34;
- assign w14 = v87d16b;
+ wire [0:31] w14;
+ wire w15;
+ assign w7 = v537510;
+ assign w8 = v6f1ced;
+ assign vc84d54 = w9;
+ assign v235119 = w11;
+ assign w12 = vd14cf6;
+ assign w13 = v976ab6;
+ assign w14 = v775e34;
+ assign w15 = v87d16b;
  vf9bdaf #(
-  .v6b316b(p0)
+  .v6b316b(p1)
  ) v9b369f (
-  .v18e78c(w1),
-  .ve1f562(w13)
+  .v18e78c(w2),
+  .ve1f562(w14)
  );
  vb2090f v2b8390 (
-  .v0e28cb(w1),
+  .v0e28cb(w2),
   .vcbab45(w10),
-  .v3ca442(w14)
+  .v3ca442(w15)
  );
  main_v020df3 v020df3 (
-  .adc_data_write(w2),
-  .adc_rw(w3),
-  .adc_addr(w4),
-  .adc_reg(w6),
-  .Bus_data(w12)
+  .adc_data_write(w3),
+  .adc_rw(w4),
+  .adc_addr(w5),
+  .Bus_data(w13)
  );
  main_vffb17e vffb17e (
-  .data_rd(w5)
+  .data_rd(w6),
+  .adcReady(w9),
+  .adcData(w11)
  );
  main_v7f5352 v7f5352 (
-  .data_rw(w2),
-  .rw(w3),
-  .addr(w4),
-  .data_rd(w5),
-  .reg_obj(w6),
-  .ADC_SCL(w7),
-  .clk(w8),
-  .resetn(w9),
+  .ADC_SCL(w0),
+  .clk(w0),
+  .data_rw(w3),
+  .rw(w4),
+  .addr(w5),
+  .data_rd(w6),
+  .resetn(w8),
   .ena(w10),
-  .ADC_SDA(w11)
+  .ADC_SDA(w12)
  );
  assign vinit = 8'b00000000;
 endmodule
@@ -171,7 +173,7 @@ module main_v020df3 (
 endmodule
 
 module main_vffb17e (
- input [7:0] data_rd,
+ input [7:0] data_tx,
  output [31:0] adcData,
  output adcReady
 );
@@ -185,8 +187,9 @@ module main_v7f5352 (
  input [6:0] addr,
  input rw,
  input [7:0] reg_obj,
- input [7:0] data_rw,
+ input [7:0] data_wr,
  output busy,
+ output ack_error,
  output [7:0] data_rd,
  output ADC_SCL,
  inout ADC_SDA
@@ -202,6 +205,15 @@ module main_v7f5352 (
  localparam DIVIDER = (INPUT_CLK / BUS_CLK) / 4;
  localparam NDIV = 8; // log2(375) ~= 8.5, usar 8 por seguridad
  
+ //Flanco de bajada.
+ reg clk_bit_prev;
+ 
+ always @(posedge clk) begin
+     clk_bit_prev <= clk_bit;
+ end
+ 
+ wire falling_edge_clk_bit = (clk_bit_prev == 1 && clk_bit == 0);
+ 
  // Señales internas
  reg [NDIV-1:0] clk_div = 0;
  reg clk_bit = 0;
@@ -211,22 +223,22 @@ module main_v7f5352 (
  end
  
  // Estados
- localparam READY   = 4'd0;
- localparam START   = 4'd1;
- localparam COMMAND = 4'd2;
- localparam ACK1    = 4'd3;
- localparam WR      = 4'd4;
- localparam RD      = 4'd5;
- localparam ACK2    = 4'd6;
- localparam MACK    = 4'd7;
- localparam STOP    = 4'd8;
+ localparam READY    = 4'd0;
+ localparam START    = 4'd1;
+ localparam COMMAND  = 4'd2;
+ localparam SLV_ACK1 = 4'd3;
+ localparam WR       = 4'd4;
+ localparam RD       = 4'd5;
+ localparam SLV_ACK2 = 4'd6;
+ localparam MSTR_ACK = 4'd7;
+ localparam STOP     = 4'd8;
  
  reg [3:0] state = READY;
  reg scl_en = 0;
  reg sda_int = 1;
  reg [7:0] addr_rw, data_tx, data_rx;
  reg [2:0] bit_cnt = 3'd7;
- reg ack_error = 0;
+ reg [6:0] prev_addr = 7'b0;  // Addr previo
  
  assign data_rd = data_rx;
  assign busy = (state != READY);
@@ -260,13 +272,13 @@ module main_v7f5352 (
                  if (bit_cnt == 0) begin
                      sda_int <= 1;
                      bit_cnt <= 7;
-                     state <= ACK1;
+                     state <= SLV_ACK1;
                  end else begin
                      bit_cnt <= bit_cnt - 1;
                      sda_int <= addr_rw[bit_cnt - 1];
                  end
              end
-             ACK1: begin
+             SLV_ACK1: begin
                  if (rw == 0) begin
                      sda_int <= data_tx[bit_cnt];
                      state <= WR;
@@ -279,7 +291,7 @@ module main_v7f5352 (
                  if (bit_cnt == 0) begin
                      sda_int <= 1;
                      bit_cnt <= 7;
-                     state <= ACK2;
+                     state <= SLV_ACK2;
                  end else begin
                      bit_cnt <= bit_cnt - 1;
                      sda_int <= data_tx[bit_cnt - 1];
@@ -289,26 +301,78 @@ module main_v7f5352 (
                  if (bit_cnt == 0) begin
                      bit_cnt <= 7;
                      sda_int <= 1;
-                     state <= MACK;
+                     state <= MSTR_ACK;
                  end else begin
                      bit_cnt <= bit_cnt - 1;
                      data_rx[bit_cnt] <= ADC_SDA;
                  end
              end
-             ACK2: begin
-                 scl_en <= 0;
-                 sda_int <= 1;
-                 state <= STOP;
+             SLV_ACK2: begin
+             
+                 if (ena) begin
+                     addr_rw <= {addr, rw};
+                     data_tx <= data_rw;
+                     if (rw == 0 && addr == prev_addr) begin
+                         bit_cnt <= 7;
+                         sda_int <= data_rw[7];
+                         state <= WR;
+                     end else begin // rw == 1 || addr != prev_addr
+                         sda_int <= 0;
+                         state <= START;
+                     end 
+                     prev_addr <= addr;
+                 end else begin
+                     scl_en <= 0;
+                     sda_int <= 1;
+                     state <= STOP;
+                 end
              end
-             MACK: begin
-                 scl_en <= 0;
-                 state <= STOP;
+             MSTR_ACK: begin
+                 if (ena) begin
+                     addr_rw <= {addr, rw};
+                     data_tx <= data_rw;
+                     if (rw == 1 && addr == prev_addr) begin
+                         bit_cnt <= 7;
+                         sda_int <= 1;
+                         state <= RD;
+                     end else begin // rw == 0 || addr != prev_addr
+                         sda_int <= 0;
+                         state <= START;
+                     end
+                     prev_addr <= addr;
+                 end else begin
+                     scl_en <= 0;
+                     sda_int <= 1;
+                     state <= STOP;
+                 end
              end
              STOP: begin
                  sda_int <= 1;
                  state <= READY;
              end
              default: state <= READY;
+         endcase
+     end
+ end
+ 
+ // Gestión del ack_error al estilo del ejemplo VHDL
+ always @(posedge clk or negedge resetn) begin
+     if (!resetn) begin
+         ack_error <= 0;
+     end else if (falling_edge_clk_bit) begin
+         case (state)
+             START: begin
+                 ack_error <= 0;
+             end
+             SLV_ACK1: begin
+                 ack_error <= ADC_SDA | ack_error;
+             end
+             SLV_ACK2: begin
+                 ack_error <= ADC_SDA | ack_error;
+             end
+             default: begin
+                 ack_error <= ack_error;
+             end
          endcase
      end
  end
