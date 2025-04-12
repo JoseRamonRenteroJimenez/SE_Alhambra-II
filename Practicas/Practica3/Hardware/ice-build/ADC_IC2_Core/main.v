@@ -23,61 +23,81 @@ module main #(
  wire [0:6] w3;
  wire w4;
  wire w5;
- wire [0:7] w6;
- wire w7;
+ wire [0:3] w6;
+ wire [0:7] w7;
  wire w8;
- wire w9;
+ wire [0:7] w9;
  wire w10;
  wire w11;
- wire [0:31] w12;
- wire [0:31] w13;
+ wire w12;
+ wire w13;
  wire w14;
- wire [0:31] w15;
- wire w16;
- assign w7 = v87186f;
- assign w8 = v87186f;
- assign w9 = v4dc0ee;
- assign w10 = v4dc0ee;
- assign w11 = v80923c;
- assign w12 = v867561;
- assign w13 = v867561;
- assign w14 = v8859f4;
- assign w15 = v23504b;
- assign w8 = w7;
- assign w10 = w9;
- assign w13 = w12;
+ wire w15;
+ wire [0:31] w16;
+ wire w17;
+ wire [0:31] w18;
+ wire [0:31] w19;
+ wire w20;
+ wire [0:31] w21;
+ wire w22;
+ assign v9127c2 = w10;
+ assign w11 = v87186f;
+ assign w12 = v87186f;
+ assign vfe2384 = w13;
+ assign w14 = v4dc0ee;
+ assign w15 = v4dc0ee;
+ assign v504d16 = w16;
+ assign w17 = v80923c;
+ assign w18 = v867561;
+ assign w19 = v867561;
+ assign w20 = v8859f4;
+ assign w21 = v23504b;
+ assign w12 = w11;
+ assign w15 = w14;
+ assign w19 = w18;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
   .v18e78c(w1),
-  .ve1f562(w13)
+  .ve1f562(w18)
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .v3ca442(w14),
-  .vcbab45(w16)
+  .v3ca442(w20),
+  .vcbab45(w22)
  );
  main_v77cc05 v77cc05 (
   .reg_obj(w2),
   .slv_addr(w3),
   .rw(w4),
   .enable(w5),
-  .data_in(w6),
-  .clk(w7),
-  .rst(w9),
-  .I2C_SDA(w11)
+  .data_size(w6),
+  .data_in(w7),
+  .ready(w8),
+  .data_out(w9),
+  .I2C_SCL(w10),
+  .clk(w11),
+  .rst(w14),
+  .I2C_SDA(w17)
  );
  main_vecfcb9 vecfcb9 (
   .adc_reg(w2),
   .slv_addr(w3),
   .adc_rw(w4),
   .enable_start(w5),
-  .adc_data_writte(w6),
-  .clk(w8),
-  .rst(w10),
-  .Bus_addr(w12),
-  .Bus_data(w15),
-  .serdat_cs(w16)
+  .adc_data_size(w6),
+  .adc_data_write(w7),
+  .clk(w12),
+  .rst(w15),
+  .Bus_addr(w19),
+  .Bus_data(w21),
+  .serdat_cs(w22)
+ );
+ main_vd082bf vd082bf (
+  .enable(w8),
+  .data_in(w9),
+  .data_ready(w13),
+  .data_out(w16)
  );
  assign vinit = 8'b00000000;
 endmodule
@@ -169,11 +189,13 @@ module main_v77cc05 (
  input [6:0] slv_addr,
  input [7:0] reg_obj,
  input [7:0] data_in,
+ input [3:0] data_size,
  output ready,
  output [7:0] data_out,
  output I2C_SCL,
  inout I2C_SDA
 );
+ // Definir los estados de la máquina de estados
  localparam READY        = 0;
  localparam START        = 1;
  localparam COMMAND      = 2;
@@ -184,12 +206,14 @@ module main_v77cc05 (
  localparam WRITE_NACK   = 7;
  localparam STOP         = 8;
  
+ // Parámetros del reloj
  localparam DIVIDE_BY = 4;
  
+ // Registros internos
  reg [3:0] state = READY;
  reg [7:0] counter = 0;
- reg [7:0] bit_ptr = 0;
- reg [15:0] tx_buffer = 0;
+ reg [7:0] bit_ptr = 0;  // Apuntador de bits
+ reg [15:0] tx_buffer = 0;  // Buffer de transmisión
  reg [7:0] saved_addr = 0;
  reg [7:0] rd_buffer = 0;
  reg [2:0] clk_div = 0;
@@ -205,110 +229,115 @@ module main_v77cc05 (
  
  assign ready = reg_ready;
  assign data_out = reg_data_out;
- // Clock I2C dividido
+ 
+ // Divisor de reloj I2C
  always @(posedge clk) begin
- 	if (clk_div == (DIVIDE_BY/2)-1) begin
- 		i2c_clk <= ~i2c_clk;
- 		clk_div <= 0;
- 	end else begin
- 		clk_div <= clk_div + 1;
- 	end
+     if (clk_div == (DIVIDE_BY/2)-1) begin
+         i2c_clk <= ~i2c_clk;
+         clk_div <= 0;
+     end else begin
+         clk_div <= clk_div + 1;
+     end
  end
- // Control de habilitación del SCL
+ 
+ // Control de habilitación de SCL
  always @(negedge i2c_clk or posedge rst) begin
- 	if (rst)
- 		i2c_scl_enable <= 0;
- 	else
- 		i2c_scl_enable <= (state != READY && state != START && state != STOP);
+     if (rst)
+         i2c_scl_enable <= 0;
+     else
+         i2c_scl_enable <= (state != READY && state != START && state != STOP);
  end
+ 
  // Máquina de estados I2C
  always @(posedge i2c_clk or posedge rst) begin
- 	if (rst) begin
- 		state <= READY;
- 		reg_ready <= 1;
- 		sda_out <= 1;
- 		write_enable <= 1;
- 	end else begin
- 		case (state)
- 			READY: begin
- 				if (enable) begin
- 					saved_addr <= {slv_addr, rw};
- 					tx_buffer <= data_in;
- 					bit_ptr <= (num_packages * 16) - 1;
- 					state <= START;
- 					reg_ready <= 0;
- 				end
- 			end
- 			START: begin
- 				write_enable <= 1;
- 				sda_out <= 0;
- 				state <= COMMAND;
- 				counter <= 7;
- 			end
- 			COMMAND: begin
- 				sda_out <= saved_addr[counter];
- 				if (counter == 0)
- 					state <= READ_ACK;
- 				else
- 					counter <= counter - 1;
- 			end
- 			READ_ACK: begin
- 				write_enable <= 0;
- 				if (I2C_SDA == 0) begin
- 					counter <= 7;
- 					if (saved_addr[0] == 0)  // Write
- 						state <= WRITE_DATA;
- 					else                     // Read
- 						state <= READ_DATA;
- 				end else
- 					state <= STOP;
- 			end
- 			WRITE_DATA: begin
- 				sda_out <= tx_buffer[bit_ptr];
- 				if (counter == 0)
- 					state <= WRITE_ACK;
- 				else begin
- 					counter <= counter - 1;
- 					bit_ptr <= bit_ptr - 1;
- 				end
- 			end
- 			WRITE_ACK: begin
- 				write_enable <= 0;
- 				if (I2C_SDA == 0) begin
- 					if (bit_ptr >= 8) begin
- 						counter <= 7;
- 						write_enable <= 1;
- 						bit_ptr <= bit_ptr - 1;
- 						sda_out <= tx_buffer[bit_ptr - 1];
- 						state <= WRITE_DATA;
- 					end else
- 						state <= STOP;
- 				end else
- 					state <= STOP;
- 			end
- 			READ_DATA: begin
- 				write_enable <= 0;
- 				rd_buffer[counter] <= I2C_SDA;
- 				if (counter == 0)
- 					state <= WRITE_NACK;
- 				else
- 					counter <= counter - 1;
- 			end
- 			WRITE_NACK: begin
- 				write_enable <= 1;
- 				sda_out <= 1;
- 				state <= STOP;
- 			end
- 			STOP: begin
- 				write_enable <= 1;
- 				sda_out <= 1;
- 				reg_data_out <= rd_buffer;
- 				reg_ready <= 1;
- 				state <= READY;
- 			end
- 		endcase
- 	end
+     if (rst) begin
+         state <= READY;
+         reg_ready <= 1;
+         sda_out <= 1;
+         write_enable <= 1;
+     end else begin
+         case (state)
+             READY: begin
+                 if (enable) begin
+                     saved_addr <= {slv_addr, rw};
+                     tx_buffer <= data_in;
+                     bit_ptr <= data_size - 1;  // Ajustamos el tamaño de bits a enviar según data_size
+                     state <= START;
+                     reg_ready <= 0;
+                 end
+             end
+             START: begin
+                 write_enable <= 1;
+                 sda_out <= 0;
+                 state <= COMMAND;
+                 counter <= 7;
+             end
+             COMMAND: begin
+                 sda_out <= saved_addr[counter];
+                 if (counter == 0)
+                     state <= READ_ACK;
+                 else
+                     counter <= counter - 1;
+             end
+             READ_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     counter <= 7;
+                     if (saved_addr[0] == 0)  // Write
+                         state <= WRITE_DATA;
+                     else                     // Read
+                         state <= READ_DATA;
+                 end else
+                     state <= STOP;
+             end
+             WRITE_DATA: begin
+                 sda_out <= tx_buffer[bit_ptr];
+                 if (counter == 0)
+                     state <= WRITE_ACK;
+                 else begin
+                     counter <= counter - 1;
+                     bit_ptr <= bit_ptr - 1;
+                 end
+             end
+             WRITE_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     if (bit_ptr >= 8) begin
+                         counter <= 7;
+                         write_enable <= 1;
+                         bit_ptr <= bit_ptr - 1;
+                         sda_out <= tx_buffer[bit_ptr - 1];
+                         state <= WRITE_DATA;
+                     end else
+                         state <= STOP;
+                 end else
+                     state <= STOP;
+             end
+             READ_DATA: begin
+                 write_enable <= 0;
+                 rd_buffer[counter] <= I2C_SDA;
+                 if (counter == 0)
+                     state <= WRITE_NACK;
+                 else
+                     counter <= counter - 1;
+             end
+             WRITE_NACK: begin
+                 write_enable <= 1;
+                 sda_out <= 1;
+                 state <= STOP;
+             end
+             STOP: begin
+                 write_enable <= 1;
+                 sda_out <= 1;
+                 reg_data_out <= rd_buffer;
+                 reg_ready <= 1;
+                 state <= READY;
+             end
+         endcase
+     end
  end
+ 
+     
 endmodule
 
 module main_vecfcb9 (
@@ -321,57 +350,86 @@ module main_vecfcb9 (
  output adc_rw,
  output [6:0] slv_addr,
  output [7:0] adc_reg,
- output [7:0] adc_data_writte,
- output [2:0] adc_data_size
+ output [7:0] adc_data_write,
+ output [3:0] adc_data_size
 );
- localparam ADDR_SLAVE     = 3'b000; 
- localparam ADDR_REG_OBJ   = 3'b001; 
- localparam ADDR_DATA      = 3'b010; 
- localparam ADDR_RW        = 3'b011;
- localparam ADDR_DATA_SIZE = 3'B100;
- 
- reg [31:0] dataArray =  32'b0;           
+ reg [7:0] dataArray [0:7];           
  reg reg_enable_start = 0;       
  
- assign slv_addr = dataArray[6:0];
- assign adc_reg = dataArray[15:8];
- assign adc_data_writte = dataArray[23:16];
- assign adc_rw = dataArray[24];
- assign adc_data_size = dataArray[27:25];
+ assign slv_addr[6:0] = dataArray[0][6:0];        //7 bits
+ assign adc_reg[7:0] = dataArray[1];
+ assign adc_data_write[7:0] = dataArray[2];
+ assign adc_rw = dataArray[3][0];            //1 bit
+ assign adc_data_size[3:0] = dataArray[4][3:0];   //4 bits
  
  assign enable_start = reg_enable_start;
  
+ integer i;
+ 
  always @(posedge serdat_cs or posedge rst) begin
+     
      if (rst) begin
-         dataArray <= 32'b0;
+         // No existen los for exactamente
+         // Esto creará estructuras de reinicio tantas veces como se diga
+         // No va a iterar x veces
+         for (i = 0; i < 8; i = i + 1) begin
+             dataArray[i] <= 8'b0;  
+         end
+         
          reg_enable_start <= 1'b0;
+         
      end else if (serdat_cs) begin
-         case (Bus_addr[2:0])  
-             ADDR_SLAVE: begin
-                 dataArray[6:0] <= Bus_data[6:0];
-             end
-             ADDR_REG_OBJ: begin
-                 dataArray[15:8] <= Bus_data[7:0];
-             end
-             ADDR_DATA: begin
-                 dataArray[23:16] <= Bus_data[7:0];
-             end
-             ADDR_RW: begin
-                 dataArray[24] <= Bus_data[0];
-             end
-             ADDR_DATA_SIZE: begin
-                 dataArray[27:25] <= Bus_data[2:0];
-             end
-         endcase
+         
+         dataArray[Bus_addr[2:0]] <= Bus_data[7:0];
  
          if(Bus_addr[7:0] == 8'b00000000) begin
-             reg_enable_start <= 1;
+             reg_enable_start <= 1'b1;
          end
      end
  end
+ 
+ //localparam ADDR_SLAVE     = 3'b000; 
+ //localparam ADDR_REG_OBJ   = 3'b001; 
+ //localparam ADDR_DATA      = 3'b010; 
+ //localparam ADDR_RW        = 3'b011;
+ //localparam ADDR_DATA_SIZE = 3'b100;
+ 
  
  // integer i;
  //for (i = 0; i < 7; i = i + 1) begin
  //dataArray[8*Bus_addr[1:0]+i] <= Bus_data[i];
  //end
+ 
+ //case (Bus_addr[2:0])  
+ //            ADDR_SLAVE: begin
+ //                dataArray[6:0] <= Bus_data[6:0];
+ //            end
+ //            ADDR_REG_OBJ: begin
+ //                dataArray[15:8] <= Bus_data[7:0];
+ //            end
+ //            ADDR_DATA: begin
+ //                dataArray[23:16] <= Bus_data[7:0];
+ //            end
+ //            ADDR_RW: begin
+ //                dataArray[24] <= Bus_data[0];
+ //            end
+ //            ADDR_DATA_SIZE: begin
+ //                dataArray[28:25] <= Bus_data[23:0];
+ //            end
+ //        endcase
+endmodule
+
+module main_vd082bf (
+ input enable,
+ input [7:0] data_in,
+ output data_ready,
+ output [31:0] data_out
+);
+ reg [7:0] data;
+ reg ready;
+ 
+ always @(posedge enable) begin
+     ready <= enable;
+     data <= data_in;
+ end
 endmodule
