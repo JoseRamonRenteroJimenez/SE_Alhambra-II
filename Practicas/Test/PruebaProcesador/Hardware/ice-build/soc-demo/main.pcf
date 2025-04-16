@@ -7,7 +7,7 @@ set_io v1e554b[4] 41
 set_io v1e554b[3] 42
 set_io v1e554b[2] 43
 set_io v1e554b[1] 44
-set_io v1e554b[0] 119
+set_io v1e554b[0] 45
 set_io vc267e1 64
 set_io v7abb98 63
 set_io vda2c07 21
@@ -18,4 +18,3 @@ set_io v5ec250 70
 set_io v013906 68
 set_io v5100fa 67
 set_io vclk 49
-set_io vinit 45

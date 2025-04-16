@@ -4,7 +4,7 @@
 //-- Registros mapeados
 #define reg_uart_data (*(volatile uint32_t*)0x02000008)
 #define reg_leds (*(volatile uint32_t*)0x03000000)
-#define reg_i2c      (*(volatile uint32_t*)0x02100000)  // Módulo I2C
+#define reg_i2c  (*(volatile uint32_t*)0x04000000)  // Módulo I2C
 
 // --------------------------------------------------------
 
@@ -67,46 +67,45 @@ void menu()
 }
 
 // --------------------------------------------------------
+// Función para construir el comando I2C
+uint32_t build_i2c_command(uint8_t slave_addr, uint8_t rw, uint8_t reg, uint8_t data) {
+    uint32_t command = 0;
 
-/**
- * Construye un comando de 32 bits para el módulo I2C.
- * Formato: [7 bits slave addr][1 bit RW][8 bits reg][8 bits data]
- */
-uint32_t build_i2c_command(uint8_t slave_addr, uint8_t rw, uint8_t reg, uint8_t data)
-{
-	uint32_t cmd = 0;
+    // Los primeros 7 bits son para la dirección del esclavo
+    command |= (slave_addr << 24);
 
-	// TODO: Componer el comando con bitshifts y máscaras
-	// cmd |= ... 
+    // El siguiente bit (bit 23) es para la operación de lectura/escritura
+    command |= (rw << 23);
 
-	uint8_t addr = 0x1A;   // Dirección del esclavo (7 bits)
-	uint8_t rw = 0x0;      // 0 = write
-	uint8_t reg = 0x05;    // Registro interno
-	uint8_t data = 0x33;   // Dato a escribir
-	
-	uint32_t cmd = 0;
-	cmd |= ((addr & 0x7F) << 0);    // bits 6:0
-	cmd |= ((rw   & 0x01) << 7);    // bit 7
-	cmd |= ((reg  & 0xFF) << 8);    // bits 15:8
-	cmd |= ((data & 0xFF) << 16);   // bits 23:16
+    // Los siguientes 8 bits son para el registro objetivo
+    command |= (reg << 15);
 
-	return cmd;
+    // Los siguientes 8 bits son para los datos a escribir
+    command |= (data << 7);
+
+    return command;
 }
 
-/**
- * Envía un comando al módulo I2C
- */
+// --------------------------------------------------------
+// Función para enviar un comando al módulo I2C
 void send_i2c_command(uint8_t slave_addr, uint8_t rw, uint8_t reg, uint8_t data)
 {
-	uint32_t cmd = build_i2c_command(slave_addr, rw, reg, data);
+    uint32_t command = build_i2c_command(slave_addr, rw, reg, data);
 
-	// TODO: Esperar a que el módulo I2C esté listo (si hay señal de busy, etc.)
+    // Invertir el orden de envío
+    // Primero enviar el bit de lectura/escritura
+    reg_i2c = command & 0xFF;          // Enviar los 8 bits menos significativos (bit RW)
 
-	// Escribir el comando en el registro
-	reg_i2c = cmd;
+    // Luego los datos a escribir
+    reg_i2c = (command >> 7) & 0xFF;   // Enviar los 8 bits siguientes (datos a escribir)
 
-	// TODO: Comprobar si hay respuesta, error, ACK, etc.
-	print("I2C command sent.\n");
+    // Después el registro objetivo
+    reg_i2c = (command >> 15) & 0xFF;  // Enviar los 8 bits siguientes (registro objetivo)
+
+    // Finalmente, la dirección del esclavo
+    reg_i2c = (command >> 24) & 0xFF;  // Enviar los 8 bits más significativos (dirección del esclavo)
+
+    print("I2C command sent.\n");
 }
 
 // --------------------------------------------------------
@@ -141,6 +140,11 @@ void main()
 			{
 			case '1':
 			  menu();
+				break;
+			case '2':
+				print("Sending I2C command...\n");
+				// Enviar un comando I2C de ejemplo
+				send_i2c_command(0x50, 0, 0x00, 0xFF); // Dirección del esclavo, RW, Registro, Datos
 				break;
 			default:
 				continue;

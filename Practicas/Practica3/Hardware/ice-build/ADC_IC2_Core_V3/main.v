@@ -4,7 +4,8 @@
 
 //---- Top entity
 module main #(
- parameter v269dbc = 'h0400_0000
+ parameter v269dbc = 'h0400_0000,
+ parameter v9c4340 = 100000
 ) (
  input v87186f,
  input v4dc0ee,
@@ -18,92 +19,95 @@ module main #(
  inout v80923c
 );
  localparam p0 = v269dbc;
+ localparam p3 = v9c4340;
  wire w1;
  wire w2;
- wire w3;
  wire w4;
  wire w5;
  wire w6;
  wire w7;
  wire w8;
  wire w9;
- wire [0:31] w10;
+ wire w10;
  wire [0:31] w11;
  wire [0:31] w12;
- wire w13;
- wire [0:31] w14;
- wire w15;
+ wire [0:31] w13;
+ wire w14;
+ wire [0:31] w15;
  wire w16;
  wire w17;
  wire w18;
  wire w19;
- wire [0:6] w20;
- wire [0:7] w21;
+ wire w20;
+ wire [0:6] w21;
  wire [0:7] w22;
  wire [0:7] w23;
- wire [0:3] w24;
- assign w3 = v87186f;
+ wire [0:7] w24;
+ wire [0:3] w25;
  assign w4 = v87186f;
- assign w5 = v4dc0ee;
+ assign w5 = v87186f;
  assign w6 = v4dc0ee;
- assign v9127c2 = w7;
- assign w8 = v80923c;
- assign vfe2384 = w9;
- assign w10 = v867561;
+ assign w7 = v4dc0ee;
+ assign v9127c2 = w8;
+ assign w9 = v80923c;
+ assign vfe2384 = w10;
  assign w11 = v867561;
- assign v504d16 = w12;
- assign w13 = v8859f4;
- assign w14 = v23504b;
- assign w4 = w3;
- assign w6 = w5;
- assign w11 = w10;
+ assign w12 = v867561;
+ assign v504d16 = w13;
+ assign w14 = v8859f4;
+ assign w15 = v23504b;
+ assign w5 = w4;
+ assign w7 = w6;
+ assign w12 = w11;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
   .v18e78c(w1),
-  .ve1f562(w10)
+  .ve1f562(w11)
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .v3ca442(w13),
-  .vcbab45(w17)
+  .v3ca442(w14),
+  .vcbab45(w18)
  );
- v0e64bc v9f9653 (
+ v0e64bc #(
+  .v207e0d(p3)
+ ) v9f9653 (
   .v8337bc(w2),
-  .v531e20(w3)
+  .v531e20(w4)
  );
  main_v571ff6 v571ff6 (
   .clk(w2),
-  .rst(w5),
-  .I2C_SCL(w7),
-  .I2C_SDA(w8),
-  .data_ready(w15),
-  .enable(w16),
-  .rw(w18),
-  .I2C_BUSY(w19),
-  .slv_addr(w20),
-  .reg_obj(w21),
-  .data_in(w22),
-  .data_out(w23),
-  .data_size(w24)
+  .rst(w6),
+  .I2C_SCL(w8),
+  .I2C_SDA(w9),
+  .data_ready(w16),
+  .enable(w17),
+  .rw(w19),
+  .I2C_BUSY(w20),
+  .slv_addr(w21),
+  .reg_obj(w22),
+  .data_in(w23),
+  .data_out(w24),
+  .data_size(w25)
  );
  main_vecfcb9 vecfcb9 (
-  .clk(w4),
-  .rst(w6),
-  .bus_data_enable(w9),
-  .Bus_addr(w11),
-  .bus_data_out(w12),
-  .Bus_data(w14),
-  .new_data_ready(w15),
-  .enable_start(w16),
-  .serdat_cs(w17),
-  .rw(w18),
-  .I2C_Busy(w19),
-  .slv_addr(w20),
-  .reg_obj(w21),
-  .data_write(w22),
-  .data_out(w23),
-  .data_size(w24)
+  .clk(w5),
+  .rst(w7),
+  .bus_data_enable(w10),
+  .Bus_addr(w12),
+  .bus_data_out(w13),
+  .Bus_data(w15),
+  .new_data_ready(w16),
+  .enable_start(w17),
+  .serdat_cs(w18),
+  .rw(w19),
+  .I2C_Busy(w20),
+  .slv_addr(w21),
+  .reg_obj(w22),
+  .data_write(w23),
+  .data_out(w24),
+  .data_size(w25)
  );
  assign vinit = 8'b00000000;
 endmodule
@@ -233,6 +237,9 @@ module v0e64bc_v94c6d7 #(
  //-- Temporal clock
  reg clk_t = 0;
  
+ //-- REgistro con el valor del reloj
+ reg clk_out = 0;
+ 
  //-- Se usa un contador modulo M/2 para luego
  //-- pasarlo por un biestable T y dividir la frecuencia
  //-- entre 2, para que el ciclo de trabajo sea del 50%
@@ -245,13 +252,14 @@ module v0e64bc_v94c6d7 #(
        divcounter <=  divcounter + 1;
        clk_t = 0;
      end 
-   
- reg clk_o = 0;  
      
  //-- Biestable T para obtener ciclo de trabajo del 50%
  always @(posedge clk)
    if (clk_t)
-     clk_o <= ~clk_o;
+     clk_out <= ~clk_out;
+ 
+ 
+ assign clk_o = clk_out;  
  
 endmodule
 
@@ -298,9 +306,9 @@ module main_v571ff6 (
      reg i2c_scl_enable = 0;         // Habilitación de SCL
      reg busy = 0;               // Flag de bus ocupado
      
-     assign I2C_SCL = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
-     assign I2C_SDA = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
-     assign i2c_busy = busy;   // Salida de ocupado
+     assign I2C_SCL  = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
+     assign I2C_SDA  = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
+     assign I2C_BUSY = busy;   // Salida de ocupado
      
      assign data_ready = new_data_read;   // Señal de listo
      assign data_out = rd_buffer;    // Salida de datos
@@ -335,8 +343,9 @@ module main_v571ff6 (
                      write_enable <= 0;
                      if (enable) begin
                          busy <= 1;
-                         slave_addr <= {slv_addr, read_write};
-                         wt_buffer <= data_in;
+                         read_write <= rw;
+                         slave_addr <= {slv_addr, rw};
+                         wt_buffer <= {reg_obj, data_in};
                          bit_ptr <= data_size;  // Ajustamos el tamaño de bits a enviar según data_size
                          state <= START;
                          new_data_read <= 0;
@@ -363,9 +372,10 @@ module main_v571ff6 (
                          if (slave_addr[0] == 0) begin  // Write
                              write_enable <= 1;
                              state <= WRITE_DATA;
-                         end else                     // Read
+                         end else begin               // Read
                              write_enable <= 0;
                              state <= READ_DATA;
+                         end
                      end else
                          state <= STOP;
                  end
@@ -416,8 +426,6 @@ module main_v571ff6 (
              endcase
          end
      end
-     
-         
 endmodule
 
 module main_vecfcb9 (
@@ -439,18 +447,25 @@ module main_vecfcb9 (
  output [31:0] bus_data_out
 );
  //Entrada desde bus de datos
- reg [7:0] dataArray [0:7]= 8'b0;           
+ reg [7:0] dataArray [0:7];           
  reg reg_enable_start = 0;
+ reg [31:0] buffer_data_out;
+ reg [31:0] zero = 32'b0;
  
- assign slv_addr[6:0] = dataArray[0][6:0];           //7 bits
+ assign slv_addr[6:0] = dataArray[0][6:0];       //7 bits
  assign reg_obj[7:0] = dataArray[1];
  assign data_write[7:0] = dataArray[2];
  assign rw = dataArray[3][0];                    //1 bit
  assign data_size[3:0] = dataArray[4][3:0];      //4 bits
+ assign bus_data_out = buffer_data_out;
+ 
+ //assign dataArray[5] = new_data_ready;
+ //assign dataArray[6] = data_out;
  
  assign enable_start = reg_enable_start;
  
  integer i;
+ 
  
  always @(posedge serdat_cs or posedge rst) begin
      
@@ -463,8 +478,6 @@ module main_vecfcb9 (
          end
          
          reg_enable_start <= 1'b0;
-         i2c_data_out <= 8'b00000000;
-         ready <= 1'b0;
          
      end else if (serdat_cs) begin
          // Caso en el que se introduce información
@@ -478,17 +491,17 @@ module main_vecfcb9 (
          end else begin
              // Caso en el que se pide el busy
              if(Bus_data[2:0] == 3'b111)begin
-                 bus_data_out <= {24'b0, dataArray[7]};
+                 buffer_data_out[31:8] = {zero[31:8],dataArray[7]};
              // Caso en el que se pide el new data o su flag
              end else if(dataArray[5][0]) begin
-                 bus_data_out <= {24'b0, dataArray[Bus_addr[2:0]]};
+                 buffer_data_out <= {zero[31:8], dataArray[Bus_addr[2:0]]};
                  if(Bus_addr[2:0] == 3'b110) begin
                      dataArray[5] <= 8'b0;
                      dataArray[6] <= 8'b0;
                  end
              // Caso en el que aún no haya información nueva
              end else begin
-                 bus_data_out <= 31'b1111111111111111111111111111111;
+                 buffer_data_out <= 32'b11111111111111111111111111111111;
              end
          end
      end
@@ -496,44 +509,12 @@ module main_vecfcb9 (
  
  always @(posedge clk) begin
      if (new_data_ready) begin
-         // Si los datos están listos, actualizamos el array con los nuevos valores
-         dataArray[5] <= new_data_ready;  // Aquí estamos almacenando el valor de `new_data_ready` en `dataArray[6]`
-         dataArray[6] <= data_out;        // Aquí estamos almacenando `data_out` en `dataArray[7]`
          reg_enable_start <= 1'b0;
      end
      if (I2C_Busy) begin
-         dataArray[7] <= {7'b0, I2C_BUSY};
+         dataArray[7] <= {7'b0, I2C_Busy};
      end
  
  end
  
- //localparam ADDR_SLAVE     = 3'b000; 
- //localparam ADDR_REG_OBJ   = 3'b001; 
- //localparam ADDR_DATA      = 3'b010; 
- //localparam ADDR_RW        = 3'b011;
- //localparam ADDR_DATA_SIZE = 3'b100;
- 
- 
- // integer i;
- //for (i = 0; i < 7; i = i + 1) begin
- //dataArray[8*Bus_addr[1:0]+i] <= Bus_data[i];
- //end
- 
- //case (Bus_addr[2:0])  
- //            ADDR_SLAVE: begin
- //                dataArray[6:0] <= Bus_data[6:0];
- //            end
- //            ADDR_REG_OBJ: begin
- //                dataArray[15:8] <= Bus_data[7:0];
- //            end
- //            ADDR_DATA: begin
- //                dataArray[23:16] <= Bus_data[7:0];
- //            end
- //            ADDR_RW: begin
- //                dataArray[24] <= Bus_data[0];
- //            end
- //            ADDR_DATA_SIZE: begin
- //                dataArray[28:25] <= Bus_data[23:0];
- //            end
- //        endcase
 endmodule
