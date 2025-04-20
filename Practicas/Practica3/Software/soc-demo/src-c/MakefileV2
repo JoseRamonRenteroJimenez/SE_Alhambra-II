@@ -1,0 +1,49 @@
+## Risc‑V toolchain
+RISCV      := /usr/bin
+CC         := $(RISCV)/riscv64-unknown-elf-gcc
+OBJCOPY    := $(RISCV)/riscv64-unknown-elf-objcopy
+
+## Nombre del ejecutable (sin extensión)
+FIRMWARE   := testV2
+
+## Paths
+SRC_DIR    := .
+DRIVER_DIR := drivers
+HDR_DIR    := $(DRIVER_DIR)/headers
+
+## Fuentes
+SRCS       := start.s                                   \
+              $(FIRMWARE).c                            \
+              $(DRIVER_DIR)/ads7924V2.c
+
+## Incluimos los headers de V2
+CFLAGS     := -I$(HDR_DIR) \
+              -DHX8KDEMO    \
+              -march=rv32im -mabi=ilp32 \
+              -ffreestanding -nostdlib
+
+LDFLAGS    := -Wl,-Bstatic,-T,sections.lds,--strip-debug
+
+.PHONY: all clean prog
+
+all: $(FIRMWARE).bin
+
+# regla para programar con iceprog
+prog: $(FIRMWARE).bin
+	iceprog -o 1M $<
+
+# enlaza elf
+$(FIRMWARE).elf: sections.lds $(SRCS)
+	$(CC) $(CFLAGS) $(LDFLAGS) \
+	     -o $@ start.s $(filter %.c,$(SRCS))
+
+# genera hex tipo verilog (si te hace falta)
+$(FIRMWARE).hex: $(FIRMWARE).elf
+	$(OBJCOPY) -O verilog $< $@
+
+# genera bin
+$(FIRMWARE).bin: $(FIRMWARE).elf
+	$(OBJCOPY) -O binary $< $@
+
+clean:
+	rm -f $(FIRMWARE).elf $(FIRMWARE).hex $(FIRMWARE).bin
