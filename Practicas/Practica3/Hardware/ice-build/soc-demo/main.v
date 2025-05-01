@@ -15,40 +15,39 @@ module main #(
  input v4922c7,
  input v013906,
  input vclk,
- output [7:0] v1e554b,
- output vc267e1,
+ output [7:0] v607950,
+ output v82b9e8,
  output v7abb98,
  output vda2c07,
  output v55f1ca,
- output ve5de99,
  output v97f0aa,
  output v5ec250,
  output v5100fa,
- inout vf7cf7d
+ output vefcf91
 );
  localparam p6 = vafbbea;
  localparam p7 = v8c97ba;
  localparam p8 = v9217e8;
- localparam p10 = v051dbb;
- localparam p11 = v9de176;
- localparam p21 = vb49a23;
- localparam p22 = v82bd1d;
+ localparam p9 = v051dbb;
+ localparam p10 = v9de176;
+ localparam p19 = vb49a23;
+ localparam p20 = v82bd1d;
  wire [0:31] w0;
  wire w1;
  wire w2;
  wire w3;
  wire w4;
  wire w5;
- wire [0:7] w9;
+ wire w11;
  wire w12;
  wire w13;
  wire w14;
  wire w15;
- wire w16;
- wire w17;
- wire [0:7] w18;
- wire [0:3] w19;
- wire [0:3] w20;
+ wire [0:3] w16;
+ wire [0:3] w17;
+ wire w18;
+ wire [0:7] w21;
+ wire [0:7] w22;
  wire w23;
  wire w24;
  wire w25;
@@ -67,47 +66,41 @@ module main #(
  wire w38;
  wire w39;
  wire w40;
- wire w41;
+ wire [0:31] w41;
  wire [0:31] w42;
  wire [0:31] w43;
  wire [0:31] w44;
- wire [0:31] w45;
- wire [0:31] w46;
- wire w47;
- wire w48;
+ wire w45;
+ wire w46;
+ wire [0:3] w47;
+ wire [0:3] w48;
  wire [0:3] w49;
- wire [0:3] w50;
- wire [0:3] w51;
- wire w52;
+ wire w50;
+ wire [0:31] w51;
+ wire [0:31] w52;
  wire [0:31] w53;
- wire [0:31] w54;
- wire [0:31] w55;
+ wire w54;
+ wire w55;
  wire [0:31] w56;
- wire w57;
- wire w58;
+ wire [0:31] w57;
+ wire [0:31] w58;
  wire [0:31] w59;
- wire [0:31] w60;
- wire [0:31] w61;
- wire [0:31] w62;
- wire [0:31] w63;
+ wire w60;
+ wire w61;
+ wire w62;
+ wire w63;
  wire w64;
- wire w65;
- wire w66;
- wire w67;
- wire w68;
- wire w69;
  assign w2 = v013906;
  assign v5100fa = w3;
  assign v5ec250 = w4;
  assign v97f0aa = w5;
- assign v1e554b = w9;
- assign w12 = v4922c7;
- assign v55f1ca = w13;
- assign vda2c07 = w14;
- assign v7abb98 = w15;
- assign vc267e1 = w16;
- assign ve5de99 = w23;
- assign w24 = vf7cf7d;
+ assign w11 = v4922c7;
+ assign v55f1ca = w12;
+ assign vda2c07 = w13;
+ assign v7abb98 = w14;
+ assign v82b9e8 = w18;
+ assign v607950 = w21;
+ assign vefcf91 = w24;
  assign w25 = vclk;
  assign w26 = vclk;
  assign w27 = vclk;
@@ -116,7 +109,7 @@ module main #(
  assign w30 = vclk;
  assign w31 = vclk;
  assign w32 = vclk;
- assign w18 = w9;
+ assign w22 = w21;
  assign w26 = w25;
  assign w27 = w25;
  assign w27 = w26;
@@ -157,33 +150,23 @@ module main #(
  assign w40 = w37;
  assign w40 = w38;
  assign w40 = w39;
- assign w41 = w37;
- assign w41 = w38;
- assign w41 = w39;
- assign w41 = w40;
+ assign w42 = w41;
+ assign w43 = w41;
  assign w43 = w42;
+ assign w44 = w41;
  assign w44 = w42;
  assign w44 = w43;
- assign w45 = w42;
- assign w45 = w43;
- assign w45 = w44;
- assign w46 = w42;
- assign w46 = w43;
- assign w46 = w44;
  assign w46 = w45;
  assign w48 = w47;
- assign w50 = w49;
- assign w51 = w49;
- assign w51 = w50;
- assign w54 = w53;
- assign w55 = w53;
+ assign w49 = w47;
+ assign w49 = w48;
+ assign w52 = w51;
+ assign w53 = w51;
+ assign w53 = w52;
  assign w55 = w54;
- assign w56 = w53;
- assign w56 = w54;
- assign w56 = w55;
- assign w58 = w57;
- assign w65 = w64;
- assign w68 = w67;
+ assign w61 = w60;
+ assign w62 = w60;
+ assign w62 = w61;
  v35f267 vc8f159 (
   .v0e28cb(w1),
   .vcbab45(w33)
@@ -192,90 +175,88 @@ module main #(
   .v9b328c(w0)
  );
  v87abc9 v7eb25a (
-  .vcbab45(w47),
-  .v814e6e(w52),
-  .v3ca442(w57),
-  .v0e28cb(w64),
-  .v132c67(w66),
-  .vcbf94e(w68)
+  .vcbab45(w45),
+  .v814e6e(w50),
+  .v3ca442(w54),
+  .v0e28cb(w60),
+  .v132c67(w63)
  );
  v604573 #(
-  .v4fde05(p11)
+  .v4fde05(p10)
  ) v72b9aa (
-  .vb6935e(w12),
-  .v2ab975(w13),
+  .vb6935e(w11),
+  .v2ab975(w12),
   .v34e785(w25),
   .v866d25(w34),
   .vad40e9(w39),
-  .v9f8bfb(w44),
-  .vd996e9(w51),
-  .v0fa3a4(w55),
-  .v62ea55(w63),
-  .vdc4800(w66),
-  .vf3ed26(w69)
+  .v9f8bfb(w43),
+  .vd996e9(w49),
+  .v0fa3a4(w53),
+  .v62ea55(w59),
+  .vdc4800(w63),
+  .vf3ed26(w64)
  );
  vdccd52 vb4539a (
  
  );
  v73403c vbe815f (
-  .v595263(w18),
-  .v85accc(w19),
-  .vf9119c(w20)
+  .v85accc(w16),
+  .vf9119c(w17),
+  .v595263(w22)
  );
  vaad680 v62d839 (
   .v29fe33(w0),
   .vba7c72(w26),
   .v5d0f7b(w33),
   .v006d37(w37),
-  .vd67338(w42),
-  .v9b0ff0(w47),
-  .v83dbbe(w49),
-  .ve61aa7(w53),
-  .v8fd87d(w59)
+  .vd67338(w41),
+  .v9b0ff0(w45),
+  .v83dbbe(w47),
+  .ve61aa7(w51),
+  .v8fd87d(w56)
  );
  v55b120 v7b9433 (
-  .v47023d(w14),
-  .v7aeba1(w15),
-  .v92ad22(w16),
-  .v1cd63b(w17),
-  .v9119d0(w19),
-  .v3d0cdd(w20),
+  .v47023d(w13),
+  .v7aeba1(w14),
+  .v1cd63b(w15),
+  .v9119d0(w16),
+  .v3d0cdd(w17),
+  .v92ad22(w18),
   .v379e9e(w27)
  );
  v6c0c4a #(
-  .vf2d743(p10)
+  .vf2d743(p9)
  ) v6500fa (
-  .v9d3deb(w9),
-  .v980561(w17),
+  .v980561(w15),
+  .v9d3deb(w21),
   .v1002e2(w28),
   .v8fadcd(w37),
-  .vd5de6b(w42),
-  .va57c44(w50),
-  .vb21f3c(w52),
-  .v6d05a9(w53)
+  .vd5de6b(w41),
+  .va57c44(w48),
+  .vb21f3c(w50),
+  .v6d05a9(w51)
  );
  v5242e2 v447d62 (
-  .ve3469f(w58),
-  .v493538(w59),
-  .v918400(w60),
-  .v917e97(w61),
-  .v5664d9(w62),
-  .vae8a69(w63),
-  .v76f74e(w65),
-  .vec88a9(w67),
-  .v58d02d(w69)
+  .vec88a9(w23),
+  .ve3469f(w55),
+  .v493538(w56),
+  .v918400(w57),
+  .v5664d9(w58),
+  .vae8a69(w59),
+  .v76f74e(w61),
+  .v58d02d(w64)
  );
  vaba674 #(
   .v6478b6(p8)
  ) v2bbe2d (
   .v04ad7a(w29),
   .vd7d395(w38),
-  .v387cca(w43),
-  .v22c516(w48),
-  .vd728f0(w49),
-  .v8d6432(w54),
-  .v69f1ab(w57),
-  .v13ce3e(w60)
+  .v387cca(w42),
+  .v22c516(w46),
+  .vd728f0(w47),
+  .v8d6432(w52),
+  .v69f1ab(w54),
+  .v13ce3e(w57)
  );
  v2b4233 v1314aa (
   .v6d0651(w1),
@@ -290,25 +271,25 @@ module main #(
   .v0da91a(w4),
   .v9b4033(w5),
   .v84763f(w31),
-  .v17983a(w36),
-  .vba8655(w41),
-  .vbee9aa(w46),
-  .v202123(w62),
-  .vbe14dd(w64)
+  .v17983a(w35),
+  .vba8655(w40),
+  .vbee9aa(w44),
+  .v202123(w58),
+  .vbe14dd(w60)
  );
- v574e65 #(
-  .v269dbc(p21),
-  .v9c4340(p22)
- ) ve6887b (
-  .v9127c2(w23),
-  .v80923c(w24),
-  .v87186f(w32),
-  .v4dc0ee(w35),
-  .v8859f4(w40),
-  .v867561(w45),
-  .v23504b(w56),
-  .v504d16(w61),
-  .vfe2384(w67)
+ v0cd7bc #(
+  .v269dbc(p19),
+  .v9c4340(p20)
+ ) v21f567 (
+  .v87186f(w32)
+ );
+ v21cfcc vcf8347 (
+  .v9fb85f(w23)
+ );
+ main_v51f48c v51f48c (
+  .x(w24),
+  .rst(w36),
+  .a(w62)
  );
 endmodule
 
@@ -412,20 +393,17 @@ module v87abc9 (
  wire w2;
  wire w3;
  wire w4;
- wire w5;
  assign w0 = v0e28cb;
  assign w1 = v3ca442;
  assign vcbab45 = w2;
  assign w3 = v132c67;
  assign w4 = v814e6e;
- assign w5 = vcbf94e;
  v87abc9_vf4938a vf4938a (
   .a(w0),
   .b(w1),
   .o(w2),
   .c(w3),
-  .d(w4),
-  .e(w5)
+  .d(w4)
  );
 endmodule
 
@@ -440,7 +418,6 @@ module v87abc9_vf4938a (
  input b,
  input c,
  input d,
- input e,
  output o
 );
  //-- Puerta OR
@@ -448,7 +425,7 @@ module v87abc9_vf4938a (
  //-- module and (input wire a, input wire b,
  //--             output wire c);
  
- assign o = a | b | c | d | e;
+ assign o = a | b | c | d;
  
  //-- endmodule
 endmodule
@@ -5641,12 +5618,15 @@ module veecece_v4407ca (
  //-- Codificador de 4 a 1
  
  //-- Señalizar que todos son ceros
- assign zero = ({i3,i2,i1,i0}==4'b00);
+ // zero = 1 si TODOS los inputs son 0
+     assign zero = ({i3,i2,i1,i0} == 4'b0000);
  
- 
- assign y = (i3 == 1) ? 2'h3 :
-            (i2 == 1) ? 2'h2 :
-            (i1 == 1) ? 2'h1 : 0;
+     // prioridad: i3 > i2 > i1 > i0, y por defecto 2'b00
+     assign y = i3 ? 2'b11 :
+                i2 ? 2'b10 :
+                i1 ? 2'b01 :
+                i0 ? 2'b00 :
+                2'b00;  // rama else obligatoria
            
  
 endmodule
@@ -6155,66 +6135,60 @@ module v372366 #(
  wire w3;
  wire w4;
  wire w5;
- wire w6;
- wire [0:23] w7;
+ wire [0:23] w6;
+ wire w7;
  wire w8;
- wire w9;
+ wire [0:31] w9;
  wire w10;
- wire [0:31] w11;
- wire w12;
- wire w13;
+ wire w11;
+ wire [0:31] w12;
+ wire [0:31] w13;
  wire [0:31] w14;
- wire [0:31] w15;
- wire [0:31] w16;
- wire w17;
- assign v40049a = w4;
- assign v0da91a = w5;
- assign v9b4033 = w6;
- assign w9 = v78b064;
- assign vbe14dd = w10;
- assign v202123 = w11;
- assign w12 = v84763f;
- assign w13 = v17983a;
+ wire w15;
+ assign v0da91a = w4;
+ assign v9b4033 = w5;
+ assign vbe14dd = w8;
+ assign v202123 = w9;
+ assign w10 = v84763f;
+ assign w11 = v17983a;
+ assign w12 = vbee9aa;
+ assign w13 = vbee9aa;
  assign w14 = vbee9aa;
- assign w15 = vbee9aa;
- assign w16 = vbee9aa;
- assign w17 = vba8655;
- assign w15 = w14;
- assign w16 = w14;
- assign w16 = w15;
+ assign w15 = vba8655;
+ assign w13 = w12;
+ assign w14 = w12;
+ assign w14 = w13;
  vf0a7c1 v3c7e19 (
-  .vd903fe(w7),
-  .v2ebc76(w16)
+  .vd903fe(w6),
+  .v2ebc76(w14)
  );
  v65879d #(
   .v16d6b8(p0)
  ) vba8cb0 (
   .v18e78c(w2),
-  .v3d8056(w14)
+  .v3d8056(w12)
  );
  v127665 #(
   .v16d6b8(p1)
  ) v3beedf (
   .v18e78c(w3),
-  .v229966(w15)
+  .v229966(w13)
  );
  vf6999a v1797a3 (
   .vfa6171(w2),
   .v7cacc4(w3),
-  .v7b40f2(w8),
-  .v76af38(w17)
+  .v7b40f2(w7),
+  .v76af38(w15)
  );
  va7f020 v285423 (
-  .v8c9980(w4),
-  .v8593fa(w5),
-  .vf34c0c(w6),
-  .v5d7746(w7),
-  .v3d9a95(w8),
-  .vad115e(w9),
-  .v5f2c67(w10),
-  .v1de298(w11),
-  .vc1deab(w12),
-  .v5b0577(w13)
+  .v8593fa(w4),
+  .vf34c0c(w5),
+  .v5d7746(w6),
+  .v3d9a95(w7),
+  .v5f2c67(w8),
+  .v1de298(w9),
+  .vc1deab(w10),
+  .v5b0577(w11)
  );
 endmodule
 
@@ -6263,140 +6237,104 @@ module va7f020 (
  input v5b0577,
  input v3d9a95,
  input [23:0] v5d7746,
- input vad115e,
  output v5f2c67,
  output [31:0] v1de298,
  output vf34c0c,
- output v8593fa,
- output v8c9980
+ output v8593fa
 );
  wire w0;
  wire w1;
- wire w2;
+ wire [0:3] w2;
  wire w3;
- wire [0:3] w4;
+ wire w4;
  wire w5;
  wire w6;
- wire w7;
+ wire [0:31] w7;
  wire w8;
- wire [0:31] w9;
+ wire [0:23] w9;
  wire w10;
- wire [0:23] w11;
+ wire w11;
  wire w12;
  wire w13;
- wire w14;
- wire w15;
- wire w16;
- wire w17;
+ wire [0:7] w14;
+ wire [0:7] w15;
+ wire [0:3] w16;
+ wire [0:3] w17;
  wire w18;
  wire w19;
  wire w20;
  wire w21;
- wire [0:7] w22;
- wire [0:7] w23;
+ wire w22;
+ wire w23;
  wire w24;
- wire [0:3] w25;
+ wire w25;
  wire w26;
- wire [0:3] w27;
+ wire w27;
  wire w28;
- wire w29;
- wire w30;
- wire w31;
- wire w32;
- wire w33;
- wire w34;
- wire w35;
- wire w36;
- wire w37;
- wire w38;
  assign vf34c0c = w0;
  assign v8593fa = w1;
- assign w2 = vad115e;
- assign v8c9980 = w3;
- assign w5 = vc1deab;
- assign w6 = vc1deab;
- assign v5f2c67 = w7;
- assign w8 = v5b0577;
- assign v1de298 = w9;
- assign w10 = v3d9a95;
- assign w11 = v5d7746;
- assign w6 = w5;
- assign w17 = w16;
- assign w21 = w20;
+ assign w3 = vc1deab;
+ assign w4 = vc1deab;
+ assign v5f2c67 = w5;
+ assign w6 = v5b0577;
+ assign v1de298 = w7;
+ assign w8 = v3d9a95;
+ assign w9 = v5d7746;
+ assign w4 = w3;
  va7f020_v5dc4ea v5dc4ea (
   .flash_csb(w0),
   .flash_clk(w1),
-  .cfgreg_we(w4),
-  .clk(w5),
-  .ready(w7),
-  .resetn(w8),
-  .rdata(w9),
-  .valid(w10),
-  .addr(w11),
-  .din_ready(w12),
-  .xfer_resetn(w13),
-  .dout_valid(w14),
-  .flash_io0_oe(w15),
-  .flash_io0_di(w16),
-  .din_valid(w18),
-  .flash_io1_oe(w19),
-  .flash_io1_di(w20),
-  .dout_data(w22),
-  .din_data(w23),
-  .flash_io0_do(w24),
-  .dout_tag(w25),
-  .flash_io1_do(w26),
-  .din_tag(w27),
-  .xfer_csb(w28),
-  .din_cont(w29),
-  .xfer_dspi(w30),
-  .xfer_clk(w31),
-  .din_qspi(w32),
-  .xfer_io0_oe(w33),
-  .xfer_ddr(w34),
-  .xfer_io1_oe(w35),
-  .din_rd(w36),
-  .xfer_io0_do(w37),
-  .xfer_io1_do(w38)
+  .cfgreg_we(w2),
+  .clk(w3),
+  .ready(w5),
+  .resetn(w6),
+  .rdata(w7),
+  .valid(w8),
+  .addr(w9),
+  .din_ready(w10),
+  .xfer_resetn(w11),
+  .dout_valid(w12),
+  .din_valid(w13),
+  .dout_data(w14),
+  .din_data(w15),
+  .dout_tag(w16),
+  .din_tag(w17),
+  .xfer_csb(w18),
+  .din_cont(w19),
+  .xfer_dspi(w20),
+  .xfer_clk(w21),
+  .din_qspi(w22),
+  .xfer_io0_oe(w23),
+  .xfer_ddr(w24),
+  .xfer_io1_oe(w25),
+  .din_rd(w26),
+  .xfer_io0_do(w27),
+  .xfer_io1_do(w28)
  );
  va7f020_v216dc9 v216dc9 (
-  .clk(w6),
-  .din_ready(w12),
-  .resetn(w13),
-  .dout_valid(w14),
-  .flash_io0_di(w17),
-  .din_valid(w18),
-  .flash_io1_di(w21),
-  .dout_data(w22),
-  .din_data(w23),
-  .dout_tag(w25),
-  .din_tag(w27),
-  .flash_csb(w28),
-  .din_cont(w29),
-  .din_dspi(w30),
-  .flash_clk(w31),
-  .din_qspi(w32),
-  .flash_io0_oe(w33),
-  .din_ddr(w34),
-  .flash_io1_oe(w35),
-  .din_rd(w36),
-  .flash_io0_do(w37),
-  .flash_io1_do(w38)
- );
- vbb787c v23c4c4 (
-  .v6b2a2c(w2),
-  .v248807(w19),
-  .v790e82(w20),
-  .vba979e(w26)
- );
- vd7e6ff v64ca2e (
-  .v341fc3(w3),
-  .v248807(w15),
-  .v790e82(w16),
-  .vba979e(w24)
+  .clk(w4),
+  .din_ready(w10),
+  .resetn(w11),
+  .dout_valid(w12),
+  .din_valid(w13),
+  .dout_data(w14),
+  .din_data(w15),
+  .dout_tag(w16),
+  .din_tag(w17),
+  .flash_csb(w18),
+  .din_cont(w19),
+  .din_dspi(w20),
+  .flash_clk(w21),
+  .din_qspi(w22),
+  .flash_io0_oe(w23),
+  .din_ddr(w24),
+  .flash_io1_oe(w25),
+  .din_rd(w26),
+  .flash_io0_do(w27),
+  .flash_io1_do(w28)
  );
  va0b8df v610d99 (
-  .va50a91(w4)
+  .va50a91(w2)
  );
 endmodule
 
@@ -6959,97 +6897,7 @@ module va7f020_v216dc9 (
  	end
 endmodule
 //---- Top entity
-module vbb787c (
- input v6b2a2c,
- input v248807,
- input vba979e,
- output v790e82
-);
- wire w0;
- wire w1;
- wire w2;
- wire w3;
- assign w0 = v6b2a2c;
- assign w1 = v248807;
- assign w2 = vba979e;
- assign v790e82 = w3;
- vbb787c_v43ad2d v43ad2d (
-  .pin(w0),
-  .oe(w1),
-  .dout(w2),
-  .din(w3)
- );
-endmodule
-
-//---------------------------------------------------
-//-- InOut
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Bloque para entrada-salida (PIO)
-//---------------------------------------------------
-
-module vbb787c_v43ad2d (
- input pin,
- input oe,
- input dout,
- output din
-);
-   SB_IO #(
-       .PIN_TYPE(6'b1010_01),
-       .PULLUP(1'b0)
-   ) triState (
-       .PACKAGE_PIN(pin),
-       .OUTPUT_ENABLE(oe),
-       .D_OUT_0(dout),
-       .D_IN_0(din)
-   );
-endmodule
-//---- Top entity
-module vd7e6ff (
- input v248807,
- input vba979e,
- output v341fc3,
- output v790e82
-);
- wire w0;
- wire w1;
- wire w2;
- wire w3;
- assign w0 = v248807;
- assign w1 = vba979e;
- assign v790e82 = w2;
- assign v341fc3 = w3;
- vd7e6ff_v43ad2d v43ad2d (
-  .oe(w0),
-  .dout(w1),
-  .din(w2),
-  .pin(w3)
- );
-endmodule
-
-//---------------------------------------------------
-//-- In-out-right
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Bloque inout, con conexión de pin por la derecha
-//---------------------------------------------------
-
-module vd7e6ff_v43ad2d (
- input oe,
- input dout,
- output pin,
- output din
-);
-   SB_IO #(
-       .PIN_TYPE(6'b1010_01),
-       .PULLUP(1'b0)
-   ) triState (
-       .PACKAGE_PIN(pin),
-       .OUTPUT_ENABLE(oe),
-       .D_OUT_0(dout),
-       .D_IN_0(din)
-   );
-endmodule
-//---- Top entity
-module v574e65 #(
+module v0cd7bc #(
  parameter v269dbc = 'h0400_0000,
  parameter v9c4340 = 100000
 ) (
@@ -7061,6 +6909,9 @@ module v574e65 #(
  output v9127c2,
  output vfe2384,
  output [31:0] v504d16,
+ output vf73703,
+ output va77527,
+ output v34d6ed,
  inout v80923c
 );
  localparam p0 = v269dbc;
@@ -7070,89 +6921,119 @@ module v574e65 #(
  wire w4;
  wire w5;
  wire w6;
- wire w7;
- wire w8;
+ wire [0:31] w7;
+ wire [0:31] w8;
  wire w9;
  wire w10;
- wire [0:31] w11;
- wire [0:31] w12;
- wire [0:31] w13;
+ wire w11;
+ wire w12;
+ wire w13;
  wire w14;
- wire [0:31] w15;
- wire w16;
- wire w17;
+ wire w15;
+ wire [0:31] w16;
+ wire [0:31] w17;
  wire w18;
  wire w19;
  wire w20;
- wire [0:6] w21;
- wire [0:7] w22;
- wire [0:7] w23;
- wire [0:7] w24;
- wire [0:3] w25;
- assign w4 = v87186f;
- assign w5 = v87186f;
- assign w6 = v4dc0ee;
- assign w7 = v4dc0ee;
- assign v9127c2 = w8;
- assign w9 = v80923c;
- assign vfe2384 = w10;
- assign w11 = v867561;
- assign w12 = v867561;
- assign v504d16 = w13;
- assign w14 = v8859f4;
- assign w15 = v23504b;
- assign w5 = w4;
- assign w7 = w6;
- assign w12 = w11;
+ wire w21;
+ wire w22;
+ wire w23;
+ wire [0:31] w24;
+ wire w25;
+ wire w26;
+ wire w27;
+ wire w28;
+ wire [0:6] w29;
+ wire [0:7] w30;
+ wire [0:7] w31;
+ wire [0:7] w32;
+ wire [0:3] w33;
+ assign v9127c2 = w4;
+ assign vfe2384 = w5;
+ assign v504d16 = w7;
+ assign w9 = v87186f;
+ assign w10 = v87186f;
+ assign w11 = v87186f;
+ assign vf73703 = w12;
+ assign w13 = v4dc0ee;
+ assign w14 = v4dc0ee;
+ assign w15 = v4dc0ee;
+ assign w16 = v867561;
+ assign w17 = v867561;
+ assign va77527 = w18;
+ assign w21 = v80923c;
+ assign v34d6ed = w22;
+ assign w23 = v8859f4;
+ assign w24 = v23504b;
+ assign w6 = w5;
+ assign w8 = w7;
+ assign w10 = w9;
+ assign w11 = w9;
+ assign w11 = w10;
+ assign w14 = w13;
+ assign w15 = w13;
+ assign w15 = w14;
+ assign w17 = w16;
+ assign w20 = w19;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
   .v18e78c(w1),
-  .ve1f562(w11)
+  .ve1f562(w16)
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .v3ca442(w14),
-  .vcbab45(w18)
+  .vcbab45(w19),
+  .v3ca442(w23)
  );
  v0e64bc #(
   .v207e0d(p3)
  ) v9f9653 (
   .v8337bc(w2),
-  .v531e20(w4)
+  .v531e20(w9)
  );
- v574e65_v571ff6 v571ff6 (
+ v0cd7bc_v571ff6 v571ff6 (
   .clk(w2),
-  .rst(w6),
-  .I2C_SCL(w8),
-  .I2C_SDA(w9),
-  .data_ready(w16),
-  .enable(w17),
-  .rw(w19),
-  .I2C_BUSY(w20),
-  .slv_addr(w21),
-  .reg_obj(w22),
-  .data_in(w23),
-  .data_out(w24),
-  .data_size(w25)
+  .I2C_SCL(w4),
+  .rst(w13),
+  .I2C_SDA(w21),
+  .data_ready(w25),
+  .enable(w26),
+  .rw(w27),
+  .I2C_BUSY(w28),
+  .slv_addr(w29),
+  .reg_obj(w30),
+  .data_out(w31),
+  .data_in(w32),
+  .data_size(w33)
  );
- v574e65_vecfcb9 vecfcb9 (
-  .clk(w5),
-  .rst(w7),
-  .bus_data_enable(w10),
-  .Bus_addr(w12),
-  .bus_data_out(w13),
-  .Bus_data(w15),
-  .new_data_ready(w16),
-  .enable_start(w17),
-  .serdat_cs(w18),
-  .rw(w19),
-  .I2C_Busy(w20),
-  .slv_addr(w21),
-  .reg_obj(w22),
-  .data_write(w23),
-  .data_out(w24),
-  .data_size(w25)
+ v0cd7bc_vecfcb9 vecfcb9 (
+  .bus_data_enable(w5),
+  .bus_data_out(w7),
+  .clk(w10),
+  .rst(w14),
+  .Bus_addr(w17),
+  .serdat_cs(w19),
+  .Bus_data(w24),
+  .new_data_ready(w25),
+  .enable_start(w26),
+  .rw(w27),
+  .I2C_Busy(w28),
+  .slv_addr(w29),
+  .reg_obj(w30),
+  .data_out(w31),
+  .data_write(w32),
+  .data_size(w33)
+ );
+ v0cd7bc_vb9f55b vb9f55b (
+  .b(w6),
+  .c(w8),
+  .clk(w11),
+  .x(w12),
+  .rst_n(w15),
+  .y(w18),
+  .a(w20),
+  .z(w22)
  );
 endmodule
 
@@ -7162,7 +7043,7 @@ endmodule
 //-- Periférico encargado de la comunicación a través del bus I2C.
 //---------------------------------------------------
 
-module v574e65_v571ff6 (
+module v0cd7bc_v571ff6 (
  input clk,
  input rst,
  input enable,
@@ -7177,162 +7058,162 @@ module v574e65_v571ff6 (
  output I2C_SCL,
  inout I2C_SDA
 );
-     // Definir los estados de la máquina de estados
-     localparam READY            = 0;
-     localparam START            = 1;
-     localparam COMMAND          = 2;
-     localparam SLV_OBJ_ACK      = 3;
-     localparam WRITE_DATA       = 4;
-     localparam WRITE_ACK        = 5;
-     localparam READ_DATA        = 6;
-     localparam READ_ACK         = 7;
-     localparam STOP             = 8;
+ // Definir los estados de la máquina de estados
+ localparam READY            = 0;
+ localparam START            = 1;
+ localparam COMMAND          = 2;
+ localparam SLV_OBJ_ACK      = 3;
+ localparam WRITE_DATA       = 4;
+ localparam WRITE_ACK        = 5;
+ localparam READ_DATA        = 6;
+ localparam READ_ACK         = 7;
+ localparam STOP             = 8;
      
      
-     // Registros internos
-     reg [3:0] state = READY;        // Estado actual
-     reg [7:0] counter = 0;          // Contador local. Cuenta hasta 8 bits de un envío
+ // Registros internos
+ reg [3:0] state = READY;        // Estado actual
+ reg [7:0] counter = 0;          // Contador local. Cuenta hasta 8 bits de un envío
                                      // No tiene en cuenta el mensaje completo
-     reg [7:0] bit_ptr = 0;          // Contador global. Cuenta hasta el tamaño del mensaje
+ reg [7:0] bit_ptr = 0;          // Contador global. Cuenta hasta el tamaño del mensaje
                                      // Tiene en cuenta el mensaje completo
-     reg [6:0] slave_addr = 0;       // Dirección del esclavo
-     reg read_write = 0;                     // Lectura o escritura
-     reg [15:0] wt_buffer = 0;       // Buffer de escritura. Mensaje a enviar
-     reg [7:0] rd_buffer = 0;        // Buffer de lectura. Mensaje recibido
-     reg new_data_read = 0;          // Flag de nuevo dato leído
-     reg sda_out = 1;                // Salida de SDA
-     reg write_enable = 0;           // Habilitación de SDA
-     reg i2c_scl_enable = 0;         // Habilitación de SCL
-     reg busy = 0;               // Flag de bus ocupado
+ reg [6:0] slave_addr = 0;       // Dirección del esclavo
+ reg read_write = 0;                     // Lectura o escritura
+ reg [15:0] wt_buffer = 0;       // Buffer de escritura. Mensaje a enviar
+ reg [7:0] rd_buffer = 0;        // Buffer de lectura. Mensaje recibido
+ reg new_data_read = 0;          // Flag de nuevo dato leído
+ reg sda_out = 1;                // Salida de SDA
+ reg write_enable = 0;           // Habilitación de SDA
+ reg i2c_scl_enable = 0;         // Habilitación de SCL
+ reg busy = 0;               // Flag de bus ocupado
      
-     assign I2C_SCL  = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
-     assign I2C_SDA  = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
-     assign I2C_BUSY = busy;   // Salida de ocupado
+ assign I2C_SCL  = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
+ assign I2C_SDA  = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
+ assign I2C_BUSY = busy;   // Salida de ocupado
      
-     assign data_ready = new_data_read;   // Señal de listo
-     assign data_out = rd_buffer;    // Salida de datos
+ assign data_ready = new_data_read;   // Señal de listo
+ assign data_out = rd_buffer;    // Salida de datos
      
      
-     // Control de habilitación de SCL
-     always @(negedge clk or posedge rst) begin
-         if (rst)
-             i2c_scl_enable <= 0;
-         else
-             i2c_scl_enable <= (state != READY && state != START && state != STOP);
-     end
+ // Control de habilitación de SCL
+ always @(negedge clk or posedge rst) begin
+     if (rst)
+         i2c_scl_enable <= 0;
+     else
+         i2c_scl_enable <= (state != READY && state != START && state != STOP);
+ end
      
-     // Máquina de estados I2C
-     always @(posedge clk or posedge rst) begin
-         if (rst) begin
-             state <= READY;
-             counter <= 0;
-             bit_ptr <= 0;
-             slave_addr <= 7'b0000000;
-             read_write <= 1'b0;
-             wt_buffer <= 8'b00000000;
-             rd_buffer <= 8'b00000000;
-             new_data_read <= 0;
-             sda_out <= 1;
-             write_enable <= 0;
-             i2c_scl_enable <= 0;        //??? - No estamos seguros de como tratar el SCL
-             busy <= 0;
-         end else begin
-             case (state)
-                 READY: begin
-                     write_enable <= 0;
-                     if (enable) begin
-                         busy <= 1;
-                         read_write <= rw;
-                         slave_addr <= {slv_addr, rw};
-                         wt_buffer <= {reg_obj, data_in};
-                         bit_ptr <= data_size;  // Ajustamos el tamaño de bits a enviar según data_size
-                         state <= START;
-                         new_data_read <= 0;
-                     end
+ // Máquina de estados I2C
+ always @(posedge clk or posedge rst) begin
+     if (rst) begin
+         state <= READY;
+         counter <= 0;
+         bit_ptr <= 0;
+         slave_addr <= 7'b0000000;
+         read_write <= 1'b0;
+         wt_buffer <= 8'b00000000;
+         rd_buffer <= 8'b00000000;
+         new_data_read <= 0;
+         sda_out <= 1;
+         write_enable <= 0;
+         i2c_scl_enable <= 0;        //??? - No estamos seguros de como tratar el SCL
+         busy <= 0;
+     end else begin
+         case (state)
+             READY: begin
+                 write_enable <= 0;
+                 if (enable) begin
+                     busy <= 1;
+                     read_write <= rw;
+                     slave_addr <= {slv_addr, rw};
+                     wt_buffer <= {reg_obj, data_in};
+                     bit_ptr <= data_size;  // Ajustamos el tamaño de bits a enviar según data_size
+                     state <= START;
+                     new_data_read <= 0;
                  end
-                 START: begin
-                     write_enable <= 1;
-                     sda_out <= 0;
-                     state <= COMMAND;
-                     counter <= 7;
-                 end
-                 COMMAND: begin
-                     sda_out <= slave_addr[counter];
-                     if (counter == 0) begin
-                         sda_out <= 1;
-                         state <= SLV_OBJ_ACK;
-                     end else
-                         counter <= counter - 1;
-                 end
-                 SLV_OBJ_ACK: begin
-                     write_enable <= 0;
-                     if (I2C_SDA == 0) begin
-                         counter <= 7;
-                         if (slave_addr[0] == 0) begin  // Write
-                             write_enable <= 1;
-                             state <= WRITE_DATA;
-                         end else begin               // Read
-                             write_enable <= 0;
-                             state <= READ_DATA;
-                         end
-                     end else
-                         state <= STOP;
-                 end
-                 WRITE_DATA: begin
-                     sda_out <= wt_buffer[bit_ptr];
-                     bit_ptr <= bit_ptr - 1;             //Cuidado con bit_ptr. Debe restar 8 bits al enviar un mensaje
-                                                         // 7,6,5 ... 1,0
-                     if (counter == 0) begin
-                         sda_out <= 1;
-                         state <= WRITE_ACK;
-                     end else 
-                         counter <= counter - 1;       //Está enviando primero el más significativo
-                 end
-                 WRITE_ACK: begin
-                     write_enable <= 0;
-                     if (I2C_SDA == 0) begin
-                         if (bit_ptr >= 8) begin
-                             counter <= 7;
-                             write_enable <= 1;
-                             //bit_ptr <= bit_ptr - 1;       //Este bit se decrementa en WRITE_DATA
-                             //sda_out <= tx_buffer[bit_ptr - 1];
-                             state <= WRITE_DATA;
-                         end else
-                             state <= STOP;
-                     end else
-                         state <= STOP;
-                 end
-                 READ_DATA: begin
-                     rd_buffer[counter] <= I2C_SDA;
-                     if (counter == 0)
-                         state <= READ_ACK;
-                     else
-                         counter <= counter - 1;
-                 end
-                 READ_ACK: begin
-                     write_enable <= 1;
-                     sda_out <= 0;
-                     state <= STOP;
-                     new_data_read <= 1;
-     
-                 end
-                 STOP: begin
-                     write_enable <= 1;
+             end
+             START: begin
+                 write_enable <= 1;
+                 sda_out <= 0;
+                 state <= COMMAND;
+                 counter <= 7;
+             end
+             COMMAND: begin
+                 sda_out <= slave_addr[counter];
+                 if (counter == 0) begin
                      sda_out <= 1;
-                     busy <= 0;
-                     state <= READY;
-                 end
-             endcase
-         end
+                     state <= SLV_OBJ_ACK;
+                 end else
+                     counter <= counter - 1;
+             end
+             SLV_OBJ_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     counter <= 7;
+                     if (slave_addr[0] == 0) begin  // Write
+                         write_enable <= 1;
+                         state <= WRITE_DATA;
+                     end else begin               // Read
+                         write_enable <= 0;
+                         state <= READ_DATA;
+                     end
+                 end else
+                     state <= STOP;
+             end
+             WRITE_DATA: begin
+                 sda_out <= wt_buffer[bit_ptr];
+                 bit_ptr <= bit_ptr - 1;             //Cuidado con bit_ptr. Debe restar 8 bits al enviar un mensaje
+                                                     // 7,6,5 ... 1,0
+                 if (counter == 0) begin
+                     sda_out <= 1;
+                     state <= WRITE_ACK;
+                 end else 
+                     counter <= counter - 1;       //Está enviando primero el más significativo
+             end
+             WRITE_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     if (bit_ptr >= 8) begin
+                         counter <= 7;
+                         write_enable <= 1;
+                         //bit_ptr <= bit_ptr - 1;       //Este bit se decrementa en WRITE_DATA
+                         //sda_out <= tx_buffer[bit_ptr - 1];
+                         state <= WRITE_DATA;
+                     end else
+                         state <= STOP;
+                 end else
+                     state <= STOP;
+             end
+             READ_DATA: begin
+                 rd_buffer[counter] <= I2C_SDA;
+                 if (counter == 0)
+                     state <= READ_ACK;
+                 else
+                     counter <= counter - 1;
+             end
+             READ_ACK: begin
+                 write_enable <= 1;
+                 sda_out <= 0;
+                 state <= STOP;
+                 new_data_read <= 1;
+ 
+             end
+             STOP: begin
+                 write_enable <= 1;
+                 sda_out <= 1;
+                 busy <= 0;
+                 state <= READY;
+             end
+         endcase
      end
+ end
 endmodule
 
-module v574e65_vecfcb9 (
+module v0cd7bc_vecfcb9 (
  input clk,
+ input rst,
  input [31:0] Bus_addr,
  input [31:0] Bus_data,
  input serdat_cs,
- input rst,
  input I2C_Busy,
  input new_data_ready,
  input [7:0] data_out,
@@ -7417,6 +7298,48 @@ module v574e65_vecfcb9 (
  end
  
 endmodule
+
+module v0cd7bc_vb9f55b (
+ input clk,
+ input rst_n,
+ input a,
+ input b,
+ input [31:0] c,
+ output x,
+ output y,
+ output z
+);
+ reg         reg_x = 0;    // ahora es reg
+ reg         reg_y = 0;    // ahora es reg
+ reg         reg_z = 0;     // ahora es reg
+ 
+ assign x = reg_x;
+ assign y = reg_y;
+ assign z = reg_z;
+ always @(posedge clk or negedge rst_n) begin
+ 
+     
+     if (!rst_n) begin
+         // Reset: vuelven a 0
+         reg_x <= 1'b0;
+         reg_y <= 1'b0;
+         reg_z <= 1'b0;
+     end else begin
+         // Al primer 1 en 'a', si aún no lo habíamos detectado
+         if (a && !reg_x)
+             reg_x <= 1'b1;
+ 
+         // Al primer 1 en 'b'
+         if (b && !reg_y)
+             reg_y <= 1'b1;
+ 
+         // Al primer 1 en cualquier bit de 'c' (reducción OR)
+         if (|c && !reg_z)
+             reg_z <= 1'b1;
+     end
+ end
+ 
+endmodule
 //---- Top entity
 module v0e64bc #(
  parameter v207e0d = 1
@@ -7488,4 +7411,22 @@ module v0e64bc_v94c6d7 #(
  
  assign clk_o = clk_out;  
  
+endmodule
+
+module main_v51f48c (
+ input rst,
+ input a,
+ output x
+);
+ reg salida = 0;
+ 
+ assign x = salida;
+ 
+ always @(posedge a or negedge rst) begin
+         if (!rst)
+             salida <= 0;
+         else
+             if (!salida)
+                 salida <= 1'b1;
+     end
 endmodule

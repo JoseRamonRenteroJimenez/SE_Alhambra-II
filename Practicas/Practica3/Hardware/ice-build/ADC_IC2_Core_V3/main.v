@@ -28,13 +28,13 @@ module main #(
  wire w7;
  wire w8;
  wire w9;
- wire w10;
+ wire [0:31] w10;
  wire [0:31] w11;
- wire [0:31] w12;
- wire [0:31] w13;
- wire w14;
- wire [0:31] w15;
- wire w16;
+ wire w12;
+ wire w13;
+ wire [0:31] w14;
+ wire w15;
+ wire [0:31] w16;
  wire w17;
  wire w18;
  wire w19;
@@ -46,29 +46,29 @@ module main #(
  wire [0:3] w25;
  assign w4 = v87186f;
  assign w5 = v87186f;
- assign w6 = v4dc0ee;
+ assign v9127c2 = w6;
  assign w7 = v4dc0ee;
- assign v9127c2 = w8;
- assign w9 = v80923c;
- assign vfe2384 = w10;
+ assign w8 = v4dc0ee;
+ assign vfe2384 = w9;
+ assign w10 = v867561;
  assign w11 = v867561;
- assign w12 = v867561;
- assign v504d16 = w13;
- assign w14 = v8859f4;
- assign w15 = v23504b;
+ assign w13 = v80923c;
+ assign v504d16 = w14;
+ assign w15 = v8859f4;
+ assign w16 = v23504b;
  assign w5 = w4;
- assign w7 = w6;
- assign w12 = w11;
+ assign w8 = w7;
+ assign w11 = w10;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
   .v18e78c(w1),
-  .ve1f562(w11)
+  .ve1f562(w10)
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .v3ca442(w14),
-  .vcbab45(w18)
+  .vcbab45(w12),
+  .v3ca442(w15)
  );
  v0e64bc #(
   .v207e0d(p3)
@@ -78,35 +78,35 @@ module main #(
  );
  main_v571ff6 v571ff6 (
   .clk(w2),
-  .rst(w6),
-  .I2C_SCL(w8),
-  .I2C_SDA(w9),
-  .data_ready(w16),
-  .enable(w17),
-  .rw(w19),
-  .I2C_BUSY(w20),
+  .I2C_SCL(w6),
+  .rst(w7),
+  .I2C_SDA(w13),
+  .data_ready(w17),
+  .enable(w18),
+  .I2C_BUSY(w19),
+  .rw(w20),
   .slv_addr(w21),
   .reg_obj(w22),
-  .data_in(w23),
-  .data_out(w24),
+  .data_out(w23),
+  .data_in(w24),
   .data_size(w25)
  );
  main_vecfcb9 vecfcb9 (
   .clk(w5),
-  .rst(w7),
-  .bus_data_enable(w10),
-  .Bus_addr(w12),
-  .bus_data_out(w13),
-  .Bus_data(w15),
-  .new_data_ready(w16),
-  .enable_start(w17),
-  .serdat_cs(w18),
-  .rw(w19),
-  .I2C_Busy(w20),
+  .rst(w8),
+  .bus_data_enable(w9),
+  .Bus_addr(w11),
+  .serdat_cs(w12),
+  .bus_data_out(w14),
+  .Bus_data(w16),
+  .new_data_ready(w17),
+  .enable_start(w18),
+  .I2C_Busy(w19),
+  .rw(w20),
   .slv_addr(w21),
   .reg_obj(w22),
-  .data_write(w23),
-  .data_out(w24),
+  .data_out(w23),
+  .data_write(w24),
   .data_size(w25)
  );
  assign vinit = 8'b00000000;
@@ -278,162 +278,162 @@ module main_v571ff6 (
  output I2C_SCL,
  inout I2C_SDA
 );
-     // Definir los estados de la máquina de estados
-     localparam READY            = 0;
-     localparam START            = 1;
-     localparam COMMAND          = 2;
-     localparam SLV_OBJ_ACK      = 3;
-     localparam WRITE_DATA       = 4;
-     localparam WRITE_ACK        = 5;
-     localparam READ_DATA        = 6;
-     localparam READ_ACK         = 7;
-     localparam STOP             = 8;
+ // Definir los estados de la máquina de estados
+ localparam READY            = 0;
+ localparam START            = 1;
+ localparam COMMAND          = 2;
+ localparam SLV_OBJ_ACK      = 3;
+ localparam WRITE_DATA       = 4;
+ localparam WRITE_ACK        = 5;
+ localparam READ_DATA        = 6;
+ localparam READ_ACK         = 7;
+ localparam STOP             = 8;
      
      
-     // Registros internos
-     reg [3:0] state = READY;        // Estado actual
-     reg [7:0] counter = 0;          // Contador local. Cuenta hasta 8 bits de un envío
+ // Registros internos
+ reg [3:0] state = READY;        // Estado actual
+ reg [7:0] counter = 0;          // Contador local. Cuenta hasta 8 bits de un envío
                                      // No tiene en cuenta el mensaje completo
-     reg [7:0] bit_ptr = 0;          // Contador global. Cuenta hasta el tamaño del mensaje
+ reg [7:0] bit_ptr = 0;          // Contador global. Cuenta hasta el tamaño del mensaje
                                      // Tiene en cuenta el mensaje completo
-     reg [6:0] slave_addr = 0;       // Dirección del esclavo
-     reg read_write = 0;                     // Lectura o escritura
-     reg [15:0] wt_buffer = 0;       // Buffer de escritura. Mensaje a enviar
-     reg [7:0] rd_buffer = 0;        // Buffer de lectura. Mensaje recibido
-     reg new_data_read = 0;          // Flag de nuevo dato leído
-     reg sda_out = 1;                // Salida de SDA
-     reg write_enable = 0;           // Habilitación de SDA
-     reg i2c_scl_enable = 0;         // Habilitación de SCL
-     reg busy = 0;               // Flag de bus ocupado
+ reg [6:0] slave_addr = 0;       // Dirección del esclavo
+ reg read_write = 0;                     // Lectura o escritura
+ reg [15:0] wt_buffer = 0;       // Buffer de escritura. Mensaje a enviar
+ reg [7:0] rd_buffer = 0;        // Buffer de lectura. Mensaje recibido
+ reg new_data_read = 0;          // Flag de nuevo dato leído
+ reg sda_out = 1;                // Salida de SDA
+ reg write_enable = 0;           // Habilitación de SDA
+ reg i2c_scl_enable = 0;         // Habilitación de SCL
+ reg busy = 0;               // Flag de bus ocupado
      
-     assign I2C_SCL  = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
-     assign I2C_SDA  = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
-     assign I2C_BUSY = busy;   // Salida de ocupado
+ assign I2C_SCL  = (i2c_scl_enable == 0) ? 1 : clk;       // Pin de SCL
+ assign I2C_SDA  = (write_enable == 1) ? sda_out : 1'bz;  // Pin de SDA
+ assign I2C_BUSY = busy;   // Salida de ocupado
      
-     assign data_ready = new_data_read;   // Señal de listo
-     assign data_out = rd_buffer;    // Salida de datos
+ assign data_ready = new_data_read;   // Señal de listo
+ assign data_out = rd_buffer;    // Salida de datos
      
      
-     // Control de habilitación de SCL
-     always @(negedge clk or posedge rst) begin
-         if (rst)
-             i2c_scl_enable <= 0;
-         else
-             i2c_scl_enable <= (state != READY && state != START && state != STOP);
-     end
+ // Control de habilitación de SCL
+ always @(negedge clk or posedge rst) begin
+     if (rst)
+         i2c_scl_enable <= 0;
+     else
+         i2c_scl_enable <= (state != READY && state != START && state != STOP);
+ end
      
-     // Máquina de estados I2C
-     always @(posedge clk or posedge rst) begin
-         if (rst) begin
-             state <= READY;
-             counter <= 0;
-             bit_ptr <= 0;
-             slave_addr <= 7'b0000000;
-             read_write <= 1'b0;
-             wt_buffer <= 8'b00000000;
-             rd_buffer <= 8'b00000000;
-             new_data_read <= 0;
-             sda_out <= 1;
-             write_enable <= 0;
-             i2c_scl_enable <= 0;        //??? - No estamos seguros de como tratar el SCL
-             busy <= 0;
-         end else begin
-             case (state)
-                 READY: begin
-                     write_enable <= 0;
-                     if (enable) begin
-                         busy <= 1;
-                         read_write <= rw;
-                         slave_addr <= {slv_addr, rw};
-                         wt_buffer <= {reg_obj, data_in};
-                         bit_ptr <= data_size;  // Ajustamos el tamaño de bits a enviar según data_size
-                         state <= START;
-                         new_data_read <= 0;
-                     end
+ // Máquina de estados I2C
+ always @(posedge clk or posedge rst) begin
+     if (rst) begin
+         state <= READY;
+         counter <= 0;
+         bit_ptr <= 0;
+         slave_addr <= 7'b0000000;
+         read_write <= 1'b0;
+         wt_buffer <= 8'b00000000;
+         rd_buffer <= 8'b00000000;
+         new_data_read <= 0;
+         sda_out <= 1;
+         write_enable <= 0;
+         i2c_scl_enable <= 0;        //??? - No estamos seguros de como tratar el SCL
+         busy <= 0;
+     end else begin
+         case (state)
+             READY: begin
+                 write_enable <= 0;
+                 if (enable) begin
+                     busy <= 1;
+                     read_write <= rw;
+                     slave_addr <= {slv_addr, rw};
+                     wt_buffer <= {reg_obj, data_in};
+                     bit_ptr <= data_size;  // Ajustamos el tamaño de bits a enviar según data_size
+                     state <= START;
+                     new_data_read <= 0;
                  end
-                 START: begin
-                     write_enable <= 1;
-                     sda_out <= 0;
-                     state <= COMMAND;
-                     counter <= 7;
-                 end
-                 COMMAND: begin
-                     sda_out <= slave_addr[counter];
-                     if (counter == 0) begin
-                         sda_out <= 1;
-                         state <= SLV_OBJ_ACK;
-                     end else
-                         counter <= counter - 1;
-                 end
-                 SLV_OBJ_ACK: begin
-                     write_enable <= 0;
-                     if (I2C_SDA == 0) begin
-                         counter <= 7;
-                         if (slave_addr[0] == 0) begin  // Write
-                             write_enable <= 1;
-                             state <= WRITE_DATA;
-                         end else begin               // Read
-                             write_enable <= 0;
-                             state <= READ_DATA;
-                         end
-                     end else
-                         state <= STOP;
-                 end
-                 WRITE_DATA: begin
-                     sda_out <= wt_buffer[bit_ptr];
-                     bit_ptr <= bit_ptr - 1;             //Cuidado con bit_ptr. Debe restar 8 bits al enviar un mensaje
-                                                         // 7,6,5 ... 1,0
-                     if (counter == 0) begin
-                         sda_out <= 1;
-                         state <= WRITE_ACK;
-                     end else 
-                         counter <= counter - 1;       //Está enviando primero el más significativo
-                 end
-                 WRITE_ACK: begin
-                     write_enable <= 0;
-                     if (I2C_SDA == 0) begin
-                         if (bit_ptr >= 8) begin
-                             counter <= 7;
-                             write_enable <= 1;
-                             //bit_ptr <= bit_ptr - 1;       //Este bit se decrementa en WRITE_DATA
-                             //sda_out <= tx_buffer[bit_ptr - 1];
-                             state <= WRITE_DATA;
-                         end else
-                             state <= STOP;
-                     end else
-                         state <= STOP;
-                 end
-                 READ_DATA: begin
-                     rd_buffer[counter] <= I2C_SDA;
-                     if (counter == 0)
-                         state <= READ_ACK;
-                     else
-                         counter <= counter - 1;
-                 end
-                 READ_ACK: begin
-                     write_enable <= 1;
-                     sda_out <= 0;
-                     state <= STOP;
-                     new_data_read <= 1;
-     
-                 end
-                 STOP: begin
-                     write_enable <= 1;
+             end
+             START: begin
+                 write_enable <= 1;
+                 sda_out <= 0;
+                 state <= COMMAND;
+                 counter <= 7;
+             end
+             COMMAND: begin
+                 sda_out <= slave_addr[counter];
+                 if (counter == 0) begin
                      sda_out <= 1;
-                     busy <= 0;
-                     state <= READY;
-                 end
-             endcase
-         end
+                     state <= SLV_OBJ_ACK;
+                 end else
+                     counter <= counter - 1;
+             end
+             SLV_OBJ_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     counter <= 7;
+                     if (slave_addr[0] == 0) begin  // Write
+                         write_enable <= 1;
+                         state <= WRITE_DATA;
+                     end else begin               // Read
+                         write_enable <= 0;
+                         state <= READ_DATA;
+                     end
+                 end else
+                     state <= STOP;
+             end
+             WRITE_DATA: begin
+                 sda_out <= wt_buffer[bit_ptr];
+                 bit_ptr <= bit_ptr - 1;             //Cuidado con bit_ptr. Debe restar 8 bits al enviar un mensaje
+                                                     // 7,6,5 ... 1,0
+                 if (counter == 0) begin
+                     sda_out <= 1;
+                     state <= WRITE_ACK;
+                 end else 
+                     counter <= counter - 1;       //Está enviando primero el más significativo
+             end
+             WRITE_ACK: begin
+                 write_enable <= 0;
+                 if (I2C_SDA == 0) begin
+                     if (bit_ptr >= 8) begin
+                         counter <= 7;
+                         write_enable <= 1;
+                         //bit_ptr <= bit_ptr - 1;       //Este bit se decrementa en WRITE_DATA
+                         //sda_out <= tx_buffer[bit_ptr - 1];
+                         state <= WRITE_DATA;
+                     end else
+                         state <= STOP;
+                 end else
+                     state <= STOP;
+             end
+             READ_DATA: begin
+                 rd_buffer[counter] <= I2C_SDA;
+                 if (counter == 0)
+                     state <= READ_ACK;
+                 else
+                     counter <= counter - 1;
+             end
+             READ_ACK: begin
+                 write_enable <= 1;
+                 sda_out <= 0;
+                 state <= STOP;
+                 new_data_read <= 1;
+ 
+             end
+             STOP: begin
+                 write_enable <= 1;
+                 sda_out <= 1;
+                 busy <= 0;
+                 state <= READY;
+             end
+         endcase
      end
+ end
 endmodule
 
 module main_vecfcb9 (
  input clk,
+ input rst,
  input [31:0] Bus_addr,
  input [31:0] Bus_data,
  input serdat_cs,
- input rst,
  input I2C_Busy,
  input new_data_ready,
  input [7:0] data_out,
