@@ -25,18 +25,18 @@
               },
               {
                 "index": "6",
-                "name": "LED6",
-                "value": "38"
+                "name": "D2",
+                "value": "4"
               },
               {
                 "index": "5",
-                "name": "LED5",
-                "value": "39"
+                "name": "D3",
+                "value": "3"
               },
               {
                 "index": "4",
-                "name": "LED4",
-                "value": "41"
+                "name": "D4",
+                "value": "8"
               },
               {
                 "index": "3",
@@ -3275,8 +3275,8 @@
             "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 256,
-            "y": 1200
+            "x": 208,
+            "y": 1192
           }
         },
         {
@@ -3730,8 +3730,8 @@
             "virtual": true
           },
           "position": {
-            "x": 248,
-            "y": 1256
+            "x": 136,
+            "y": 1248
           }
         },
         {
@@ -4110,6 +4110,46 @@
           }
         },
         {
+          "id": "553c5270-227a-4285-93da-c2f24553bd90",
+          "type": "basic.output",
+          "data": {
+            "name": "PruebaSerData",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED4",
+                "value": "41"
+              }
+            ]
+          },
+          "position": {
+            "x": 2864,
+            "y": 1264
+          }
+        },
+        {
+          "id": "f0c794dc-68eb-42a7-972d-d738398ddb1e",
+          "type": "basic.outputLabel",
+          "data": {
+            "blockColor": "fuchsia",
+            "name": "ser_rdy",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true,
+            "oldBlockColor": "fuchsia"
+          },
+          "position": {
+            "x": 208,
+            "y": 1288
+          }
+        },
+        {
           "id": "1a185aed-35d9-4226-aeab-7b1c20f8e122",
           "type": "basic.inputLabel",
           "data": {
@@ -4347,27 +4387,6 @@
           }
         },
         {
-          "id": "f0c794dc-68eb-42a7-972d-d738398ddb1e",
-          "type": "basic.outputLabel",
-          "data": {
-            "blockColor": "fuchsia",
-            "name": "ser_rdy",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "oldBlockColor": "fuchsia"
-          },
-          "position": {
-            "x": 232,
-            "y": 1320
-          }
-        },
-        {
           "id": "fbc4f706-b975-4be2-a139-60d9e67e4dfd",
           "type": "basic.outputLabel",
           "data": {
@@ -4422,6 +4441,27 @@
           "position": {
             "x": 1344,
             "y": 1328
+          }
+        },
+        {
+          "id": "edd3fc0c-c0e1-48f6-ab15-70275c6de46f",
+          "type": "basic.outputLabel",
+          "data": {
+            "blockColor": "fuchsia",
+            "name": "io_rdy",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true,
+            "oldBlockColor": "fuchsia"
+          },
+          "position": {
+            "x": 216,
+            "y": 1344
           }
         },
         {
@@ -4482,27 +4522,6 @@
           "position": {
             "x": 808,
             "y": 1360
-          }
-        },
-        {
-          "id": "edd3fc0c-c0e1-48f6-ab15-70275c6de46f",
-          "type": "basic.outputLabel",
-          "data": {
-            "blockColor": "fuchsia",
-            "name": "io_rdy",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "oldBlockColor": "fuchsia"
-          },
-          "position": {
-            "x": 232,
-            "y": 1376
           }
         },
         {
@@ -4722,6 +4741,25 @@
           }
         },
         {
+          "id": "63193f40-36a3-4c16-ab5b-9ca2b3755c49",
+          "type": "basic.output",
+          "data": {
+            "name": "PruebaRW",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED5",
+                "value": "39"
+              }
+            ]
+          },
+          "position": {
+            "x": 2736,
+            "y": 1432
+          }
+        },
+        {
           "id": "6d625954-8b35-4d4b-9312-e3ee3d89899c",
           "type": "basic.outputLabel",
           "data": {
@@ -4758,8 +4796,27 @@
             "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 512,
-            "y": 1640
+            "x": 744,
+            "y": 1504
+          }
+        },
+        {
+          "id": "d88a23a0-a0d8-45d4-95d5-8e26ff304b78",
+          "type": "basic.output",
+          "data": {
+            "name": "PruebaI2C_DataOut",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED6",
+                "value": "38"
+              }
+            ]
+          },
+          "position": {
+            "x": 2640,
+            "y": 1520
           }
         },
         {
@@ -4860,6 +4917,19 @@
           }
         },
         {
+          "id": "7a015329-81e2-4e49-be73-498a6cc19dc6",
+          "type": "basic.constant",
+          "data": {
+            "name": "Addr_ADC",
+            "value": "'h0400_0001",
+            "local": false
+          },
+          "position": {
+            "x": 2504,
+            "y": 968
+          }
+        },
+        {
           "id": "3597107a-c618-4dbb-9895-40af4fc70347",
           "type": "basic.constant",
           "data": {
@@ -4868,8 +4938,8 @@
             "local": false
           },
           "position": {
-            "x": 2456,
-            "y": 936
+            "x": 2760,
+            "y": 944
           }
         },
         {
@@ -5365,18 +5435,6 @@
           }
         },
         {
-          "id": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-          "type": "1c05b17b08be32ce96e1f3b19ccafb690bff815a",
-          "position": {
-            "x": 2360,
-            "y": 1176
-          },
-          "size": {
-            "width": 96,
-            "height": 192
-          }
-        },
-        {
           "id": "6c8c26ff-cf7e-4c2c-9882-67ebe131f590",
           "type": "basic.code",
           "data": {
@@ -5399,11 +5457,23 @@
             "code": "reg salida = 0;\n\nassign x = salida;\n\nalways @(posedge a or negedge rst) begin\n        if (!rst)\n            salida <= 0;\n        else\n            if (!salida)\n                salida <= 1'b1;\n    end"
           },
           "position": {
-            "x": 720,
-            "y": 1656
+            "x": 792,
+            "y": 1616
           },
           "size": {
             "width": 384,
+            "height": 192
+          }
+        },
+        {
+          "id": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+          "type": "6196205aa9e4b01285542e3ef088c28b17daa28b",
+          "position": {
+            "x": 2408,
+            "y": 1176
+          },
+          "size": {
+            "width": 96,
             "height": 192
           }
         }
@@ -5658,22 +5728,6 @@
             "block": "80c1ac3d-fc6e-4b22-b15a-ca72d355ac7e",
             "port": "97b51945-d716-4b6c-9db9-970d08541249"
           }
-        },
-        {
-          "source": {
-            "block": "f0c794dc-68eb-42a7-972d-d738398ddb1e",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "80c1ac3d-fc6e-4b22-b15a-ca72d355ac7e",
-            "port": "8c46de6c-8895-446f-bcbd-850a4a72c42d"
-          },
-          "vertices": [
-            {
-              "x": 384,
-              "y": 1360
-            }
-          ]
         },
         {
           "source": {
@@ -6187,109 +6241,6 @@
         },
         {
           "source": {
-            "block": "3597107a-c618-4dbb-9895-40af4fc70347",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "32f34f9b-4a7f-4264-8971-fec0dc122c3d"
-          }
-        },
-        {
-          "source": {
-            "block": "9f11c5f9-eea8-4a84-82f8-b844353f2de3",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "3d9bc216-670d-4dcb-96d4-753803522730"
-          }
-        },
-        {
-          "source": {
-            "block": "4bad038c-ac57-4159-9cad-53229a97e150",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "910303bc-a22c-4725-b894-df1011d5a8b2"
-          }
-        },
-        {
-          "source": {
-            "block": "a3f1476c-69fa-4a2c-9883-b2f50c2de81e",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "8594fbb7-9e10-4782-a5c5-075c0d6130a2"
-          },
-          "size": 32
-        },
-        {
-          "source": {
-            "block": "fbc4f706-b975-4be2-a139-60d9e67e4dfd",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "462662e6-3172-48c0-8844-e132e6a2748e"
-          }
-        },
-        {
-          "source": {
-            "block": "774c0f75-60f1-46d0-bea4-2a8fbb4c21b2",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "bf2c13a3-02d9-40be-9413-30de948552ff"
-          },
-          "size": 32
-        },
-        {
-          "source": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "9b8c3515-24ae-4719-a737-6f2858304b78"
-          },
-          "target": {
-            "block": "d2ac5a25-3c95-4dca-b064-e12de901bddd",
-            "port": "inlabel"
-          },
-          "size": 32
-        },
-        {
-          "source": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "88a0441d-790c-4bcd-a708-d9f685884126"
-          },
-          "target": {
-            "block": "3fdd996a-ec5a-450f-b423-9531abc5ff79",
-            "port": "inlabel"
-          }
-        },
-        {
-          "source": {
-            "block": "37846a23-5b06-4164-b347-49a0cd38ba6d",
-            "port": "out"
-          },
-          "target": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "7f5008e5-7060-457e-b415-71d914682325"
-          }
-        },
-        {
-          "source": {
-            "block": "d0cf115c-565d-4d26-a6bf-fd6d044be5a0",
-            "port": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd"
-          },
-          "target": {
-            "block": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
             "block": "4abf0f5a-91b8-4c29-8128-34a4653f5595",
             "port": "outlabel"
           },
@@ -6327,6 +6278,159 @@
           "target": {
             "block": "6c8c26ff-cf7e-4c2c-9882-67ebe131f590",
             "port": "a"
+          }
+        },
+        {
+          "source": {
+            "block": "f0c794dc-68eb-42a7-972d-d738398ddb1e",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "80c1ac3d-fc6e-4b22-b15a-ca72d355ac7e",
+            "port": "8c46de6c-8895-446f-bcbd-850a4a72c42d"
+          }
+        },
+        {
+          "source": {
+            "block": "9f11c5f9-eea8-4a84-82f8-b844353f2de3",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "3d9bc216-670d-4dcb-96d4-753803522730"
+          }
+        },
+        {
+          "source": {
+            "block": "3597107a-c618-4dbb-9895-40af4fc70347",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "32f34f9b-4a7f-4264-8971-fec0dc122c3d"
+          }
+        },
+        {
+          "source": {
+            "block": "4bad038c-ac57-4159-9cad-53229a97e150",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "910303bc-a22c-4725-b894-df1011d5a8b2"
+          }
+        },
+        {
+          "source": {
+            "block": "37846a23-5b06-4164-b347-49a0cd38ba6d",
+            "port": "out"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "7f5008e5-7060-457e-b415-71d914682325"
+          }
+        },
+        {
+          "source": {
+            "block": "a3f1476c-69fa-4a2c-9883-b2f50c2de81e",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "8594fbb7-9e10-4782-a5c5-075c0d6130a2"
+          },
+          "size": 32
+        },
+        {
+          "source": {
+            "block": "fbc4f706-b975-4be2-a139-60d9e67e4dfd",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "462662e6-3172-48c0-8844-e132e6a2748e"
+          }
+        },
+        {
+          "source": {
+            "block": "774c0f75-60f1-46d0-bea4-2a8fbb4c21b2",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "bf2c13a3-02d9-40be-9413-30de948552ff"
+          },
+          "size": 32
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd"
+          },
+          "target": {
+            "block": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "88a0441d-790c-4bcd-a708-d9f685884126"
+          },
+          "target": {
+            "block": "3fdd996a-ec5a-450f-b423-9531abc5ff79",
+            "port": "inlabel"
+          }
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "9b8c3515-24ae-4719-a737-6f2858304b78"
+          },
+          "target": {
+            "block": "d2ac5a25-3c95-4dca-b064-e12de901bddd",
+            "port": "inlabel"
+          },
+          "size": 32
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "1cfe438c-e803-49b1-a75f-0c75a8bb4f0c"
+          },
+          "target": {
+            "block": "553c5270-227a-4285-93da-c2f24553bd90",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "5f2fa40e-e518-44e4-8888-e0dacab21c85"
+          },
+          "target": {
+            "block": "63193f40-36a3-4c16-ab5b-9ca2b3755c49",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "0c00cc96-779e-4531-a658-47672e077914"
+          },
+          "target": {
+            "block": "d88a23a0-a0d8-45d4-95d5-8e26ff304b78",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "7a015329-81e2-4e49-be73-498a6cc19dc6",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "fa95b280-d151-4eb0-8a9e-26e1989aec8d",
+            "port": "cdd3e76a-5c64-4bcb-aa64-bef565053d51"
           }
         }
       ]
@@ -30999,7 +31103,7 @@
         }
       }
     },
-    "1c05b17b08be32ce96e1f3b19ccafb690bff815a": {
+    "6196205aa9e4b01285542e3ef088c28b17daa28b": {
       "package": {
         "name": "I2C_soc",
         "version": "",
@@ -31172,7 +31276,7 @@
               "id": "5f2fa40e-e518-44e4-8888-e0dacab21c85",
               "type": "basic.output",
               "data": {
-                "name": "test_i2c_data_ready"
+                "name": "test_rw"
               },
               "position": {
                 "x": 2776,
@@ -31437,7 +31541,7 @@
                 "blockColor": "springgreen"
               },
               "position": {
-                "x": 1200,
+                "x": 1192,
                 "y": 320
               }
             },
@@ -31477,7 +31581,7 @@
                 "size": 7
               },
               "position": {
-                "x": 744,
+                "x": 752,
                 "y": 392
               }
             },
@@ -31571,7 +31675,7 @@
                 "size": 2
               },
               "position": {
-                "x": 744,
+                "x": 752,
                 "y": 656
               }
             },
@@ -31701,8 +31805,8 @@
                 "blockColor": "gold"
               },
               "position": {
-                "x": 568,
-                "y": 1088
+                "x": 560,
+                "y": 1104
               }
             },
             {
@@ -31713,8 +31817,8 @@
                 "blockColor": "gold"
               },
               "position": {
-                "x": 1608,
-                "y": 1120
+                "x": 1600,
+                "y": 1152
               }
             },
             {
@@ -31725,8 +31829,8 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": 568,
-                "y": 1192
+                "x": 560,
+                "y": 1248
               }
             },
             {
@@ -31737,8 +31841,8 @@
                 "blockColor": "gold"
               },
               "position": {
-                "x": 1608,
-                "y": 1296
+                "x": 1600,
+                "y": 1392
               }
             },
             {
@@ -31749,20 +31853,22 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": 568,
-                "y": 1296
+                "x": 560,
+                "y": 1392
               }
             },
             {
-              "id": "1911039b-3440-4a05-8589-74defaa70aaa",
+              "id": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
               "type": "basic.outputLabel",
               "data": {
-                "name": "I2C_DATA_READY",
-                "blockColor": "fuchsia"
+                "name": "addr",
+                "range": "[31:0]",
+                "blockColor": "fuchsia",
+                "size": 32
               },
               "position": {
-                "x": 568,
-                "y": 1400
+                "x": 112,
+                "y": 1504
               }
             },
             {
@@ -31774,21 +31880,21 @@
               },
               "position": {
                 "x": 1608,
-                "y": 1464
+                "y": 1624
               }
             },
             {
-              "id": "4d507036-26b1-4c1a-aed7-479aa7b4ac95",
+              "id": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
               "type": "basic.outputLabel",
               "data": {
-                "name": "I2C_DATA_OUT",
+                "name": "data",
                 "range": "[31:0]",
                 "blockColor": "fuchsia",
                 "size": 32
               },
               "position": {
-                "x": 568,
-                "y": 1504
+                "x": 560,
+                "y": 1672
               }
             },
             {
@@ -31802,6 +31908,19 @@
               "position": {
                 "x": 176,
                 "y": -264
+              }
+            },
+            {
+              "id": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
+              "type": "basic.constant",
+              "data": {
+                "name": "PRUEBA_NO_TOCAR",
+                "value": "'h0400_0001",
+                "local": false
+              },
+              "position": {
+                "x": 296,
+                "y": 1408
               }
             },
             {
@@ -31897,8 +32016,8 @@
                 "y": 1064
               },
               "size": {
-                "width": 768,
-                "height": 520
+                "width": 784,
+                "height": 712
               }
             },
             {
@@ -31960,7 +32079,7 @@
                   ]
                 },
                 "params": [],
-                "code": "// Definir los estados de la máquina de estados\nlocalparam READY       = 4'd0;\nlocalparam START       = 4'd1;\nlocalparam COMMAND     = 4'd2;\nlocalparam SLV_OBJ_ACK = 4'd3;\nlocalparam WRITE_DATA  = 4'd4;\nlocalparam WRITE_ACK   = 4'd5;\nlocalparam READ_DATA   = 4'd6;\nlocalparam READ_ACK    = 4'd7;\nlocalparam STOP        = 4'd8;\n    \nreg [3:0] state = READY;        // Estado actual\nreg [2:0] counter = 3'd0;          // Contador local. Cuenta hasta 8 bits de un envío\n                                // No tiene en cuenta el mensaje completo, solo el paquete actual\nreg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.\n                                    // Tiene en cuenta el mensaje completo\nreg [7:0] slave_addr = 8'd0;       // Dirección del esclavo\nreg read_write = 1'd0;              // Lectura o escritura\nreg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar\nreg [7:0] rd_buffer = 8'd0;        // Buffer de lectura. Mensaje recibido\nreg sda_out = 1'd0;                // Salida de SDA\nreg write_enable = 1'd0;           // Habilitación de SDA\n\nreg clk_enable;\nreg busy = 1'd0;               // Flag de bus ocupado\nreg reg_data_ready = 1'b0;\n    \nassign busy_out = busy;\nassign data_out = rd_buffer;\n    \nassign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL\nassign I2C_SDA = write_enable ? sda_out : 1'bz;  // Pin de SDA\n\n// Máquina de estados I2C\nalways @(posedge clk) begin\n    if (!rstn) begin\n        state <= READY;        \n        counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)\n        num_paquetes <= 2'd0;  \n        sda_out <= 1'b1;\n        slave_addr <= 8'd0;       \n        read_write <= 1'd0;\n        wt_buffer <= 24'b0;       \n        rd_buffer <= 8'd0;                \n        write_enable <= 1'd0;           \n        busy <= 1'd0;\n        reg_data_ready <= 1'b0;\n\n    end else begin\n        case (state)\n            READY: begin\n                reg_data_ready <= 1'b0;\n                write_enable <= 1'b0;\n                busy <= enable;\n                if (enable) begin\n                    num_paquetes <= n_paquetes;\n                    read_write <= rw;\n                    slave_addr <= {slv_addr, rw};\n                    wt_buffer <= data_in;\n                    state <= START;\n                end\n            end\n            START: begin\n                busy <= 1'b1;\n                write_enable <= 1'b1;\n                counter <= 3'd7;\n                sda_out <= slave_addr[counter];               \n                state <= COMMAND;  \n            end\n            COMMAND: begin\n                if (counter == 3'd0) begin\n                    //write_enable <= 1'b0;\n                    sda_out <= 1'b1;  // Finaliza el envío de la dirección\n                    state <= SLV_OBJ_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= slave_addr[counter];\n                end\n            end\n            SLV_OBJ_ACK: begin\n                // Chequear ACK del esclavo. No está en el verilog\n                if (I2C_SDA == 1'b0) begin  // Write\n                    if(num_paquetes == 2'd0) begin\n                        counter <= 3'd0;\n                    end else begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                    end \n                    state <= WRITE_DATA;\n                end else begin               // Read\n                    counter <= 3'd7;\n                    write_enable <= 1'b0;\n                    state <= READ_DATA;\n                end\n                \n            end\n            WRITE_DATA: begin\n                busy <= 1'b1;\n                if (counter == 3'd0) begin\n                    write_enable <= 1'b0;\n                    num_paquetes <= num_paquetes - 1'b1;\n                    state <= WRITE_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                end\n            end\n            READ_DATA: begin\n                rd_buffer[counter] <= I2C_SDA;\n                if (counter == 3'd0) begin\n                    state <= READ_ACK;\n                end else begin \n                    counter <= counter - 1;\n                end\n            end\n            WRITE_ACK: begin\n                if (enable == 1'b1) begin\n                    if (num_paquetes > 1'b0) begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                        state <= WRITE_DATA;\n                    end else begin\n                        state <= STOP;\n                    end\n                end else begin \n                    state <= STOP;\n                end\n            end\n            READ_ACK: begin\n                busy <= 1'b0;\n                write_enable <= 1'b1;\n                sda_out <= 1'b0;\n                reg_data_ready <= 1'b1;\n                state <= STOP;\n            end\n            STOP: begin\n                write_enable <= 1'b1;\n                sda_out <= 1'b1;\n                busy <= 1'b0;\n                state <= READY;\n            end\n        endcase\n    end\nend\n\n// Control síncrono de SCL enable\nalways @(posedge clk) begin\n    if (!rstn)\n        clk_enable <= 1'b0;\n    else\n        clk_enable <= (state != READY) && (state != START) && (state != STOP);\nend"
+                "code": "// Definir los estados de la máquina de estados\nlocalparam READY       = 4'd0;\nlocalparam START       = 4'd1;\nlocalparam COMMAND     = 4'd2;\nlocalparam SLV_OBJ_ACK = 4'd3;\nlocalparam WRITE_DATA  = 4'd4;\nlocalparam WRITE_ACK   = 4'd5;\nlocalparam READ_DATA   = 4'd6;\nlocalparam READ_ACK    = 4'd7;\nlocalparam STOP        = 4'd8;\n    \nreg [3:0] state = READY;            // Estado actual\nreg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío\n                                    // No tiene en cuenta el mensaje completo, solo el paquete actual\nreg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.\n                                    // Tiene en cuenta el mensaje completo\nreg [7:0] slave_addr = 8'd0;        // Dirección del esclavo\nreg read_write = 1'd0;              // Lectura o escritura\nreg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar\nreg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido\nreg sda_out = 1'd0;                 // Salida de SDA\nreg write_enable = 1'd0;            // Habilitación de SDA\nreg [7:0] aux_buffer = 8'd0;\n\nreg enable_reg = 1'd0;\n\nreg clk_enable;\nreg busy = 1'd0;               // Flag de bus ocupado\nreg reg_data_ready = 1'b0;\n    \nassign busy_out = busy;\nassign data_out = rd_buffer;\n    \nassign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL\nassign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA\n\n//always @(posedge enable) begin\n//    enable_reg <= 1'b1;\n//end\n\n// Máquina de estados I2C\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        state <= READY;        \n        counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)\n        num_paquetes <= 2'd0;  \n        sda_out <= 1'b1;\n        slave_addr <= 8'd0;       \n        read_write <= 1'd0;\n        wt_buffer <= 24'b0;       \n        rd_buffer <= 8'd0;                \n        write_enable <= 1'd0;           \n        busy <= 1'd0;\n        reg_data_ready <= 1'b0;\n        enable_reg <= 1'b0;\n        aux_buffer <= 8'd0;\n\n    end else begin\n        case (state)\n            READY: begin\n                reg_data_ready <= 1'b0;\n                write_enable <= 1'b0;\n                busy <= enable;\n                if (enable && !enable_reg) begin\n                    enable_reg <= 1'b1;\n                end\n                if (enable_reg) begin\n                    num_paquetes <= n_paquetes;\n                    read_write <= rw;\n                    slave_addr <= {slv_addr, rw};\n                    wt_buffer <= data_in;\n                    enable_reg <= 1'b0;\n                    state <= START;\n                end\n            end\n            START: begin\n                busy <= 1'b1;\n                write_enable <= 1'b1;\n                counter <= 3'd7;\n                sda_out <= slave_addr[counter];               \n                state <= COMMAND;  \n            end\n            COMMAND: begin\n                if (counter == 3'd0) begin\n                    //write_enable <= 1'b0;\n                    sda_out <= 1'b1;  // Finaliza el envío de la dirección\n                    state <= SLV_OBJ_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= slave_addr[counter];\n                end\n            end\n            SLV_OBJ_ACK: begin\n                // Chequear ACK del esclavo. No está en el verilog\n                if (I2C_SDA == 1'b0) begin  // Write\n                    \n                    counter <= 3'd7;\n                    write_enable <= 1'b1;\n                    aux_buffer <= wt_buffer[23:16];\n                    sda_out <= aux_buffer[counter];\n                    state <= WRITE_DATA;\n                end else begin               // Read\n                    counter <= 3'd7;\n                    write_enable <= 1'b0;\n                    state <= READ_DATA;\n                end\n                \n            end\n            WRITE_DATA: begin\n                busy <= 1'b1;\n                if (counter == 3'd0) begin\n                    write_enable <= 1'b0;\n                    num_paquetes <= num_paquetes - 1'b1;\n                    state <= WRITE_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= aux_buffer[counter];\n                end\n            end\n            READ_DATA: begin\n                rd_buffer[counter] <= I2C_SDA;\n                if (counter == 3'd0) begin\n                    state <= READ_ACK;\n                end else begin \n                    counter <= counter - 1;\n                end\n            end\n            WRITE_ACK: begin\n                if (enable == 1'b1) begin\n                    if (num_paquetes > 2'b0) begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        wt_buffer <= wt_buffer << 8;\n                        aux_buffer <= wt_buffer[23:16];\n                        sda_out <= aux_buffer[counter];\n                        state <= WRITE_DATA;\n                    end else begin\n                        state <= STOP;\n                    end\n                end else begin \n                    state <= STOP;\n                end\n            end\n            READ_ACK: begin\n                busy <= 1'b0;\n                write_enable <= 1'b1;\n                sda_out <= 1'b0;\n                reg_data_ready <= 1'b1;\n                state <= STOP;\n            end\n            STOP: begin\n                write_enable <= 1'b1;\n                sda_out <= 1'b1;\n                busy <= 1'b0;\n                state <= READY;\n            end\n        endcase\n    end\nend\n\n// Control síncrono de SCL enable\nalways @(posedge clk) begin\n    if (!rstn)\n        clk_enable <= 1'b0;\n    else\n        clk_enable <= (state != READY) && (state != START) && (state != STOP);\nend"
               },
               "position": {
                 "x": 1400,
@@ -32043,7 +32162,7 @@
                   ]
                 },
                 "params": [],
-                "code": "\nparameter W_SLV_ADDR = 4'b0000;   \nparameter W_RW = 4'b0001;   \nparameter W_N_PQTS = 4'b0101;   \nparameter R_STATE = 4'b0011;   \nparameter R_BUSY = 4'b0100;   \nparameter R_DATA_OUT = 4'b0101;   \nparameter S_ENABLE_START = 4'b0110; \nparameter S_ENABLE_OUT = 4'b0111;   \nparameter W_DATA_WRITE = 4'b1000;   \n\n//Entrada desde bus de datos\nreg [7:0] dataArray [0:7];\nreg [31:0] buffer_data_out;      \nreg [31:0] zero = 32'b0;\nreg [23:0] data_wr = 24'b0;\n\nassign slv_addr[6:0] = dataArray[0][6:0];       //7 bits                            //0x0400 0000 // 0000\nassign rw = dataArray[1][0];                    //1 bit                             //0x0400 0001 // 0001\nassign n_paquetes[1:0] = dataArray[2][1:0];     //4 bits                            //0x0400 0002 // 0010\n\nassign I2C_State[3:0] = dataArray[3][3:0];                                          //0x0400 0003 // 0011                               \nassign I2C_Busy = dataArray[4][0];                                                  //0x0400 0004 // 0100\nassign data_out[7:0] = dataArray[5][7:0];                                           //0x0400 0005 // 0101\nassign enable_start = dataArray[6][0];         //1 bit                             //0x0400 0006 // 0110                           \nassign bus_data_enable = dataArray[7][0];         // Datos para la salida del bus      //0x0400 0007 // 0111\n\nassign data_write[23:0] = data_wr;              //24 bits                           //0x0400 0003 // 1000\nassign bus_data_out = buffer_data_out;          // Datos para la salida del bus\n\nalways @(posedge clk) begin\n    dataArray[6] <= 8'b0;\n    dataArray[7] <= 8'b0;\n    \n    if (!rstn) begin\n        // No existen los for exactamente\n        // Esto creará estructuras de reinicio tantas veces como se diga\n        // No va a iterar x veces\n        dataArray[0] <= 8'b0;\n        dataArray[1] <= 8'b0;\n        dataArray[2] <= 8'b0;\n        dataArray[3] <= 8'b0;\n        dataArray[4] <= 8'b0;\n        dataArray[5] <= 8'b0;\n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n        // Se reinician los registros\n        buffer_data_out <= 32'b0;\n        data_wr <= 24'b0;\n        zero <= 32'b0;\n        \n    end else if (serdat_cs) begin\n        // Caso en el que se introduce información\n        if(Bus_data[3:0] == W_SLV_ADDR || Bus_data[3:0] == W_RW|| Bus_data[3:0] == W_N_PQTS)begin\n            dataArray[Bus_addr[2:0]] <= Bus_data[7:0];\n\n            if(Bus_addr[7:0] == 8'd0) begin\n                dataArray[6][0] <= 1'b1;\n            end\n            // Caso en el que se lee información\n        end else if(Bus_data[2:0] == R_STATE || Bus_data[2:0] == R_BUSY || Bus_data[2:0] == R_DATA_OUT)begin\n            dataArray[7][0] <= 1'b1;\n            buffer_data_out <= {zero[31:8], dataArray[Bus_addr[2:0]]};\n            \n        end else if(Bus_data[2:0] == W_DATA_WRITE)begin\n            buffer_data_out <= {zero[31:24], Bus_data[23:0]};\n        end else begin\n            dataArray[7][0] <= 1'b0;\n        end\n    end else begin\n        // Si no se está escribiendo en el bus, se pone a 0\n        dataArray[7][0] <= 1'b0;\n    end\nend\n"
+                "code": "\nparameter W_SLV_ADDR = 4'b0000;   \nparameter W_RW = 4'b0001;   \nparameter W_N_PQTS = 4'b0010;   \nparameter R_STATE = 4'b0011;   \nparameter R_BUSY = 4'b0100;   \nparameter R_DATA_OUT = 4'b0101;   \nparameter S_ENABLE_START = 4'b0110; \nparameter S_ENABLE_OUT = 4'b0111;   \nparameter W_DATA_WRITE = 4'b1000;   \n\n//Entrada desde bus de datos\nreg [7:0] dataArray [7:0];\nreg [31:0] buffer_data_out;\nreg [23:0] data_wr = 24'b0;\n\nassign slv_addr[6:0] = dataArray[0][6:0];      \nassign rw = dataArray[1][0];                   \nassign n_paquetes[1:0] = dataArray[2][1:0];    \n\nassign enable_start = dataArray[6][0];                                    \nassign bus_data_enable = dataArray[7][0];      \n\nassign data_write[23:0] = data_wr;             \nassign bus_data_out = buffer_data_out;     \n\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        dataArray[0] <= 8'b0;\n        dataArray[1] <= 8'b0;\n        dataArray[2] <= 8'b0;\n        dataArray[3] <= 8'b0;\n        dataArray[4] <= 8'b0;\n        dataArray[5] <= 8'b0;\n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n        // Se reinician los registros\n        buffer_data_out <= 32'b0;\n        data_wr <= 24'b0;\n\n    end else begin\n    \n        if(I2C_State != dataArray[3][3:0])begin\n            dataArray[3] <= {4'b0, I2C_State};\n        end\n    \n        if(I2C_Busy != dataArray[4][0])begin\n            dataArray[4] <= {7'b0, I2C_Busy};\n        end\n    \n        if(data_out!= dataArray[5])begin\n            dataArray[5] <= data_out;\n        end\n    \n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n    \n        if (serdat_cs) begin\n            // Caso en el que se introduce información\n            if(Bus_addr[3:0] == W_SLV_ADDR || Bus_addr[3:0] == W_RW|| Bus_addr[3:0] == W_N_PQTS)begin\n                dataArray[Bus_addr[3:0]] <= Bus_data[7:0];\n\n                if(Bus_addr[7:0] == 8'd0) begin\n                    dataArray[6][0] <= 1'b1;\n                end\n                // Caso en el que se lee información\n            end else if(Bus_addr[3:0] == R_STATE || Bus_addr[3:0] == R_BUSY || Bus_addr[3:0] == R_DATA_OUT)begin\n                dataArray[7][0] <= 1'b1;\n                buffer_data_out <= {24'b0, dataArray[Bus_addr[3:0]]};\n            \n            end else if(Bus_addr[3:0] == W_DATA_WRITE)begin\n                data_wr <= Bus_data[23:0];\n            end \n        end\n    end\nend"
               },
               "position": {
                 "x": -144,
@@ -32052,6 +32171,18 @@
               "size": {
                 "width": 768,
                 "height": 904
+              }
+            },
+            {
+              "id": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+              "type": "f9bdaff1530f334164536bb41f91d66f8878f4e0",
+              "position": {
+                "x": 296,
+                "y": 1504
+              },
+              "size": {
+                "width": 96,
+                "height": 64
               }
             }
           ],
@@ -32322,28 +32453,6 @@
             },
             {
               "source": {
-                "block": "1911039b-3440-4a05-8589-74defaa70aaa",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "b"
-              }
-            },
-            {
-              "source": {
-                "block": "4d507036-26b1-4c1a-aed7-479aa7b4ac95",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "c",
-                "size": 32
-              },
-              "size": 32
-            },
-            {
-              "source": {
                 "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
                 "port": "x"
               },
@@ -32476,16 +32585,6 @@
             },
             {
               "source": {
-                "block": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "aab30564-78cd-45d2-868a-572069b82155",
-                "port": "I2C_SDA"
-              }
-            },
-            {
-              "source": {
                 "block": "aab30564-78cd-45d2-868a-572069b82155",
                 "port": "I2C_SCL"
               },
@@ -32600,6 +32699,41 @@
             },
             {
               "source": {
+                "block": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "aab30564-78cd-45d2-868a-572069b82155",
+                "port": "I2C_SDA"
+              }
+            },
+            {
+              "source": {
+                "block": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
+                "port": "c",
+                "size": 32
+              },
+              "size": 32
+            },
+            {
+              "source": {
+                "block": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+                "port": "b609ce71-5f25-4491-b628-d73be6e4c572",
+                "size": 32
+              },
+              "vertices": [],
+              "size": 32
+            },
+            {
+              "source": {
                 "block": "3d9bc216-670d-4dcb-96d4-753803522730",
                 "port": "constant-out"
               },
@@ -32638,6 +32772,27 @@
               "target": {
                 "block": "aab30564-78cd-45d2-868a-572069b82155",
                 "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+                "port": "bde24908-c5bf-4286-b7e3-e42a11ca5c68"
+              },
+              "vertices": []
+            },
+            {
+              "source": {
+                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+                "port": "0344dacc-8583-456b-b377-8cb4ab97cf94"
+              },
+              "target": {
+                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
+                "port": "b"
               }
             }
           ]

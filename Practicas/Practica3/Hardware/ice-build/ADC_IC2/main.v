@@ -5,6 +5,7 @@
 //---- Top entity
 module main #(
  parameter v269dbc = 'h0400_0000,
+ parameter v8eaf13 = 'h0400_0001,
  parameter v9c4340 = 100000
 ) (
  input v87186f,
@@ -23,12 +24,12 @@ module main #(
 );
  localparam p0 = v269dbc;
  localparam p2 = v9c4340;
+ localparam p4 = v8eaf13;
  wire w1;
  wire w3;
- wire w4;
  wire w5;
  wire w6;
- wire [0:31] w7;
+ wire w7;
  wire [0:31] w8;
  wire w9;
  wire w10;
@@ -39,23 +40,26 @@ module main #(
  wire w15;
  wire [0:31] w16;
  wire [0:31] w17;
- wire w18;
+ wire [0:31] w18;
  wire w19;
  wire w20;
  wire w21;
  wire w22;
  wire w23;
- wire [0:31] w24;
- wire w25;
- wire w26;
+ wire w24;
+ wire [0:31] w25;
+ wire [0:31] w26;
  wire w27;
- wire [0:6] w28;
- wire [0:23] w29;
- wire [0:7] w30;
- wire [0:1] w31;
- assign v9127c2 = w4;
- assign vfe2384 = w5;
- assign v504d16 = w7;
+ wire [0:3] w28;
+ wire w29;
+ wire w30;
+ wire [0:6] w31;
+ wire [0:23] w32;
+ wire [0:7] w33;
+ wire [0:1] w34;
+ assign v9127c2 = w6;
+ assign vfe2384 = w7;
+ assign v504d16 = w8;
  assign w9 = v87186f;
  assign w10 = v87186f;
  assign w11 = v87186f;
@@ -65,13 +69,13 @@ module main #(
  assign w15 = v4dc0ee;
  assign w16 = v867561;
  assign w17 = v867561;
- assign va77527 = w18;
- assign w21 = v80923c;
- assign v34d6ed = w22;
- assign w23 = v8859f4;
- assign w24 = v23504b;
- assign w6 = w5;
- assign w8 = w7;
+ assign w18 = v867561;
+ assign va77527 = w19;
+ assign w22 = v80923c;
+ assign v34d6ed = w23;
+ assign w24 = v8859f4;
+ assign w25 = v23504b;
+ assign w26 = v23504b;
  assign w10 = w9;
  assign w11 = w9;
  assign w11 = w10;
@@ -79,7 +83,10 @@ module main #(
  assign w15 = w13;
  assign w15 = w14;
  assign w17 = w16;
- assign w20 = w19;
+ assign w18 = w16;
+ assign w18 = w17;
+ assign w21 = w20;
+ assign w26 = w25;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
@@ -88,8 +95,8 @@ module main #(
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .vcbab45(w19),
-  .v3ca442(w23)
+  .vcbab45(w20),
+  .v3ca442(w24)
  );
  v0e64bc #(
   .v207e0d(p2)
@@ -98,49 +105,57 @@ module main #(
   .v531e20(w9)
  );
  main_vb9f55b vb9f55b (
-  .b(w6),
-  .c(w8),
+  .b(w5),
   .clk(w11),
   .x(w12),
   .rst_n(w15),
-  .y(w18),
-  .a(w20),
-  .z(w22)
+  .y(w19),
+  .a(w21),
+  .z(w23),
+  .c(w26)
  );
  main_v9294e6 v9294e6 (
   .clk(w3),
-  .I2C_SCL(w4),
+  .I2C_SCL(w6),
   .rstn(w13),
-  .I2C_SDA(w21),
-  .enable(w25),
-  .rw(w26),
-  .busy_out(w27),
-  .slv_addr(w28),
-  .data_in(w29),
-  .data_out(w30),
-  .n_paquetes(w31)
+  .I2C_SDA(w22),
+  .enable(w27),
+  .state_out(w28),
+  .rw(w29),
+  .busy_out(w30),
+  .slv_addr(w31),
+  .data_in(w32),
+  .data_out(w33),
+  .n_paquetes(w34)
  );
  main_vecfcb9 vecfcb9 (
-  .bus_data_enable(w5),
-  .bus_data_out(w7),
+  .bus_data_enable(w7),
+  .bus_data_out(w8),
   .clk(w10),
   .rstn(w14),
   .Bus_addr(w17),
-  .serdat_cs(w19),
-  .Bus_data(w24),
-  .enable_start(w25),
-  .rw(w26),
-  .I2C_Busy(w27),
-  .slv_addr(w28),
-  .data_write(w29),
-  .data_out(w30),
-  .n_paquetes(w31)
+  .serdat_cs(w20),
+  .Bus_data(w25),
+  .enable_start(w27),
+  .I2C_State(w28),
+  .rw(w29),
+  .I2C_Busy(w30),
+  .slv_addr(w31),
+  .data_write(w32),
+  .data_out(w33),
+  .n_paquetes(w34)
+ );
+ vf9bdaf #(
+  .v6b316b(p4)
+ ) v3156fe (
+  .v18e78c(w5),
+  .ve1f562(w18)
  );
  assign vinit = 8'b00000000;
 endmodule
 
 //---------------------------------------------------
-//-- I2C
+//-- I2C_soc
 //-- - - - - - - - - - - - - - - - - - - - - - - - --
 //-- Periférico encargado de la comunicación a través del bus I2C.
 //---------------------------------------------------
@@ -176,7 +191,7 @@ module vf9bdaf_vd75681 #(
  input [31:0] a,
  output eq
 );
- assign eq = (a[23:8] == K[23:8]);
+ assign eq = (a == K);
 endmodule
 //---- Top entity
 module vb2090f (
@@ -357,17 +372,20 @@ module main_v9294e6 (
  localparam READ_ACK    = 4'd7;
  localparam STOP        = 4'd8;
      
- reg [3:0] state = READY;        // Estado actual
- reg [2:0] counter = 3'd0;          // Contador local. Cuenta hasta 8 bits de un envío
-                                 // No tiene en cuenta el mensaje completo, solo el paquete actual
+ reg [3:0] state = READY;            // Estado actual
+ reg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío
+                                     // No tiene en cuenta el mensaje completo, solo el paquete actual
  reg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.
                                      // Tiene en cuenta el mensaje completo
- reg [7:0] slave_addr = 8'd0;       // Dirección del esclavo
+ reg [7:0] slave_addr = 8'd0;        // Dirección del esclavo
  reg read_write = 1'd0;              // Lectura o escritura
  reg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar
- reg [7:0] rd_buffer = 8'd0;        // Buffer de lectura. Mensaje recibido
- reg sda_out = 1'd0;                // Salida de SDA
- reg write_enable = 1'd0;           // Habilitación de SDA
+ reg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido
+ reg sda_out = 1'd0;                 // Salida de SDA
+ reg write_enable = 1'd0;            // Habilitación de SDA
+ reg [7:0] aux_buffer = 8'd0;
+ 
+ reg enable_reg = 1'd0;
  
  reg clk_enable;
  reg busy = 1'd0;               // Flag de bus ocupado
@@ -377,10 +395,14 @@ module main_v9294e6 (
  assign data_out = rd_buffer;
      
  assign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL
- assign I2C_SDA = write_enable ? sda_out : 1'bz;  // Pin de SDA
+ assign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA
+ 
+ //always @(posedge enable) begin
+ //    enable_reg <= 1'b1;
+ //end
  
  // Máquina de estados I2C
- always @(posedge clk) begin
+ always @(posedge clk or negedge rstn) begin
      if (!rstn) begin
          state <= READY;        
          counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)
@@ -393,6 +415,8 @@ module main_v9294e6 (
          write_enable <= 1'd0;           
          busy <= 1'd0;
          reg_data_ready <= 1'b0;
+         enable_reg <= 1'b0;
+         aux_buffer <= 8'd0;
  
      end else begin
          case (state)
@@ -400,11 +424,15 @@ module main_v9294e6 (
                  reg_data_ready <= 1'b0;
                  write_enable <= 1'b0;
                  busy <= enable;
-                 if (enable) begin
+                 if (enable && !enable_reg) begin
+                     enable_reg <= 1'b1;
+                 end
+                 if (enable_reg) begin
                      num_paquetes <= n_paquetes;
                      read_write <= rw;
                      slave_addr <= {slv_addr, rw};
                      wt_buffer <= data_in;
+                     enable_reg <= 1'b0;
                      state <= START;
                  end
              end
@@ -428,13 +456,11 @@ module main_v9294e6 (
              SLV_OBJ_ACK: begin
                  // Chequear ACK del esclavo. No está en el verilog
                  if (I2C_SDA == 1'b0) begin  // Write
-                     if(num_paquetes == 2'd0) begin
-                         counter <= 3'd0;
-                     end else begin
-                         counter <= 3'd7;
-                         write_enable <= 1'b1;
-                         sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
-                     end 
+                     
+                     counter <= 3'd7;
+                     write_enable <= 1'b1;
+                     aux_buffer <= wt_buffer[23:16];
+                     sda_out <= aux_buffer[counter];
                      state <= WRITE_DATA;
                  end else begin               // Read
                      counter <= 3'd7;
@@ -451,7 +477,7 @@ module main_v9294e6 (
                      state <= WRITE_ACK;
                  end else begin
                      counter <= counter - 1;
-                     sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
+                     sda_out <= aux_buffer[counter];
                  end
              end
              READ_DATA: begin
@@ -464,10 +490,12 @@ module main_v9294e6 (
              end
              WRITE_ACK: begin
                  if (enable == 1'b1) begin
-                     if (num_paquetes > 1'b0) begin
+                     if (num_paquetes > 2'b0) begin
                          counter <= 3'd7;
                          write_enable <= 1'b1;
-                         sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
+                         wt_buffer <= wt_buffer << 8;
+                         aux_buffer <= wt_buffer[23:16];
+                         sda_out <= aux_buffer[counter];
                          state <= WRITE_DATA;
                      end else begin
                          state <= STOP;
@@ -522,7 +550,7 @@ module main_vecfcb9 (
  
  parameter W_SLV_ADDR = 4'b0000;   
  parameter W_RW = 4'b0001;   
- parameter W_N_PQTS = 4'b0101;   
+ parameter W_N_PQTS = 4'b0010;   
  parameter R_STATE = 4'b0011;   
  parameter R_BUSY = 4'b0100;   
  parameter R_DATA_OUT = 4'b0101;   
@@ -531,32 +559,22 @@ module main_vecfcb9 (
  parameter W_DATA_WRITE = 4'b1000;   
  
  //Entrada desde bus de datos
- reg [7:0] dataArray [0:7];
- reg [31:0] buffer_data_out;      
- reg [31:0] zero = 32'b0;
+ reg [7:0] dataArray [7:0];
+ reg [31:0] buffer_data_out;
  reg [23:0] data_wr = 24'b0;
  
- assign slv_addr[6:0] = dataArray[0][6:0];       //7 bits                            //0x0400 0000 // 0000
- assign rw = dataArray[1][0];                    //1 bit                             //0x0400 0001 // 0001
- assign n_paquetes[1:0] = dataArray[2][1:0];     //4 bits                            //0x0400 0002 // 0010
+ assign slv_addr[6:0] = dataArray[0][6:0];      
+ assign rw = dataArray[1][0];                   
+ assign n_paquetes[1:0] = dataArray[2][1:0];    
  
- assign I2C_State[3:0] = dataArray[3][3:0];                                          //0x0400 0003 // 0011                               
- assign I2C_Busy = dataArray[4][0];                                                  //0x0400 0004 // 0100
- assign data_out[7:0] = dataArray[5][7:0];                                           //0x0400 0005 // 0101
- assign enable_start = dataArray[6][0];         //1 bit                             //0x0400 0006 // 0110                           
- assign bus_data_enable = dataArray[7][0];         // Datos para la salida del bus      //0x0400 0007 // 0111
+ assign enable_start = dataArray[6][0];                                    
+ assign bus_data_enable = dataArray[7][0];      
  
- assign data_write[23:0] = data_wr;              //24 bits                           //0x0400 0003 // 1000
- assign bus_data_out = buffer_data_out;          // Datos para la salida del bus
+ assign data_write[23:0] = data_wr;             
+ assign bus_data_out = buffer_data_out;     
  
- always @(posedge clk) begin
-     dataArray[6] <= 8'b0;
-     dataArray[7] <= 8'b0;
-     
+ always @(posedge clk or negedge rstn) begin
      if (!rstn) begin
-         // No existen los for exactamente
-         // Esto creará estructuras de reinicio tantas veces como se diga
-         // No va a iterar x veces
          dataArray[0] <= 8'b0;
          dataArray[1] <= 8'b0;
          dataArray[2] <= 8'b0;
@@ -568,30 +586,41 @@ module main_vecfcb9 (
          // Se reinician los registros
          buffer_data_out <= 32'b0;
          data_wr <= 24'b0;
-         zero <= 32'b0;
-         
-     end else if (serdat_cs) begin
-         // Caso en el que se introduce información
-         if(Bus_data[3:0] == W_SLV_ADDR || Bus_data[3:0] == W_RW|| Bus_data[3:0] == W_N_PQTS)begin
-             dataArray[Bus_addr[2:0]] <= Bus_data[7:0];
  
-             if(Bus_addr[3:0] == W_SLV_ADDR) begin
-                 dataArray[6][0] <= 1'b1;
-             end
-             // Caso en el que se lee información
-         end else if(Bus_data[2:0] == R_STATE || Bus_data[2:0] == R_BUSY || Bus_data[2:0] == R_DATA_OUT)begin
-             dataArray[7][0] <= 1'b1;
-             buffer_data_out <= {zero[31:8], dataArray[Bus_addr[2:0]]};
-             
-         end else if(Bus_data[2:0] == W_DATA_WRITE)begin
-             buffer_data_out <= {zero[31:24], Bus_data[23:0]};
-         end else begin
-             dataArray[7][0] <= 1'b0;
-         end
      end else begin
-         // Si no se está escribiendo en el bus, se pone a 0
-         dataArray[7][0] <= 1'b0;
+     
+         if(I2C_State != dataArray[3][3:0])begin
+             dataArray[3] <= {4'b0, I2C_State};
+         end
+     
+         if(I2C_Busy != dataArray[4][0])begin
+             dataArray[4] <= {7'b0, I2C_Busy};
+         end
+     
+         if(data_out!= dataArray[5])begin
+             dataArray[5] <= data_out;
+         end
+     
+         dataArray[6] <= 8'b0;
+         dataArray[7] <= 8'b0;
+     
+         if (serdat_cs) begin
+             // Caso en el que se introduce información
+             if(Bus_addr[3:0] == W_SLV_ADDR || Bus_addr[3:0] == W_RW|| Bus_addr[3:0] == W_N_PQTS)begin
+                 dataArray[Bus_addr[3:0]] <= Bus_data[7:0];
+ 
+                 if(Bus_addr[7:0] == 8'd0) begin
+                     dataArray[6][0] <= 1'b1;
+                 end
+                 // Caso en el que se lee información
+             end else if(Bus_addr[3:0] == R_STATE || Bus_addr[3:0] == R_BUSY || Bus_addr[3:0] == R_DATA_OUT)begin
+                 dataArray[7][0] <= 1'b1;
+                 buffer_data_out <= {24'b0, dataArray[Bus_addr[3:0]]};
+             
+             end else if(Bus_addr[3:0] == W_DATA_WRITE)begin
+                 data_wr <= Bus_data[23:0];
+             end 
+         end
      end
  end
- 
 endmodule

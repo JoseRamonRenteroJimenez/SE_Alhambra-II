@@ -6,7 +6,7 @@ RISCV = /usr/bin
 INCLUDE_DIRS = -I./drivers
 
 # Fuentes de compilación
-SRC_FILES = start.s menu.c drivers/i2c_ADS7924.c
+SRC_FILES = start.s menu.c drivers/i2c_ADS7924.c drivers/UART.c drivers/auxiliar.c
 
 # Regla de programación con iceprog
 prog: $(FIRMWARE).bin

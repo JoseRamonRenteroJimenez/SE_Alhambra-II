@@ -10,6 +10,7 @@ module main #(
  parameter v9de176 = 'h0200_0008,
  parameter v051dbb = 'h03000000,
  parameter v383b3a = 'h0400_0000,
+ parameter vf5d733 = 'h0400_0001,
  parameter v4eab12 = 100000
 ) (
  input v4922c7,
@@ -20,11 +21,14 @@ module main #(
  output v7abb98,
  output vda2c07,
  output v55f1ca,
+ output vd6e0f0,
+ output v9ff037,
  output v97f0aa,
  output v5ec250,
  output v5100fa,
+ output v982878,
+ output v5b491e,
  output va912df,
- output vd6e0f0,
  inout va19f97
 );
  localparam p6 = vafbbea;
@@ -32,8 +36,9 @@ module main #(
  localparam p8 = v9217e8;
  localparam p10 = v051dbb;
  localparam p11 = v9de176;
- localparam p22 = v4eab12;
- localparam p23 = v383b3a;
+ localparam p22 = v383b3a;
+ localparam p23 = v4eab12;
+ localparam p29 = vf5d733;
  wire [0:31] w0;
  wire w1;
  wire w2;
@@ -56,7 +61,6 @@ module main #(
  wire w26;
  wire w27;
  wire w28;
- wire w29;
  wire w30;
  wire w31;
  wire w32;
@@ -71,35 +75,39 @@ module main #(
  wire w41;
  wire w42;
  wire w43;
- wire [0:31] w44;
- wire [0:31] w45;
- wire [0:31] w46;
- wire [0:31] w47;
+ wire w44;
+ wire w45;
+ wire w46;
+ wire w47;
  wire [0:31] w48;
- wire w49;
- wire w50;
- wire [0:3] w51;
- wire [0:3] w52;
- wire [0:3] w53;
+ wire [0:31] w49;
+ wire [0:31] w50;
+ wire [0:31] w51;
+ wire [0:31] w52;
+ wire w53;
  wire w54;
- wire [0:31] w55;
- wire [0:31] w56;
- wire [0:31] w57;
- wire [0:31] w58;
- wire w59;
- wire w60;
+ wire [0:3] w55;
+ wire [0:3] w56;
+ wire [0:3] w57;
+ wire w58;
+ wire [0:31] w59;
+ wire [0:31] w60;
  wire [0:31] w61;
  wire [0:31] w62;
- wire [0:31] w63;
- wire [0:31] w64;
- wire w65;
- wire w66;
- wire w67;
- wire w68;
+ wire w63;
+ wire w64;
+ wire [0:31] w65;
+ wire [0:31] w66;
+ wire [0:31] w67;
+ wire [0:31] w68;
  wire [0:31] w69;
  wire w70;
  wire w71;
  wire w72;
+ wire w73;
+ wire w74;
+ wire w75;
+ wire w76;
  assign w2 = v013906;
  assign v5100fa = w3;
  assign v5ec250 = w4;
@@ -113,117 +121,120 @@ module main #(
  assign va912df = w21;
  assign w24 = va19f97;
  assign vd6e0f0 = w25;
- assign w26 = vclk;
- assign w27 = vclk;
- assign w28 = vclk;
- assign w29 = vclk;
+ assign v9ff037 = w26;
+ assign v982878 = w27;
+ assign v5b491e = w28;
  assign w30 = vclk;
  assign w31 = vclk;
  assign w32 = vclk;
  assign w33 = vclk;
+ assign w34 = vclk;
+ assign w35 = vclk;
+ assign w36 = vclk;
+ assign w37 = vclk;
  assign w18 = w9;
- assign w27 = w26;
- assign w28 = w26;
- assign w28 = w27;
- assign w29 = w26;
- assign w29 = w27;
- assign w29 = w28;
- assign w30 = w26;
- assign w30 = w27;
- assign w30 = w28;
- assign w30 = w29;
- assign w31 = w26;
- assign w31 = w27;
- assign w31 = w28;
- assign w31 = w29;
  assign w31 = w30;
- assign w32 = w26;
- assign w32 = w27;
- assign w32 = w28;
- assign w32 = w29;
  assign w32 = w30;
  assign w32 = w31;
- assign w33 = w26;
- assign w33 = w27;
- assign w33 = w28;
- assign w33 = w29;
  assign w33 = w30;
  assign w33 = w31;
  assign w33 = w32;
+ assign w34 = w30;
+ assign w34 = w31;
+ assign w34 = w32;
+ assign w34 = w33;
+ assign w35 = w30;
+ assign w35 = w31;
+ assign w35 = w32;
+ assign w35 = w33;
  assign w35 = w34;
+ assign w36 = w30;
+ assign w36 = w31;
+ assign w36 = w32;
+ assign w36 = w33;
  assign w36 = w34;
  assign w36 = w35;
+ assign w37 = w30;
+ assign w37 = w31;
+ assign w37 = w32;
+ assign w37 = w33;
  assign w37 = w34;
  assign w37 = w35;
  assign w37 = w36;
- assign w38 = w34;
- assign w38 = w35;
- assign w38 = w36;
- assign w38 = w37;
+ assign w39 = w38;
+ assign w40 = w38;
  assign w40 = w39;
+ assign w41 = w38;
  assign w41 = w39;
  assign w41 = w40;
+ assign w42 = w38;
  assign w42 = w39;
  assign w42 = w40;
  assign w42 = w41;
- assign w43 = w39;
- assign w43 = w40;
- assign w43 = w41;
- assign w43 = w42;
+ assign w44 = w43;
+ assign w45 = w43;
  assign w45 = w44;
+ assign w46 = w43;
  assign w46 = w44;
  assign w46 = w45;
+ assign w47 = w43;
  assign w47 = w44;
  assign w47 = w45;
  assign w47 = w46;
- assign w48 = w44;
- assign w48 = w45;
- assign w48 = w46;
- assign w48 = w47;
+ assign w49 = w48;
+ assign w50 = w48;
  assign w50 = w49;
+ assign w51 = w48;
+ assign w51 = w49;
+ assign w51 = w50;
+ assign w52 = w48;
+ assign w52 = w49;
+ assign w52 = w50;
  assign w52 = w51;
- assign w53 = w51;
- assign w53 = w52;
+ assign w54 = w53;
  assign w56 = w55;
  assign w57 = w55;
  assign w57 = w56;
- assign w58 = w55;
- assign w58 = w56;
- assign w58 = w57;
  assign w60 = w59;
- assign w66 = w65;
+ assign w61 = w59;
+ assign w61 = w60;
+ assign w62 = w59;
+ assign w62 = w60;
+ assign w62 = w61;
+ assign w64 = w63;
  assign w71 = w70;
- assign w72 = w70;
- assign w72 = w71;
+ assign w74 = w73;
+ assign w75 = w73;
+ assign w75 = w74;
  v35f267 vc8f159 (
   .v0e28cb(w1),
-  .vcbab45(w34)
+  .vcbab45(w38)
  );
  v725d0b vcd95a5 (
   .v9b328c(w0)
  );
  v87abc9 v7eb25a (
-  .vcbab45(w49),
-  .v814e6e(w54),
-  .v3ca442(w59),
-  .v0e28cb(w65),
-  .v132c67(w67),
-  .vae8923(w71)
+  .vcbab45(w53),
+  .v814e6e(w58),
+  .v3ca442(w63),
+  .v0e28cb(w70),
+  .v132c67(w72),
+  .vae8923(w74)
  );
  v604573 #(
   .v4fde05(p11)
  ) v72b9aa (
   .vb6935e(w12),
   .v2ab975(w13),
-  .v34e785(w26),
-  .v866d25(w35),
-  .vad40e9(w41),
-  .v9f8bfb(w46),
-  .vd996e9(w53),
-  .v0fa3a4(w57),
-  .v62ea55(w64),
-  .vdc4800(w67),
-  .vf3ed26(w68)
+  .v34e785(w30),
+  .v866d25(w39),
+  .vad40e9(w45),
+  .v9f8bfb(w50),
+  .vd996e9(w57),
+  .v0fa3a4(w61),
+  .v62ea55(w69),
+  .vdc4800(w72),
+  .vf3ed26(w76)
  );
  vdccd52 vb4539a (
  
@@ -235,14 +246,14 @@ module main #(
  );
  vaad680 v62d839 (
   .v29fe33(w0),
-  .vba7c72(w27),
-  .v5d0f7b(w34),
-  .v006d37(w39),
-  .vd67338(w44),
-  .v9b0ff0(w49),
-  .v83dbbe(w51),
-  .ve61aa7(w55),
-  .v8fd87d(w61)
+  .vba7c72(w31),
+  .v5d0f7b(w38),
+  .v006d37(w43),
+  .vd67338(w48),
+  .v9b0ff0(w53),
+  .v83dbbe(w55),
+  .ve61aa7(w59),
+  .v8fd87d(w65)
  );
  v55b120 v7b9433 (
   .v47023d(w14),
@@ -251,46 +262,46 @@ module main #(
   .v1cd63b(w17),
   .v9119d0(w19),
   .v3d0cdd(w20),
-  .v379e9e(w28)
+  .v379e9e(w32)
  );
  v6c0c4a #(
   .vf2d743(p10)
  ) v6500fa (
   .v9d3deb(w9),
   .v980561(w17),
-  .v1002e2(w29),
-  .v8fadcd(w39),
-  .vd5de6b(w44),
-  .va57c44(w52),
-  .vb21f3c(w54),
-  .v6d05a9(w55)
+  .v1002e2(w33),
+  .v8fadcd(w43),
+  .vd5de6b(w48),
+  .va57c44(w56),
+  .vb21f3c(w58),
+  .v6d05a9(w59)
  );
  v5242e2 v447d62 (
-  .ve3469f(w60),
-  .v493538(w61),
-  .v918400(w62),
-  .v5664d9(w63),
-  .vae8a69(w64),
-  .v76f74e(w66),
-  .v58d02d(w68),
-  .v917e97(w69),
-  .vec88a9(w70)
+  .ve3469f(w64),
+  .v493538(w65),
+  .v918400(w66),
+  .v917e97(w67),
+  .v5664d9(w68),
+  .vae8a69(w69),
+  .v76f74e(w71),
+  .vec88a9(w73),
+  .v58d02d(w76)
  );
  vaba674 #(
   .v6478b6(p8)
  ) v2bbe2d (
-  .v04ad7a(w30),
-  .vd7d395(w40),
-  .v387cca(w45),
-  .v22c516(w50),
-  .vd728f0(w51),
-  .v8d6432(w56),
-  .v69f1ab(w59),
-  .v13ce3e(w62)
+  .v04ad7a(w34),
+  .vd7d395(w44),
+  .v387cca(w49),
+  .v22c516(w54),
+  .vd728f0(w55),
+  .v8d6432(w60),
+  .v69f1ab(w63),
+  .v13ce3e(w66)
  );
  v2b4233 v1314aa (
   .v6d0651(w1),
-  .v4c8225(w31)
+  .v4c8225(w35)
  );
  v372366 #(
   .vbce3f7(p6),
@@ -300,31 +311,35 @@ module main #(
   .v40049a(w3),
   .v0da91a(w4),
   .v9b4033(w5),
-  .v84763f(w32),
-  .v17983a(w36),
-  .vba8655(w42),
-  .vbee9aa(w47),
-  .v202123(w63),
-  .vbe14dd(w65)
- );
- v1c05b1 #(
-  .v9c4340(p22),
-  .v269dbc(p23)
- ) vcc24c0 (
-  .v80923c(w24),
-  .v9127c2(w25),
-  .v87186f(w33),
-  .v4dc0ee(w38),
-  .v8859f4(w43),
-  .v867561(w48),
-  .v23504b(w58),
-  .v504d16(w69),
-  .vfe2384(w70)
+  .v84763f(w36),
+  .v17983a(w41),
+  .vba8655(w47),
+  .vbee9aa(w52),
+  .v202123(w68),
+  .vbe14dd(w70)
  );
  main_v4cf70b v4cf70b (
   .x(w21),
-  .rst(w37),
-  .a(w72)
+  .rst(w42),
+  .a(w75)
+ );
+ v619620 #(
+  .v269dbc(p22),
+  .v9c4340(p23),
+  .v8eaf13(p29)
+ ) v48ec9f (
+  .v80923c(w24),
+  .v9127c2(w25),
+  .vf73703(w26),
+  .va77527(w27),
+  .v34d6ed(w28),
+  .v87186f(w37),
+  .v4dc0ee(w40),
+  .v8859f4(w46),
+  .v867561(w51),
+  .v23504b(w62),
+  .v504d16(w67),
+  .vfe2384(w73)
  );
 endmodule
 
@@ -7065,8 +7080,9 @@ module vd7e6ff_v43ad2d (
    );
 endmodule
 //---- Top entity
-module v1c05b1 #(
+module v619620 #(
  parameter v269dbc = 'h0400_0000,
+ parameter v8eaf13 = 'h0400_0001,
  parameter v9c4340 = 100000
 ) (
  input v87186f,
@@ -7084,12 +7100,12 @@ module v1c05b1 #(
 );
  localparam p0 = v269dbc;
  localparam p2 = v9c4340;
+ localparam p4 = v8eaf13;
  wire w1;
  wire w3;
- wire w4;
  wire w5;
  wire w6;
- wire [0:31] w7;
+ wire w7;
  wire [0:31] w8;
  wire w9;
  wire w10;
@@ -7100,24 +7116,26 @@ module v1c05b1 #(
  wire w15;
  wire [0:31] w16;
  wire [0:31] w17;
- wire w18;
+ wire [0:31] w18;
  wire w19;
  wire w20;
  wire w21;
  wire w22;
  wire w23;
- wire [0:31] w24;
- wire w25;
- wire [0:3] w26;
+ wire w24;
+ wire [0:31] w25;
+ wire [0:31] w26;
  wire w27;
- wire w28;
- wire [0:6] w29;
- wire [0:23] w30;
- wire [0:7] w31;
- wire [0:1] w32;
- assign v9127c2 = w4;
- assign vfe2384 = w5;
- assign v504d16 = w7;
+ wire [0:3] w28;
+ wire w29;
+ wire w30;
+ wire [0:6] w31;
+ wire [0:23] w32;
+ wire [0:7] w33;
+ wire [0:1] w34;
+ assign v9127c2 = w6;
+ assign vfe2384 = w7;
+ assign v504d16 = w8;
  assign w9 = v87186f;
  assign w10 = v87186f;
  assign w11 = v87186f;
@@ -7127,13 +7145,13 @@ module v1c05b1 #(
  assign w15 = v4dc0ee;
  assign w16 = v867561;
  assign w17 = v867561;
- assign va77527 = w18;
- assign w21 = v80923c;
- assign v34d6ed = w22;
- assign w23 = v8859f4;
- assign w24 = v23504b;
- assign w6 = w5;
- assign w8 = w7;
+ assign w18 = v867561;
+ assign va77527 = w19;
+ assign w22 = v80923c;
+ assign v34d6ed = w23;
+ assign w24 = v8859f4;
+ assign w25 = v23504b;
+ assign w26 = v23504b;
  assign w10 = w9;
  assign w11 = w9;
  assign w11 = w10;
@@ -7141,7 +7159,10 @@ module v1c05b1 #(
  assign w15 = w13;
  assign w15 = w14;
  assign w17 = w16;
- assign w20 = w19;
+ assign w18 = w16;
+ assign w18 = w17;
+ assign w21 = w20;
+ assign w26 = w25;
  vf9bdaf #(
   .v6b316b(p0)
  ) v72f060 (
@@ -7150,8 +7171,8 @@ module v1c05b1 #(
  );
  vb2090f vef47e6 (
   .v0e28cb(w1),
-  .vcbab45(w19),
-  .v3ca442(w23)
+  .vcbab45(w20),
+  .v3ca442(w24)
  );
  v0e64bc #(
   .v207e0d(p2)
@@ -7159,46 +7180,52 @@ module v1c05b1 #(
   .v8337bc(w3),
   .v531e20(w9)
  );
- v1c05b1_vb9f55b vb9f55b (
-  .b(w6),
-  .c(w8),
+ v619620_vb9f55b vb9f55b (
+  .b(w5),
   .clk(w11),
   .x(w12),
   .rst_n(w15),
-  .y(w18),
-  .a(w20),
-  .z(w22)
+  .y(w19),
+  .a(w21),
+  .z(w23),
+  .c(w26)
  );
- v1c05b1_v9294e6 v9294e6 (
+ v619620_v9294e6 v9294e6 (
   .clk(w3),
-  .I2C_SCL(w4),
+  .I2C_SCL(w6),
   .rstn(w13),
-  .I2C_SDA(w21),
-  .enable(w25),
-  .state_out(w26),
-  .rw(w27),
-  .busy_out(w28),
-  .slv_addr(w29),
-  .data_in(w30),
-  .data_out(w31),
-  .n_paquetes(w32)
+  .I2C_SDA(w22),
+  .enable(w27),
+  .state_out(w28),
+  .rw(w29),
+  .busy_out(w30),
+  .slv_addr(w31),
+  .data_in(w32),
+  .data_out(w33),
+  .n_paquetes(w34)
  );
- v1c05b1_vecfcb9 vecfcb9 (
-  .bus_data_enable(w5),
-  .bus_data_out(w7),
+ v619620_vecfcb9 vecfcb9 (
+  .bus_data_enable(w7),
+  .bus_data_out(w8),
   .clk(w10),
   .rstn(w14),
   .Bus_addr(w17),
-  .serdat_cs(w19),
-  .Bus_data(w24),
-  .enable_start(w25),
-  .I2C_State(w26),
-  .rw(w27),
-  .I2C_Busy(w28),
-  .slv_addr(w29),
-  .data_write(w30),
-  .data_out(w31),
-  .n_paquetes(w32)
+  .serdat_cs(w20),
+  .Bus_data(w25),
+  .enable_start(w27),
+  .I2C_State(w28),
+  .rw(w29),
+  .I2C_Busy(w30),
+  .slv_addr(w31),
+  .data_write(w32),
+  .data_out(w33),
+  .n_paquetes(w34)
+ );
+ vf9bdaf #(
+  .v6b316b(p4)
+ ) v3156fe (
+  .v18e78c(w5),
+  .ve1f562(w18)
  );
 endmodule
 
@@ -7208,7 +7235,7 @@ endmodule
 //-- Periférico encargado de la comunicación a través del bus I2C.
 //---------------------------------------------------
 
-module v1c05b1_vb9f55b (
+module v619620_vb9f55b (
  input clk,
  input rst_n,
  input a,
@@ -7250,7 +7277,7 @@ module v1c05b1_vb9f55b (
  
 endmodule
 
-module v1c05b1_v9294e6 (
+module v619620_v9294e6 (
  input clk,
  input rstn,
  input enable,
@@ -7275,17 +7302,20 @@ module v1c05b1_v9294e6 (
  localparam READ_ACK    = 4'd7;
  localparam STOP        = 4'd8;
      
- reg [3:0] state = READY;        // Estado actual
- reg [2:0] counter = 3'd0;          // Contador local. Cuenta hasta 8 bits de un envío
-                                 // No tiene en cuenta el mensaje completo, solo el paquete actual
+ reg [3:0] state = READY;            // Estado actual
+ reg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío
+                                     // No tiene en cuenta el mensaje completo, solo el paquete actual
  reg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.
                                      // Tiene en cuenta el mensaje completo
- reg [7:0] slave_addr = 8'd0;       // Dirección del esclavo
+ reg [7:0] slave_addr = 8'd0;        // Dirección del esclavo
  reg read_write = 1'd0;              // Lectura o escritura
  reg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar
- reg [7:0] rd_buffer = 8'd0;        // Buffer de lectura. Mensaje recibido
- reg sda_out = 1'd0;                // Salida de SDA
- reg write_enable = 1'd0;           // Habilitación de SDA
+ reg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido
+ reg sda_out = 1'd0;                 // Salida de SDA
+ reg write_enable = 1'd0;            // Habilitación de SDA
+ reg [7:0] aux_buffer = 8'd0;
+ 
+ reg enable_reg = 1'd0;
  
  reg clk_enable;
  reg busy = 1'd0;               // Flag de bus ocupado
@@ -7295,10 +7325,14 @@ module v1c05b1_v9294e6 (
  assign data_out = rd_buffer;
      
  assign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL
- assign I2C_SDA = write_enable ? sda_out : 1'bz;  // Pin de SDA
+ assign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA
+ 
+ //always @(posedge enable) begin
+ //    enable_reg <= 1'b1;
+ //end
  
  // Máquina de estados I2C
- always @(posedge clk) begin
+ always @(posedge clk or negedge rstn) begin
      if (!rstn) begin
          state <= READY;        
          counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)
@@ -7311,6 +7345,8 @@ module v1c05b1_v9294e6 (
          write_enable <= 1'd0;           
          busy <= 1'd0;
          reg_data_ready <= 1'b0;
+         enable_reg <= 1'b0;
+         aux_buffer <= 8'd0;
  
      end else begin
          case (state)
@@ -7318,11 +7354,15 @@ module v1c05b1_v9294e6 (
                  reg_data_ready <= 1'b0;
                  write_enable <= 1'b0;
                  busy <= enable;
-                 if (enable) begin
+                 if (enable && !enable_reg) begin
+                     enable_reg <= 1'b1;
+                 end
+                 if (enable_reg) begin
                      num_paquetes <= n_paquetes;
                      read_write <= rw;
                      slave_addr <= {slv_addr, rw};
                      wt_buffer <= data_in;
+                     enable_reg <= 1'b0;
                      state <= START;
                  end
              end
@@ -7346,13 +7386,11 @@ module v1c05b1_v9294e6 (
              SLV_OBJ_ACK: begin
                  // Chequear ACK del esclavo. No está en el verilog
                  if (I2C_SDA == 1'b0) begin  // Write
-                     if(num_paquetes == 2'd0) begin
-                         counter <= 3'd0;
-                     end else begin
-                         counter <= 3'd7;
-                         write_enable <= 1'b1;
-                         sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
-                     end 
+                     
+                     counter <= 3'd7;
+                     write_enable <= 1'b1;
+                     aux_buffer <= wt_buffer[23:16];
+                     sda_out <= aux_buffer[counter];
                      state <= WRITE_DATA;
                  end else begin               // Read
                      counter <= 3'd7;
@@ -7369,7 +7407,7 @@ module v1c05b1_v9294e6 (
                      state <= WRITE_ACK;
                  end else begin
                      counter <= counter - 1;
-                     sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
+                     sda_out <= aux_buffer[counter];
                  end
              end
              READ_DATA: begin
@@ -7382,10 +7420,12 @@ module v1c05b1_v9294e6 (
              end
              WRITE_ACK: begin
                  if (enable == 1'b1) begin
-                     if (num_paquetes > 1'b0) begin
+                     if (num_paquetes > 2'b0) begin
                          counter <= 3'd7;
                          write_enable <= 1'b1;
-                         sda_out <= wt_buffer[8*(num_paquetes-1) + counter];
+                         wt_buffer <= wt_buffer << 8;
+                         aux_buffer <= wt_buffer[23:16];
+                         sda_out <= aux_buffer[counter];
                          state <= WRITE_DATA;
                      end else begin
                          state <= STOP;
@@ -7420,7 +7460,7 @@ module v1c05b1_v9294e6 (
  end
 endmodule
 
-module v1c05b1_vecfcb9 (
+module v619620_vecfcb9 (
  input clk,
  input rstn,
  input [31:0] Bus_addr,
@@ -7440,7 +7480,7 @@ module v1c05b1_vecfcb9 (
  
  parameter W_SLV_ADDR = 4'b0000;   
  parameter W_RW = 4'b0001;   
- parameter W_N_PQTS = 4'b0101;   
+ parameter W_N_PQTS = 4'b0010;   
  parameter R_STATE = 4'b0011;   
  parameter R_BUSY = 4'b0100;   
  parameter R_DATA_OUT = 4'b0101;   
@@ -7449,32 +7489,22 @@ module v1c05b1_vecfcb9 (
  parameter W_DATA_WRITE = 4'b1000;   
  
  //Entrada desde bus de datos
- reg [7:0] dataArray [0:7];
- reg [31:0] buffer_data_out;      
- reg [31:0] zero = 32'b0;
+ reg [7:0] dataArray [7:0];
+ reg [31:0] buffer_data_out;
  reg [23:0] data_wr = 24'b0;
  
- assign slv_addr[6:0] = dataArray[0][6:0];       //7 bits                            //0x0400 0000 // 0000
- assign rw = dataArray[1][0];                    //1 bit                             //0x0400 0001 // 0001
- assign n_paquetes[1:0] = dataArray[2][1:0];     //4 bits                            //0x0400 0002 // 0010
+ assign slv_addr[6:0] = dataArray[0][6:0];      
+ assign rw = dataArray[1][0];                   
+ assign n_paquetes[1:0] = dataArray[2][1:0];    
  
- assign I2C_State[3:0] = dataArray[3][3:0];                                          //0x0400 0003 // 0011                               
- assign I2C_Busy = dataArray[4][0];                                                  //0x0400 0004 // 0100
- assign data_out[7:0] = dataArray[5][7:0];                                           //0x0400 0005 // 0101
- assign enable_start = dataArray[6][0];         //1 bit                             //0x0400 0006 // 0110                           
- assign bus_data_enable = dataArray[7][0];         // Datos para la salida del bus      //0x0400 0007 // 0111
+ assign enable_start = dataArray[6][0];                                    
+ assign bus_data_enable = dataArray[7][0];      
  
- assign data_write[23:0] = data_wr;              //24 bits                           //0x0400 0003 // 1000
- assign bus_data_out = buffer_data_out;          // Datos para la salida del bus
+ assign data_write[23:0] = data_wr;             
+ assign bus_data_out = buffer_data_out;     
  
- always @(posedge clk) begin
-     dataArray[6] <= 8'b0;
-     dataArray[7] <= 8'b0;
-     
+ always @(posedge clk or negedge rstn) begin
      if (!rstn) begin
-         // No existen los for exactamente
-         // Esto creará estructuras de reinicio tantas veces como se diga
-         // No va a iterar x veces
          dataArray[0] <= 8'b0;
          dataArray[1] <= 8'b0;
          dataArray[2] <= 8'b0;
@@ -7486,32 +7516,43 @@ module v1c05b1_vecfcb9 (
          // Se reinician los registros
          buffer_data_out <= 32'b0;
          data_wr <= 24'b0;
-         zero <= 32'b0;
-         
-     end else if (serdat_cs) begin
-         // Caso en el que se introduce información
-         if(Bus_data[3:0] == W_SLV_ADDR || Bus_data[3:0] == W_RW|| Bus_data[3:0] == W_N_PQTS)begin
-             dataArray[Bus_addr[2:0]] <= Bus_data[7:0];
  
-             if(Bus_addr[7:0] == 8'd0) begin
-                 dataArray[6][0] <= 1'b1;
-             end
-             // Caso en el que se lee información
-         end else if(Bus_data[2:0] == R_STATE || Bus_data[2:0] == R_BUSY || Bus_data[2:0] == R_DATA_OUT)begin
-             dataArray[7][0] <= 1'b1;
-             buffer_data_out <= {zero[31:8], dataArray[Bus_addr[2:0]]};
-             
-         end else if(Bus_data[2:0] == W_DATA_WRITE)begin
-             buffer_data_out <= {zero[31:24], Bus_data[23:0]};
-         end else begin
-             dataArray[7][0] <= 1'b0;
-         end
      end else begin
-         // Si no se está escribiendo en el bus, se pone a 0
-         dataArray[7][0] <= 1'b0;
+     
+         if(I2C_State != dataArray[3][3:0])begin
+             dataArray[3] <= {4'b0, I2C_State};
+         end
+     
+         if(I2C_Busy != dataArray[4][0])begin
+             dataArray[4] <= {7'b0, I2C_Busy};
+         end
+     
+         if(data_out!= dataArray[5])begin
+             dataArray[5] <= data_out;
+         end
+     
+         dataArray[6] <= 8'b0;
+         dataArray[7] <= 8'b0;
+     
+         if (serdat_cs) begin
+             // Caso en el que se introduce información
+             if(Bus_addr[3:0] == W_SLV_ADDR || Bus_addr[3:0] == W_RW|| Bus_addr[3:0] == W_N_PQTS)begin
+                 dataArray[Bus_addr[3:0]] <= Bus_data[7:0];
+ 
+                 if(Bus_addr[7:0] == 8'd0) begin
+                     dataArray[6][0] <= 1'b1;
+                 end
+                 // Caso en el que se lee información
+             end else if(Bus_addr[3:0] == R_STATE || Bus_addr[3:0] == R_BUSY || Bus_addr[3:0] == R_DATA_OUT)begin
+                 dataArray[7][0] <= 1'b1;
+                 buffer_data_out <= {24'b0, dataArray[Bus_addr[3:0]]};
+             
+             end else if(Bus_addr[3:0] == W_DATA_WRITE)begin
+                 data_wr <= Bus_data[23:0];
+             end 
+         end
      end
  end
- 
 endmodule
 //---- Top entity
 module v0e64bc #(

@@ -739,7 +739,7 @@
           "id": "5f2fa40e-e518-44e4-8888-e0dacab21c85",
           "type": "basic.output",
           "data": {
-            "name": "test_i2c_data_ready",
+            "name": "test_rw",
             "virtual": true,
             "pins": [
               {
@@ -1810,7 +1810,7 @@
             ]
           },
           "position": {
-            "x": 1200,
+            "x": 1192,
             "y": 320
           }
         },
@@ -2542,7 +2542,7 @@
             ]
           },
           "position": {
-            "x": 744,
+            "x": 752,
             "y": 656
           }
         },
@@ -3072,8 +3072,8 @@
             ]
           },
           "position": {
-            "x": 568,
-            "y": 1088
+            "x": 560,
+            "y": 1104
           }
         },
         {
@@ -3092,8 +3092,8 @@
             ]
           },
           "position": {
-            "x": 1608,
-            "y": 1120
+            "x": 1600,
+            "y": 1152
           }
         },
         {
@@ -3112,8 +3112,8 @@
             ]
           },
           "position": {
-            "x": 568,
-            "y": 1192
+            "x": 560,
+            "y": 1248
           }
         },
         {
@@ -3132,8 +3132,8 @@
             ]
           },
           "position": {
-            "x": 1608,
-            "y": 1296
+            "x": 1600,
+            "y": 1392
           }
         },
         {
@@ -3152,55 +3152,15 @@
             ]
           },
           "position": {
-            "x": 568,
-            "y": 1296
+            "x": 560,
+            "y": 1392
           }
         },
         {
-          "id": "1911039b-3440-4a05-8589-74defaa70aaa",
+          "id": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
           "type": "basic.outputLabel",
           "data": {
-            "name": "I2C_DATA_READY",
-            "blockColor": "fuchsia",
-            "virtual": true,
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ]
-          },
-          "position": {
-            "x": 568,
-            "y": 1400
-          }
-        },
-        {
-          "id": "46631b04-0b9d-4fde-b4f2-82789a6dd348",
-          "type": "basic.inputLabel",
-          "data": {
-            "name": "z",
-            "blockColor": "gold",
-            "virtual": true,
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ]
-          },
-          "position": {
-            "x": 1608,
-            "y": 1464
-          }
-        },
-        {
-          "id": "4d507036-26b1-4c1a-aed7-479aa7b4ac95",
-          "type": "basic.outputLabel",
-          "data": {
-            "name": "I2C_DATA_OUT",
+            "name": "addr",
             "range": "[31:0]",
             "blockColor": "fuchsia",
             "virtual": true,
@@ -3368,8 +3328,204 @@
             ]
           },
           "position": {
-            "x": 568,
-            "y": 1504
+            "x": 328,
+            "y": 1584
+          }
+        },
+        {
+          "id": "46631b04-0b9d-4fde-b4f2-82789a6dd348",
+          "type": "basic.inputLabel",
+          "data": {
+            "name": "z",
+            "blockColor": "gold",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 1608,
+            "y": 1624
+          }
+        },
+        {
+          "id": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
+          "type": "basic.outputLabel",
+          "data": {
+            "name": "data",
+            "range": "[31:0]",
+            "blockColor": "fuchsia",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "31",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "30",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "29",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "28",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "27",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "26",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "25",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "24",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "23",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "22",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "21",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "20",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "19",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "18",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "17",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "16",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "15",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "14",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "13",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "12",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "11",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "10",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "9",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "8",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "7",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "6",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "5",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "4",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "3",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "2",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "1",
+                "name": "NULL",
+                "value": "NULL"
+              },
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 560,
+            "y": 1672
           }
         },
         {
@@ -3383,6 +3539,19 @@
           "position": {
             "x": 176,
             "y": -264
+          }
+        },
+        {
+          "id": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
+          "type": "basic.constant",
+          "data": {
+            "name": "PRUEBA_NO_TOCAR",
+            "value": "'h0400_0001",
+            "local": false
+          },
+          "position": {
+            "x": 512,
+            "y": 1488
           }
         },
         {
@@ -3478,8 +3647,8 @@
             "y": 1064
           },
           "size": {
-            "width": 768,
-            "height": 520
+            "width": 784,
+            "height": 712
           }
         },
         {
@@ -3541,7 +3710,7 @@
               ]
             },
             "params": [],
-            "code": "// Definir los estados de la máquina de estados\nlocalparam READY       = 4'd0;\nlocalparam START       = 4'd1;\nlocalparam COMMAND     = 4'd2;\nlocalparam SLV_OBJ_ACK = 4'd3;\nlocalparam WRITE_DATA  = 4'd4;\nlocalparam WRITE_ACK   = 4'd5;\nlocalparam READ_DATA   = 4'd6;\nlocalparam READ_ACK    = 4'd7;\nlocalparam STOP        = 4'd8;\n    \nreg [3:0] state = READY;        // Estado actual\nreg [2:0] counter = 3'd0;          // Contador local. Cuenta hasta 8 bits de un envío\n                                // No tiene en cuenta el mensaje completo, solo el paquete actual\nreg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.\n                                    // Tiene en cuenta el mensaje completo\nreg [7:0] slave_addr = 8'd0;       // Dirección del esclavo\nreg read_write = 1'd0;              // Lectura o escritura\nreg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar\nreg [7:0] rd_buffer = 8'd0;        // Buffer de lectura. Mensaje recibido\nreg sda_out = 1'd0;                // Salida de SDA\nreg write_enable = 1'd0;           // Habilitación de SDA\n\nreg clk_enable;\nreg busy = 1'd0;               // Flag de bus ocupado\nreg reg_data_ready = 1'b0;\n    \nassign busy_out = busy;\nassign data_out = rd_buffer;\n    \nassign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL\nassign I2C_SDA = write_enable ? sda_out : 1'bz;  // Pin de SDA\n\n// Máquina de estados I2C\nalways @(posedge clk) begin\n    if (!rstn) begin\n        state <= READY;        \n        counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)\n        num_paquetes <= 2'd0;  \n        sda_out <= 1'b1;\n        slave_addr <= 8'd0;       \n        read_write <= 1'd0;\n        wt_buffer <= 24'b0;       \n        rd_buffer <= 8'd0;                \n        write_enable <= 1'd0;           \n        busy <= 1'd0;\n        reg_data_ready <= 1'b0;\n\n    end else begin\n        case (state)\n            READY: begin\n                reg_data_ready <= 1'b0;\n                write_enable <= 1'b0;\n                busy <= enable;\n                if (enable) begin\n                    num_paquetes <= n_paquetes;\n                    read_write <= rw;\n                    slave_addr <= {slv_addr, rw};\n                    wt_buffer <= data_in;\n                    state <= START;\n                end\n            end\n            START: begin\n                busy <= 1'b1;\n                write_enable <= 1'b1;\n                counter <= 3'd7;\n                sda_out <= slave_addr[counter];               \n                state <= COMMAND;  \n            end\n            COMMAND: begin\n                if (counter == 3'd0) begin\n                    //write_enable <= 1'b0;\n                    sda_out <= 1'b1;  // Finaliza el envío de la dirección\n                    state <= SLV_OBJ_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= slave_addr[counter];\n                end\n            end\n            SLV_OBJ_ACK: begin\n                // Chequear ACK del esclavo. No está en el verilog\n                if (I2C_SDA == 1'b0) begin  // Write\n                    if(num_paquetes == 2'd0) begin\n                        counter <= 3'd0;\n                    end else begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                    end \n                    state <= WRITE_DATA;\n                end else begin               // Read\n                    counter <= 3'd7;\n                    write_enable <= 1'b0;\n                    state <= READ_DATA;\n                end\n                \n            end\n            WRITE_DATA: begin\n                busy <= 1'b1;\n                if (counter == 3'd0) begin\n                    write_enable <= 1'b0;\n                    num_paquetes <= num_paquetes - 1'b1;\n                    state <= WRITE_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                end\n            end\n            READ_DATA: begin\n                rd_buffer[counter] <= I2C_SDA;\n                if (counter == 3'd0) begin\n                    state <= READ_ACK;\n                end else begin \n                    counter <= counter - 1;\n                end\n            end\n            WRITE_ACK: begin\n                if (enable == 1'b1) begin\n                    if (num_paquetes > 1'b0) begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        sda_out <= wt_buffer[8*(num_paquetes-1) + counter];\n                        state <= WRITE_DATA;\n                    end else begin\n                        state <= STOP;\n                    end\n                end else begin \n                    state <= STOP;\n                end\n            end\n            READ_ACK: begin\n                busy <= 1'b0;\n                write_enable <= 1'b1;\n                sda_out <= 1'b0;\n                reg_data_ready <= 1'b1;\n                state <= STOP;\n            end\n            STOP: begin\n                write_enable <= 1'b1;\n                sda_out <= 1'b1;\n                busy <= 1'b0;\n                state <= READY;\n            end\n        endcase\n    end\nend\n\n// Control síncrono de SCL enable\nalways @(posedge clk) begin\n    if (!rstn)\n        clk_enable <= 1'b0;\n    else\n        clk_enable <= (state != READY) && (state != START) && (state != STOP);\nend"
+            "code": "// Definir los estados de la máquina de estados\nlocalparam READY       = 4'd0;\nlocalparam START       = 4'd1;\nlocalparam COMMAND     = 4'd2;\nlocalparam SLV_OBJ_ACK = 4'd3;\nlocalparam WRITE_DATA  = 4'd4;\nlocalparam WRITE_ACK   = 4'd5;\nlocalparam READ_DATA   = 4'd6;\nlocalparam READ_ACK    = 4'd7;\nlocalparam STOP        = 4'd8;\n    \nreg [3:0] state = READY;            // Estado actual\nreg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío\n                                    // No tiene en cuenta el mensaje completo, solo el paquete actual\nreg [1:0] num_paquetes = 2'd0;      // Contador de paquetes a enviar.\n                                    // Tiene en cuenta el mensaje completo\nreg [7:0] slave_addr = 8'd0;        // Dirección del esclavo\nreg read_write = 1'd0;              // Lectura o escritura\nreg [23:0] wt_buffer = 24'b0;       // Buffer de escritura. Mensaje a enviar\nreg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido\nreg sda_out = 1'd0;                 // Salida de SDA\nreg write_enable = 1'd0;            // Habilitación de SDA\nreg [7:0] aux_buffer = 8'd0;\n\nreg enable_reg = 1'd0;\n\nreg clk_enable;\nreg busy = 1'd0;               // Flag de bus ocupado\nreg reg_data_ready = 1'b0;\n    \nassign busy_out = busy;\nassign data_out = rd_buffer;\n    \nassign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL\nassign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA\n\n//always @(posedge enable) begin\n//    enable_reg <= 1'b1;\n//end\n\n// Máquina de estados I2C\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        state <= READY;        \n        counter <= 3'd0; //Contador a 0 (cuenta hasta 7, número de 3 bits: 3'd0 representa 0 decimal en formato de 3 bits)\n        num_paquetes <= 2'd0;  \n        sda_out <= 1'b1;\n        slave_addr <= 8'd0;       \n        read_write <= 1'd0;\n        wt_buffer <= 24'b0;       \n        rd_buffer <= 8'd0;                \n        write_enable <= 1'd0;           \n        busy <= 1'd0;\n        reg_data_ready <= 1'b0;\n        enable_reg <= 1'b0;\n        aux_buffer <= 8'd0;\n\n    end else begin\n        case (state)\n            READY: begin\n                reg_data_ready <= 1'b0;\n                write_enable <= 1'b0;\n                busy <= enable;\n                if (enable && !enable_reg) begin\n                    enable_reg <= 1'b1;\n                end\n                if (enable_reg) begin\n                    num_paquetes <= n_paquetes;\n                    read_write <= rw;\n                    slave_addr <= {slv_addr, rw};\n                    wt_buffer <= data_in;\n                    enable_reg <= 1'b0;\n                    state <= START;\n                end\n            end\n            START: begin\n                busy <= 1'b1;\n                write_enable <= 1'b1;\n                counter <= 3'd7;\n                sda_out <= slave_addr[counter];               \n                state <= COMMAND;  \n            end\n            COMMAND: begin\n                if (counter == 3'd0) begin\n                    //write_enable <= 1'b0;\n                    sda_out <= 1'b1;  // Finaliza el envío de la dirección\n                    state <= SLV_OBJ_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= slave_addr[counter];\n                end\n            end\n            SLV_OBJ_ACK: begin\n                // Chequear ACK del esclavo. No está en el verilog\n                if (I2C_SDA == 1'b0) begin  // Write\n                    \n                    counter <= 3'd7;\n                    write_enable <= 1'b1;\n                    aux_buffer <= wt_buffer[23:16];\n                    sda_out <= aux_buffer[counter];\n                    state <= WRITE_DATA;\n                end else begin               // Read\n                    counter <= 3'd7;\n                    write_enable <= 1'b0;\n                    state <= READ_DATA;\n                end\n                \n            end\n            WRITE_DATA: begin\n                busy <= 1'b1;\n                if (counter == 3'd0) begin\n                    write_enable <= 1'b0;\n                    num_paquetes <= num_paquetes - 1'b1;\n                    state <= WRITE_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    sda_out <= aux_buffer[counter];\n                end\n            end\n            READ_DATA: begin\n                rd_buffer[counter] <= I2C_SDA;\n                if (counter == 3'd0) begin\n                    state <= READ_ACK;\n                end else begin \n                    counter <= counter - 1;\n                end\n            end\n            WRITE_ACK: begin\n                if (enable == 1'b1) begin\n                    if (num_paquetes > 2'b0) begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        wt_buffer <= wt_buffer << 8;\n                        aux_buffer <= wt_buffer[23:16];\n                        sda_out <= aux_buffer[counter];\n                        state <= WRITE_DATA;\n                    end else begin\n                        state <= STOP;\n                    end\n                end else begin \n                    state <= STOP;\n                end\n            end\n            READ_ACK: begin\n                busy <= 1'b0;\n                write_enable <= 1'b1;\n                sda_out <= 1'b0;\n                reg_data_ready <= 1'b1;\n                state <= STOP;\n            end\n            STOP: begin\n                write_enable <= 1'b1;\n                sda_out <= 1'b1;\n                busy <= 1'b0;\n                state <= READY;\n            end\n        endcase\n    end\nend\n\n// Control síncrono de SCL enable\nalways @(posedge clk) begin\n    if (!rstn)\n        clk_enable <= 1'b0;\n    else\n        clk_enable <= (state != READY) && (state != START) && (state != STOP);\nend"
           },
           "position": {
             "x": 1400,
@@ -3624,7 +3793,7 @@
               ]
             },
             "params": [],
-            "code": "\nparameter W_SLV_ADDR = 4'b0000;   \nparameter W_RW = 4'b0001;   \nparameter W_N_PQTS = 4'b0010;   \nparameter R_STATE = 4'b0011;   \nparameter R_BUSY = 4'b0100;   \nparameter R_DATA_OUT = 4'b0101;   \nparameter S_ENABLE_START = 4'b0110; \nparameter S_ENABLE_OUT = 4'b0111;   \nparameter W_DATA_WRITE = 4'b1000;   \n\n//Entrada desde bus de datos\nreg [7:0] dataArray [0:7];\nreg [31:0] buffer_data_out;      \nreg [31:0] zero = 32'b0;\nreg [23:0] data_wr = 24'b0;\n\nassign slv_addr[6:0] = dataArray[0][6:0];       //7 bits                            //0x0400 0000 // 0000\nassign rw = dataArray[1][0];                    //1 bit                             //0x0400 0001 // 0001\nassign n_paquetes[1:0] = dataArray[2][1:0];     //4 bits                            //0x0400 0002 // 0010\nassign I2C_State[3:0] = dataArray[3][3:0];                                          //0x0400 0003 // 0011                               \nassign I2C_Busy = dataArray[4][0];                                                  //0x0400 0004 // 0100\nassign data_out[7:0] = dataArray[5][7:0];                                           //0x0400 0005 // 0101\nassign enable_start = dataArray[6][0];         //1 bit                             //0x0400 0006 // 0110                           \nassign bus_data_enable = dataArray[7][0];         // Datos para la salida del bus      //0x0400 0007 // 0111\n\nassign data_write[23:0] = data_wr;              //24 bits                           //0x0400 0003 // 1000\nassign bus_data_out = buffer_data_out;          // Datos para la salida del bus\n\nalways @(posedge clk) begin\n    dataArray[6] <= 8'b0;\n    dataArray[7] <= 8'b0;\n    \n    if (!rstn) begin\n        // No existen los for exactamente\n        // Esto creará estructuras de reinicio tantas veces como se diga\n        // No va a iterar x veces\n        dataArray[0] <= 8'b0;\n        dataArray[1] <= 8'b0;\n        dataArray[2] <= 8'b0;\n        dataArray[3] <= 8'b0;\n        dataArray[4] <= 8'b0;\n        dataArray[5] <= 8'b0;\n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n        // Se reinician los registros\n        buffer_data_out <= 32'b0;\n        data_wr <= 24'b0;\n        zero <= 32'b0;\n        \n    end else if (serdat_cs) begin\n        // Caso en el que se introduce información\n        if(Bus_data[3:0] == W_SLV_ADDR || Bus_data[3:0] == W_RW|| Bus_data[3:0] == W_N_PQTS)begin\n            dataArray[Bus_addr[2:0]] <= Bus_data[7:0];\n\n            if(Bus_addr[7:0] == 8'd0) begin\n                dataArray[6][0] <= 1'b1;\n            end\n            // Caso en el que se lee información\n        end else if(Bus_data[2:0] == R_STATE || Bus_data[2:0] == R_BUSY || Bus_data[2:0] == R_DATA_OUT)begin\n            dataArray[7][0] <= 1'b1;\n            buffer_data_out <= {zero[31:8], dataArray[Bus_addr[2:0]]};\n            \n        end else if(Bus_data[2:0] == W_DATA_WRITE)begin\n            buffer_data_out <= {zero[31:24], Bus_data[23:0]};\n        end else begin\n            dataArray[7][0] <= 1'b0;\n        end\n    end else begin\n        // Si no se está escribiendo en el bus, se pone a 0\n        dataArray[7][0] <= 1'b0;\n    end\nend\n"
+            "code": "\nparameter W_SLV_ADDR = 4'b0000;   \nparameter W_RW = 4'b0001;   \nparameter W_N_PQTS = 4'b0010;   \nparameter R_STATE = 4'b0011;   \nparameter R_BUSY = 4'b0100;   \nparameter R_DATA_OUT = 4'b0101;   \nparameter S_ENABLE_START = 4'b0110; \nparameter S_ENABLE_OUT = 4'b0111;   \nparameter W_DATA_WRITE = 4'b1000;   \n\n//Entrada desde bus de datos\nreg [7:0] dataArray [7:0];\nreg [31:0] buffer_data_out;\nreg [23:0] data_wr = 24'b0;\n\nassign slv_addr[6:0] = dataArray[0][6:0];      \nassign rw = dataArray[1][0];                   \nassign n_paquetes[1:0] = dataArray[2][1:0];    \n\nassign enable_start = dataArray[6][0];                                    \nassign bus_data_enable = dataArray[7][0];      \n\nassign data_write[23:0] = data_wr;             \nassign bus_data_out = buffer_data_out;     \n\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        dataArray[0] <= 8'b0;\n        dataArray[1] <= 8'b0;\n        dataArray[2] <= 8'b0;\n        dataArray[3] <= 8'b0;\n        dataArray[4] <= 8'b0;\n        dataArray[5] <= 8'b0;\n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n        // Se reinician los registros\n        buffer_data_out <= 32'b0;\n        data_wr <= 24'b0;\n\n    end else begin\n    \n        if(I2C_State != dataArray[3][3:0])begin\n            dataArray[3] <= {4'b0, I2C_State};\n        end\n    \n        if(I2C_Busy != dataArray[4][0])begin\n            dataArray[4] <= {7'b0, I2C_Busy};\n        end\n    \n        if(data_out!= dataArray[5])begin\n            dataArray[5] <= data_out;\n        end\n    \n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n    \n        if (serdat_cs) begin\n            // Caso en el que se introduce información\n            if(Bus_addr[3:0] == W_SLV_ADDR || Bus_addr[3:0] == W_RW|| Bus_addr[3:0] == W_N_PQTS)begin\n                dataArray[Bus_addr[3:0]] <= Bus_data[7:0];\n\n                if(Bus_addr[7:0] == 8'd0) begin\n                    dataArray[6][0] <= 1'b1;\n                end\n                // Caso en el que se lee información\n            end else if(Bus_addr[3:0] == R_STATE || Bus_addr[3:0] == R_BUSY || Bus_addr[3:0] == R_DATA_OUT)begin\n                dataArray[7][0] <= 1'b1;\n                buffer_data_out <= {24'b0, dataArray[Bus_addr[3:0]]};\n            \n            end else if(Bus_addr[3:0] == W_DATA_WRITE)begin\n                data_wr <= Bus_data[23:0];\n            end \n        end\n    end\nend"
           },
           "position": {
             "x": -144,
@@ -3633,6 +3802,18 @@
           "size": {
             "width": 768,
             "height": 904
+          }
+        },
+        {
+          "id": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+          "type": "f9bdaff1530f334164536bb41f91d66f8878f4e0",
+          "position": {
+            "x": 512,
+            "y": 1584
+          },
+          "size": {
+            "width": 96,
+            "height": 64
           }
         }
       ],
@@ -3926,27 +4107,6 @@
         },
         {
           "source": {
-            "block": "1911039b-3440-4a05-8589-74defaa70aaa",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-            "port": "b"
-          }
-        },
-        {
-          "source": {
-            "block": "4d507036-26b1-4c1a-aed7-479aa7b4ac95",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-            "port": "c"
-          },
-          "size": 32
-        },
-        {
-          "source": {
             "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
             "port": "x"
           },
@@ -4088,16 +4248,6 @@
         },
         {
           "source": {
-            "block": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
-            "port": "outlabel"
-          },
-          "target": {
-            "block": "aab30564-78cd-45d2-868a-572069b82155",
-            "port": "I2C_SDA"
-          }
-        },
-        {
-          "source": {
             "block": "aab30564-78cd-45d2-868a-572069b82155",
             "port": "I2C_SCL"
           },
@@ -4202,6 +4352,60 @@
             "port": "I2C_State"
           },
           "size": 4
+        },
+        {
+          "source": {
+            "block": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "aab30564-78cd-45d2-868a-572069b82155",
+            "port": "I2C_SDA"
+          }
+        },
+        {
+          "source": {
+            "block": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
+            "port": "c"
+          },
+          "size": 32
+        },
+        {
+          "source": {
+            "block": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
+            "port": "outlabel"
+          },
+          "target": {
+            "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+            "port": "b609ce71-5f25-4491-b628-d73be6e4c572"
+          },
+          "vertices": [],
+          "size": 32
+        },
+        {
+          "source": {
+            "block": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+            "port": "bde24908-c5bf-4286-b7e3-e42a11ca5c68"
+          },
+          "vertices": []
+        },
+        {
+          "source": {
+            "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
+            "port": "0344dacc-8583-456b-b377-8cb4ab97cf94"
+          },
+          "target": {
+            "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
+            "port": "b"
+          }
         }
       ]
     }
@@ -4430,7 +4634,7 @@
               "id": "9c811723-c900-4ceb-9989-036b071ee3fe",
               "type": "basic.code",
               "data": {
-                "code": "assign eq = (a[23:8] == K[23:8]);",
+                "code": "assign eq = (a == K);",
                 "params": [
                   {
                     "name": "K"

@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "i2c_ads7924.h": "c"
+    }
+}
