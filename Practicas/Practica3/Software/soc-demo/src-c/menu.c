@@ -6,29 +6,68 @@
 // Dirección base del I2C
 #define reg_uart_data  (*(volatile uint32_t*)0x02000008)
 #define reg_leds       (*(volatile uint32_t*)0x03000000)
-#define I2C_BASE       (*(volatile uint32_t*)0x04000000)
+//#define-I2C_BASE       (*(volatile uint32_t*)0x04000000)
+#define rw             (*(volatile uint32_t*)0x04000024) // Registro de lectura/escritura
+#define npqts             (*(volatile uint32_t*)0x04000008) // Registro de lectura/escritura
+#define cosi             (*(volatile uint32_t*)0x00000055) // Registro de lectura/escritura
 
-//Direcciones dentro del I2C
-#define I2C_ADC_DIRECTION 0X48  // 1001 000B // Dirección de ADS7924
+// Direcciones dentro del I2C
+#define I2C_ADC_DIRECTION 0X48  // 1001 0001B // Dirección de ADS7924
 
 void printMenu();
-void menu();
 void i2c_submenu(void);
 
 
-void printMenu()
-{
+int main(void) {
+    char c;
+    print("Booting...\n\n");
+    reg_leds = 0xFF;
+    reg_leds = 0x00;
+    reg_leds = 0xFF;
+    
+    print("Prueba número");
+    do { c = getchar(); } while (c == '\r' || c == '\n');
+    print("\n");
+    print("Usted digitó: ");
+    print("\n");
+    putchar(c);
+    print("\r\n");
+    npqts = 0x01; // Inicializamos el registro rw a 0
+    printMenu();
+    while (1) {
+        do { c = getchar(); } while (c == '\r' || c == '\n');
+        switch (c) {
+            case '1': printMenu(); break;
+            case '2': i2c_submenu(); break;
+            case '3': config(); break;
+            case '4':
+                // Envío de 10101001 al registro 00
+                print("Enviando 0b10101001 al registro 0xAA...\r\n");
+                uint32_t payload = (0xFF << 24) | (0xFF << 16) | (0xFF << 8) | (0xFF << 0);
+                int n_bytes_dato = 2;
+                i2c_send_toReg(I2C_ADC_DIRECTION, 1, payload, n_bytes_dato);
+                print("Envío completado.\r\n");
+                break;
+            default: print("Opción inválida.\r\n"); break;
+        }
+    }
+}
+
+void printMenu() {
+    int numPrueba = 1; // Número de prueba inicializado a 1
     print("\n");
     print("I2C Test Menu:\n");
     print("1. Mostrar menu\n");
     print("2. Interfaz I2C sub-menú\n");
     print("3. Autoconfiguración de ADC 7924\n");
-    print("\n");
-}
+    print("4. Envío de 10101001 al registro AA\n");
+    npqts = npqts << 1; // Incrementa el registro npqts para simular un cambio
+    numPrueba = npqts & 0xFF; // Asegura que numPrueba sea un valor válido
+    print("Número de prueba: ");
+    print_hex_byte(numPrueba);
+    print("\n");}
 
-
-void i2c_submenu(void)
-{
+void i2c_submenu(void) {
     uint32_t regObj = 0b0; // Variable regObj inicializada en binario, utilizada para almacenar un registro en formato binario
     char c1, op;           // c1: carácter de entrada, op: operación seleccionada por el usuario
     int n_reg = 0;         // Número total de registros disponibles
@@ -54,167 +93,73 @@ void i2c_submenu(void)
     putchar(c1);
     print("\r\n");
     n_reg = 1;
-    switch (c1)
-    {
-    case '0':
-        regObj = 0b00000000;
-        break;
-
-    case '1':
-        regObj = 0b00000001;
-        break;
-
-    case '2':
-        n_reg = 2;
-        print("Seleccione el registro DATA: ");
-        do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
-        print("Opciones\n");
-        print("  0: DATA0_U\r\n");
-        print("  1: DATA0_L\r\n");
-        print("  2: DATA1_U\r\n");
-        print("  3: DATA1_L\r\n");
-        print("  4: DATA2_U\r\n");
-        print("  5: DATA2_L\r\n");
-        print("  6: DATA3_U\r\n");
-        print("  7: DATA3_L\r\n");
-        putchar(c1);
-        print("\r\n");
-
-        if (!(c1 >= '0' && c1 <= '7')) {
-            print("Selección inválida.\r\n");
-            return;
-        }
-
-        switch (c1)
-        {
-        case '0':
-            regObj = 0b00000010;
-            break;
-
-        case '1':
-            regObj = 0b00000011;
-            break;
-
+    switch (c1) {
+        case '0': regObj = 0b00000000; break;
+        case '1': regObj = 0b00000001; break;
         case '2':
-            regObj = 0b00000100;
+            n_reg = 2;
+            print("Seleccione el registro DATA: ");
+            do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+            print("Opciones\n");
+            print("  0: DATA0_U\r\n");
+            print("  1: DATA0_L\r\n");
+            print("  2: DATA1_U\r\n");
+            print("  3: DATA1_L\r\n");
+            print("  4: DATA2_U\r\n");
+            print("  5: DATA2_L\r\n");
+            print("  6: DATA3_U\r\n");
+            print("  7: DATA3_L\r\n");
+            putchar(c1);
+            print("\r\n");
+            if (!(c1 >= '0' && c1 <= '7')) { print("Selección inválida.\r\n"); return; }
+            switch (c1) {
+                case '0': regObj = 0b00000010; break;
+                case '1': regObj = 0b00000011; break;
+                case '2': regObj = 0b00000100; break;
+                case '3': regObj = 0b00000101; break;
+                case '4': regObj = 0b00000110; break;
+                case '5': regObj = 0b00000111; break;
+                case '6': regObj = 0b00001000; break;
+                case '7': regObj = 0b00001001; break;
+                default: print("Selección inválida.\r\n"); return;
+            }
             break;
-
         case '3':
-            regObj = 0b00000101;
+            n_reg = 2;
+            print("Seleccione un registro LR: ");
+            do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+            print("Opciones\n");
+            print("  0: ULR0\r\n");
+            print("  1: LLR0\r\n");
+            print("  2: ULR1\r\n");
+            print("  3: LLR1\r\n");
+            print("  4: ULR2\r\n");
+            print("  5: LLR2\r\n");
+            print("  6: ULR3\r\n");
+            print("  7: LLR3\r\n");
+            putchar(c1);
+            print("\r\n");
+            if (!(c1 >= '0' && c1 <= '7')) { print("Selección inválida.\r\n"); return; }
+            switch (c1) {
+                case '0': regObj = 0b00001010; break;
+                case '1': regObj = 0b00001011; break;
+                case '2': regObj = 0b00001100; break;
+                case '3': regObj = 0b00001101; break;
+                case '4': regObj = 0b00001110; break;
+                case '5': regObj = 0b00001111; break;
+                case '6': regObj = 0b00010000; break;
+                case '7': regObj = 0b00010001; break;
+                default: print("Selección inválida.\r\n"); return;
+            }
             break;
-
-        case '4':
-            regObj = 0b00000110;
-            break;
-
-        case '5':
-            regObj = 0b00000111;
-            break;
-
-        case '6':
-            regObj = 0b00001000;
-            break;
-
-        case '7':
-            regObj = 0b00001001;
-            break;
-
-        default:
-            print("Selección inválida.\r\n");
-            return;
-
-        }
-        break;
-
-    case '3':
-        n_reg = 2;
-        print("Seleccione un registro LR: ");
-        do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
-        print("Opciones\n");
-        print("  0: ULR0\r\n");
-        print("  1: LLR0\r\n");
-        print("  2: ULR1\r\n");
-        print("  3: LLR1\r\n");
-        print("  4: ULR2\r\n");
-        print("  5: LLR2\r\n");
-        print("  6: ULR3\r\n");
-        print("  7: LLR3\r\n");
-        putchar(c1);
-        print("\r\n");
-
-        if (!(c1 >= '0' && c1 <= '7')) {
-            print("Selección inválida.\r\n");
-            return;
-        }
-
-        switch (c1)
-        {
-        case '0':
-            regObj = 0b00001010;
-            break;
-
-        case '1':
-            regObj = 0b00001011;
-            break;
-
-        case '2':
-            regObj = 0b00001100;
-            break;
-
-        case '3':
-            regObj = 0b00001101;
-            break;
-
-        case '4':
-            regObj = 0b00001110;
-            break;
-
-        case '5':
-            regObj = 0b00001111;
-            break;
-
-        case '6':
-            regObj = 0b00010000;
-            break;
-
-        case '7':
-            regObj = 0b00010001;
-            break;
-
-        default:
-            print("Selección inválida.\r\n");
-            return;
-        }
-        break;
-    
-    case '4':
-        regObj = 0b00010010;
-        break;
-    
-    case '5':
-        regObj = 0b00010011;
-        break;
-    
-    case '6':
-        regObj = 0b00010100;
-        break;
-    
-    case '7':
-        regObj = 0b00010101;
-        break;
-    
-    case '8':
-        regObj = 0b00010110;
-        break;
-    
-    case 'r':
-    case 'R':
-        print("Volviendo al menú principal...\r\n");
-        return;
-    
-    default:
-        print("Selección inválida.\r\n");
-        return;
+        case '4': regObj = 0b00010010; break;
+        case '5': regObj = 0b00010011; break;
+        case '6': regObj = 0b00010100; break;
+        case '7': regObj = 0b00010101; break;
+        case '8': regObj = 0b00010110; break;
+        case 'r':
+        case 'R': print("Volviendo al menú principal...\r\n"); return;
+        default: print("Selección inválida.\r\n"); return;
     }
 
     // 4) Pide operación
@@ -224,48 +169,36 @@ void i2c_submenu(void)
     print("\r\n");
 
     if (op == '1') {
-        //Lectura
-        // La escritura vacía la hacemos desde dentro de i2c_recive_fromReg
+        // Lectura
         uint32_t payload = 0;
         uint8_t val;
-        payload =   0  << 24|
-                    regObj << 16|
-                    0 << 8 |
-                    0 << 0;
+        payload = (0 << 24) | (regObj << 16) | (0 << 8) | (0 << 0);
         i2c_recieve_fromReg(I2C_ADC_DIRECTION, 1, payload, &val);
-
-        // imprime: Leído reg 0x<reg_idx>: valor=0x<val>
         print("Dato leído: ");
-        print(val);
+        //print(val);
         print("\r\n");
-    }
-    else if (op == '2') {
+    } else if (op == '2') {
         // Escritura
         uint32_t payload = 0;
         char h[4] = {0};
         int n_bytes_dato = 1;
-
         print("¿Quiere escribir un byte? (y/n): ");
         do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
-
-        if(c1 == 'y' || c1 == 'Y') {
+        if (c1 == 'y' || c1 == 'Y') {
             print("\r\n");
             print("Dato (hex 2 dígitos)\r\n");
-
-            print ("Más significativo: "); 
+            print("Más significativo: ");
             do { h[0] = getchar(); } while (h[0] == '\r' || h[0] == '\n');
             print("\r\n");
             print("Más significativo en binario: ");
-            print_bin_byte(hexval(h[0]));
+            print_hex_nibble(hexval(h[0]));
             print("\r\n");
-
-            print ("Menos significativo: ");
+            print("Menos significativo: ");
             do { h[1] = getchar(); } while (h[1] == '\r' || h[1] == '\n');
             print("\r\n");
             print("Menos significativo en binario: ");
-            print_bin_byte(hexval(h[1]));
+            print_hex_nibble(hexval(h[1]));
             print("\r\n");
-
             print("¿Quiere escribir un segundo byte? (y/n): ");
             do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
             if (c1 == 'y' || c1 == 'Y') {
@@ -282,124 +215,53 @@ void i2c_submenu(void)
                 print("Menos significativo en binario: ");
                 print_hex_nibble(h[3]);
                 print("\r\n");
-            }
-            else {
+            } else {
                 h[2] = '0';
                 h[3] = '0';
             }
-        }
-        else {
+        } else {
             h[0] = '0';
             h[1] = '0';
         }
-        
         print("Registro objetivo: ");
         print_bin_byte(regObj);
         print("\r\n");
-
         uint8_t segundoByte = (hexval(h[0]) << 4) | hexval(h[1]);
         print("Segundo byte: ");
         print_bin_byte(segundoByte);
         print("\r\n");
-
         uint8_t tercerByte = (hexval(h[2]) << 4) | hexval(h[3]);
         print("Tercer byte: ");
         print_bin_byte(tercerByte);
         print("\r\n");
-
-        payload =   0  << 24|
-                    regObj << 16|
-                    segundoByte << 8 |
-                    tercerByte << 0;
-
+        payload = (0 << 24) | (regObj << 16) | (segundoByte << 8) | (tercerByte << 0);
         if (segundoByte != 0) {
             n_bytes_dato++;
             if (tercerByte != 0) {
                 n_bytes_dato++;
             }
         }
-
         print("Escribiendo...\r\n");
         print("I2C_ADC_DIRECTION: ");
         print_bin_byte(I2C_ADC_DIRECTION);
         print("\r\n");
-
         print("R/W: ");
         print_bin_byte(0); // 0 for write operation
         print("\r\n");
-
         print("Payload: ");
         print_hex32(payload);
         print("\r\n");
-
         print("Payload en binario: ");
         print_bin32(payload);
         print("\r\n");
-
         print("n_bytes_dato: ");
         print_hex_byte(n_bytes_dato);
         print("\r\n");
-
-        i2c_send_toReg(I2C_ADC_DIRECTION,0 ,payload ,n_bytes_dato);
+        i2c_send_toReg(I2C_ADC_DIRECTION, 1, payload, n_bytes_dato);
         print("Escritura completada.\r\n");
-    }
-    else if (op == 'r' || op == 'R') {
+    } else if (op == 'r' || op == 'R') {
         print("Volviendo al menú principal...\r\n");
-    }
-    else {
+    } else {
         print("Operación inválida.\r\n");
     }
 }
-
-
-
-int main(void)
-{
-    char c;
-
-    reg_leds = 0xF0;
-    print("Booting...\n\n");
-
-    print("Prueba número");
-    do { c = getchar(); } while (c == '\r' || c == '\n');
-    
-
-    print("\n");
-    print("Usted digitó: ");
-    print("\n");
-    putchar(c);
-    print("\r\n");
-
-
-    reg_leds = 0x11;
-
-    printMenu();
-
-    while (1)
-    {
-        do { c = getchar(); } while (c == '\r' || c == '\n');
-
-        switch (c)
-        {
-        case '1':
-            /* code */
-            printMenu();
-            break;
-
-        case '2':
-            /* code */
-            i2c_submenu();
-            break;
-
-        case '3':
-            /* code */
-            config();
-            break;
-        
-        default:
-            print("Opción inválida.\r\n");
-            break;
-        }
-    }
-
-}   

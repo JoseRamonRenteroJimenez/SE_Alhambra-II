@@ -6,7 +6,7 @@
 #define reg_uart_data  (*(volatile uint32_t*)0x02000008)
 #define reg_leds       (*(volatile uint32_t*)0x03000000)
 
-void putChar(char c);
+void putchar(char c);
 void print(const char *p);
 char getchar_prompt(char *prompt);
 char getchar();

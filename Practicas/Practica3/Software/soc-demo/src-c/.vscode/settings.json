@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "i2c_ads7924.h": "c"
+        "i2c_ads7924.h": "c",
+        "stdint.h": "c",
+        "cstdint": "c"
     }
 }
