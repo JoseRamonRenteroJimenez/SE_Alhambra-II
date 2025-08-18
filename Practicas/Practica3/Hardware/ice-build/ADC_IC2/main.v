@@ -5,8 +5,8 @@
 //---- Top entity
 module main #(
  parameter vec4673 = 'h0400_0000,
- parameter v8eaf13 = 'h0400_0001,
- parameter v9c4340 = 100000
+ parameter v9c4340 = 100000,
+ parameter vdcbaf8 = 100000
 ) (
  input v87186f,
  input v4dc0ee,
@@ -17,22 +17,18 @@ module main #(
  output v9127c2,
  output vfe2384,
  output [31:0] v504d16,
- output vf73703,
- output va77527,
- output v34d6ed,
- output v5a58e0,
- output [7:0] vaac567,
- output [6:0] vc02bbb,
+ output [7:0] v9d524f,
+ output [3:0] v6c6273,
  output [0:7] vinit,
  inout v80923c
 );
- localparam p0 = v9c4340;
- localparam p1 = v8eaf13;
- localparam p6 = vec4673;
- wire w2;
- wire [0:6] w3;
+ localparam p0 = vec4673;
+ localparam p3 = v9c4340;
+ localparam p5 = vdcbaf8;
+ wire [0:3] w1;
+ wire [0:7] w2;
  wire w4;
- wire [0:7] w5;
+ wire w6;
  wire w7;
  wire w8;
  wire w9;
@@ -41,134 +37,122 @@ module main #(
  wire w12;
  wire w13;
  wire w14;
- wire [0:31] w15;
- wire [0:31] w16;
- wire [0:31] w17;
- wire w18;
- wire w19;
- wire w20;
+ wire w15;
+ wire w16;
+ wire w17;
+ wire [0:31] w18;
+ wire [0:31] w19;
+ wire [0:31] w20;
  wire w21;
  wire w22;
  wire w23;
  wire [0:31] w24;
- wire [0:31] w25;
- wire [0:31] w26;
- wire [0:3] w27;
+ wire [0:3] w25;
+ wire w26;
+ wire w27;
  wire w28;
  wire w29;
- wire w30;
+ wire [0:7] w30;
  wire [0:3] w31;
  wire w32;
- wire w33;
- wire w34;
- wire [0:6] w35;
- wire [0:6] w36;
- wire [0:31] w37;
- wire [0:7] w38;
- wire [0:2] w39;
- assign vc02bbb = w3;
- assign vaac567 = w5;
+ wire [0:31] w33;
+ wire [0:2] w34;
+ wire [0:7] w35;
+ assign v6c6273 = w1;
+ assign v9d524f = w2;
  assign w7 = v87186f;
  assign w8 = v87186f;
  assign w9 = v87186f;
- assign w10 = v4dc0ee;
- assign w11 = v4dc0ee;
+ assign w10 = v87186f;
+ assign v9127c2 = w11;
  assign w12 = v4dc0ee;
- assign w13 = v80923c;
- assign v5a58e0 = w13;
- assign w14 = v80923c;
- assign w15 = v867561;
- assign w16 = v867561;
- assign w17 = v867561;
- assign v9127c2 = w18;
- assign w19 = v8859f4;
- assign w20 = v8859f4;
- assign vfe2384 = w23;
+ assign w13 = v4dc0ee;
+ assign w14 = v4dc0ee;
+ assign vfe2384 = w15;
+ assign w16 = v80923c;
+ assign w17 = v80923c;
+ assign v504d16 = w18;
+ assign w19 = v867561;
+ assign w20 = v867561;
+ assign w21 = v8859f4;
+ assign w22 = v8859f4;
  assign w24 = v23504b;
- assign w25 = v23504b;
- assign v504d16 = w26;
- assign w27 = v1c4ad8;
- assign vf73703 = w28;
- assign va77527 = w29;
- assign v34d6ed = w30;
+ assign w25 = v1c4ad8;
  assign w8 = w7;
  assign w9 = w7;
  assign w9 = w8;
- assign w11 = w10;
- assign w12 = w10;
- assign w12 = w11;
+ assign w10 = w7;
+ assign w10 = w8;
+ assign w10 = w9;
+ assign w13 = w12;
+ assign w14 = w12;
  assign w14 = w13;
- assign w16 = w15;
- assign w17 = w15;
  assign w17 = w16;
  assign w20 = w19;
  assign w22 = w21;
- assign w25 = w24;
- assign w36 = w35;
- v0e64bc #(
-  .v207e0d(p0)
- ) v9f9653 (
-  .v8337bc(w4),
-  .v531e20(w7)
- );
- vf9bdaf #(
-  .v6b316b(p1)
- ) v3156fe (
-  .v18e78c(w2),
-  .ve1f562(w17)
- );
- main_vb9f55b vb9f55b (
-  .b(w2),
-  .slave__out(w3),
-  .clk(w9),
-  .rst_n(w12),
-  .a(w22),
-  .c(w25),
-  .x(w28),
-  .y(w29),
-  .z(w30),
-  .slave_out(w36)
+ assign w27 = w26;
+ assign w29 = w28;
+ assign w30 = w2;
+ assign w31 = w1;
+ main_vadbda8 #(
+  .Addr(p0)
+ ) vadbda8 (
+  .addr_in(w19),
+  .bit_valid(w21),
+  .i2c_cs(w23)
  );
  main_v626e75 v626e75 (
+  .state_out(w1),
   .clk(w4),
-  .rstn(w10),
-  .I2C_SDA(w14),
-  .I2C_SCL(w18),
-  .state_out(w31),
-  .enable(w32),
-  .rw(w33),
-  .busy_out(w34),
-  .slv_addr(w35),
-  .data_in(w37),
-  .data_out(w38),
-  .n_paquetes(w39)
- );
- main_vadbda8 #(
-  .Addr(p6)
- ) vadbda8 (
-  .addr_in(w15),
-  .bit_valid(w19),
-  .i2c_cs(w21)
+  .I2C_SCL(w11),
+  .rstn(w13),
+  .I2C_SDA(w16),
+  .enable(w26),
+  .rw(w28),
+  .slv_addr(w30),
+  .busy_out(w32),
+  .data_in(w33),
+  .n_paquetes(w34),
+  .data_out(w35)
  );
  main_vecfcb9 vecfcb9 (
-  .check(w5),
-  .clk(w8),
-  .rstn(w11),
-  .Bus_addr(w16),
-  .valid(w20),
-  .serdat_cs(w21),
-  .bus_data_enable(w23),
+  .slv_addr(w2),
+  .clk(w7),
+  .rstn(w12),
+  .bus_data_enable(w15),
+  .bus_data_out(w18),
+  .Bus_addr(w20),
+  .valid(w22),
+  .serdat_cs(w23),
   .Bus_data(w24),
-  .bus_data_out(w26),
-  .mem_wstrb(w27),
+  .mem_wstrb(w25),
+  .enable_start(w26),
+  .rw(w28),
   .I2C_State(w31),
-  .enable_start(w32),
-  .rw(w33),
-  .I2C_Busy(w34),
-  .slv_addr(w35),
-  .data_write(w37),
-  .data_out(w38),
-  .n_paquetes(w39)
+  .I2C_Busy(w32),
+  .data_write(w33),
+  .n_paquetes(w34),
+  .data_out(w35)
+ );
+ main_v390fcc #(
+  .Frecuencia(p3)
+ ) v390fcc (
+  .clk_out(w4),
+  .clk_in(w8)
+ );
+ main_vf5c265 #(
+  .Frecuencia(p5)
+ ) vf5c265 (
+  .clk_out(w6),
+  .clk_in(w9)
+ );
+ main_vc66ea6 vc66ea6 (
+  .i2c_clk(w6),
+  .clk(w10),
+  .resetn(w14),
+  .sda(w17),
+  .ena(w27),
+  .rw(w29)
  );
  assign vinit = 8'b00000000;
 endmodule
@@ -178,164 +162,15 @@ endmodule
 //-- - - - - - - - - - - - - - - - - - - - - - - - --
 //-- Periférico encargado de la comunicación a través del bus I2C.
 //---------------------------------------------------
-//---- Top entity
-module v0e64bc #(
- parameter v207e0d = 1
+
+module main_vadbda8 #(
+ parameter Addr = 0
 ) (
- input v531e20,
- output v8337bc
+ input [31:0] addr_in,
+ input bit_valid,
+ output i2c_cs
 );
- localparam p2 = v207e0d;
- wire w0;
- wire w1;
- assign v8337bc = w0;
- assign w1 = v531e20;
- v0e64bc_v94c6d7 #(
-  .HZ(p2)
- ) v94c6d7 (
-  .clk_o(w0),
-  .clk(w1)
- );
-endmodule
-
-//---------------------------------------------------
-//-- Corazon_Hz
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Corazon genérico para bombear bits a la frecuencia fijada en Hz (por defecto 1Hz)
-//---------------------------------------------------
-
-module v0e64bc_v94c6d7 #(
- parameter HZ = 0
-) (
- input clk,
- output clk_o
-);
- 
- //parameter HZ=1;
- 
- //-- Constante para dividir y obtener una frecuencia de 1Hz
- localparam M = 12000000/HZ;
- 
- //-- Calcular el numero de bits para almacenar M
- localparam N = $clog2(M);
- 
- //-- Registro del divisor
- reg [N-1:0] divcounter;
- 
- //-- Temporal clock
- reg clk_t = 0;
- 
- //-- REgistro con el valor del reloj
- reg clk_out = 0;
- 
- //-- Se usa un contador modulo M/2 para luego
- //-- pasarlo por un biestable T y dividir la frecuencia
- //-- entre 2, para que el ciclo de trabajo sea del 50%
- always @(posedge clk)
-     if (divcounter == M/2) begin
-       clk_t <= 1;
-       divcounter = 0;
-     end 
-     else begin
-       divcounter <=  divcounter + 1;
-       clk_t = 0;
-     end 
-     
- //-- Biestable T para obtener ciclo de trabajo del 50%
- always @(posedge clk)
-   if (clk_t)
-     clk_out <= ~clk_out;
- 
- 
- assign clk_o = clk_out;  
- 
-endmodule
-//---- Top entity
-module vf9bdaf #(
- parameter v6b316b = 0
-) (
- input [31:0] ve1f562,
- output v18e78c
-);
- localparam p1 = v6b316b;
- wire w0;
- wire [0:31] w2;
- assign v18e78c = w0;
- assign w2 = ve1f562;
- vf9bdaf_vd75681 #(
-  .K(p1)
- ) vd75681 (
-  .eq(w0),
-  .a(w2)
- );
-endmodule
-
-//---------------------------------------------------
-//-- Comparador
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Comparador de un operando de 32 bits. Se compara si el operando es igual al parámetro
-//---------------------------------------------------
-
-module vf9bdaf_vd75681 #(
- parameter K = 0
-) (
- input [31:0] a,
- output eq
-);
- assign eq = (a[31:6] == K[31:6]);
-endmodule
-
-module main_vb9f55b (
- input clk,
- input rst_n,
- input a,
- input b,
- input [31:0] c,
- input [6:0] slave_out,
- input rw_out,
- output x,
- output y,
- output z,
- output [6:0] slave__out
-);
- reg         reg_x = 0;    // ahora es reg
- reg         reg_y = 0;    // ahora es reg
- reg         reg_z = 0;     // ahora es reg
- 
- reg [6:0] slave_addr = 7'd0;   
- 
- assign x = reg_x;
- assign y = reg_y;
- assign z = reg_z;
- assign slave__out = slave_addr;
- always @(posedge clk or negedge rst_n) begin
- 
-     
-     if (!rst_n) begin
-         // Reset: vuelven a 0
-         reg_x <= 1'b0;
-         reg_y <= 1'b0;
-         reg_z <= 1'b0;
-         slave_addr <= 8'd0;   
-         
-     end else begin
-         // Al primer 1 en 'a', si aún no lo habíamos detectado
-         if (a && !reg_x)
-             reg_x <= 1'b1;
- 
-         // Al primer 1 en 'b'
-         if (b && !reg_y)
-             reg_y <= 1'b1;
- 
-         // Al primer 1 en cualquier bit de 'c' (reducción OR)
-         if (c && !reg_z)
-             reg_z <= 1'b1;
-         
-         if(slave_out && !slave_addr)
-             slave_addr <= slave_out;
-     end
- end
- 
+ assign i2c_cs = (addr_in[31:6] == Addr[31:6]) & bit_valid;
 endmodule
 
 module main_v626e75 (
@@ -343,16 +178,18 @@ module main_v626e75 (
  input rstn,
  input enable,
  input rw,
- input [6:0] slv_addr,
+ input [7:0] slv_addr,
  input [31:0] data_in,
  input [2:0] n_paquetes,
- input I2C_SDA,
  output [3:0] state_out,
  output busy_out,
  output [7:0] data_out,
- output I2C_SCL
+ inout I2C_SDA,
+ inout I2C_SCL
 );
- // Definir los estados de la máquina de estados
+ // -----------------------------
+ // Parámetros de la máquina de estados
+ // -----------------------------
  localparam READY       = 4'd0;
  localparam START       = 4'd1;
  localparam COMMAND     = 4'd2;
@@ -363,113 +200,137 @@ module main_v626e75 (
  localparam READ_ACK    = 4'd7;
  localparam STOP        = 4'd8;
  
- // Bit más significativos
+ // Bits más significativos
  localparam max_slv_Addr = 7;
  localparam max_data_wr = 31;
  
+ // -----------------------------
  // Registros internos
+ // -----------------------------
  reg [3:0] state = READY;            // Estado actual
- reg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío
- reg [2:0] num_paquetes = 3'd0;      // Contador de paquetes a enviar.
+ x1reg busy = 1'd0;                    // Flag de bus ocupado
+ reg reg_data_ready = 1'b0;
+ reg enable_reg = 1'd0;              // Latch para transición READY->START
+ reg clk_enable = 1'b0;
+ reg [2:0] counter = 3'd0;           // Cuenta hasta 8 bits de un envío
+ reg [2:0] num_paquetes = 3'd0;      // Paquetes a enviar
+ reg [31:0] wt_buffer = 32'b0;       // Buffer de escritura
+ reg [7:0] rd_buffer = 8'd0;         // Buffer de lectura
  reg [7:0] slave_addr = 8'd0;        // Dirección del esclavo
  reg read_write = 1'd0;              // Lectura o escritura
- reg [31:0] wt_buffer = 32'b0;       // Buffer de escritura. Mensaje a enviar
- reg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido
  reg sda_out = 1'd0;                 // Salida de SDA
  reg write_enable = 1'd0;            // Habilitación de SDA
- reg enable_reg = 1'd0;
- reg clk_enable;
- reg busy = 1'd0;                    // Flag de bus ocupado
- reg reg_data_ready = 1'b0;
+ reg enable_d;
  
- // Asignaciones
- assign busy_out = busy;
- assign data_out = rd_buffer;
- assign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL
- assign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA
+ wire enable_edge = enable & ~enable_d;
  
- //always @(posedge enable) begin
- //    enable_reg <= 1'b1;
- //end
+ // -----------------------------
+ // Asignaciones de salida
+ // -----------------------------
+ assign busy_out   = busy;
+ assign data_out   = rd_buffer;
+ assign I2C_SCL = (clk_enable && (clk == 1'b0)) ? 1'b0 : 1'bz;
+ assign I2C_SDA    = (write_enable && (sda_out==1'b0)) ? 1'b0 : 1'bz; // Pin de SDA
+ assign state_out  = state; // Estado actual
  
+ // -----------------------------
  // Máquina de estados I2C
+ // -----------------------------
  always @(posedge clk or negedge rstn) begin
      if (!rstn) begin
-         state <= READY;        
-         counter <= 3'd0;
-         num_paquetes <= 2'd0;  
-         sda_out <= 1'b1;
-         slave_addr <= 8'd0;       
-         read_write <= 1'd0;
-         wt_buffer <= 24'b0;       
-         rd_buffer <= 8'd0;                
-         write_enable <= 1'd0;           
-         busy <= 1'd0;
+         // Reset global
+         state          <= READY;
+         busy           <= 1'd0;
          reg_data_ready <= 1'b0;
-         enable_reg <= 1'b0;
+         enable_reg     <= 1'b0;
+         write_enable   <= 1'd0;
+         counter        <= 3'd0;
+         num_paquetes   <= 3'd0;
+         wt_buffer      <= 32'b0;
+         rd_buffer      <= 8'd0;
+         slave_addr     <= 8'd0;
+         read_write     <= 1'd0;
+         sda_out        <= 1'b1;
+         enable_d       <= 1'b0;
      end else begin
+         enable_d <= enable;
          case (state)
              READY: begin
+                 // Espera comando externo
                  reg_data_ready <= 1'b0;
-                 write_enable <= 1'b0;
-                 busy <= enable;
-                 if (enable && !enable_reg) begin
+                 write_enable   <= 1'b0;
+                 busy           <= 1'b0;
+                 // Latch de enable para transición segura
+                 if (enable_edge) begin
                      enable_reg <= 1'b1;
                  end
+                 // Carga de datos y transición de estado
                  if (enable_reg) begin
                      num_paquetes <= n_paquetes;
-                     read_write <= rw;
-                     slave_addr <= {slv_addr, rw};
-                     wt_buffer <= data_in;
-                     enable_reg <= 1'b0;
-                     state <= START;
+                     read_write   <= rw;
+                     slave_addr   <= slv_addr;
+                     wt_buffer    <= data_in;
+                     state        <= START;
+                     sda_out      <= 1'b0; // SDA en alto
+                     busy         <= 1'b1;
+                     write_enable <= 1'b1;
+                     clk_enable <= 1'b1;
                  end
              end
              START: begin
-                 busy <= 1'b1;
-                 write_enable <= 1'b1;
-                 counter <= 3'd7;
-                 sda_out <= slave_addr[max_slv_Addr];               
-                 state <= COMMAND;  
+                 // Inicio de comunicación
+                 enable_reg   <= 1'b0;
+                 busy         <= 1'b1;
+                 counter      <= 3'd7;
+                 //sda_out      <= slave_addr[max_slv_Addr];
+                 state        <= COMMAND;
              end
              COMMAND: begin
+                 // En cada ciclo sacamos el bit actual
+                 sda_out <= slave_addr[7];
+ 
                  if (counter == 3'd0) begin
-                     //write_enable <= 1'b0;
-                     sda_out <= 1'b0;  // Finaliza el envío de la dirección
-                     state <= SLV_OBJ_ACK;
+                     // Último bit ya colocado; en el siguiente ciclo soltamos SDA para ACK
+                     write_enable <= 1'b0;
+                     state        <= SLV_OBJ_ACK;
                  end else begin
-                     counter <= counter - 1;
-                     slave_addr <= slave_addr << 1; // Desplaza la dirección del esclavo
-                     sda_out <= slave_addr[max_slv_Addr];
+                     slave_addr   <= slave_addr << 1;
+                     counter      <= counter - 1;
                  end
              end
              SLV_OBJ_ACK: begin
-                 // Chequear ACK del esclavo. No está en el verilog
-                 if (I2C_SDA == 1'b1) begin  // Write
-                     counter <= 3'd7;
-                     write_enable <= 1'b1;
-                     sda_out <= wt_buffer[max_data_wr];
-                     state <= WRITE_DATA;
-                 end else begin               // Read
-                     counter <= 3'd7;
-                     write_enable <= 1'b0;
-                     state <= READ_DATA;
+                 // Espera ACK del esclavo
+                 if (I2C_SDA == 1'b0) begin
+                     if (read_write == 1'b0) begin  // Write
+                         counter      <= 3'd7;
+                         write_enable <= 1'b1;
+                         sda_out      <= wt_buffer[max_data_wr];
+                         state        <= WRITE_DATA;
+                     end else begin             // Read
+                         counter      <= 3'd7;
+                         state        <= READ_DATA;
+                     end
+                 end else begin
+                     // NACK
+                     state <= STOP;
                  end
              end
              WRITE_DATA: begin
+                 // Envío de datos
                  busy <= 1'b1;
                  if (counter == 3'd0) begin
                      write_enable <= 1'b0;
                      num_paquetes <= num_paquetes - 1'b1;
-                     sda_out <= 1'b0;
-                     state <= WRITE_ACK;
+                     sda_out      <= 1'b0;
+                     state        <= WRITE_ACK;
                  end else begin
-                     counter <= counter - 1;
+                     counter   <= counter - 1;
                      wt_buffer <= wt_buffer << 1;
-                     sda_out <= wt_buffer[max_data_wr];
+                     sda_out   <= wt_buffer[max_data_wr];
                  end
              end
              READ_DATA: begin
+                 // Lectura de datos
                  rd_buffer[counter] <= I2C_SDA;
                  if (counter == 3'd0) begin
                      state <= READ_ACK;
@@ -478,12 +339,13 @@ module main_v626e75 (
                  end
              end
              WRITE_ACK: begin
+                 // Espera ACK tras escritura
                  if (enable == 1'b1) begin
                      if (num_paquetes > 2'b0) begin
-                         counter <= 3'd7;
+                         counter      <= 3'd7;
                          write_enable <= 1'b1;
-                         sda_out <= wt_buffer[max_data_wr];
-                         state <= WRITE_DATA;
+                         sda_out      <= wt_buffer[max_data_wr];
+                         state        <= WRITE_DATA;
                      end else begin
                          state <= STOP;
                      end
@@ -492,39 +354,25 @@ module main_v626e75 (
                  end
              end
              READ_ACK: begin
-                 busy <= 1'b0;
-                 write_enable <= 1'b1;
-                 sda_out <= 1'b0;
+                 // ACK tras lectura
+                 busy           <= 1'b0;
+                 write_enable   <= 1'b1;
+                 sda_out        <= 1'b0;
                  reg_data_ready <= 1'b1;
-                 state <= STOP;
+                 state          <= STOP;
              end
              STOP: begin
+                 // Finalización de comunicación
                  write_enable <= 1'b1;
-                 sda_out <= 1'b1;
-                 busy <= 1'b0;
-                 state <= READY;
+                 sda_out      <= 1'b1;
+                 busy         <= 1'b0;
+                 clk_enable   <= 1'b0;
+                 state        <= READY;
              end
          endcase
      end
  end
  
- // Control síncrono de SCL enable
- always @(posedge clk) begin
-     if (!rstn)
-         clk_enable <= 1'b0;
-     else
-         clk_enable <= (state != READY) && (state != START) && (state != STOP);
- end
-endmodule
-
-module main_vadbda8 #(
- parameter Addr = 0
-) (
- input [31:0] addr_in,
- input bit_valid,
- output i2c_cs
-);
- assign i2c_cs = (addr_in[31:6] == Addr[31:6]) & bit_valid;
 endmodule
 
 module main_vecfcb9 (
@@ -540,13 +388,11 @@ module main_vecfcb9 (
  input [7:0] data_out,
  output enable_start,
  output rw,
- output [6:0] slv_addr,
+ output [7:0] slv_addr,
  output [31:0] data_write,
  output [2:0] n_paquetes,
  output bus_data_enable,
- output [31:0] bus_data_out,
- output [7:0] check,
- output data_ready
+ output [31:0] bus_data_out
 );
  parameter W_SLV_ADDR        = 3'b000;  // 0x04000000
  parameter W_RW              = 3'b001;  // 0x04000004
@@ -576,7 +422,7 @@ module main_vecfcb9 (
  assign bus_data_enable = ack_r;
  
  
- assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      
+ assign slv_addr[7:0] = dataArray[slv_addr_register][7:0];      
  assign rw = dataArray[rw_register][0];                   
  assign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    
  
@@ -584,7 +430,6 @@ module main_vecfcb9 (
  
  assign data_write = data_wr;             
  assign bus_data_out = buffer_data_out;     
- assign check = dataArray[W_N_PQTS];
  
  wire serdat_write = serdat_cs & |mem_wstrb;     
  
@@ -607,11 +452,10 @@ module main_vecfcb9 (
          dataArray[state_register]    <= {4'b0, I2C_State};
          dataArray[busy_register]     <= {7'b0, I2C_Busy};
          dataArray[data_out_register] <= data_out;
-         
  
          // Interfaz externa desde CPU
          if (serdat_cs) begin
-         ack_r <= 1'b1;
+             ack_r <= 1'b1;
              if (serdat_write) begin
                  // ----------- ESCRITURA -----------
                  if (Bus_addr[4:2] == W_DATA_WRITE) begin
@@ -621,23 +465,138 @@ module main_vecfcb9 (
                  end
              end else begin
                  // ----------- LECTURA -----------
-                 buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
-             end 
+                 if (Bus_addr[4:2] == W_DATA_WRITE) begin
+                     buffer_data_out <= data_wr;
+                 end else begin
+                     buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
+                 end
+             end
+             // Limpieza de registros de un solo ciclo
+             //dataArray[enable_register] <= 8'b0;
          end else begin
-             ack_r <= 1'b0;       // al siguiente ciclo vuelve a 0
+             ack_r <= 1'b0; // al siguiente ciclo vuelve a 0
          end
- 
-         // Limpieza de registros de un solo ciclo
-         dataArray[enable_register] <= 8'b0;
      end
- 
  end
+endmodule
+
+module main_v390fcc #(
+ parameter Frecuencia = 0
+) (
+ input clk_in,
+ output clk_out
+);
  
- always @(posedge clk or negedge rstn) begin
-     if (!rstn)
-         ack_r <= 1'b0;
-     else
-         ack_r <= serdat_cs;        // alto mientras dure la transacción
- end
+ //parameter HZ=1;
  
+ //-- Constante para dividir y obtener una frecuencia de 1Hz
+ localparam M = 12000000/HZ;
+ 
+ //-- Calcular el numero de bits para almacenar M
+ localparam N = $clog2(M);
+ 
+ //-- Registro del divisor
+ reg [N-1:0] divcounter = 0;
+ 
+ //-- Temporal clock
+ reg clk_t = 0;
+ 
+ //-- REgistro con el valor del reloj
+ reg clk_out = 0;
+ 
+ //-- Se usa un contador modulo M/2 para luego
+ //-- pasarlo por un biestable T y dividir la frecuencia
+ //-- entre 2, para que el ciclo de trabajo sea del 50%
+ always @(posedge clk)
+     if (divcounter == M/2) begin
+       clk_t <= 1;
+       divcounter = 0;
+     end 
+     else begin
+       divcounter <=  divcounter + 1;
+       clk_t = 0;
+     end 
+     
+ //-- Biestable T para obtener ciclo de trabajo del 50%
+ always @(posedge clk)
+   if (clk_t)
+     clk_out <= ~clk_out;
+ 
+ 
+ assign clk_o = clk_out;  
+ 
+endmodule
+
+module main_vf5c265 #(
+ parameter Frecuencia = 0
+) (
+ input clk_in,
+ output clk_out
+);
+ 
+ //parameter HZ=1;
+ 
+ //-- Constante para dividir y obtener una frecuencia de 1Hz
+ localparam M = 12000000/HZ;
+ 
+ //-- Calcular el numero de bits para almacenar M
+ localparam N = $clog2(M);
+ 
+ //-- Registro del divisor
+ reg [N-1:0] divcounter = 0;
+ 
+ //-- Temporal clock
+ reg clk_t = 0;
+ 
+ //-- REgistro con el valor del reloj
+ reg clk_out = 0;
+ 
+ //-- Se usa un contador modulo M/2 para luego
+ //-- pasarlo por un biestable T y dividir la frecuencia
+ //-- entre 2, para que el ciclo de trabajo sea del 50%
+ always @(posedge clk)
+     if (divcounter == M/2) begin
+       clk_t <= 1;
+       divcounter = 0;
+     end 
+     else begin
+       divcounter <=  divcounter + 1;
+       clk_t = 0;
+     end 
+     
+ //-- Biestable T para obtener ciclo de trabajo del 50%
+ always @(posedge clk)
+   if (clk_t)
+     clk_out <= ~clk_out;
+ 
+ 
+ assign clk_o = clk_out;  
+ 
+endmodule
+
+module main_vc66ea6 (
+ input clk,
+ input i2c_clk,
+ input resetn,
+ input ena,
+ input [6:0] slv_addr,
+ input rw,
+ input [7:0] data_in,
+ input sda_I,
+ input scl_I,
+ output busy,
+ output [7:0] data_rd,
+ output ack_error,
+ output sda_O,
+ output sda_T,
+ output scl_O,
+ output scl_T,
+ output [3:0] states,
+ output [3:0] bit_cnts,
+ output data_clkp,
+ output streetchp,
+ inout scl,
+ inout sda
+);
+
 endmodule

@@ -2373,27 +2373,6 @@
           }
         },
         {
-          "id": "4bad038c-ac57-4159-9cad-53229a97e150",
-          "type": "basic.outputLabel",
-          "data": {
-            "blockColor": "yellow",
-            "name": "resetn",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "oldBlockColor": "fuchsia"
-          },
-          "position": {
-            "x": 2120,
-            "y": 1096
-          }
-        },
-        {
           "id": "6e0c78f3-34d9-4b61-a877-8c90349e7717",
           "type": "basic.inputLabel",
           "data": {
@@ -2571,6 +2550,26 @@
           }
         },
         {
+          "id": "3fdd996a-ec5a-450f-b423-9531abc5ff79",
+          "type": "basic.inputLabel",
+          "data": {
+            "name": "i2c_ready",
+            "blockColor": "fuchsia",
+            "virtual": true,
+            "pins": [
+              {
+                "index": "0",
+                "name": "NULL",
+                "value": "NULL"
+              }
+            ]
+          },
+          "position": {
+            "x": 2392,
+            "y": 1112
+          }
+        },
+        {
           "id": "af024d69-edfc-4f36-9304-0190d67daf03",
           "type": "basic.outputLabel",
           "data": {
@@ -2745,25 +2744,6 @@
           "position": {
             "x": 1336,
             "y": 1128
-          }
-        },
-        {
-          "id": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
-          "type": "basic.output",
-          "data": {
-            "name": "ADC_SCL",
-            "virtual": false,
-            "pins": [
-              {
-                "index": "0",
-                "name": "ADC_SCL",
-                "value": "84"
-              }
-            ]
-          },
-          "position": {
-            "x": 2888,
-            "y": 1152
           }
         },
         {
@@ -3184,21 +3164,21 @@
           }
         },
         {
-          "id": "cc8bac38-0fce-423e-a8c0-3ac8a8e4f621",
+          "id": "477d11fb-1beb-4c0b-8ee9-2546f34d85fe",
           "type": "basic.output",
           "data": {
-            "name": "SDA_OUT",
+            "name": "SCL_OUT",
             "virtual": false,
             "pins": [
               {
                 "index": "0",
-                "name": "D5",
-                "value": "7"
+                "name": "D1",
+                "value": "1"
               }
             ]
           },
           "position": {
-            "x": 2224,
+            "x": 2440,
             "y": 1208
           }
         },
@@ -3220,26 +3200,6 @@
           },
           "position": {
             "x": 1336,
-            "y": 1208
-          }
-        },
-        {
-          "id": "3fdd996a-ec5a-450f-b423-9531abc5ff79",
-          "type": "basic.inputLabel",
-          "data": {
-            "name": "i2c_ready",
-            "blockColor": "fuchsia",
-            "virtual": true,
-            "pins": [
-              {
-                "index": "0",
-                "name": "NULL",
-                "value": "NULL"
-              }
-            ]
-          },
-          "position": {
-            "x": 3064,
             "y": 1208
           }
         },
@@ -3482,43 +3442,23 @@
           }
         },
         {
-          "id": "477d11fb-1beb-4c0b-8ee9-2546f34d85fe",
+          "id": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
           "type": "basic.output",
           "data": {
-            "name": "SCL_OUT",
+            "name": "ADC_SCL",
             "virtual": false,
             "pins": [
               {
                 "index": "0",
-                "name": "D6",
-                "value": "10"
-              }
-            ]
-          },
-          "position": {
-            "x": 2936,
-            "y": 1232
-          }
-        },
-        {
-          "id": "37846a23-5b06-4164-b347-49a0cd38ba6d",
-          "type": "basic.input",
-          "data": {
-            "name": "ADC_SDA",
-            "virtual": false,
-            "pins": [
-              {
-                "index": "0",
-                "name": "ADC_SDA",
-                "value": "83"
+                "name": "ADC_SCL",
+                "value": "84"
               }
             ],
-            "clock": false,
             "inout": true
           },
           "position": {
-            "x": 1968,
-            "y": 1248
+            "x": 2576,
+            "y": 1224
           }
         },
         {
@@ -3978,62 +3918,6 @@
           }
         },
         {
-          "id": "c1748bb7-ab47-4f5f-96c3-e4aba912d164",
-          "type": "basic.outputLabel",
-          "data": {
-            "blockColor": "fuchsia",
-            "name": "ram_ready",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true
-          },
-          "position": {
-            "x": 768,
-            "y": 1312
-          }
-        },
-        {
-          "id": "8960c34c-6918-4752-85b3-a10b88b02f50",
-          "type": "basic.outputLabel",
-          "data": {
-            "name": "Wtic",
-            "range": "[3:0]",
-            "pins": [
-              {
-                "index": "3",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "2",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "1",
-                "name": "",
-                "value": ""
-              },
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "blockColor": "steelblue"
-          },
-          "position": {
-            "x": 1344,
-            "y": 1328
-          }
-        },
-        {
           "id": "d2ac5a25-3c95-4dca-b064-e12de901bddd",
           "type": "basic.inputLabel",
           "data": {
@@ -4205,8 +4089,83 @@
             ]
           },
           "position": {
-            "x": 2976,
-            "y": 1344
+            "x": 2432,
+            "y": 1304
+          }
+        },
+        {
+          "id": "c1748bb7-ab47-4f5f-96c3-e4aba912d164",
+          "type": "basic.outputLabel",
+          "data": {
+            "blockColor": "fuchsia",
+            "name": "ram_ready",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true
+          },
+          "position": {
+            "x": 768,
+            "y": 1312
+          }
+        },
+        {
+          "id": "8960c34c-6918-4752-85b3-a10b88b02f50",
+          "type": "basic.outputLabel",
+          "data": {
+            "name": "Wtic",
+            "range": "[3:0]",
+            "pins": [
+              {
+                "index": "3",
+                "name": "",
+                "value": ""
+              },
+              {
+                "index": "2",
+                "name": "",
+                "value": ""
+              },
+              {
+                "index": "1",
+                "name": "",
+                "value": ""
+              },
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true,
+            "blockColor": "steelblue"
+          },
+          "position": {
+            "x": 1344,
+            "y": 1328
+          }
+        },
+        {
+          "id": "12862cfd-1d83-4159-9f71-20a4c36801f1",
+          "type": "basic.output",
+          "data": {
+            "name": "SDA_OUT",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D2",
+                "value": "4"
+              }
+            ]
+          },
+          "position": {
+            "x": 2736,
+            "y": 1336
           }
         },
         {
@@ -4252,22 +4211,24 @@
           }
         },
         {
-          "id": "08784eb0-d74c-4996-bd7a-7c48f3737311",
-          "type": "basic.output",
+          "id": "4bad038c-ac57-4159-9cad-53229a97e150",
+          "type": "basic.outputLabel",
           "data": {
-            "name": "l",
-            "virtual": false,
+            "blockColor": "yellow",
+            "name": "resetn",
             "pins": [
               {
                 "index": "0",
-                "name": "LED3",
-                "value": "42"
+                "name": "",
+                "value": ""
               }
-            ]
+            ],
+            "virtual": true,
+            "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 2792,
-            "y": 1352
+            "x": 1992,
+            "y": 1360
           }
         },
         {
@@ -4307,6 +4268,84 @@
           "position": {
             "x": 808,
             "y": 1360
+          }
+        },
+        {
+          "id": "4fd6da44-5615-4433-bb03-84f42ff1dd6e",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D7",
+                "value": "9"
+              }
+            ]
+          },
+          "position": {
+            "x": 2576,
+            "y": 1408
+          }
+        },
+        {
+          "id": "20f88deb-7433-4e5c-adaa-2973fda2467c",
+          "type": "basic.input",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "MISO",
+                "value": "68"
+              }
+            ],
+            "virtual": false,
+            "clock": false
+          },
+          "position": {
+            "x": -352,
+            "y": 1432
+          }
+        },
+        {
+          "id": "90d6d3dd-7d69-4f3d-ab38-cef4f6131d26",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "MOSI",
+                "value": "67"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": -88,
+            "y": 1432
+          }
+        },
+        {
+          "id": "b0085476-9fae-45e8-8f7f-a7cfbd650479",
+          "type": "basic.output",
+          "data": {
+            "name": "ADC_SDA",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "ADC_SDA",
+                "value": "83"
+              }
+            ],
+            "inout": true
+          },
+          "position": {
+            "x": 2776,
+            "y": 1448
           }
         },
         {
@@ -4482,123 +4521,8 @@
             "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 2168,
-            "y": 1384
-          }
-        },
-        {
-          "id": "20f88deb-7433-4e5c-adaa-2973fda2467c",
-          "type": "basic.input",
-          "data": {
-            "name": "",
-            "pins": [
-              {
-                "index": "0",
-                "name": "MISO",
-                "value": "68"
-              }
-            ],
-            "virtual": false,
-            "clock": false
-          },
-          "position": {
-            "x": -352,
-            "y": 1432
-          }
-        },
-        {
-          "id": "90d6d3dd-7d69-4f3d-ab38-cef4f6131d26",
-          "type": "basic.output",
-          "data": {
-            "name": "",
-            "pins": [
-              {
-                "index": "0",
-                "name": "MOSI",
-                "value": "67"
-              }
-            ],
-            "virtual": false
-          },
-          "position": {
-            "x": -88,
-            "y": 1432
-          }
-        },
-        {
-          "id": "fbc4f706-b975-4be2-a139-60d9e67e4dfd",
-          "type": "basic.outputLabel",
-          "data": {
-            "blockColor": "lightseagreen",
-            "name": "Valid",
-            "pins": [
-              {
-                "index": "0",
-                "name": "",
-                "value": ""
-              }
-            ],
-            "virtual": true,
-            "oldBlockColor": "fuchsia"
-          },
-          "position": {
-            "x": 2168,
-            "y": 1440
-          }
-        },
-        {
-          "id": "6b314602-1649-4ce1-88bd-f726ebcea1f0",
-          "type": "basic.output",
-          "data": {
-            "name": "RegistroSlave",
-            "virtual": false,
-            "range": "[7:0]",
-            "pins": [
-              {
-                "index": "7",
-                "name": "LED0",
-                "value": "45"
-              },
-              {
-                "index": "6",
-                "name": "LED1",
-                "value": "44"
-              },
-              {
-                "index": "5",
-                "name": "LED2",
-                "value": "43"
-              },
-              {
-                "index": "4",
-                "name": "D2",
-                "value": "4"
-              },
-              {
-                "index": "3",
-                "name": "LED4",
-                "value": "41"
-              },
-              {
-                "index": "2",
-                "name": "LED5",
-                "value": "39"
-              },
-              {
-                "index": "1",
-                "name": "LED6",
-                "value": "38"
-              },
-              {
-                "index": "0",
-                "name": "LED7",
-                "value": "37"
-              }
-            ]
-          },
-          "position": {
-            "x": 2976,
-            "y": 1464
+            "x": 1992,
+            "y": 1448
           }
         },
         {
@@ -4619,6 +4543,84 @@
           "position": {
             "x": 288,
             "y": 1488
+          }
+        },
+        {
+          "id": "201f757e-cee4-4eba-a63b-0c272f1103ae",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D8",
+                "value": "20"
+              }
+            ]
+          },
+          "position": {
+            "x": 2440,
+            "y": 1504
+          }
+        },
+        {
+          "id": "fbc4f706-b975-4be2-a139-60d9e67e4dfd",
+          "type": "basic.outputLabel",
+          "data": {
+            "blockColor": "lightseagreen",
+            "name": "Valid",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true,
+            "oldBlockColor": "fuchsia"
+          },
+          "position": {
+            "x": 1992,
+            "y": 1528
+          }
+        },
+        {
+          "id": "8011abf8-fda3-45a7-bd71-545c268a2741",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D3",
+                "value": "3"
+              }
+            ]
+          },
+          "position": {
+            "x": 2576,
+            "y": 1536
+          }
+        },
+        {
+          "id": "81021a5a-7879-4d48-a10e-8fbaae0b5b6a",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D4",
+                "value": "8"
+              }
+            ]
+          },
+          "position": {
+            "x": 2576,
+            "y": 1584
           }
         },
         {
@@ -4794,8 +4796,67 @@
             "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 2168,
-            "y": 1496
+            "x": 1992,
+            "y": 1616
+          }
+        },
+        {
+          "id": "de074bfa-4988-47fb-a354-4ab07e5e6889",
+          "type": "basic.outputLabel",
+          "data": {
+            "blockColor": "yellow",
+            "name": "resetn",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true,
+            "oldBlockColor": "fuchsia"
+          },
+          "position": {
+            "x": 848,
+            "y": 1624
+          }
+        },
+        {
+          "id": "6032f8b6-3860-4267-a924-94b65c6d5bbc",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D5",
+                "value": "7"
+              }
+            ]
+          },
+          "position": {
+            "x": 2576,
+            "y": 1632
+          }
+        },
+        {
+          "id": "7fd5bc5d-3fb4-4d88-bc48-fe3678e74a95",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "D6",
+                "value": "10"
+              }
+            ]
+          },
+          "position": {
+            "x": 2576,
+            "y": 1680
           }
         },
         {
@@ -4830,12 +4891,69 @@
             "blockColor": "steelblue"
           },
           "position": {
-            "x": 2448,
-            "y": 1616
+            "x": 1992,
+            "y": 1704
           }
         },
         {
-          "id": "de074bfa-4988-47fb-a354-4ab07e5e6889",
+          "id": "e8ab249e-71e9-4ed4-9161-0a2ba0b170f5",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED0",
+                "value": "45"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 1896
+          }
+        },
+        {
+          "id": "22acb5c3-2bfa-41cf-9a69-c70f80626e3d",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED1",
+                "value": "44"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 1936
+          }
+        },
+        {
+          "id": "fe0a91ce-5984-49a0-98cb-f4d51312545f",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED2",
+                "value": "43"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 1976
+          }
+        },
+        {
+          "id": "d8551e1f-2aee-4a7a-825c-ada274875caf",
           "type": "basic.outputLabel",
           "data": {
             "blockColor": "yellow",
@@ -4851,8 +4969,103 @@
             "oldBlockColor": "fuchsia"
           },
           "position": {
-            "x": 848,
-            "y": 1624
+            "x": 2208,
+            "y": 1984
+          }
+        },
+        {
+          "id": "60ba466e-005e-40d2-a27a-f37f77bbddf0",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED3",
+                "value": "42"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 2016
+          }
+        },
+        {
+          "id": "fbb2ea59-9408-4b5e-87ee-04cbee4f4def",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED4",
+                "value": "41"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 2056
+          }
+        },
+        {
+          "id": "1b3ba850-9946-4c25-9708-91054f335004",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED5",
+                "value": "39"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 2096
+          }
+        },
+        {
+          "id": "f3c7b240-9e6e-42de-ad12-1a35d591a6de",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED6",
+                "value": "38"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 2136
+          }
+        },
+        {
+          "id": "2dd22516-aa50-42f9-ba38-20e6f074ab8d",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "virtual": false,
+            "pins": [
+              {
+                "index": "0",
+                "name": "LED7",
+                "value": "37"
+              }
+            ]
+          },
+          "position": {
+            "x": 3088,
+            "y": 2176
           }
         },
         {
@@ -4929,8 +5142,8 @@
             "local": false
           },
           "position": {
-            "x": 2320,
-            "y": 936
+            "x": 2136,
+            "y": 1008
           }
         },
         {
@@ -4942,8 +5155,8 @@
             "local": false
           },
           "position": {
-            "x": 2624,
-            "y": 904
+            "x": 2240,
+            "y": 1008
           }
         },
         {
@@ -5470,15 +5683,72 @@
           }
         },
         {
-          "id": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-          "type": "4cb9bb5668ef685a51c27d69f8b29a5fab932465",
+          "id": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+          "type": "basic.code",
+          "data": {
+            "ports": {
+              "in": [
+                {
+                  "name": "a",
+                  "range": "[7:0]",
+                  "size": 8
+                },
+                {
+                  "name": "rstn"
+                },
+                {
+                  "name": "clk"
+                }
+              ],
+              "out": [
+                {
+                  "name": "led0_out"
+                },
+                {
+                  "name": "led1_out"
+                },
+                {
+                  "name": "led2_out"
+                },
+                {
+                  "name": "led3_out"
+                },
+                {
+                  "name": "led4_out"
+                },
+                {
+                  "name": "led5_out"
+                },
+                {
+                  "name": "led6_out"
+                },
+                {
+                  "name": "led7_out"
+                }
+              ]
+            },
+            "params": [],
+            "code": "reg [7:0] max_reg;      // almacena el máximo histórico (desde el último reset)\n\n//assign b = max_reg;\nassign led0_out = max_reg[0];\nassign led1_out = max_reg[1];\nassign led2_out = max_reg[2];\nassign led3_out = max_reg[3];\nassign led4_out = max_reg[4];\nassign led5_out = max_reg[5];\nassign led6_out = max_reg[6];\nassign led7_out = max_reg[7];\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        max_reg <= 0;          // arranca en 0\n    end else begin\n        if (max_reg < a)\n            max_reg <= a;\n    end\nend\n"
+          },
           "position": {
-            "x": 2544,
-            "y": 1184
+            "x": 2384,
+            "y": 1896
+          },
+          "size": {
+            "width": 552,
+            "height": 344
+          }
+        },
+        {
+          "id": "3a701976-dd50-4574-935c-84d8b3dabda3",
+          "type": "ce42df9f2022c5e629db7fc8aaf7875005d8c3d4",
+          "position": {
+            "x": 2200,
+            "y": 1264
           },
           "size": {
             "width": 96,
-            "height": 288
+            "height": 576
           }
         }
       ],
@@ -6268,11 +6538,91 @@
         },
         {
           "source": {
-            "block": "37846a23-5b06-4164-b347-49a0cd38ba6d",
-            "port": "out"
+            "block": "d8551e1f-2aee-4a7a-825c-ada274875caf",
+            "port": "outlabel"
           },
           "target": {
-            "block": "cc8bac38-0fce-423e-a8c0-3ac8a8e4f621",
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "rstn"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led0_out"
+          },
+          "target": {
+            "block": "e8ab249e-71e9-4ed4-9161-0a2ba0b170f5",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led1_out"
+          },
+          "target": {
+            "block": "22acb5c3-2bfa-41cf-9a69-c70f80626e3d",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led2_out"
+          },
+          "target": {
+            "block": "fe0a91ce-5984-49a0-98cb-f4d51312545f",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led3_out"
+          },
+          "target": {
+            "block": "60ba466e-005e-40d2-a27a-f37f77bbddf0",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led4_out"
+          },
+          "target": {
+            "block": "fbb2ea59-9408-4b5e-87ee-04cbee4f4def",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led5_out"
+          },
+          "target": {
+            "block": "1b3ba850-9946-4c25-9708-91054f335004",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led6_out"
+          },
+          "target": {
+            "block": "f3c7b240-9e6e-42de-ad12-1a35d591a6de",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "led7_out"
+          },
+          "target": {
+            "block": "2dd22516-aa50-42f9-ba38-20e6f074ab8d",
             "port": "in"
           }
         },
@@ -6282,18 +6632,8 @@
             "port": "outlabel"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "910303bc-a22c-4725-b894-df1011d5a8b2"
-          }
-        },
-        {
-          "source": {
-            "block": "37846a23-5b06-4164-b347-49a0cd38ba6d",
-            "port": "out"
-          },
-          "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "7f5008e5-7060-457e-b415-71d914682325"
           }
         },
         {
@@ -6302,7 +6642,7 @@
             "port": "outlabel"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "8594fbb7-9e10-4782-a5c5-075c0d6130a2"
           },
           "size": 32
@@ -6313,7 +6653,7 @@
             "port": "outlabel"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "462662e6-3172-48c0-8844-e132e6a2748e"
           }
         },
@@ -6323,64 +6663,25 @@
             "port": "outlabel"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "bf2c13a3-02d9-40be-9413-30de948552ff"
           },
           "size": 32
         },
         {
           "source": {
-            "block": "9f11c5f9-eea8-4a84-82f8-b844353f2de3",
-            "port": "constant-out"
+            "block": "f6c296d6-5354-42f7-b446-b84cd7bd52d9",
+            "port": "outlabel"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "d2ebc0f3-fe40-473f-ade2-9742e8913efa"
-          }
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "8469f4ce-ffc7-4ad2-884e-3921f5dded7b"
+          },
+          "size": 4
         },
         {
           "source": {
-            "block": "9f11c5f9-eea8-4a84-82f8-b844353f2de3",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "cdd3e76a-5c64-4bcb-aa64-bef565053d51"
-          }
-        },
-        {
-          "source": {
-            "block": "3597107a-c618-4dbb-9895-40af4fc70347",
-            "port": "constant-out"
-          },
-          "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "32f34f9b-4a7f-4264-8971-fec0dc122c3d"
-          }
-        },
-        {
-          "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd"
-          },
-          "target": {
-            "block": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd"
-          },
-          "target": {
-            "block": "477d11fb-1beb-4c0b-8ee9-2546f34d85fe",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "88a0441d-790c-4bcd-a708-d9f685884126"
           },
           "target": {
@@ -6390,7 +6691,7 @@
         },
         {
           "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
             "port": "9b8c3515-24ae-4719-a737-6f2858304b78"
           },
           "target": {
@@ -6401,35 +6702,134 @@
         },
         {
           "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "c68bfe99-9f09-45cb-a302-4725ea8f26cd"
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "d8dff3dd-86bf-48ed-94b9-5e7981ea9c41"
           },
           "target": {
-            "block": "6b314602-1649-4ce1-88bd-f726ebcea1f0",
-            "port": "in"
-          },
-          "size": 8
-        },
-        {
-          "source": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "1cfe438c-e803-49b1-a75f-0c75a8bb4f0c"
-          },
-          "target": {
-            "block": "08784eb0-d74c-4996-bd7a-7c48f3737311",
+            "block": "201f757e-cee4-4eba-a63b-0c272f1103ae",
             "port": "in"
           }
         },
         {
           "source": {
-            "block": "f6c296d6-5354-42f7-b446-b84cd7bd52d9",
-            "port": "outlabel"
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "9c6d7a02-86bc-4e17-b500-22652b0ca7c6"
           },
           "target": {
-            "block": "acc57b0b-2ec7-40bf-9d4b-6139153688a5",
-            "port": "8469f4ce-ffc7-4ad2-884e-3921f5dded7b"
+            "block": "4fd6da44-5615-4433-bb03-84f42ff1dd6e",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "3dc94e3c-7cf7-4a4a-96a5-0e3c6e583253"
           },
-          "size": 4
+          "target": {
+            "block": "3cd08300-bed3-4d4c-ad04-6eb67ce6d7cf",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "546352ec-21a6-49c9-9410-5336168277aa"
+          },
+          "target": {
+            "block": "b0085476-9fae-45e8-8f7f-a7cfbd650479",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "1062ae58-bea9-4a0e-8d81-0e3367784341"
+          },
+          "target": {
+            "block": "8011abf8-fda3-45a7-bd71-545c268a2741",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "45aa2f9f-76a3-42bd-9aa0-ec8327d90206"
+          },
+          "target": {
+            "block": "81021a5a-7879-4d48-a10e-8fbaae0b5b6a",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "989d3eba-c633-4501-96fc-989708028c23"
+          },
+          "target": {
+            "block": "6032f8b6-3860-4267-a924-94b65c6d5bbc",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "90058ebd-6b3f-441b-98d2-a1600a2a5b4f"
+          },
+          "target": {
+            "block": "7fd5bc5d-3fb4-4d88-bc48-fe3678e74a95",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "57a1a9f4-091c-46c7-8369-c0799e614b2d"
+          },
+          "target": {
+            "block": "c3e31803-c94a-452e-84be-f9effb1fcf47",
+            "port": "a"
+          },
+          "size": 8
+        },
+        {
+          "source": {
+            "block": "9f11c5f9-eea8-4a84-82f8-b844353f2de3",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "d2ebc0f3-fe40-473f-ade2-9742e8913efa"
+          }
+        },
+        {
+          "source": {
+            "block": "3597107a-c618-4dbb-9895-40af4fc70347",
+            "port": "constant-out"
+          },
+          "target": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "4f2d56cb-6b63-4223-ba99-b1f57bb2299d"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "22f1545d-eee5-41d6-a6d2-fda905b3969d"
+          },
+          "target": {
+            "block": "477d11fb-1beb-4c0b-8ee9-2546f34d85fe",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "3a701976-dd50-4574-935c-84d8b3dabda3",
+            "port": "df5b4874-0f20-4f2e-be20-88628727dc7d"
+          },
+          "target": {
+            "block": "12862cfd-1d83-4159-9f71-20a4c36801f1",
+            "port": "in"
+          }
         }
       ]
     }
@@ -31101,7 +31501,7 @@
         }
       }
     },
-    "4cb9bb5668ef685a51c27d69f8b29a5fab932465": {
+    "ce42df9f2022c5e629db7fc8aaf7875005d8c3d4": {
       "package": {
         "name": "I2C_soc",
         "version": "",
@@ -31112,6 +31512,30 @@
       "design": {
         "graph": {
           "blocks": [
+            {
+              "id": "bccff863-a6fe-4f4d-af1b-67970656ca34",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "clk",
+                "blockColor": "gold"
+              },
+              "position": {
+                "x": 1712,
+                "y": -536
+              }
+            },
+            {
+              "id": "682f4182-7db5-4106-830b-e2a3600469f6",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "scl_I",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 2792,
+                "y": -528
+              }
+            },
             {
               "id": "1b7be843-78cf-4607-97b2-73dcdeb25a12",
               "type": "basic.input",
@@ -31137,6 +31561,29 @@
               }
             },
             {
+              "id": "88a0441d-790c-4bcd-a708-d9f685884126",
+              "type": "basic.output",
+              "data": {
+                "name": "i2c_ready"
+              },
+              "position": {
+                "x": 3264,
+                "y": -488
+              }
+            },
+            {
+              "id": "35e62068-eb37-454b-9dfa-24127ef02bd0",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "I2C_DATA_READY",
+                "blockColor": "fuchsia"
+              },
+              "position": {
+                "x": 3136,
+                "y": -488
+              }
+            },
+            {
               "id": "910303bc-a22c-4725-b894-df1011d5a8b2",
               "type": "basic.input",
               "data": {
@@ -31144,8 +31591,8 @@
                 "clock": false
               },
               "position": {
-                "x": -400,
-                "y": -472
+                "x": -392,
+                "y": -480
               }
             },
             {
@@ -31156,33 +31603,66 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": -248,
-                "y": -472
+                "x": -240,
+                "y": -480
               }
             },
             {
-              "id": "7f5008e5-7060-457e-b415-71d914682325",
-              "type": "basic.input",
+              "id": "22f1545d-eee5-41d6-a6d2-fda905b3969d",
+              "type": "basic.output",
               "data": {
-                "name": "adc_sda",
-                "clock": false,
-                "inout": true
+                "name": "PIN_SCL_I",
+                "virtual": true,
+                "pins": [
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ]
               },
               "position": {
-                "x": -400,
-                "y": -424
+                "x": 2792,
+                "y": -480
               }
             },
             {
-              "id": "18c0248b-aec7-4545-a2b4-96bdce15b0c7",
-              "type": "basic.inputLabel",
+              "id": "756207db-ac25-4903-bebe-37fb2ba06d9a",
+              "type": "basic.outputLabel",
               "data": {
-                "name": "ADC_SDA",
-                "blockColor": "deepskyblue"
+                "name": "resetn",
+                "blockColor": "fuchsia"
               },
               "position": {
-                "x": -248,
-                "y": -424
+                "x": 1712,
+                "y": -456
+              }
+            },
+            {
+              "id": "9b8c3515-24ae-4719-a737-6f2858304b78",
+              "type": "basic.output",
+              "data": {
+                "name": "data_out",
+                "range": "[31:0]",
+                "size": 32
+              },
+              "position": {
+                "x": 3264,
+                "y": -440
+              }
+            },
+            {
+              "id": "6ab6ab0c-de11-4df7-87e8-7b1cb4e09d60",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "I2C_DATA_OUT",
+                "range": "[31:0]",
+                "blockColor": "fuchsia",
+                "size": 32
+              },
+              "position": {
+                "x": 3136,
+                "y": -440
               }
             },
             {
@@ -31214,26 +31694,41 @@
               }
             },
             {
-              "id": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd",
-              "type": "basic.output",
-              "data": {
-                "name": "adc_scl"
-              },
-              "position": {
-                "x": 2776,
-                "y": -344
-              }
-            },
-            {
-              "id": "bc58e4db-b90b-4e87-acfd-6604b21dd75a",
+              "id": "23154bea-f53a-4d0f-938c-f32a09a8ab79",
               "type": "basic.outputLabel",
               "data": {
-                "name": "ADC_SCL",
+                "name": "scl_O",
                 "blockColor": "deepskyblue"
               },
               "position": {
-                "x": 2640,
-                "y": -344
+                "x": 1712,
+                "y": -376
+              }
+            },
+            {
+              "id": "b79b0620-efc9-4638-a833-29709ba988c5",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "addr",
+                "range": "[31:0]",
+                "blockColor": "fuchsia",
+                "size": 32
+              },
+              "position": {
+                "x": 40,
+                "y": -336
+              }
+            },
+            {
+              "id": "3dc94e3c-7cf7-4a4a-96a5-0e3c6e583253",
+              "type": "basic.output",
+              "data": {
+                "name": "SCL",
+                "inout": true
+              },
+              "position": {
+                "x": 2784,
+                "y": -336
               }
             },
             {
@@ -31261,6 +31756,18 @@
               }
             },
             {
+              "id": "019ee99a-dcd3-40ec-81f9-632b90c29b59",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "scl_T",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 1712,
+                "y": -296
+              }
+            },
+            {
               "id": "7442e853-38b9-4cea-89cb-3bcc3c7a3fe2",
               "type": "basic.inputLabel",
               "data": {
@@ -31268,44 +31775,7 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": 1024,
-                "y": -312
-              }
-            },
-            {
-              "id": "88a0441d-790c-4bcd-a708-d9f685884126",
-              "type": "basic.output",
-              "data": {
-                "name": "i2c_ready"
-              },
-              "position": {
-                "x": 2776,
-                "y": -296
-              }
-            },
-            {
-              "id": "35e62068-eb37-454b-9dfa-24127ef02bd0",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "I2C_DATA_READY",
-                "blockColor": "fuchsia"
-              },
-              "position": {
-                "x": 2640,
-                "y": -296
-              }
-            },
-            {
-              "id": "b79b0620-efc9-4638-a833-29709ba988c5",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "addr",
-                "range": "[31:0]",
-                "blockColor": "fuchsia",
-                "size": 32
-              },
-              "position": {
-                "x": 24,
+                "x": 928,
                 "y": -280
               }
             },
@@ -31338,33 +31808,6 @@
               }
             },
             {
-              "id": "9b8c3515-24ae-4719-a737-6f2858304b78",
-              "type": "basic.output",
-              "data": {
-                "name": "data_out",
-                "range": "[31:0]",
-                "size": 32
-              },
-              "position": {
-                "x": 2776,
-                "y": -248
-              }
-            },
-            {
-              "id": "6ab6ab0c-de11-4df7-87e8-7b1cb4e09d60",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "I2C_DATA_OUT",
-                "range": "[31:0]",
-                "blockColor": "fuchsia",
-                "size": 32
-              },
-              "position": {
-                "x": 2640,
-                "y": -248
-              }
-            },
-            {
               "id": "78ece4b9-9a19-41d8-afdd-0fb4284f8490",
               "type": "basic.inputLabel",
               "data": {
@@ -31374,8 +31817,8 @@
                 "size": 4
               },
               "position": {
-                "x": -256,
-                "y": -216
+                "x": -248,
+                "y": -232
               }
             },
             {
@@ -31389,30 +31832,7 @@
               },
               "position": {
                 "x": -400,
-                "y": -208
-              }
-            },
-            {
-              "id": "1cfe438c-e803-49b1-a75f-0c75a8bb4f0c",
-              "type": "basic.output",
-              "data": {
-                "name": "test_serdata"
-              },
-              "position": {
-                "x": 2776,
-                "y": -200
-              }
-            },
-            {
-              "id": "ab6ea01f-2efa-4077-86af-3fbe1367fbc4",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "x",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 2640,
-                "y": -200
+                "y": -232
               }
             },
             {
@@ -31428,110 +31848,81 @@
               }
             },
             {
-              "id": "5f2fa40e-e518-44e4-8888-e0dacab21c85",
-              "type": "basic.output",
-              "data": {
-                "name": "test_rw"
-              },
-              "position": {
-                "x": 2776,
-                "y": -152
-              }
-            },
-            {
-              "id": "fbf5e1ff-1b9e-4446-848e-855b0abd9025",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "y",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 2640,
-                "y": -152
-              }
-            },
-            {
-              "id": "0c00cc96-779e-4531-a658-47672e077914",
-              "type": "basic.output",
-              "data": {
-                "name": "test_I2C_DATA_OUT"
-              },
-              "position": {
-                "x": 2776,
-                "y": -104
-              }
-            },
-            {
-              "id": "ba57cfd9-d0f6-4da8-be83-39f6b1488d43",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "z",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 2640,
-                "y": -104
-              }
-            },
-            {
-              "id": "003ba5b1-3f57-4851-b439-7318bc4b992e",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "ADC_SDA",
-                "blockColor": "deepskyblue"
-              },
-              "position": {
-                "x": 2640,
-                "y": -56
-              }
-            },
-            {
-              "id": "a361e582-0c55-43ed-933b-7157ed432113",
-              "type": "basic.output",
-              "data": {
-                "name": "SDA_PIN"
-              },
-              "position": {
-                "x": 2776,
-                "y": -56
-              }
-            },
-            {
-              "id": "954a4c4a-cc1f-4bdd-92de-85f2ed507506",
+              "id": "62e18129-e57d-4bd9-a46b-f8c2cd50cb13",
               "type": "basic.outputLabel",
               "data": {
                 "name": "clk",
                 "blockColor": "gold"
               },
               "position": {
-                "x": 1176,
-                "y": -24
+                "x": 1920,
+                "y": -168
               }
             },
             {
-              "id": "906592f8-5cb2-4e93-a548-e5c30929eac0",
+              "id": "351fde6c-f112-43d9-857f-0befab714435",
               "type": "basic.inputLabel",
               "data": {
-                "name": "state_out",
-                "range": "[3:0]",
-                "blockColor": "darkorange",
-                "size": 4
+                "name": "sda_I",
+                "blockColor": "deepskyblue"
               },
               "position": {
-                "x": 2392,
-                "y": 40
+                "x": 2656,
+                "y": -152
               }
             },
             {
-              "id": "94c3a654-3189-46a2-87be-2eb6f1192cae",
+              "id": "df5b4874-0f20-4f2e-be20-88628727dc7d",
+              "type": "basic.output",
+              "data": {
+                "name": "PIN_SDA_I",
+                "virtual": true,
+                "pins": [
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ]
+              },
+              "position": {
+                "x": 2656,
+                "y": -104
+              }
+            },
+            {
+              "id": "5163e075-d0bb-4cde-b0ac-4d9cabb92dde",
               "type": "basic.outputLabel",
               "data": {
                 "name": "resetn",
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": 1320,
-                "y": 96
+                "x": 1920,
+                "y": -96
+              }
+            },
+            {
+              "id": "9c6d7a02-86bc-4e17-b500-22652b0ca7c6",
+              "type": "basic.output",
+              "data": {
+                "name": "ena_pin"
+              },
+              "position": {
+                "x": 632,
+                "y": -48
+              }
+            },
+            {
+              "id": "7ab2e829-3566-4ad1-924a-d37494c0f90a",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "sda_O",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 1920,
+                "y": -32
               }
             },
             {
@@ -31542,8 +31933,8 @@
                 "blockColor": "gold"
               },
               "position": {
-                "x": -344,
-                "y": 128
+                "x": -488,
+                "y": -16
               }
             },
             {
@@ -31554,20 +31945,32 @@
                 "blockColor": "springgreen"
               },
               "position": {
-                "x": 728,
-                "y": 144
+                "x": 632,
+                "y": 0
               }
             },
             {
-              "id": "9362cb2f-ff45-4bdb-a60d-befe64326379",
-              "type": "basic.inputLabel",
+              "id": "546352ec-21a6-49c9-9410-5336168277aa",
+              "type": "basic.output",
               "data": {
-                "name": "rw",
-                "blockColor": "springgreen"
+                "name": "SDA",
+                "inout": true
               },
               "position": {
-                "x": 744,
-                "y": 224
+                "x": 2656,
+                "y": 8
+              }
+            },
+            {
+              "id": "4bdeaf24-4c91-424a-8fb0-e1c52844db13",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "sda_T",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 1920,
+                "y": 40
               }
             },
             {
@@ -31578,32 +31981,20 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": -344,
-                "y": 240
+                "x": -488,
+                "y": 72
               }
             },
             {
-              "id": "bab706f2-49cc-4250-bbdc-b06cbe2726c3",
-              "type": "basic.outputLabel",
+              "id": "9362cb2f-ff45-4bdb-a60d-befe64326379",
+              "type": "basic.inputLabel",
               "data": {
-                "name": "enable_start",
+                "name": "rw",
                 "blockColor": "springgreen"
               },
               "position": {
-                "x": 1328,
-                "y": 264
-              }
-            },
-            {
-              "id": "f0fff056-8241-47d6-af33-c48a12ac82ff",
-              "type": "basic.inputLabel",
-              "data": {
-                "name": "I2C_BUSY",
-                "blockColor": "darkorange"
-              },
-              "position": {
-                "x": 2392,
-                "y": 272
+                "x": 632,
+                "y": 128
               }
             },
             {
@@ -31614,24 +32005,12 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": -200,
-                "y": 320
+                "x": -488,
+                "y": 160
               }
             },
             {
-              "id": "02b50dd8-518c-4699-9fdd-dfe12f727c62",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "rw",
-                "blockColor": "springgreen"
-              },
-              "position": {
-                "x": 1320,
-                "y": 328
-              }
-            },
-            {
-              "id": "a7f6a09c-e8d0-4575-bc0b-2ed360d5b719",
+              "id": "b8010627-3c27-42bc-a356-58661c770ba5",
               "type": "basic.inputLabel",
               "data": {
                 "name": "slv_addr",
@@ -31640,36 +32019,8 @@
                 "size": 7
               },
               "position": {
-                "x": 744,
-                "y": 352
-              }
-            },
-            {
-              "id": "c609f7bd-8554-4a08-8364-2334050a0c94",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "addr",
-                "range": "[31:0]",
-                "blockColor": "fuchsia",
-                "size": 32
-              },
-              "position": {
-                "x": -344,
-                "y": 352
-              }
-            },
-            {
-              "id": "0bfa6bf2-1f85-4fdd-9efb-9c791d2d34a9",
-              "type": "basic.inputLabel",
-              "data": {
-                "name": "data_write",
-                "range": "[31:0]",
-                "blockColor": "springgreen",
-                "size": 32
-              },
-              "position": {
-                "x": 920,
-                "y": 368
+                "x": 632,
+                "y": 232
               }
             },
             {
@@ -31682,22 +32033,72 @@
                 "size": 4
               },
               "position": {
-                "x": -256,
-                "y": 408
+                "x": -488,
+                "y": 256
               }
             },
             {
-              "id": "8a043a41-f507-4770-86ca-9da4298edd4f",
-              "type": "basic.outputLabel",
+              "id": "c9c19ef9-ad73-4c4b-8135-e886d3461618",
+              "type": "basic.output",
               "data": {
-                "name": "slv_addr",
+                "name": "slv_Addrr",
                 "range": "[6:0]",
-                "blockColor": "springgreen",
                 "size": 7
               },
               "position": {
-                "x": 1320,
-                "y": 448
+                "x": 632,
+                "y": 280
+              }
+            },
+            {
+              "id": "c609f7bd-8554-4a08-8364-2334050a0c94",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "addr",
+                "range": "[31:0]",
+                "blockColor": "fuchsia",
+                "size": 32
+              },
+              "position": {
+                "x": -488,
+                "y": 344
+              }
+            },
+            {
+              "id": "d8dff3dd-86bf-48ed-94b9-5e7981ea9c41",
+              "type": "basic.output",
+              "data": {
+                "name": "busy_pin"
+              },
+              "position": {
+                "x": 3280,
+                "y": 352
+              }
+            },
+            {
+              "id": "fb7b34e2-2faf-4b2a-b4b8-b88b038c3061",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "data_write",
+                "range": "[7:0]",
+                "blockColor": "springgreen",
+                "size": 8
+              },
+              "position": {
+                "x": 632,
+                "y": 392
+              }
+            },
+            {
+              "id": "4c51ea20-7683-4afc-a09d-4f3b79553b80",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "I2C_BUSY",
+                "blockColor": "darkorange"
+              },
+              "position": {
+                "x": 3280,
+                "y": 392
               }
             },
             {
@@ -31710,12 +32111,12 @@
                 "size": 32
               },
               "position": {
-                "x": -344,
-                "y": 464
+                "x": -488,
+                "y": 432
               }
             },
             {
-              "id": "06c6134d-480e-498c-a95f-9f496d123805",
+              "id": "9a2834fc-94b2-4389-9678-2806027d5ed7",
               "type": "basic.inputLabel",
               "data": {
                 "name": "data_out",
@@ -31724,8 +32125,8 @@
                 "size": 8
               },
               "position": {
-                "x": 2392,
-                "y": 504
+                "x": 3280,
+                "y": 456
               }
             },
             {
@@ -31738,22 +32139,8 @@
                 "size": 3
               },
               "position": {
-                "x": 864,
-                "y": 528
-              }
-            },
-            {
-              "id": "4920c5a8-f8f8-4fa3-a336-d48fcc4ef3b4",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "data_write",
-                "range": "[31:0]",
-                "blockColor": "springgreen",
-                "size": 32
-              },
-              "position": {
-                "x": 1320,
-                "y": 528
+                "x": 632,
+                "y": 520
               }
             },
             {
@@ -31764,34 +32151,56 @@
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": -328,
-                "y": 576
+                "x": -488,
+                "y": 520
               }
             },
             {
-              "id": "92f83d2f-244e-4e32-bee5-3e80e0b8debd",
+              "id": "57a863b6-f734-4a70-89d7-874a148cdc30",
               "type": "basic.outputLabel",
               "data": {
-                "name": "n_paquetes",
-                "range": "[2:0]",
-                "blockColor": "springgreen",
-                "size": 3
+                "name": "clk",
+                "blockColor": "gold"
               },
               "position": {
-                "x": 1312,
-                "y": 600
+                "x": 808,
+                "y": 528
               }
             },
             {
-              "id": "87045572-7cf0-458f-82b2-73f33c5909be",
+              "id": "1062ae58-bea9-4a0e-8d81-0e3367784341",
+              "type": "basic.output",
+              "data": {
+                "name": "PIN_SDA_O",
+                "inout": true
+              },
+              "position": {
+                "x": 3280,
+                "y": 544
+              }
+            },
+            {
+              "id": "af9fa394-73b2-49b3-9562-aa5a140ec56d",
               "type": "basic.inputLabel",
               "data": {
-                "name": "I2C_DATA_READY",
+                "name": "sda_O",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 3280,
+                "y": 584
+              }
+            },
+            {
+              "id": "2c7bb3e1-12d4-4174-8e72-89a14faf89ad",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "resetn",
                 "blockColor": "fuchsia"
               },
               "position": {
-                "x": 928,
-                "y": 616
+                "x": 1640,
+                "y": 608
               }
             },
             {
@@ -31804,20 +32213,116 @@
                 "size": 4
               },
               "position": {
-                "x": -344,
-                "y": 696
+                "x": -488,
+                "y": 616
               }
             },
             {
-              "id": "e9a222bc-77f9-46b8-95c7-937650652849",
+              "id": "45aa2f9f-76a3-42bd-9aa0-ec8327d90206",
+              "type": "basic.output",
+              "data": {
+                "name": "PIN_SDA_T",
+                "inout": true
+              },
+              "position": {
+                "x": 3272,
+                "y": 632
+              }
+            },
+            {
+              "id": "87045572-7cf0-458f-82b2-73f33c5909be",
               "type": "basic.inputLabel",
               "data": {
-                "name": "ADC_SCL",
+                "name": "I2C_DATA_READY",
+                "blockColor": "fuchsia"
+              },
+              "position": {
+                "x": 632,
+                "y": 648
+              }
+            },
+            {
+              "id": "15cabbff-6143-44e0-801e-982f37484357",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "scl_O",
                 "blockColor": "deepskyblue"
               },
               "position": {
-                "x": 2392,
-                "y": 736
+                "x": 3432,
+                "y": 664
+              }
+            },
+            {
+              "id": "8e5de49b-19ef-4352-a17f-9e259311eb07",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "sda_T",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 3272,
+                "y": 672
+              }
+            },
+            {
+              "id": "aaa3ec2b-e4ce-45f6-be1e-e1cbcd0098a2",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "resetn",
+                "blockColor": "fuchsia"
+              },
+              "position": {
+                "x": 808,
+                "y": 704
+              }
+            },
+            {
+              "id": "7cea5c9d-9b10-4f2d-9bff-af99d3959c7a",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "I2C_BUSY",
+                "blockColor": "darkorange"
+              },
+              "position": {
+                "x": -488,
+                "y": 704
+              }
+            },
+            {
+              "id": "989d3eba-c633-4501-96fc-989708028c23",
+              "type": "basic.output",
+              "data": {
+                "name": "PIN_SCL_O",
+                "inout": true
+              },
+              "position": {
+                "x": 3440,
+                "y": 704
+              }
+            },
+            {
+              "id": "51e26248-56ec-4e58-a27f-5deede6b0918",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "enable_start",
+                "blockColor": "springgreen"
+              },
+              "position": {
+                "x": 808,
+                "y": 760
+              }
+            },
+            {
+              "id": "90058ebd-6b3f-441b-98d2-a1600a2a5b4f",
+              "type": "basic.output",
+              "data": {
+                "name": "PIN_SCL_T",
+                "inout": true
+              },
+              "position": {
+                "x": 3328,
+                "y": 768
               }
             },
             {
@@ -31830,49 +32335,12 @@
                 "size": 32
               },
               "position": {
-                "x": 936,
-                "y": 744
+                "x": 632,
+                "y": 776
               }
             },
             {
-              "id": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "ADC_SDA",
-                "blockColor": "deepskyblue"
-              },
-              "position": {
-                "x": 1320,
-                "y": 800
-              }
-            },
-            {
-              "id": "45b5852e-16a8-4657-9109-64163d2fd162",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "I2C_BUSY",
-                "blockColor": "darkorange"
-              },
-              "position": {
-                "x": -344,
-                "y": 808
-              }
-            },
-            {
-              "id": "c68bfe99-9f09-45cb-a302-4725ea8f26cd",
-              "type": "basic.output",
-              "data": {
-                "name": "check_out",
-                "range": "[7:0]",
-                "size": 8
-              },
-              "position": {
-                "x": 968,
-                "y": 816
-              }
-            },
-            {
-              "id": "ce8d762c-a384-45aa-9f40-c0883c5218fb",
+              "id": "949fe779-302e-45eb-9e66-5cbb2331fae6",
               "type": "basic.outputLabel",
               "data": {
                 "name": "data_out",
@@ -31881,112 +32349,12 @@
                 "size": 8
               },
               "position": {
-                "x": -344,
-                "y": 920
+                "x": -488,
+                "y": 792
               }
             },
             {
-              "id": "8696a607-44cc-4d76-9db6-29afd3981bfc",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "clk",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 888,
-                "y": 1416
-              }
-            },
-            {
-              "id": "6d9ed983-24c0-434a-ac54-bd607c11eeec",
-              "type": "basic.inputLabel",
-              "data": {
-                "name": "x",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 1928,
-                "y": 1464
-              }
-            },
-            {
-              "id": "e86649fe-d485-41d9-bfcb-39bffcb11552",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "resetn",
-                "blockColor": "fuchsia"
-              },
-              "position": {
-                "x": 888,
-                "y": 1560
-              }
-            },
-            {
-              "id": "5e750fd1-f7b7-4014-b131-0b935811ddb3",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "i2c_cs",
-                "blockColor": "fuchsia"
-              },
-              "position": {
-                "x": 888,
-                "y": 1608
-              }
-            },
-            {
-              "id": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "addr",
-                "range": "[31:0]",
-                "blockColor": "fuchsia",
-                "size": 32
-              },
-              "position": {
-                "x": 400,
-                "y": 1688
-              }
-            },
-            {
-              "id": "3d7b8984-61db-4c86-97e5-288d9e8852c5",
-              "type": "basic.inputLabel",
-              "data": {
-                "name": "y",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 1928,
-                "y": 1704
-              }
-            },
-            {
-              "id": "46631b04-0b9d-4fde-b4f2-82789a6dd348",
-              "type": "basic.inputLabel",
-              "data": {
-                "name": "z",
-                "blockColor": "gold"
-              },
-              "position": {
-                "x": 1984,
-                "y": 1792
-              }
-            },
-            {
-              "id": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
-              "type": "basic.outputLabel",
-              "data": {
-                "name": "data",
-                "range": "[31:0]",
-                "blockColor": "fuchsia",
-                "size": 32
-              },
-              "position": {
-                "x": 776,
-                "y": 1792
-              }
-            },
-            {
-              "id": "282bca92-acdc-469a-8674-de9edc70ca6f",
+              "id": "a75de6a1-feab-42da-bacf-9f22ed1a9d8a",
               "type": "basic.outputLabel",
               "data": {
                 "name": "slv_addr",
@@ -31995,21 +32363,197 @@
                 "size": 7
               },
               "position": {
-                "x": 872,
-                "y": 1904
+                "x": 1648,
+                "y": 800
               }
             },
             {
-              "id": "9faa4bcd-9d1d-44dc-a52b-a145261437c4",
-              "type": "basic.output",
+              "id": "5e720486-2699-49d0-ac64-9bdedb07e014",
+              "type": "basic.outputLabel",
               "data": {
-                "name": "SlaveOut",
-                "range": "[6:0]",
-                "size": 7
+                "name": "I2C_BUSY",
+                "blockColor": "darkorange"
               },
               "position": {
-                "x": 2032,
-                "y": 1968
+                "x": 808,
+                "y": 808
+              }
+            },
+            {
+              "id": "a3bec092-5535-4c0e-b461-dc8ab07dc899",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "scl_T",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 3328,
+                "y": 816
+              }
+            },
+            {
+              "id": "22b3c668-c438-4813-b5b5-c39569c84a3a",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "rw",
+                "blockColor": "springgreen"
+              },
+              "position": {
+                "x": 1648,
+                "y": 888
+              }
+            },
+            {
+              "id": "b22277bb-7f39-440f-a1c8-d75b20d08601",
+              "type": "basic.inputLabel",
+              "data": {
+                "name": "state_out",
+                "range": "[3:0]",
+                "blockColor": "darkorange",
+                "size": 4
+              },
+              "position": {
+                "x": 3312,
+                "y": 912
+              }
+            },
+            {
+              "id": "9be68144-c0b5-4557-b9d2-2d661be0848a",
+              "type": "basic.output",
+              "data": {
+                "name": "STATE_PIN",
+                "range": "[3:0]",
+                "size": 4
+              },
+              "position": {
+                "x": 3312,
+                "y": 968
+              }
+            },
+            {
+              "id": "f065f94f-c041-40c4-8031-1524e28b8a36",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "data_write",
+                "range": "[7:0]",
+                "blockColor": "springgreen",
+                "size": 8
+              },
+              "position": {
+                "x": 1648,
+                "y": 984
+              }
+            },
+            {
+              "id": "dbe8c228-6978-46b4-a717-b1603b5dc010",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "scl_I",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 1648,
+                "y": 1080
+              }
+            },
+            {
+              "id": "36e6efc9-8384-485c-b937-cb385d45cca7",
+              "type": "basic.outputLabel",
+              "data": {
+                "name": "sda_I",
+                "blockColor": "deepskyblue"
+              },
+              "position": {
+                "x": 1648,
+                "y": 1168
+              }
+            },
+            {
+              "id": "57a1a9f4-091c-46c7-8369-c0799e614b2d",
+              "type": "basic.output",
+              "data": {
+                "name": "debbug_slv_Addr_out",
+                "virtual": true,
+                "range": "[7:0]",
+                "pins": [
+                  {
+                    "index": "7",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "6",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "5",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "4",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "3",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "2",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "1",
+                    "name": "NULL",
+                    "value": "NULL"
+                  },
+                  {
+                    "index": "0",
+                    "name": "NULL",
+                    "value": "NULL"
+                  }
+                ]
+              },
+              "position": {
+                "x": 3080,
+                "y": 1232
+              }
+            },
+            {
+              "id": "cd6a74f9-54c8-4ce1-bb3a-18873b4261ea",
+              "type": "basic.output",
+              "data": {
+                "name": "debbug_scl_clk_out"
+              },
+              "position": {
+                "x": 3368,
+                "y": 1248
+              }
+            },
+            {
+              "id": "ce9709e8-7a83-4f32-b714-1a81e0cea8d7",
+              "type": "basic.output",
+              "data": {
+                "name": "debbug_scl_ena_out"
+              },
+              "position": {
+                "x": 3360,
+                "y": 1304
+              }
+            },
+            {
+              "id": "32c80511-eee6-4f98-9b98-79ef8d67ccb1",
+              "type": "basic.output",
+              "data": {
+                "name": "debbug_data_clk_out"
+              },
+              "position": {
+                "x": 3296,
+                "y": 1352
               }
             },
             {
@@ -32026,20 +32570,7 @@
               }
             },
             {
-              "id": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
-              "type": "basic.constant",
-              "data": {
-                "name": "PRUEBA_NO_TOCAR",
-                "value": "'h0400_0001",
-                "local": false
-              },
-              "position": {
-                "x": 704,
-                "y": 1488
-              }
-            },
-            {
-              "id": "32f34f9b-4a7f-4264-8971-fec0dc122c3d",
+              "id": "4f2d56cb-6b63-4223-ba99-b1f57bb2299d",
               "type": "basic.constant",
               "data": {
                 "name": "Freq_ADC",
@@ -32047,161 +32578,21 @@
                 "local": false
               },
               "position": {
-                "x": 1320,
-                "y": -184
+                "x": 1328,
+                "y": 48
               }
             },
             {
-              "id": "71f8472f-f7bf-4f29-8ea7-080bb326b428",
-              "type": "0e64bc728cbb881007bf629e44dc5b5b0fa3a34c",
-              "position": {
-                "x": 1320,
-                "y": -24
-              },
-              "size": {
-                "width": 96,
-                "height": 64
-              }
-            },
-            {
-              "id": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
-              "type": "f9bdaff1530f334164536bb41f91d66f8878f4e0",
-              "position": {
-                "x": 704,
-                "y": 1688
-              },
-              "size": {
-                "width": 96,
-                "height": 64
-              }
-            },
-            {
-              "id": "68b48996-3700-4625-885e-6d8b9656fbe6",
-              "type": "basic.code",
+              "id": "265abcc0-f2d0-407c-8055-8c6577b1fbaf",
+              "type": "basic.constant",
               "data": {
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    },
-                    {
-                      "name": "rst_n"
-                    },
-                    {
-                      "name": "a"
-                    },
-                    {
-                      "name": "b"
-                    },
-                    {
-                      "name": "c",
-                      "range": "[31:0]",
-                      "size": 32
-                    },
-                    {
-                      "name": "slave_out",
-                      "range": "[6:0]",
-                      "size": 7
-                    },
-                    {
-                      "name": "rw_out"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "x"
-                    },
-                    {
-                      "name": "y"
-                    },
-                    {
-                      "name": "z"
-                    },
-                    {
-                      "name": "slave__out",
-                      "range": "[6:0]",
-                      "size": 7
-                    }
-                  ]
-                },
-                "params": [],
-                "code": "reg         reg_x = 0;    // ahora es reg\nreg         reg_y = 0;    // ahora es reg\nreg         reg_z = 0;     // ahora es reg\n\nreg [6:0] slave_addr = 7'd0;   \n\nassign x = reg_x;\nassign y = reg_y;\nassign z = reg_z;\nassign slave__out = slave_addr;\nalways @(posedge clk or negedge rst_n) begin\n\n    \n    if (!rst_n) begin\n        // Reset: vuelven a 0\n        reg_x <= 1'b0;\n        reg_y <= 1'b0;\n        reg_z <= 1'b0;\n        slave_addr <= 8'd0;   \n        \n    end else begin\n        // Al primer 1 en 'a', si aún no lo habíamos detectado\n        if (a && !reg_x)\n            reg_x <= 1'b1;\n\n        // Al primer 1 en 'b'\n        if (b && !reg_y)\n            reg_y <= 1'b1;\n\n        // Al primer 1 en cualquier bit de 'c' (reducción OR)\n        if (c && !reg_z)\n            reg_z <= 1'b1;\n        \n        if(slave_out && !slave_addr)\n            slave_addr <= slave_out;\n    end\nend\n"
+                "name": "Divider",
+                "value": "250",
+                "local": true
               },
               "position": {
-                "x": 1064,
-                "y": 1376
-              },
-              "size": {
-                "width": 784,
-                "height": 712
-              }
-            },
-            {
-              "id": "b97aacf5-9996-4923-987d-28e67808ef95",
-              "type": "basic.code",
-              "data": {
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    },
-                    {
-                      "name": "rstn"
-                    },
-                    {
-                      "name": "enable"
-                    },
-                    {
-                      "name": "rw"
-                    },
-                    {
-                      "name": "slv_addr",
-                      "range": "[6:0]",
-                      "size": 7
-                    },
-                    {
-                      "name": "data_in",
-                      "range": "[31:0]",
-                      "size": 32
-                    },
-                    {
-                      "name": "n_paquetes",
-                      "range": "[2:0]",
-                      "size": 3
-                    },
-                    {
-                      "name": "I2C_SDA"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "state_out",
-                      "range": "[3:0]",
-                      "size": 4
-                    },
-                    {
-                      "name": "busy_out"
-                    },
-                    {
-                      "name": "data_out",
-                      "range": "[7:0]",
-                      "size": 8
-                    },
-                    {
-                      "name": "I2C_SCL"
-                    }
-                  ]
-                },
-                "params": [],
-                "code": "// Definir los estados de la máquina de estados\nlocalparam READY       = 4'd0;\nlocalparam START       = 4'd1;\nlocalparam COMMAND     = 4'd2;\nlocalparam SLV_OBJ_ACK = 4'd3;\nlocalparam WRITE_DATA  = 4'd4;\nlocalparam WRITE_ACK   = 4'd5;\nlocalparam READ_DATA   = 4'd6;\nlocalparam READ_ACK    = 4'd7;\nlocalparam STOP        = 4'd8;\n\n// Bit más significativos\nlocalparam max_slv_Addr = 7;\nlocalparam max_data_wr = 31;\n\n// Registros internos\nreg [3:0] state = READY;            // Estado actual\nreg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío\nreg [2:0] num_paquetes = 3'd0;      // Contador de paquetes a enviar.\nreg [7:0] slave_addr = 8'd0;        // Dirección del esclavo\nreg read_write = 1'd0;              // Lectura o escritura\nreg [31:0] wt_buffer = 32'b0;       // Buffer de escritura. Mensaje a enviar\nreg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido\nreg sda_out = 1'd0;                 // Salida de SDA\nreg write_enable = 1'd0;            // Habilitación de SDA\nreg enable_reg = 1'd0;\nreg clk_enable;\nreg busy = 1'd0;                    // Flag de bus ocupado\nreg reg_data_ready = 1'b0;\n\n// Asignaciones\nassign busy_out = busy;\nassign data_out = rd_buffer;\nassign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL\nassign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA\n\n//always @(posedge enable) begin\n//    enable_reg <= 1'b1;\n//end\n\n// Máquina de estados I2C\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        state <= READY;        \n        counter <= 3'd0;\n        num_paquetes <= 2'd0;  \n        sda_out <= 1'b1;\n        slave_addr <= 8'd0;       \n        read_write <= 1'd0;\n        wt_buffer <= 24'b0;       \n        rd_buffer <= 8'd0;                \n        write_enable <= 1'd0;           \n        busy <= 1'd0;\n        reg_data_ready <= 1'b0;\n        enable_reg <= 1'b0;\n    end else begin\n        case (state)\n            READY: begin\n                reg_data_ready <= 1'b0;\n                write_enable <= 1'b0;\n                busy <= enable;\n                if (enable && !enable_reg) begin\n                    enable_reg <= 1'b1;\n                end\n                if (enable_reg) begin\n                    num_paquetes <= n_paquetes;\n                    read_write <= rw;\n                    slave_addr <= {slv_addr, rw};\n                    wt_buffer <= data_in;\n                    enable_reg <= 1'b0;\n                    state <= START;\n                end\n            end\n            START: begin\n                busy <= 1'b1;\n                write_enable <= 1'b1;\n                counter <= 3'd7;\n                sda_out <= slave_addr[max_slv_Addr];               \n                state <= COMMAND;  \n            end\n            COMMAND: begin\n                if (counter == 3'd0) begin\n                    //write_enable <= 1'b0;\n                    sda_out <= 1'b0;  // Finaliza el envío de la dirección\n                    state <= SLV_OBJ_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    slave_addr <= slave_addr << 1; // Desplaza la dirección del esclavo\n                    sda_out <= slave_addr[max_slv_Addr];\n                end\n            end\n            SLV_OBJ_ACK: begin\n                // Chequear ACK del esclavo. No está en el verilog\n                if (I2C_SDA == 1'b1) begin  // Write\n                    counter <= 3'd7;\n                    write_enable <= 1'b1;\n                    sda_out <= wt_buffer[max_data_wr];\n                    state <= WRITE_DATA;\n                end else begin               // Read\n                    counter <= 3'd7;\n                    write_enable <= 1'b0;\n                    state <= READ_DATA;\n                end\n            end\n            WRITE_DATA: begin\n                busy <= 1'b1;\n                if (counter == 3'd0) begin\n                    write_enable <= 1'b0;\n                    num_paquetes <= num_paquetes - 1'b1;\n                    sda_out <= 1'b0;\n                    state <= WRITE_ACK;\n                end else begin\n                    counter <= counter - 1;\n                    wt_buffer <= wt_buffer << 1;\n                    sda_out <= wt_buffer[max_data_wr];\n                end\n            end\n            READ_DATA: begin\n                rd_buffer[counter] <= I2C_SDA;\n                if (counter == 3'd0) begin\n                    state <= READ_ACK;\n                end else begin \n                    counter <= counter - 1;\n                end\n            end\n            WRITE_ACK: begin\n                if (enable == 1'b1) begin\n                    if (num_paquetes > 2'b0) begin\n                        counter <= 3'd7;\n                        write_enable <= 1'b1;\n                        sda_out <= wt_buffer[max_data_wr];\n                        state <= WRITE_DATA;\n                    end else begin\n                        state <= STOP;\n                    end\n                end else begin \n                    state <= STOP;\n                end\n            end\n            READ_ACK: begin\n                busy <= 1'b0;\n                write_enable <= 1'b1;\n                sda_out <= 1'b0;\n                reg_data_ready <= 1'b1;\n                state <= STOP;\n            end\n            STOP: begin\n                write_enable <= 1'b1;\n                sda_out <= 1'b1;\n                busy <= 1'b0;\n                state <= READY;\n            end\n        endcase\n    end\nend\n\n// Control síncrono de SCL enable\nalways @(posedge clk) begin\n    if (!rstn)\n        clk_enable <= 1'b0;\n    else\n        clk_enable <= (state != READY) && (state != START) && (state != STOP);\nend"
-              },
-              "position": {
-                "x": 1656,
-                "y": 184
-              },
-              "size": {
-                "width": 488,
-                "height": 440
+                "x": 2344,
+                "y": 232
               }
             },
             {
@@ -32237,8 +32628,8 @@
                 "y": -280
               },
               "size": {
-                "width": 536,
-                "height": 232
+                "width": 584,
+                "height": 64
               }
             },
             {
@@ -32302,8 +32693,8 @@
                     },
                     {
                       "name": "data_write",
-                      "range": "[31:0]",
-                      "size": 32
+                      "range": "[7:0]",
+                      "size": 8
                     },
                     {
                       "name": "n_paquetes",
@@ -32317,27 +32708,280 @@
                       "name": "bus_data_out",
                       "range": "[31:0]",
                       "size": 32
-                    },
-                    {
-                      "name": "check",
-                      "range": "[7:0]",
-                      "size": 8
-                    },
-                    {
-                      "name": "data_ready"
                     }
                   ]
                 },
                 "params": [],
-                "code": "parameter W_SLV_ADDR        = 3'b000;  // 0x04000000\nparameter W_RW              = 3'b001;  // 0x04000004\nparameter W_N_PQTS          = 3'b010;  // 0x04000008\nparameter R_STATE           = 3'b011;  // 0x0400000C\nparameter R_BUSY            = 3'b100;  // 0x04000010\nparameter R_DATA_OUT        = 3'b101;  // 0x04000014\nparameter S_ENABLE          = 3'b110;  // 0x04000018\nparameter W_DATA_WRITE      = 3'b111;  // 0x0400001C\n\n// Índice en el array de registros\nparameter slv_addr_register         = 0;\nparameter rw_register               = 1;\nparameter num_pqts_register         = 2;\nparameter state_register            = 3;\nparameter busy_register             = 4;\nparameter data_out_register         = 5;\nparameter enable_register           = 6;\n\n\n//Entrada desde bus de datos\nreg [7:0] dataArray [7:0];\nreg [31:0] buffer_data_out;\nreg [31:0] data_wr = 32'b0;\n\nreg ack_r;          // pulso a CLK del bus\nassign bus_data_enable = ack_r;\n\n\nassign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      \nassign rw = dataArray[rw_register][0];                   \nassign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    \n\nassign enable_start = dataArray[enable_register][0];                 \n\nassign data_write = data_wr;             \nassign bus_data_out = buffer_data_out;     \nassign check = dataArray[W_N_PQTS];\n\nwire serdat_write = serdat_cs & |mem_wstrb;     \n\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn) begin\n        // Reset completo de los registros\n        dataArray[0] <= 8'b0;\n        dataArray[1] <= 8'b0;\n        dataArray[2] <= 8'b0;\n        dataArray[3] <= 8'b0;\n        dataArray[4] <= 8'b0;\n        dataArray[5] <= 8'b0;\n        dataArray[6] <= 8'b0;\n        dataArray[7] <= 8'b0;\n        buffer_data_out <= 32'b0;\n        data_wr <= 32'b0;\n        ack_r <= 1'b0;\n    end else begin\n        // Registros actualizados por hardware (FSM)\n        dataArray[state_register]    <= {4'b0, I2C_State};\n        dataArray[busy_register]     <= {7'b0, I2C_Busy};\n        dataArray[data_out_register] <= data_out;\n        \n\n        // Interfaz externa desde CPU\n        if (serdat_cs) begin\n        ack_r <= 1'b1;\n            if (serdat_write) begin\n                // ----------- ESCRITURA -----------\n                if (Bus_addr[4:2] == W_DATA_WRITE) begin\n                    data_wr <= Bus_data;\n                end else begin\n                    dataArray[Bus_addr[4:2]] <= Bus_data[7:0];\n                end\n            end else begin\n                // ----------- LECTURA -----------\n                buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};\n            end \n        end else begin\n            ack_r <= 1'b0;       // al siguiente ciclo vuelve a 0\n        end\n\n        // Limpieza de registros de un solo ciclo\n        dataArray[enable_register] <= 8'b0;\n    end\n\nend\n\nalways @(posedge clk or negedge rstn) begin\n    if (!rstn)\n        ack_r <= 1'b0;\n    else\n        ack_r <= serdat_cs;        // alto mientras dure la transacción\nend\n"
+                "code": "parameter W_SLV_ADDR        = 3'b000;  // 0x04000000\n  parameter W_RW              = 3'b001;  // 0x04000004\n  parameter W_N_PQTS          = 3'b010;  // 0x04000008\n  parameter R_STATE           = 3'b011;  // 0x0400000C\n  parameter R_BUSY            = 3'b100;  // 0x04000010\n  parameter R_DATA_OUT        = 3'b101;  // 0x04000014\n  parameter S_ENABLE          = 3'b110;  // 0x04000018\n  parameter W_DATA_WRITE      = 3'b111;  // 0x0400001C\n  \n  //Estados i2c\n  localparam READY        = 4'd0;\n  localparam START        = 4'd1;\n  localparam COMMAND      = 4'd2;\n  localparam SLV_ACK_1    = 4'd3;\n  localparam WR           = 4'd4;\n  localparam RD           = 4'd5;\n  localparam SLV_ACK_2    = 4'd6;\n  localparam MSTR_ACK     = 4'd7;\n  localparam STOP         = 4'd8;\n  \n  // Índice en el array de registros\n  parameter slv_addr_register         = 0;\n  parameter rw_register               = 1;\n  parameter num_pqts_register         = 2;\n  parameter state_register            = 3;\n  parameter busy_register             = 4;\n  parameter data_out_register         = 5;\n  parameter enable_register           = 6;\n  \n  \n  //Entrada desde bus de datos\n  reg [7:0] dataArray [7:0];\n  reg [31:0] buffer_data_out;\n  reg [31:0] data_wr = 32'b0;\n  reg [3:0] prev_i2c_state = 4'd0;\n  \n  reg ack_r;          // pulso a CLK del bus\n  assign bus_data_enable = ack_r;\n  \n  \n  assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      \n  assign rw = dataArray[rw_register][0];                   \n  assign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    \n  \n  assign enable_start = dataArray[enable_register][0];                 \n  \n  assign data_write = data_wr[7:0];             \n  assign bus_data_out = buffer_data_out;     \n  \n  wire serdat_write = serdat_cs & |mem_wstrb;     \n  \n  always @(posedge clk or negedge rstn) begin\n      if (!rstn) begin\n          // Reset completo de los registros\n          dataArray[0] <= 8'b0;\n          dataArray[1] <= 8'b0;\n          dataArray[2] <= 8'b0;\n          dataArray[3] <= 8'b0;\n          dataArray[4] <= 8'b0;\n          dataArray[5] <= 8'b0;\n          dataArray[6] <= 8'b0;\n          dataArray[7] <= 8'b0;\n          buffer_data_out <= 32'b0;\n          data_wr <= 32'b0;\n          ack_r <= 1'b0;\n          prev_i2c_state <= READY;\n      end else begin\n          // Registros actualizados por hardware (FSM)\n          dataArray[state_register]    <= {4'b0, I2C_State};\n          dataArray[busy_register]     <= {7'b0, I2C_Busy};\n          dataArray[data_out_register] <= data_out;\n          //dataArray[enable_register] <= 8'b0;\n          if(I2C_State != STOP) begin\n              dataArray[enable_register] <= 8'b0;\n          end\n  \n          // Interfaz externa desde CPU\n          if (serdat_cs) begin\n              ack_r <= 1'b1;\n              if (serdat_write) begin\n                  // ----------- ESCRITURA -----------\n                  if(Bus_addr[4:2] == W_DATA_WRITE) begin\n                     data_wr <= Bus_data;\n                  end else begin\n                     dataArray[Bus_addr[4:2]] <= Bus_data[7:0];\n                  end\n              end else begin\n                  // ----------- LECTURA -----------\n                  if (Bus_addr[4:2] == W_DATA_WRITE) begin\n                      buffer_data_out <= data_wr;\n                  end else begin\n                      buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};\n                  end\n              end\n              // Limpieza de registros de un solo ciclo\n              //dataArray[enable_register] <= 8'b0;\n          end else begin\n              ack_r <= 1'b0; // al siguiente ciclo vuelve a 0\n          end\n         //Desplazamos un byte a la derecha una sola vez al entrar en SLV_ACK_2\n         if(prev_i2c_state != SLV_ACK_2 && I2C_State == SLV_ACK_2) begin\n            data_wr <= data_wr >> 8;\n         end\n         prev_i2c_state <= I2C_State;\n      end\n  end"
               },
               "position": {
-                "x": -64,
-                "y": 104
+                "x": -280,
+                "y": -32
               },
               "size": {
                 "width": 768,
                 "height": 904
+              }
+            },
+            {
+              "id": "d7742edf-52c0-45dc-91db-977333476245",
+              "type": "basic.code",
+              "data": {
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "rstn"
+                    },
+                    {
+                      "name": "ena"
+                    },
+                    {
+                      "name": "busy"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "ena_out"
+                    }
+                  ]
+                },
+                "params": [],
+                "code": "//Reset de enable cuando busy empieza\n\nreg ena_output;\n\nassign ena_out = ena_output;\n\nalways @(posedge clk or negedge rstn) begin\n    if(!rstn) begin\n        ena_output = 1'b0;\n    end else begin\n        if(busy)begin\n            ena_output = 1'b0;\n        end else begin\n            if(ena)begin\n                ena_output <= 1'b1;\n            end\n        end\n    end\nend\n    "
+              },
+              "position": {
+                "x": 976,
+                "y": 664
+              },
+              "size": {
+                "width": 448,
+                "height": 200
+              }
+            },
+            {
+              "id": "acab5c72-8117-4252-9e14-78d3823ebdb6",
+              "type": "basic.code",
+              "data": {
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "clk_o"
+                    }
+                  ]
+                },
+                "params": [
+                  {
+                    "name": "Hz"
+                  }
+                ],
+                "code": "//Este módulo no está en uso. \n//Era el divisor de frecuencias antiguo\n\n//parameter HZ=1;\n\n//-- Constante para dividir y obtener una frecuencia de 1Hz\nlocalparam M = 12000000/Hz;\n\n//-- Calcular el numero de bits para almacenar M\nlocalparam N = $clog2(M);\n\n//-- Registro del divisor\nreg [N-1:0] divcounter = 0;\n\n//-- Temporal clock\nreg clk_t = 0;\n\n//-- REgistro con el valor del reloj\nreg clk_out = 0;\n\n//-- Se usa un contador modulo M/2 para luego\n//-- pasarlo por un biestable T y dividir la frecuencia\n//-- entre 2, para que el ciclo de trabajo sea del 50%\nalways @(posedge clk)\n    if (divcounter == M/2) begin\n      clk_t <= 1;\n      divcounter = 0;\n    end \n    else begin\n      divcounter <=  divcounter + 1;\n      clk_t = 0;\n    end \n    \n//-- Biestable T para obtener ciclo de trabajo del 50%\nalways @(posedge clk)\n  if (clk_t)\n    clk_out <= ~clk_out;\n\n\nassign clk_o = clk_out;  \n"
+              },
+              "position": {
+                "x": 1080,
+                "y": 216
+              },
+              "size": {
+                "width": 584,
+                "height": 144
+              }
+            },
+            {
+              "id": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+              "type": "basic.code",
+              "data": {
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "resetn"
+                    },
+                    {
+                      "name": "sda_O"
+                    },
+                    {
+                      "name": "sda_T"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "sda_I"
+                    },
+                    {
+                      "name": "sda"
+                    }
+                  ]
+                },
+                "params": [],
+                "code": "wire sda_pad_in;\nSB_IO #(\n        .PIN_TYPE(6'b1010_01), \n        .PULLUP(1'b0)          \n    ) sda_tri (\n        .PACKAGE_PIN(sda),     \n        .OUTPUT_ENABLE(~sda_T),\n        .D_OUT_0(1'b0),        \n        .D_IN_0(sda_pad_in)    \n    );\nassign sda_I = sda_pad_in;"
+              },
+              "position": {
+                "x": 2088,
+                "y": -168
+              },
+              "size": {
+                "width": 496,
+                "height": 272
+              }
+            },
+            {
+              "id": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+              "type": "basic.code",
+              "data": {
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "resetn"
+                    },
+                    {
+                      "name": "scl_O"
+                    },
+                    {
+                      "name": "scl_T"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "scl_I"
+                    }
+                  ],
+                  "inoutRight": [
+                    {
+                      "name": "scl"
+                    }
+                  ]
+                },
+                "params": [],
+                "code": "//Copro\nwire scl_pad_in;\n \nSB_IO #(\n        .PIN_TYPE(6'b1010_01), // Pin como E/S simple, sin registros internos\n        .PULLUP(1'b0)          // Pull-up interno desactivado (usar resistencias externas para I²C)\n    ) scl_tri(\n        .PACKAGE_PIN(scl),     // Conecta al pin físico SCL\n        .OUTPUT_ENABLE(~scl_T),// '1' = conduce (saca 0), '0' = Hi-Z (línea libre)\n        .D_OUT_0(1'b0),        // Valor a sacar cuando conduce (siempre 0 en open-drain)\n        .D_IN_0(scl_pad_in)    // Valor leído del pin SCL (estado real de la línea)\n    );\nassign scl_I = scl_pad_in;\n//assign sda = (sda_T == 1'b0) ? sda_O : 1'bz;\n//assign sda_I = sda;\n\n//assign scl = (scl_T == 1'b0) ? scl_O : 1'bz;\n//assign scl_I = scl;"
+              },
+              "position": {
+                "x": 1880,
+                "y": -544
+              },
+              "size": {
+                "width": 856,
+                "height": 320
+              }
+            },
+            {
+              "id": "325808b1-f800-455e-8dc7-c39f04add403",
+              "type": "basic.code",
+              "data": {
+                "ports": {
+                  "in": [
+                    {
+                      "name": "i2c_clk"
+                    },
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "rstn"
+                    },
+                    {
+                      "name": "ena"
+                    },
+                    {
+                      "name": "slv_addr",
+                      "range": "[6:0]",
+                      "size": 7
+                    },
+                    {
+                      "name": "rw"
+                    },
+                    {
+                      "name": "data_in",
+                      "range": "[7:0]",
+                      "size": 8
+                    },
+                    {
+                      "name": "scl_I"
+                    },
+                    {
+                      "name": "sda_I"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "busy"
+                    },
+                    {
+                      "name": "data_rd",
+                      "range": "[7:0]",
+                      "size": 8
+                    },
+                    {
+                      "name": "ack_error"
+                    },
+                    {
+                      "name": "sda_O"
+                    },
+                    {
+                      "name": "sda_T"
+                    },
+                    {
+                      "name": "scl_O"
+                    },
+                    {
+                      "name": "scl_T"
+                    },
+                    {
+                      "name": "states",
+                      "range": "[3:0]",
+                      "size": 4
+                    },
+                    {
+                      "name": "bit_cnts",
+                      "range": "[3:0]",
+                      "size": 4
+                    },
+                    {
+                      "name": "data_clkp"
+                    },
+                    {
+                      "name": "streetchip"
+                    },
+                    {
+                      "name": "debbug_scl_clk"
+                    },
+                    {
+                      "name": "debbug_scl_ena"
+                    },
+                    {
+                      "name": "debbug_data_clk"
+                    },
+                    {
+                      "name": "debbug_slv_Addr",
+                      "range": "[7:0]",
+                      "size": 8
+                    }
+                  ]
+                },
+                "params": [
+                  {
+                    "name": "DIVIDER"
+                  }
+                ],
+                "code": "// Estados como en el VHDL\nlocalparam READY        = 4'd0;\nlocalparam START        = 4'd1;\nlocalparam START_HOLD   = 4'd2;\nlocalparam COMMAND      = 4'd3;\nlocalparam SLV_ACK_1    = 4'd4;\nlocalparam WR           = 4'd5;\nlocalparam RD           = 4'd6;\nlocalparam SLV_ACK_2    = 4'd7;\nlocalparam MSTR_ACK     = 4'd8;\nlocalparam STOP         = 4'd9;\nlocalparam CNT_W = $clog2(DIVIDER*4);\n\n// Registros “VHDL-like”\nreg [3:0] state = READY;\nreg [2:0] bit_cnt;\nreg       data_clk;                // 0: Q1/Q4, 1: Q2/Q3\nreg       scl_clk;                 // 0: forzar 0, 1: soltar (Hi-Z via T)\nreg       scl_ena;\nreg       sda_int;                 // 0=conducir 0, 1=soltar (open-drain)\nreg [7:0] data_tx, data_rx;\nreg [7:0] addr_rw;\nreg [7:0] reg_data_rd;\nreg       reg_busy;\nreg       reg_ack_error;\nreg       stretch;\nreg [CNT_W-1:0] cuenta;\n\nalways @(posedge clk or negedge rstn) begin\n  if (!rstn) begin\n    cuenta   <= {CNT_W{1'b0}};\n    data_clk <= 1'b0;\n    scl_clk  <= 1'b0;\n    stretch  <= 1'b0;\n  end else begin\n    // hold si hay stretching (solo cuando pretendemos SCL alto)\n    if (cuenta == DIVIDER*4-1)          cuenta <= {CNT_W{1'b0}};\n    else if (!stretch)                  cuenta <= cuenta + 1'b1;\n    // Q1: SCL=0, data_clk=0\n    if (cuenta < DIVIDER) begin\n      scl_clk  <= 1'b0;\n      data_clk <= 1'b0;\n    end\n    // Q2: SCL=0, data_clk=1 (aquí sube data_clk)\n    else if (cuenta < DIVIDER*2) begin\n      scl_clk  <= 1'b0;\n      data_clk <= 1'b1;\n    end\n    // Q3: SCL liberado, data_clk=1 (leer ACK/datos; detectar stretching)\n    else if (cuenta < DIVIDER*3) begin\n      scl_clk  <= 1'b1;                // liberar (tri-state mediante T)\n      data_clk <= 1'b1;\n      // stretching si intentamos alto pero el pin sigue bajo\n      if (scl_I == 1'b0) stretch <= 1'b1;\n      else               stretch <= 1'b0;\n    end\n    // Q4: SCL liberado, data_clk=0\n    else begin\n      scl_clk  <= 1'b1;\n      data_clk <= 1'b0;\n      stretch  <= 1'b0;\n    end\n  end\nend\n\n// --- FSM: escribir SDA con SCL bajo (posedge data_clk) ---\nalways @(posedge data_clk or negedge rstn) begin\n  if (!rstn) begin\n    state        <= READY;\n    reg_busy     <= 1'b1;\n    scl_ena      <= 1'b0;\n    sda_int      <= 1'b1;\n    bit_cnt      <= 3'd7;\n    reg_data_rd  <= 8'd0;\n    addr_rw      <= 8'd0;\n    data_tx      <= 8'd0;\n  end else begin\n    case (state)\n      READY: begin\n        if (ena) begin\n          reg_busy <= 1'b1;\n          addr_rw[7:1] <= addr_rw[6:0]; // copiar dirección sin RW\n          addr_rw[0] <= rw; // RW=0: write, RW=1: read\n          data_tx  <= data_in;\n          sda_int  <= 1'b0;        // preparar START (SDA baja)\n          state    <= START_HOLD;\n        end else begin\n          reg_busy <= 1'b0;\n          scl_ena  <= 1'b0;\n        end\n      end\n      START_HOLD: begin\n        reg_busy <= 1'b1;\n        scl_ena  <= 1'b1;          // habilita SCL\n        sda_int  <= 1'b0;          // mantener SDA baja un cuarto\n        state    <= START;\n      end\n      START: begin\n        sda_int <= addr_rw[bit_cnt]; // primer bit (MSB)\n        state   <= COMMAND;\n      end\n      COMMAND: begin\n        if (bit_cnt == 0) begin\n          sda_int <= 1'b1;         // soltar para ACK del esclavo\n          bit_cnt <= 3'd7;\n          state   <= SLV_ACK_1;\n        end else begin\n          bit_cnt <= bit_cnt - 1'b1;\n          sda_int <= addr_rw[bit_cnt-1]; // **ojo**: -1 como en VHDL\n        end\n      end\n      SLV_ACK_1: begin\n        if (!addr_rw[0]) begin      // write\n          sda_int <= data_tx[bit_cnt];\n          state   <= WR;\n        end else begin              // read\n          sda_int <= 1'b1;          // soltar para leer\n          state   <= RD;\n        end\n      end\n      WR: begin\n        reg_busy <= 1'b1;\n        if (bit_cnt == 0) begin\n          sda_int <= 1'b1;          // soltar para ACK del esclavo\n          bit_cnt <= 3'd7;\n          state   <= SLV_ACK_2;\n        end else begin\n          bit_cnt <= bit_cnt - 1'b1;\n          sda_int <= data_tx[bit_cnt-1]; // **ojo**: -1\n        end\n      end\n      RD: begin\n        reg_busy <= 1'b1;\n        if (bit_cnt == 0) begin\n          sda_int     <= (ena && rw) ? 1'b0 : 1'b1; // ACK (0) si seguimos leyendo\n          bit_cnt     <= 3'd7;\n          reg_data_rd <= data_rx;\n          state       <= MSTR_ACK;\n        end else begin\n          bit_cnt <= bit_cnt - 1'b1;\n          // sda_int permanece soltada (ya viene de SLV_ACK_1)\n        end\n      end\n      SLV_ACK_2: begin\n        if (ena) begin\n          reg_busy <= 1'b0;         // “acepta” continuar (como VHDL)\n          addr_rw  <= {slv_addr, rw};\n          data_tx  <= data_in;\n          if (rw) begin\n            state <= START_HOLD;    // repeated START hacia lectura\n          end else begin\n            sda_int <= data_tx[bit_cnt];\n            state   <= WR;\n          end\n        end else begin\n          scl_ena <= 1'b0;\n          state   <= STOP;\n        end\n      end\n      MSTR_ACK: begin\n        if (ena) begin\n          reg_busy <= 1'b0;         // “acepta” continuar\n          addr_rw  <= {slv_addr, rw};\n          data_tx  <= data_in;\n          if (!rw) begin\n            state <= START_HOLD;    // repeated START hacia escritura\n          end else begin\n            sda_int <= 1'b0;        // ACK para más lectura\n            state   <= RD;\n          end\n        end else begin\n          scl_ena <= 1'b0;\n          state   <= STOP;\n        end\n      end\n      STOP: begin\n        reg_busy <= 1'b0;\n        scl_ena  <= 1'b0;\n        sda_int  <= 1'b1;           // STOP (SDA sube con SCL alto en Q3)\n        state    <= READY;\n      end\n      default: state <= READY;\n    endcase\n  end\nend\n\n// --- Muestreo con SCL alto (negedge data_clk) ---\nalways @(negedge data_clk or negedge rstn) begin\n  if (!rstn) begin\n    reg_ack_error <= 1'b0;\n    data_rx       <= 8'd0;\n  end else begin\n    case (state)\n      START:      reg_ack_error <= 1'b0;                    // limpia flag al iniciar\n      SLV_ACK_1:  reg_ack_error <= sda_I | reg_ack_error;   // 0=ACK, 1=NACK\n      RD:         data_rx[bit_cnt] <= sda_I;                // lee bit\n      SLV_ACK_2:  reg_ack_error <= sda_I | reg_ack_error;\n    endcase\n  end\nend\n\n// --- Mapeo de salidas (igual filosofía al VHDL) ---\n// START/STOP forman la condición usando data_clk (Q2/Q3)\nwire sda_ena_n = (state == START) ? data_clk :\n                 (state == STOP)  ? ~data_clk :\n                                     sda_int;\nassign scl_O = scl_clk;                          // valor “no importa” cuando T=1\nassign scl_T = ~(scl_ena & ~scl_clk);            // T=0 cuando scl_ena=1 y scl_clk=0\nassign sda_O = 1'b0;                             // open-drain puro\nassign sda_T = sda_ena_n;\n\n// debug\nassign busy            = reg_busy;\nassign data_rd         = reg_data_rd;\nassign ack_error       = reg_ack_error;\nassign states          = state;\nassign bit_cnts        = {1'b0, bit_cnt};\nassign data_clkp       = data_clk;\nassign streetchip      = stretch;\nassign debbug_scl_clk  = scl_clk;\nassign debbug_scl_ena  = scl_ena;\nassign debbug_data_clk = data_clk;\n"
+              },
+              "position": {
+                "x": 1832,
+                "y": 408
+              },
+              "size": {
+                "width": 1136,
+                "height": 840
               }
             }
           ],
@@ -32345,8 +32989,7 @@
             {
               "source": {
                 "block": "8594fbb7-9e10-4782-a5c5-075c0d6130a2",
-                "port": "out",
-                "size": 32
+                "port": "out"
               },
               "target": {
                 "block": "d329906c-1f81-4e0d-b48b-1caaa0abd57a",
@@ -32369,8 +33012,7 @@
             {
               "source": {
                 "block": "bf2c13a3-02d9-40be-9413-30de948552ff",
-                "port": "out",
-                "size": 32
+                "port": "out"
               },
               "target": {
                 "block": "40bd157a-f2e5-4b2b-8c58-92246aa036f2",
@@ -32401,23 +33043,12 @@
             },
             {
               "source": {
-                "block": "7f5008e5-7060-457e-b415-71d914682325",
-                "port": "out"
-              },
-              "target": {
-                "block": "18c0248b-aec7-4545-a2b4-96bdce15b0c7",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
                 "block": "7d1b99d6-2604-4a70-a182-29063fae5d36",
                 "port": "outlabel"
               },
               "target": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "Bus_data",
-                "size": 32
+                "port": "Bus_data"
               },
               "vertices": [],
               "size": 32
@@ -32429,20 +33060,9 @@
               },
               "target": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "Bus_addr",
-                "size": 32
+                "port": "Bus_addr"
               },
               "size": 32
-            },
-            {
-              "source": {
-                "block": "bc58e4db-b90b-4e87-acfd-6604b21dd75a",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "faa52f3e-5cab-41b1-8dae-32bfcc3988cd",
-                "port": "in"
-              }
             },
             {
               "source": {
@@ -32451,8 +33071,7 @@
               },
               "target": {
                 "block": "9b8c3515-24ae-4719-a737-6f2858304b78",
-                "port": "in",
-                "size": 32
+                "port": "in"
               },
               "size": 32
             },
@@ -32469,20 +33088,7 @@
             {
               "source": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "slv_addr",
-                "size": 7
-              },
-              "target": {
-                "block": "a7f6a09c-e8d0-4575-bc0b-2ed360d5b719",
-                "port": "inlabel"
-              },
-              "size": 7
-            },
-            {
-              "source": {
-                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "bus_data_out",
-                "size": 32
+                "port": "bus_data_out"
               },
               "target": {
                 "block": "04957a53-acce-4c67-9b2d-c079c516b765",
@@ -32492,124 +33098,12 @@
             },
             {
               "source": {
-                "block": "954a4c4a-cc1f-4bdd-92de-85f2ed507506",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "71f8472f-f7bf-4f29-8ea7-080bb326b428",
-                "port": "4656865c-bcf1-4668-8e13-9221e32222d3"
-              }
-            },
-            {
-              "source": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
                 "port": "rw"
               },
               "target": {
                 "block": "9362cb2f-ff45-4bdb-a60d-befe64326379",
                 "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "45b5852e-16a8-4657-9109-64163d2fd162",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "I2C_Busy"
-              }
-            },
-            {
-              "source": {
-                "block": "ce8d762c-a384-45aa-9f40-c0883c5218fb",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "data_out",
-                "size": 8
-              },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "x"
-              },
-              "target": {
-                "block": "6d9ed983-24c0-434a-ac54-bd607c11eeec",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "y"
-              },
-              "target": {
-                "block": "3d7b8984-61db-4c86-97e5-288d9e8852c5",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "z"
-              },
-              "target": {
-                "block": "46631b04-0b9d-4fde-b4f2-82789a6dd348",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "ab6ea01f-2efa-4077-86af-3fbe1367fbc4",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "1cfe438c-e803-49b1-a75f-0c75a8bb4f0c",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "fbf5e1ff-1b9e-4446-848e-855b0abd9025",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "5f2fa40e-e518-44e4-8888-e0dacab21c85",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "ba57cfd9-d0f6-4da8-be83-39f6b1488d43",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "0c00cc96-779e-4531-a658-47672e077914",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "8696a607-44cc-4d76-9db6-29afd3981bfc",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "clk"
-              }
-            },
-            {
-              "source": {
-                "block": "e86649fe-d485-41d9-bfcb-39bffcb11552",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "rst_n"
               }
             },
             {
@@ -32639,205 +33133,18 @@
               },
               "target": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "I2C_State",
-                "size": 4
+                "port": "I2C_State"
               },
               "size": 4
             },
             {
               "source": {
-                "block": "5f5d0d15-984b-4d5e-83f3-5fde1629e29c",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "c",
-                "size": 32
-              },
-              "size": 32
-            },
-            {
-              "source": {
-                "block": "e8085bd2-1b93-4867-9621-7b7d6d54cc00",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
-                "port": "b609ce71-5f25-4491-b628-d73be6e4c572",
-                "size": 32
-              },
-              "vertices": [],
-              "size": 32
-            },
-            {
-              "source": {
-                "block": "003ba5b1-3f57-4851-b439-7318bc4b992e",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "a361e582-0c55-43ed-933b-7157ed432113",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "282bca92-acdc-469a-8674-de9edc70ca6f",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "slave_out",
-                "size": 7
-              },
-              "size": 7
-            },
-            {
-              "source": {
-                "block": "6cfa4c0b-09b5-4608-a83e-4f0b08053011",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "I2C_SDA"
-              }
-            },
-            {
-              "source": {
-                "block": "8a043a41-f507-4770-86ca-9da4298edd4f",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "slv_addr",
-                "size": 7
-              },
-              "size": 7
-            },
-            {
-              "source": {
-                "block": "02b50dd8-518c-4699-9fdd-dfe12f727c62",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "rw"
-              }
-            },
-            {
-              "source": {
-                "block": "bab706f2-49cc-4250-bbdc-b06cbe2726c3",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "enable"
-              }
-            },
-            {
-              "source": {
-                "block": "94c3a654-3189-46a2-87be-2eb6f1192cae",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "rstn"
-              },
-              "vertices": [
-                {
-                  "x": 1584,
-                  "y": 160
-                }
-              ]
-            },
-            {
-              "source": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "state_out",
-                "size": 4
-              },
-              "target": {
-                "block": "906592f8-5cb2-4e93-a548-e5c30929eac0",
-                "port": "inlabel"
-              },
-              "size": 4
-            },
-            {
-              "source": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "busy_out"
-              },
-              "target": {
-                "block": "f0fff056-8241-47d6-af33-c48a12ac82ff",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "data_out",
-                "size": 8
-              },
-              "target": {
-                "block": "06c6134d-480e-498c-a95f-9f496d123805",
-                "port": "inlabel"
-              },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "I2C_SCL"
-              },
-              "target": {
-                "block": "e9a222bc-77f9-46b8-95c7-937650652849",
-                "port": "inlabel"
-              }
-            },
-            {
-              "source": {
-                "block": "4920c5a8-f8f8-4fa3-a336-d48fcc4ef3b4",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "data_in",
-                "size": 32
-              },
-              "size": 32
-            },
-            {
-              "source": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "data_write",
-                "size": 32
-              },
-              "target": {
-                "block": "0bfa6bf2-1f85-4fdd-9efb-9c791d2d34a9",
-                "port": "inlabel"
-              },
-              "size": 32
-            },
-            {
-              "source": {
-                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "n_paquetes",
-                "size": 3
+                "port": "n_paquetes"
               },
               "target": {
                 "block": "4a8f8391-f7e5-4852-91a9-c8afecc651d1",
                 "port": "inlabel"
-              },
-              "size": 3
-            },
-            {
-              "source": {
-                "block": "92f83d2f-244e-4e32-bee5-3e80e0b8debd",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
-                "port": "n_paquetes",
-                "size": 3
               },
               "size": 3
             },
@@ -32868,8 +33175,7 @@
               },
               "target": {
                 "block": "8a3b5933-88a7-4d13-a0b6-24455ba12e63",
-                "port": "addr_in",
-                "size": 32
+                "port": "addr_in"
               },
               "size": 32
             },
@@ -32885,38 +33191,12 @@
             },
             {
               "source": {
-                "block": "8a3b5933-88a7-4d13-a0b6-24455ba12e63",
-                "port": "i2c_cs"
-              },
-              "target": {
-                "block": "7442e853-38b9-4cea-89cb-3bcc3c7a3fe2",
-                "port": "inlabel"
-              },
-              "vertices": [
-                {
-                  "x": 984,
-                  "y": -152
-                }
-              ]
-            },
-            {
-              "source": {
                 "block": "469b1e23-a00d-4cff-8bee-331d3f97b3b2",
                 "port": "outlabel"
               },
               "target": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
                 "port": "serdat_cs"
-              }
-            },
-            {
-              "source": {
-                "block": "5e750fd1-f7b7-4014-b131-0b935811ddb3",
-                "port": "outlabel"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "a"
               }
             },
             {
@@ -32932,8 +33212,7 @@
             {
               "source": {
                 "block": "8469f4ce-ffc7-4ad2-884e-3921f5dded7b",
-                "port": "out",
-                "size": 4
+                "port": "out"
               },
               "target": {
                 "block": "78ece4b9-9a19-41d8-afdd-0fb4284f8490",
@@ -32948,73 +33227,346 @@
               },
               "target": {
                 "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "mem_wstrb",
-                "size": 4
+                "port": "mem_wstrb"
               },
               "size": 4
             },
             {
               "source": {
-                "block": "32f34f9b-4a7f-4264-8971-fec0dc122c3d",
-                "port": "constant-out"
+                "block": "949fe779-302e-45eb-9e66-5cbb2331fae6",
+                "port": "outlabel"
               },
               "target": {
-                "block": "71f8472f-f7bf-4f29-8ea7-080bb326b428",
-                "port": "319cdca8-e777-4c8b-88ca-f885ba96ad06"
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "data_out"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "7cea5c9d-9b10-4f2d-9bff-af99d3959c7a",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "I2C_Busy"
               }
             },
             {
               "source": {
-                "block": "cdd3e76a-5c64-4bcb-aa64-bef565053d51",
-                "port": "constant-out"
+                "block": "8a3b5933-88a7-4d13-a0b6-24455ba12e63",
+                "port": "i2c_cs"
               },
               "target": {
-                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
-                "port": "bde24908-c5bf-4286-b7e3-e42a11ca5c68"
-              },
-              "vertices": []
-            },
-            {
-              "source": {
-                "block": "b7a8e4b7-2f3a-4747-beeb-89364bb6e377",
-                "port": "0344dacc-8583-456b-b377-8cb4ab97cf94"
-              },
-              "target": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "b"
+                "block": "7442e853-38b9-4cea-89cb-3bcc3c7a3fe2",
+                "port": "inlabel"
               }
             },
             {
               "source": {
-                "block": "68b48996-3700-4625-885e-6d8b9656fbe6",
-                "port": "slave__out"
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "busy"
               },
               "target": {
-                "block": "9faa4bcd-9d1d-44dc-a52b-a145261437c4",
-                "port": "in"
-              },
-              "size": 7
+                "block": "4c51ea20-7683-4afc-a09d-4f3b79553b80",
+                "port": "inlabel"
+              }
             },
             {
               "source": {
-                "block": "71f8472f-f7bf-4f29-8ea7-080bb326b428",
-                "port": "70887b0b-826c-4150-a873-605b77da8272"
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "data_rd"
               },
               "target": {
-                "block": "b97aacf5-9996-4923-987d-28e67808ef95",
+                "block": "9a2834fc-94b2-4389-9678-2806027d5ed7",
+                "port": "inlabel"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "states"
+              },
+              "target": {
+                "block": "b22277bb-7f39-440f-a1c8-d75b20d08601",
+                "port": "inlabel"
+              },
+              "size": 4
+            },
+            {
+              "source": {
+                "block": "22b3c668-c438-4813-b5b5-c39569c84a3a",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "rw"
+              }
+            },
+            {
+              "source": {
+                "block": "bccff863-a6fe-4f4d-af1b-67970656ca34",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
                 "port": "clk"
               }
             },
             {
               "source": {
-                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
-                "port": "check"
+                "block": "756207db-ac25-4903-bebe-37fb2ba06d9a",
+                "port": "outlabel"
               },
               "target": {
-                "block": "c68bfe99-9f09-45cb-a302-4725ea8f26cd",
-                "port": "in"
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "resetn"
+              }
+            },
+            {
+              "source": {
+                "block": "36e6efc9-8384-485c-b937-cb385d45cca7",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "sda_I"
+              }
+            },
+            {
+              "source": {
+                "block": "dbe8c228-6978-46b4-a717-b1603b5dc010",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "scl_I"
+              }
+            },
+            {
+              "source": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "scl_I"
+              },
+              "target": {
+                "block": "682f4182-7db5-4106-830b-e2a3600469f6",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "scl_O"
+              },
+              "target": {
+                "block": "15cabbff-6143-44e0-801e-982f37484357",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "scl_T"
+              },
+              "target": {
+                "block": "a3bec092-5535-4c0e-b461-dc8ab07dc899",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "23154bea-f53a-4d0f-938c-f32a09a8ab79",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "scl_O"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "sda_T"
+              },
+              "target": {
+                "block": "8e5de49b-19ef-4352-a17f-9e259311eb07",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "sda_O"
+              },
+              "target": {
+                "block": "af9fa394-73b2-49b3-9562-aa5a140ec56d",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "019ee99a-dcd3-40ec-81f9-632b90c29b59",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "scl_T"
+              }
+            },
+            {
+              "source": {
+                "block": "a75de6a1-feab-42da-bacf-9f22ed1a9d8a",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "slv_addr"
+              },
+              "size": 7
+            },
+            {
+              "source": {
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "slv_addr"
+              },
+              "target": {
+                "block": "b8010627-3c27-42bc-a356-58661c770ba5",
+                "port": "inlabel"
+              },
+              "size": 7
+            },
+            {
+              "source": {
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "data_write"
+              },
+              "target": {
+                "block": "fb7b34e2-2faf-4b2a-b4b8-b88b038c3061",
+                "port": "inlabel"
               },
               "size": 8
+            },
+            {
+              "source": {
+                "block": "f065f94f-c041-40c4-8031-1524e28b8a36",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "data_in"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "57a863b6-f734-4a70-89d7-874a148cdc30",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "2c7bb3e1-12d4-4174-8e72-89a14faf89ad",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "rstn"
+              }
+            },
+            {
+              "source": {
+                "block": "51e26248-56ec-4e58-a27f-5deede6b0918",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "d7742edf-52c0-45dc-91db-977333476245",
+                "port": "ena"
+              }
+            },
+            {
+              "source": {
+                "block": "5e720486-2699-49d0-ac64-9bdedb07e014",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "d7742edf-52c0-45dc-91db-977333476245",
+                "port": "busy"
+              }
+            },
+            {
+              "source": {
+                "block": "aaa3ec2b-e4ce-45f6-be1e-e1cbcd0098a2",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "d7742edf-52c0-45dc-91db-977333476245",
+                "port": "rstn"
+              }
+            },
+            {
+              "source": {
+                "block": "57a863b6-f734-4a70-89d7-874a148cdc30",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "d7742edf-52c0-45dc-91db-977333476245",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "7ab2e829-3566-4ad1-924a-d37494c0f90a",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "sda_O"
+              }
+            },
+            {
+              "source": {
+                "block": "4bdeaf24-4c91-424a-8fb0-e1c52844db13",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "sda_T"
+              }
+            },
+            {
+              "source": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "sda_I"
+              },
+              "target": {
+                "block": "351fde6c-f112-43d9-857f-0befab714435",
+                "port": "inlabel"
+              }
+            },
+            {
+              "source": {
+                "block": "5163e075-d0bb-4cde-b0ac-4d9cabb92dde",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "resetn"
+              }
+            },
+            {
+              "source": {
+                "block": "62e18129-e57d-4bd9-a46b-f8c2cd50cb13",
+                "port": "outlabel"
+              },
+              "target": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "clk"
+              }
             },
             {
               "source": {
@@ -33025,137 +33577,209 @@
                 "block": "8a3b5933-88a7-4d13-a0b6-24455ba12e63",
                 "port": "Addr"
               }
-            }
-          ]
-        }
-      }
-    },
-    "0e64bc728cbb881007bf629e44dc5b5b0fa3a34c": {
-      "package": {
-        "name": "Corazon_Hz",
-        "version": "0.1",
-        "description": "Corazon genérico para bombear bits a la frecuencia fijada en Hz (por defecto 1Hz)",
-        "author": "Juan Gonzalez-Gomez (obijuan)",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22177.215%22%20height=%22156.392%22%20viewBox=%220%200%20166.13943%20146.61829%22%3E%3Cpath%20d=%22M78.495%20143.399c-2.574-4.43-6.565-8.766-14.127-15.35-4.096-3.566-6.588-5.546-20.775-16.506-11.12-8.593-16.668-13.36-23.098-19.847C14.07%2085.208%2010.293%2080.04%207.052%2073.303%204.984%2069%203.562%2064.854%202.676%2060.547c-1.123-5.472-1.275-7.324-1.27-15.382.008-10.573.357-12.332%203.828-19.385%202.58-5.239%204.54-7.997%208.62-12.141%203.963-4.022%206.536-5.85%2012.1-8.6%206.18-3.057%2010.65-3.859%2019.86-3.562%207.157.232%209.776.943%2015.45%204.208%208.929%205.138%2015.858%2013.387%2017.776%2021.162.313%201.27.636%202.312.719%202.312.082%200%20.805-1.487%201.606-3.305%202.727-6.179%205.26-9.95%209.284-13.828%2012.32-11.88%2031.744-14.027%2047.45-5.25%206.414%203.584%2011.633%208.802%2015.676%2015.675%203.184%205.41%204.812%2012.595%205.09%2022.464.402%2014.298-2.214%2024.207-9.174%2034.766-2.763%204.19-4.806%206.73-8.638%2010.73-6.182%206.458-11.758%2011.205-24.92%2021.216-8.307%206.317-13.23%2010.378-20.355%2016.8-5.71%205.143-14.558%2014.1-15.41%2015.596-.372.655-.71%201.189-.749%201.189-.039%200-.544-.815-1.124-1.813z%22%20fill=%22red%22%20stroke=%22#000%22%20stroke-width=%222.813%22/%3E%3Ctext%20y=%22136.183%22%20x=%22124.113%22%20style=%22line-height:125%25%22%20font-weight=%22400%22%20font-size=%2253.914%22%20letter-spacing=%220%22%20word-spacing=%220%22%20transform=%22scale(.99853%201.00147)%22%20font-family=%22sans-serif%22%20fill=%22#00f%22%3E%3Ctspan%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20y=%22136.183%22%20x=%22124.113%22%20font-weight=%22700%22%20font-size=%2230.808%22%3EHz%3C/tspan%3E%3C/text%3E%3C/svg%3E"
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "70887b0b-826c-4150-a873-605b77da8272",
-              "type": "basic.output",
-              "data": {
-                "name": "clk_out",
-                "virtual": true,
-                "pins": [
-                  {
-                    "index": "0",
-                    "name": "NULL",
-                    "value": "NULL"
-                  }
-                ]
-              },
-              "position": {
-                "x": 560,
-                "y": 128
-              }
             },
-            {
-              "id": "4656865c-bcf1-4668-8e13-9221e32222d3",
-              "type": "basic.input",
-              "data": {
-                "name": "clk_in",
-                "virtual": true,
-                "pins": [
-                  {
-                    "index": "0",
-                    "name": "NULL",
-                    "value": "NULL"
-                  }
-                ],
-                "clock": true
-              },
-              "position": {
-                "x": -296,
-                "y": 128
-              }
-            },
-            {
-              "id": "319cdca8-e777-4c8b-88ca-f885ba96ad06",
-              "type": "basic.constant",
-              "data": {
-                "name": "Frecuencia",
-                "value": "1",
-                "local": false
-              },
-              "position": {
-                "x": 112,
-                "y": -224
-              }
-            },
-            {
-              "id": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
-              "type": "basic.code",
-              "data": {
-                "code": "\n//parameter HZ=1;\n\n//-- Constante para dividir y obtener una frecuencia de 1Hz\nlocalparam M = 12000000/HZ;\n\n//-- Calcular el numero de bits para almacenar M\nlocalparam N = $clog2(M);\n\n//-- Registro del divisor\nreg [N-1:0] divcounter;\n\n//-- Temporal clock\nreg clk_t = 0;\n\n//-- REgistro con el valor del reloj\nreg clk_out = 0;\n\n//-- Se usa un contador modulo M/2 para luego\n//-- pasarlo por un biestable T y dividir la frecuencia\n//-- entre 2, para que el ciclo de trabajo sea del 50%\nalways @(posedge clk)\n    if (divcounter == M/2) begin\n      clk_t <= 1;\n      divcounter = 0;\n    end \n    else begin\n      divcounter <=  divcounter + 1;\n      clk_t = 0;\n    end \n    \n//-- Biestable T para obtener ciclo de trabajo del 50%\nalways @(posedge clk)\n  if (clk_t)\n    clk_out <= ~clk_out;\n\n\nassign clk_o = clk_out;  \n",
-                "params": [
-                  {
-                    "name": "HZ"
-                  }
-                ],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "clk_o"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": -104,
-                "y": -104
-              },
-              "size": {
-                "width": 528,
-                "height": 528
-              }
-            }
-          ],
-          "wires": [
             {
               "source": {
-                "block": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
-                "port": "clk_o"
+                "block": "265abcc0-f2d0-407c-8055-8c6577b1fbaf",
+                "port": "constant-out"
               },
               "target": {
-                "block": "70887b0b-826c-4150-a873-605b77da8272",
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "DIVIDER"
+              }
+            },
+            {
+              "source": {
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "slv_addr"
+              },
+              "target": {
+                "block": "c9c19ef9-ad73-4c4b-8135-e886d3461618",
+                "port": "in"
+              },
+              "size": 7
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "sda_O"
+              },
+              "target": {
+                "block": "1062ae58-bea9-4a0e-8d81-0e3367784341",
                 "port": "in"
               }
             },
             {
               "source": {
-                "block": "4656865c-bcf1-4668-8e13-9221e32222d3",
-                "port": "out"
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "sda_T"
               },
               "target": {
-                "block": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
-                "port": "clk"
+                "block": "45aa2f9f-76a3-42bd-9aa0-ec8327d90206",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "scl_O"
+              },
+              "target": {
+                "block": "989d3eba-c633-4501-96fc-989708028c23",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "scl_T"
+              },
+              "target": {
+                "block": "90058ebd-6b3f-441b-98d2-a1600a2a5b4f",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "states"
+              },
+              "target": {
+                "block": "9be68144-c0b5-4557-b9d2-2d661be0848a",
+                "port": "in"
+              },
+              "size": 4
+            },
+            {
+              "source": {
+                "block": "79c071be-ce7b-4521-a125-6e4ea4b0fcbd",
+                "port": "enable_start"
+              },
+              "target": {
+                "block": "9c6d7a02-86bc-4e17-b500-22652b0ca7c6",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "busy"
+              },
+              "target": {
+                "block": "d8dff3dd-86bf-48ed-94b9-5e7981ea9c41",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "d7742edf-52c0-45dc-91db-977333476245",
+                "port": "ena_out"
+              },
+              "target": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "ena"
+              }
+            },
+            {
+              "source": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "scl"
+              },
+              "target": {
+                "block": "3dc94e3c-7cf7-4a4a-96a5-0e3c6e583253",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "debbug_scl_clk"
+              },
+              "target": {
+                "block": "cd6a74f9-54c8-4ce1-bb3a-18873b4261ea",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "debbug_scl_ena"
+              },
+              "target": {
+                "block": "ce9709e8-7a83-4f32-b714-1a81e0cea8d7",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "debbug_data_clk"
+              },
+              "target": {
+                "block": "32c80511-eee6-4f98-9b98-79ef8d67ccb1",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "4f2d56cb-6b63-4223-ba99-b1f57bb2299d",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "acab5c72-8117-4252-9e14-78d3823ebdb6",
+                "port": "Hz"
               },
               "vertices": []
             },
             {
               "source": {
-                "block": "319cdca8-e777-4c8b-88ca-f885ba96ad06",
-                "port": "constant-out"
+                "block": "acab5c72-8117-4252-9e14-78d3823ebdb6",
+                "port": "clk_o"
               },
               "target": {
-                "block": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
-                "port": "HZ"
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "i2c_clk"
+              }
+            },
+            {
+              "source": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "sda"
+              },
+              "target": {
+                "block": "546352ec-21a6-49c9-9410-5336168277aa",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "325808b1-f800-455e-8dc7-c39f04add403",
+                "port": "debbug_slv_Addr"
+              },
+              "target": {
+                "block": "57a1a9f4-091c-46c7-8369-c0799e614b2d",
+                "port": "in"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "db999311-ae74-4e92-ae00-ccc31a8366c8",
+                "port": "scl_I"
+              },
+              "target": {
+                "block": "22f1545d-eee5-41d6-a6d2-fda905b3969d",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "bbb1a2e6-5781-4821-b4fb-f5cd8380ee43",
+                "port": "sda_I"
+              },
+              "target": {
+                "block": "df5b4874-0f20-4f2e-be20-88628727dc7d",
+                "port": "in"
               }
             }
           ]

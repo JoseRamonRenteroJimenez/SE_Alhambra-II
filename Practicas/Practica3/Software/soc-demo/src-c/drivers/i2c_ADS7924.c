@@ -3,7 +3,83 @@
 
 // Función configuración automática
 void config(){
+    uint8_t slave_addr = I2C_ADC_DIRECTION; // Dirección del esclavo
+    uint8_t rw = 0; // 0 para escritura, 1 para lectura
+    uint32_t data_in = 0x07AAAA01; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
+    uint8_t n_bytes_dato = 0b00000010; // Número de bytes a enviar (2 bytes en este caso)
+    uint32_t read_back;
+    // Escritura en registro de control
+    print("Configurando ADC 7924...\r\n");
+
+    print("Escribiendo en el registro de lectura/escritura...\r\n");
+    i2c_write(RW_REG, rw); // Mandamos si es lectura o escritura 
+    wait_i2c();
+    print("En el registro de lecgtura/escritura está: ");
+    i2c_read(RW_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+
+    print("Escribiendo en el registro de datos...\r\n");
+    i2c_write(DATA_WRITE_REG, data_in);     // Mandamos los datos al
+    wait_i2c();
+    print("En el registro de datos está: ");
+    i2c_read(DATA_WRITE_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+
+    print("Escribiendo en el registro de número de paquetes...\r\n");
+    i2c_write(N_PQTS_REG, n_bytes_dato);        // Mandamos el número de paquetes a enviar                     
+    wait_i2c();
+    print("En el registro de número de paquetes está: ");
+    i2c_read(N_PQTS_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+
+    print("Escribiendo en el registro de dirección del esclavo...\r\n");
+    // Mandamos la dirección del esclavo || Trigger
+    //slave_addr = (slave_addr << 1) | rw; // Aseguramos que el bit de lectura/escritura está en la posición correcta
+    i2c_write(SLV_ADDR_REG, slave_addr);
+    wait_i2c();
+    print("En el registro de dirección del esclavo está: ");
+    i2c_read(SLV_ADDR_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+
+
+    print("Configuración completada.\r\n");
+    print ("En los registros está escrito lo siguiente:\r\n");
+    print("Registro de lectura/escritura: ");
+    i2c_read(RW_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+    print("Registro de datos: ");
+    i2c_read(DATA_WRITE_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+    print("Registro de número de paquetes: ");
+    i2c_read(N_PQTS_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+    print("Registro de dirección del esclavo: ");
+    i2c_read(SLV_ADDR_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
     
+    print("Empezando comunicación I2C...\r\n");
+    print("Mandando señal de start...\r\n");
+    i2c_write(ENABLE_REG, 0x01); // Activamos la señal
+    wait_i2c();
+    print("En el registro de habilitación está: ");
+    i2c_read(ENABLE_REG, &read_back);
+    print_hex32(read_back);
+    print("\r\n");
+    uint32_t st, busy;
+    i2c_read(STATE_REG, &st);
+    i2c_read(BUSY_REG, &busy);
+    print("STATE tras ENABLE: "); print_hex32(st); print("\r\n");
+    print("BUSY tras ENABLE:  "); print_hex32(busy); print("\r\n");
+    print("Comunicacion I2C iniciada.\r\n");
+    print("Señal de start enviada.\r\n");
 }
 
 // Función de escritura
@@ -24,7 +100,7 @@ void i2c_read(volatile uint32_t* addr, uint32_t* data){
 // Espera hasta que la máquina de estados esté en READY
 void wait_i2c(void)
 {
-    const uint32_t TIMEOUT_LIMIT = 1000;  // Ajusta este valor según tu reloj y necesidades
+    const uint32_t TIMEOUT_LIMIT = 50000;  // Ajusta este valor según tu reloj y necesidades
     uint32_t counter = 0;
 
     while ( (*(volatile uint32_t*)BUSY_REG & 0x1) && counter < TIMEOUT_LIMIT ){
@@ -50,24 +126,18 @@ uint8_t status_i2c(void)
 // Orden de lectura de data_in es de izquierda a dereche en grupos de 8. Max 3. Serán leidos los 24 bits menos significativos
 void i2c_send_toReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, int n_bytes_dato){
     uint32_t read_back;
-    //print("Enviando a la interfaz I2C...\r\n");
+    print("Enviando a la interfaz I2C...\r\n");
     i2c_write(RW_REG, rw);                  // Mandamos si es lectura o escritura    
-    //wait_i2c();
-    ////print("R/W enviado a la interfaz\r\n");
-    //wait_i2c();                             
-    
-    //i2c_read(RW_REG, &read_back);
-    //print("RW_REG contiene: ");
-    //print_hex_byte(read_back);
+    wait_i2c();
 
-    //i2c_write(DATA_WRITE_REG, data_in);     // Mandamos los datos al esclavo
-    //print("Datos enviados a la interfaz\r\n");
-    //wait_i2c();
-    //i2c_write(N_PQTS_REG, n_bytes_dato);        // Mandamos el número de paquetes a enviar                     
-    //print("Número de paquetes enviados a la interfaz: ");
-    //wait_i2c();
-    //i2c_write(SLV_ADDR_REG, slave_addr);    // Mandamos la dirección del esclavo || Trigger
-    //wait_i2c();
+    i2c_write(DATA_WRITE_REG, data_in);     // Mandamos los datos al esclavo
+    wait_i2c();
+    i2c_write(N_PQTS_REG, n_bytes_dato);        // Mandamos el número de paquetes a enviar                     
+    wait_i2c();
+    i2c_write(SLV_ADDR_REG, slave_addr);    // Mandamos la dirección del esclavo
+    wait_i2c();
+    i2c_write(ENABLE_REG, 0x01);            // Activamos la señal de start
+    wait_i2c();
 }
 
 void i2c_recieve_fromReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, uint8_t* data_out){
@@ -77,13 +147,19 @@ void i2c_recieve_fromReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, uint8
 
     i2c_write(RW_REG, rw);                  // Mandamos si es lectura o escritura
     wait_i2c();
-    i2c_write(DATA_WRITE_REG, data_in);     // Mandamos el dato a leer                  // PUEDE NO SER NECESARIO
-    wait_i2c();
+    //i2c_write(DATA_WRITE_REG, data_in);     // Mandamos el dato a leer                  // PUEDE NO SER NECESARIO
+    //wait_i2c();
     i2c_write(N_PQTS_REG, 1);               // Mandamos el número de paquetes a enviar  // PUEDE NO SER NECESARIO
     wait_i2c();
     i2c_write(SLV_ADDR_REG, slave_addr);    // Mandamos la dirección del esclavo || Trigger
     wait_i2c();
-    
+    i2c_write(ENABLE_REG, 0x01);            // Activamos la señal de start
+    wait_i2c();
+ 
+    //Espera bloqueante
+    uint32_t guard = 100000;
+    while (status_i2c() == 1 && guard--) ;
+
     i2c_read(DATA_OUT_REG, &data_out_temp);       // Leemos el dato
     *data_out = (uint8_t)(data_out_temp & 0xFF);  // Solo los 8 bits menos significativos
 

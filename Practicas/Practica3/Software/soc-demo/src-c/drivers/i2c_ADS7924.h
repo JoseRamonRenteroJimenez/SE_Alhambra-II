@@ -3,7 +3,14 @@
 #define I2C_ADS7924_H
 
 #include <stdint.h>
-
+#include "UART.h"
+#include "auxiliar.h"
+//48
+//0100 1000
+//49
+//1001 001
+#define I2C_ADC_DIRECTION 0X48  // 1001 00_A0_RW B // Dirección de ADS7924 // A0 está determinado por el pin al que esté conectado el conversor
+// 0x48 previo al desplazamiento de 1 bit para RW
 // Dirección base del I2C
 #define I2C_BASE    0x04000000
 
@@ -27,6 +34,6 @@ void i2c_read(volatile uint32_t* addr, uint32_t* data);
 void wait_i2c(void);
 void i2c_send_toReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, int n_bytes_dato);
 void i2c_recieve_fromReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, uint8_t* data_out);
-void config(void);
+void config();
 
 #endif //I2C_ADS7924_H

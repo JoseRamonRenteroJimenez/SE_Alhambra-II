@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Open nextpnr logs (tail)",
+			"command": "set -e\nfor d in ice-build/procesadorOriginal ice-build/ADC_IC2_NEW; do\n  if [ -f \"$d/hardware.out\" ]; then\n    echo \"==== $d/hardware.out (tail) ====\"\n    tail -n 200 \"$d/hardware.out\"\n  fi\n  if [ -f \"$d/build.log\" ]; then\n    echo \"==== $d/build.log (tail) ====\"\n    tail -n 200 \"$d/build.log\"\n  fi\n  if [ -f \"$d/main.v\" ]; then\n    echo \"==== $d/main.v (grep OE tri-state summary) ====\"\n    grep -n \"SB_IO\\|OUTPUT_ENABLE\\|D_OUT_0\\|PULLUP\" \"$d/main.v\" | sed -n '1,200p'\n  fi\n done",
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		}
+	]
+}

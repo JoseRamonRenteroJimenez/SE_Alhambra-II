@@ -19,24 +19,35 @@ module main #(
  output v7abb98,
  output vda2c07,
  output v55f1ca,
- output vd6e0f0,
- output v01b4b5,
  output vcdcb19,
  output v97f0aa,
+ output vcd0f70,
  output v5ec250,
+ output vd17d16,
  output v5100fa,
- output ve21dc3,
- output [7:0] v0c966c,
- inout va19f97
+ output vaec8e3,
+ output va91706,
+ output ve938fb,
+ output v402b61,
+ output vd22f88,
+ output v070b81,
+ output v9a682a,
+ output v58380c,
+ output v381f26,
+ output vddab27,
+ output vd63838,
+ output v6ff84a,
+ output va5c62d,
+ inout vd6e0f0,
+ inout v4dbee7
 );
  localparam p6 = vafbbea;
  localparam p7 = v8c97ba;
  localparam p8 = v9217e8;
  localparam p9 = v051dbb;
  localparam p10 = v9de176;
- localparam p22 = v383b3a;
- localparam p23 = v383b3a;
- localparam p24 = v4eab12;
+ localparam p37 = v383b3a;
+ localparam p38 = v4eab12;
  wire [0:31] w0;
  wire w1;
  wire w2;
@@ -54,9 +65,12 @@ module main #(
  wire [0:3] w19;
  wire w20;
  wire w21;
+ wire w22;
+ wire w23;
+ wire w24;
  wire w25;
  wire w26;
- wire [0:7] w27;
+ wire w27;
  wire w28;
  wire w29;
  wire w30;
@@ -65,9 +79,7 @@ module main #(
  wire w33;
  wire w34;
  wire w35;
- wire w36;
- wire w37;
- wire w38;
+ wire [0:7] w36;
  wire w39;
  wire w40;
  wire w41;
@@ -76,36 +88,50 @@ module main #(
  wire w44;
  wire w45;
  wire w46;
- wire [0:31] w47;
- wire [0:31] w48;
- wire [0:31] w49;
- wire [0:31] w50;
- wire [0:31] w51;
+ wire w47;
+ wire w48;
+ wire w49;
+ wire w50;
+ wire w51;
  wire w52;
  wire w53;
- wire [0:3] w54;
- wire [0:3] w55;
- wire [0:3] w56;
- wire [0:3] w57;
+ wire w54;
+ wire w55;
+ wire w56;
+ wire w57;
  wire w58;
- wire [0:31] w59;
- wire [0:31] w60;
+ wire w59;
+ wire w60;
  wire [0:31] w61;
  wire [0:31] w62;
- wire w63;
- wire w64;
+ wire [0:31] w63;
+ wire [0:31] w64;
  wire [0:31] w65;
- wire [0:31] w66;
- wire [0:31] w67;
- wire [0:31] w68;
- wire [0:31] w69;
- wire w70;
- wire w71;
+ wire w66;
+ wire w67;
+ wire [0:3] w68;
+ wire [0:3] w69;
+ wire [0:3] w70;
+ wire [0:3] w71;
  wire w72;
- wire w73;
- wire w74;
- wire w75;
- wire w76;
+ wire [0:31] w73;
+ wire [0:31] w74;
+ wire [0:31] w75;
+ wire [0:31] w76;
+ wire w77;
+ wire w78;
+ wire [0:31] w79;
+ wire [0:31] w80;
+ wire [0:31] w81;
+ wire [0:31] w82;
+ wire [0:31] w83;
+ wire w84;
+ wire w85;
+ wire w86;
+ wire w87;
+ wire w88;
+ wire w89;
+ wire w90;
  assign w2 = v013906;
  assign v5100fa = w3;
  assign v5ec250 = w4;
@@ -115,128 +141,151 @@ module main #(
  assign vda2c07 = w13;
  assign v7abb98 = w14;
  assign vc267e1 = w15;
- assign v01b4b5 = w20;
- assign w20 = va19f97;
- assign w21 = va19f97;
- assign vd6e0f0 = w25;
- assign vcdcb19 = w26;
- assign v0c966c = w27;
- assign ve21dc3 = w28;
- assign w29 = vclk;
- assign w30 = vclk;
- assign w31 = vclk;
- assign w32 = vclk;
- assign w33 = vclk;
- assign w34 = vclk;
- assign w35 = vclk;
- assign w36 = vclk;
- assign w21 = w20;
- assign w26 = w25;
- assign w30 = w29;
- assign w31 = w29;
- assign w31 = w30;
- assign w32 = w29;
- assign w32 = w30;
- assign w32 = w31;
- assign w33 = w29;
- assign w33 = w30;
- assign w33 = w31;
- assign w33 = w32;
- assign w34 = w29;
- assign w34 = w30;
- assign w34 = w31;
- assign w34 = w32;
- assign w34 = w33;
- assign w35 = w29;
- assign w35 = w30;
- assign w35 = w31;
- assign w35 = w32;
- assign w35 = w33;
- assign w35 = w34;
- assign w36 = w29;
- assign w36 = w30;
- assign w36 = w31;
- assign w36 = w32;
- assign w36 = w33;
- assign w36 = w34;
- assign w36 = w35;
- assign w38 = w37;
- assign w39 = w37;
- assign w39 = w38;
- assign w40 = w37;
- assign w40 = w38;
- assign w40 = w39;
- assign w41 = w37;
- assign w41 = w38;
- assign w41 = w39;
- assign w41 = w40;
+ assign v070b81 = w20;
+ assign v9a682a = w21;
+ assign v58380c = w22;
+ assign v381f26 = w23;
+ assign vddab27 = w24;
+ assign vd63838 = w25;
+ assign v6ff84a = w26;
+ assign va5c62d = w27;
+ assign vaec8e3 = w28;
+ assign vd17d16 = w29;
+ assign vd6e0f0 = w30;
+ assign v4dbee7 = w31;
+ assign va91706 = w32;
+ assign ve938fb = w33;
+ assign v402b61 = w34;
+ assign vd22f88 = w35;
+ assign vcdcb19 = w39;
+ assign vcd0f70 = w40;
+ assign w41 = vclk;
+ assign w42 = vclk;
+ assign w43 = vclk;
+ assign w44 = vclk;
+ assign w45 = vclk;
+ assign w46 = vclk;
+ assign w47 = vclk;
+ assign w48 = vclk;
+ assign w49 = vclk;
+ assign w42 = w41;
+ assign w43 = w41;
  assign w43 = w42;
+ assign w44 = w41;
  assign w44 = w42;
  assign w44 = w43;
+ assign w45 = w41;
  assign w45 = w42;
  assign w45 = w43;
  assign w45 = w44;
+ assign w46 = w41;
  assign w46 = w42;
  assign w46 = w43;
  assign w46 = w44;
  assign w46 = w45;
+ assign w47 = w41;
+ assign w47 = w42;
+ assign w47 = w43;
+ assign w47 = w44;
+ assign w47 = w45;
+ assign w47 = w46;
+ assign w48 = w41;
+ assign w48 = w42;
+ assign w48 = w43;
+ assign w48 = w44;
+ assign w48 = w45;
+ assign w48 = w46;
  assign w48 = w47;
+ assign w49 = w41;
+ assign w49 = w42;
+ assign w49 = w43;
+ assign w49 = w44;
+ assign w49 = w45;
+ assign w49 = w46;
  assign w49 = w47;
  assign w49 = w48;
- assign w50 = w47;
- assign w50 = w48;
- assign w50 = w49;
- assign w51 = w47;
- assign w51 = w48;
- assign w51 = w49;
  assign w51 = w50;
+ assign w52 = w50;
+ assign w52 = w51;
+ assign w53 = w50;
+ assign w53 = w51;
  assign w53 = w52;
+ assign w54 = w50;
+ assign w54 = w51;
+ assign w54 = w52;
+ assign w54 = w53;
+ assign w55 = w50;
+ assign w55 = w51;
+ assign w55 = w52;
+ assign w55 = w53;
  assign w55 = w54;
- assign w56 = w54;
- assign w56 = w55;
- assign w57 = w54;
- assign w57 = w55;
  assign w57 = w56;
+ assign w58 = w56;
+ assign w58 = w57;
+ assign w59 = w56;
+ assign w59 = w57;
+ assign w59 = w58;
+ assign w60 = w56;
+ assign w60 = w57;
+ assign w60 = w58;
  assign w60 = w59;
- assign w61 = w59;
- assign w61 = w60;
- assign w62 = w59;
- assign w62 = w60;
  assign w62 = w61;
+ assign w63 = w61;
+ assign w63 = w62;
+ assign w64 = w61;
+ assign w64 = w62;
  assign w64 = w63;
+ assign w65 = w61;
+ assign w65 = w62;
+ assign w65 = w63;
+ assign w65 = w64;
+ assign w67 = w66;
+ assign w69 = w68;
+ assign w70 = w68;
+ assign w70 = w69;
+ assign w71 = w68;
+ assign w71 = w69;
  assign w71 = w70;
  assign w74 = w73;
  assign w75 = w73;
  assign w75 = w74;
+ assign w76 = w73;
+ assign w76 = w74;
+ assign w76 = w75;
+ assign w78 = w77;
+ assign w85 = w84;
+ assign w86 = w84;
+ assign w86 = w85;
+ assign w88 = w87;
  v35f267 vc8f159 (
   .v0e28cb(w1),
-  .vcbab45(w37)
+  .vcbab45(w50)
  );
  v725d0b vcd95a5 (
   .v9b328c(w0)
  );
  v87abc9 v7eb25a (
-  .vcbab45(w52),
-  .v814e6e(w58),
-  .v3ca442(w63),
-  .v0e28cb(w70),
-  .v132c67(w72),
-  .vae8923(w74)
+  .vcbab45(w66),
+  .v814e6e(w72),
+  .v3ca442(w77),
+  .vae8923(w85),
+  .v0e28cb(w87),
+  .v132c67(w89)
  );
  v604573 #(
   .v4fde05(p10)
  ) v72b9aa (
   .vb6935e(w11),
   .v2ab975(w12),
-  .v34e785(w29),
-  .v866d25(w38),
-  .vad40e9(w44),
-  .v9f8bfb(w49),
-  .vd996e9(w56),
-  .v0fa3a4(w61),
-  .v62ea55(w69),
-  .vdc4800(w72),
-  .vf3ed26(w76)
+  .v34e785(w41),
+  .v866d25(w51),
+  .vad40e9(w58),
+  .v9f8bfb(w63),
+  .vd996e9(w70),
+  .v0fa3a4(w75),
+  .v62ea55(w83),
+  .vdc4800(w89),
+  .vf3ed26(w90)
  );
  vdccd52 vb4539a (
  
@@ -248,14 +297,14 @@ module main #(
  );
  vaad680 v62d839 (
   .v29fe33(w0),
-  .vba7c72(w30),
-  .v5d0f7b(w37),
-  .v006d37(w42),
-  .vd67338(w47),
-  .v9b0ff0(w52),
-  .v83dbbe(w54),
-  .ve61aa7(w59),
-  .v8fd87d(w65)
+  .vba7c72(w42),
+  .v5d0f7b(w50),
+  .v006d37(w56),
+  .vd67338(w61),
+  .v9b0ff0(w66),
+  .v83dbbe(w68),
+  .ve61aa7(w73),
+  .v8fd87d(w79)
  );
  v55b120 v7b9433 (
   .v47023d(w13),
@@ -264,46 +313,46 @@ module main #(
   .v1cd63b(w16),
   .v9119d0(w18),
   .v3d0cdd(w19),
-  .v379e9e(w31)
+  .v379e9e(w43)
  );
  v6c0c4a #(
   .vf2d743(p9)
  ) v6500fa (
   .v980561(w16),
   .v9d3deb(w17),
-  .v1002e2(w32),
-  .v8fadcd(w42),
-  .vd5de6b(w47),
-  .va57c44(w55),
-  .vb21f3c(w58),
-  .v6d05a9(w59)
+  .v1002e2(w44),
+  .v8fadcd(w56),
+  .vd5de6b(w61),
+  .va57c44(w69),
+  .vb21f3c(w72),
+  .v6d05a9(w73)
  );
  v5242e2 v447d62 (
-  .ve3469f(w64),
-  .v493538(w65),
-  .v918400(w66),
-  .v917e97(w67),
-  .v5664d9(w68),
-  .vae8a69(w69),
-  .v76f74e(w71),
-  .vec88a9(w73),
-  .v58d02d(w76)
+  .ve3469f(w78),
+  .v493538(w79),
+  .v918400(w80),
+  .v917e97(w81),
+  .v5664d9(w82),
+  .vae8a69(w83),
+  .vec88a9(w84),
+  .v76f74e(w88),
+  .v58d02d(w90)
  );
  vaba674 #(
   .v6478b6(p8)
  ) v2bbe2d (
-  .v04ad7a(w33),
-  .vd7d395(w43),
-  .v387cca(w48),
-  .v22c516(w53),
-  .vd728f0(w54),
-  .v8d6432(w60),
-  .v69f1ab(w63),
-  .v13ce3e(w66)
+  .v04ad7a(w45),
+  .vd7d395(w57),
+  .v387cca(w62),
+  .v22c516(w67),
+  .vd728f0(w68),
+  .v8d6432(w74),
+  .v69f1ab(w77),
+  .v13ce3e(w80)
  );
  v2b4233 v1314aa (
   .v6d0651(w1),
-  .v4c8225(w34)
+  .v4c8225(w46)
  );
  v372366 #(
   .vbce3f7(p6),
@@ -313,34 +362,53 @@ module main #(
   .v40049a(w3),
   .v0da91a(w4),
   .v9b4033(w5),
-  .v84763f(w35),
-  .v17983a(w40),
-  .vba8655(w45),
-  .vbee9aa(w50),
-  .v202123(w68),
-  .vbe14dd(w70)
+  .v84763f(w47),
+  .v17983a(w52),
+  .vba8655(w59),
+  .vbee9aa(w64),
+  .v202123(w82),
+  .vbe14dd(w87)
  );
  main_v4cf70b v4cf70b (
-  .rst(w41),
-  .a(w75)
+  .rst(w54),
+  .a(w86)
  );
- v4cb9bb #(
-  .vec4673(p22),
-  .v8eaf13(p23),
-  .v9c4340(p24)
- ) v34e459 (
-  .v80923c(w21),
-  .v9127c2(w25),
-  .vaac567(w27),
-  .vf73703(w28),
-  .v87186f(w36),
-  .v4dc0ee(w39),
-  .v8859f4(w46),
-  .v867561(w51),
-  .v1c4ad8(w57),
-  .v23504b(w62),
-  .v504d16(w67),
-  .vfe2384(w73)
+ main_v1f47ad v1f47ad (
+  .led0_out(w20),
+  .led1_out(w21),
+  .led2_out(w22),
+  .led3_out(w23),
+  .led4_out(w24),
+  .led5_out(w25),
+  .led6_out(w26),
+  .led7_out(w27),
+  .a(w36),
+  .clk(w48),
+  .rstn(w55)
+ );
+ vce42df #(
+  .vec4673(p37),
+  .vc4dd14(p38)
+ ) vf47623 (
+  .va93703(w28),
+  .v6858be(w29),
+  .v3e4632(w30),
+  .v12290d(w31),
+  .v4ecea0(w32),
+  .v8d37ee(w33),
+  .va45fa7(w34),
+  .vf6b416(w35),
+  .v01fc44(w36),
+  .v6770b3(w39),
+  .vb54153(w40),
+  .v87186f(w49),
+  .v4dc0ee(w53),
+  .v8859f4(w60),
+  .v867561(w65),
+  .v1c4ad8(w71),
+  .v23504b(w76),
+  .v504d16(w81),
+  .vfe2384(w84)
  );
 endmodule
 
@@ -7081,10 +7149,10 @@ module vd7e6ff_v43ad2d (
    );
 endmodule
 //---- Top entity
-module v4cb9bb #(
+module vce42df #(
  parameter vec4673 = 'h0400_0000,
- parameter v8eaf13 = 'h0400_0001,
- parameter v9c4340 = 100000
+ parameter vc4dd14 = 100000,
+ parameter v57fab4 = 250
 ) (
  input v87186f,
  input v4dc0ee,
@@ -7092,25 +7160,34 @@ module v4cb9bb #(
  input v8859f4,
  input [31:0] v23504b,
  input [3:0] v1c4ad8,
- output v9127c2,
  output vfe2384,
+ output v6770b3,
  output [31:0] v504d16,
- output vf73703,
- output va77527,
- output v34d6ed,
- output v5a58e0,
- output [7:0] vaac567,
- output [6:0] vc02bbb,
- inout v80923c
+ output vb54153,
+ output v6858be,
+ output [6:0] vacc282,
+ output va93703,
+ output [3:0] vabd030,
+ output [7:0] v01fc44,
+ output va71e9d,
+ output v873e47,
+ output v93941f,
+ inout v3e4632,
+ inout v12290d,
+ inout v4ecea0,
+ inout v8d37ee,
+ inout va45fa7,
+ inout vf6b416
 );
- localparam p0 = v9c4340;
- localparam p1 = v8eaf13;
- localparam p6 = vec4673;
- wire w2;
- wire [0:6] w3;
+ localparam p0 = vec4673;
+ localparam p1 = v57fab4;
+ localparam p15 = vc4dd14;
+ wire [0:6] w2;
+ wire w3;
  wire w4;
- wire [0:7] w5;
- wire w7;
+ wire w5;
+ wire w6;
+ wire [0:3] w7;
  wire w8;
  wire w9;
  wire w10;
@@ -7118,134 +7195,188 @@ module v4cb9bb #(
  wire w12;
  wire w13;
  wire w14;
- wire [0:31] w15;
- wire [0:31] w16;
- wire [0:31] w17;
- wire w18;
+ wire w16;
+ wire w17;
+ wire [0:7] w18;
  wire w19;
  wire w20;
  wire w21;
  wire w22;
  wire w23;
- wire [0:31] w24;
- wire [0:31] w25;
- wire [0:31] w26;
- wire [0:3] w27;
+ wire w24;
+ wire w25;
+ wire w26;
+ wire w27;
  wire w28;
  wire w29;
  wire w30;
- wire [0:3] w31;
+ wire w31;
  wire w32;
- wire w33;
- wire w34;
- wire [0:6] w35;
- wire [0:6] w36;
- wire [0:31] w37;
- wire [0:7] w38;
- wire [0:2] w39;
- assign vc02bbb = w3;
- assign vaac567 = w5;
- assign w7 = v87186f;
- assign w8 = v87186f;
- assign w9 = v87186f;
- assign w10 = v4dc0ee;
- assign w11 = v4dc0ee;
- assign w12 = v4dc0ee;
- assign w13 = v80923c;
- assign v5a58e0 = w13;
- assign w14 = v80923c;
- assign w15 = v867561;
- assign w16 = v867561;
- assign w17 = v867561;
- assign v9127c2 = w18;
- assign w19 = v8859f4;
- assign w20 = v8859f4;
- assign vfe2384 = w23;
- assign w24 = v23504b;
- assign w25 = v23504b;
- assign v504d16 = w26;
- assign w27 = v1c4ad8;
- assign vf73703 = w28;
- assign va77527 = w29;
- assign v34d6ed = w30;
- assign w8 = w7;
- assign w9 = w7;
- assign w9 = w8;
- assign w11 = w10;
- assign w12 = w10;
- assign w12 = w11;
- assign w14 = w13;
- assign w16 = w15;
- assign w17 = w15;
- assign w17 = w16;
- assign w20 = w19;
+ wire [0:31] w33;
+ wire [0:31] w34;
+ wire [0:31] w35;
+ wire w36;
+ wire w37;
+ wire w38;
+ wire w39;
+ wire w40;
+ wire [0:31] w41;
+ wire [0:3] w42;
+ wire w43;
+ wire w44;
+ wire w45;
+ wire w46;
+ wire w47;
+ wire [0:6] w48;
+ wire [0:7] w49;
+ wire w50;
+ wire w51;
+ wire [0:7] w52;
+ wire [0:3] w53;
+ assign vacc282 = w2;
+ assign v4ecea0 = w3;
+ assign v8d37ee = w4;
+ assign va45fa7 = w5;
+ assign vf6b416 = w6;
+ assign vabd030 = w7;
+ assign v6858be = w8;
+ assign va93703 = w9;
+ assign v3e4632 = w11;
+ assign va71e9d = w12;
+ assign v873e47 = w13;
+ assign v93941f = w14;
+ assign v12290d = w17;
+ assign v01fc44 = w18;
+ assign v6770b3 = w19;
+ assign vb54153 = w20;
+ assign w21 = v87186f;
+ assign w22 = v87186f;
+ assign w23 = v87186f;
+ assign w24 = v87186f;
+ assign w25 = v87186f;
+ assign vfe2384 = w27;
+ assign w28 = v4dc0ee;
+ assign w29 = v4dc0ee;
+ assign w30 = v4dc0ee;
+ assign w31 = v4dc0ee;
+ assign w32 = v4dc0ee;
+ assign v504d16 = w33;
+ assign w34 = v867561;
+ assign w35 = v867561;
+ assign w37 = v8859f4;
+ assign w38 = v8859f4;
+ assign w41 = v23504b;
+ assign w42 = v1c4ad8;
  assign w22 = w21;
+ assign w23 = w21;
+ assign w23 = w22;
+ assign w24 = w21;
+ assign w24 = w22;
+ assign w24 = w23;
+ assign w25 = w21;
+ assign w25 = w22;
+ assign w25 = w23;
  assign w25 = w24;
- assign w36 = w35;
- v0e64bc #(
-  .v207e0d(p0)
- ) v9f9653 (
-  .v8337bc(w4),
-  .v531e20(w7)
- );
- vf9bdaf #(
-  .v6b316b(p1)
- ) v3156fe (
-  .v18e78c(w2),
-  .ve1f562(w17)
- );
- v4cb9bb_vb9f55b vb9f55b (
-  .b(w2),
-  .slave__out(w3),
-  .clk(w9),
-  .rst_n(w12),
-  .a(w22),
-  .c(w25),
-  .x(w28),
-  .y(w29),
-  .z(w30),
-  .slave_out(w36)
- );
- v4cb9bb_v626e75 v626e75 (
-  .clk(w4),
-  .rstn(w10),
-  .I2C_SDA(w14),
-  .I2C_SCL(w18),
-  .state_out(w31),
-  .enable(w32),
-  .rw(w33),
-  .busy_out(w34),
-  .slv_addr(w35),
-  .data_in(w37),
-  .data_out(w38),
-  .n_paquetes(w39)
- );
- v4cb9bb_vadbda8 #(
-  .Addr(p6)
+ assign w26 = w19;
+ assign w29 = w28;
+ assign w30 = w28;
+ assign w30 = w29;
+ assign w31 = w28;
+ assign w31 = w29;
+ assign w31 = w30;
+ assign w32 = w28;
+ assign w32 = w29;
+ assign w32 = w30;
+ assign w32 = w31;
+ assign w35 = w34;
+ assign w36 = w5;
+ assign w38 = w37;
+ assign w39 = w6;
+ assign w43 = w20;
+ assign w44 = w3;
+ assign w45 = w8;
+ assign w46 = w4;
+ assign w48 = w2;
+ assign w50 = w9;
+ assign w51 = w9;
+ assign w51 = w50;
+ assign w53 = w7;
+ vce42df_vadbda8 #(
+  .Addr(p0)
  ) vadbda8 (
-  .addr_in(w15),
-  .bit_valid(w19),
-  .i2c_cs(w21)
+  .addr_in(w34),
+  .bit_valid(w37),
+  .i2c_cs(w40)
  );
- v4cb9bb_vecfcb9 vecfcb9 (
-  .check(w5),
-  .clk(w8),
-  .rstn(w11),
-  .Bus_addr(w16),
-  .valid(w20),
-  .serdat_cs(w21),
-  .bus_data_enable(w23),
-  .Bus_data(w24),
-  .bus_data_out(w26),
-  .mem_wstrb(w27),
-  .I2C_State(w31),
-  .enable_start(w32),
-  .rw(w33),
-  .I2C_Busy(w34),
-  .slv_addr(w35),
-  .data_write(w37),
-  .data_out(w38),
-  .n_paquetes(w39)
+ vce42df_vecfcb9 vecfcb9 (
+  .slv_addr(w2),
+  .enable_start(w8),
+  .clk(w23),
+  .bus_data_enable(w27),
+  .rstn(w30),
+  .bus_data_out(w33),
+  .Bus_addr(w35),
+  .valid(w38),
+  .serdat_cs(w40),
+  .Bus_data(w41),
+  .mem_wstrb(w42),
+  .rw(w47),
+  .data_write(w49),
+  .I2C_Busy(w50),
+  .data_out(w52),
+  .I2C_State(w53)
+ );
+ vce42df_vfe0356 vfe0356 (
+  .ena_out(w10),
+  .clk(w25),
+  .rstn(w32),
+  .ena(w45),
+  .busy(w51)
+ );
+ vce42df_v6d4014 #(
+  .Hz(p15)
+ ) v6d4014 (
+  .clk_o(w16)
+ );
+ vce42df_v6e0755 v6e0755 (
+  .sda(w17),
+  .sda_I(w20),
+  .clk(w22),
+  .resetn(w29),
+  .sda_O(w44),
+  .sda_T(w46)
+ );
+ vce42df_v0e7a2b v0e7a2b (
+  .scl(w11),
+  .scl_I(w19),
+  .clk(w21),
+  .resetn(w28),
+  .scl_O(w36),
+  .scl_T(w39)
+ );
+ vce42df_vd61014 #(
+  .DIVIDER(p1)
+ ) vd61014 (
+  .sda_O(w3),
+  .sda_T(w4),
+  .scl_O(w5),
+  .scl_T(w6),
+  .states(w7),
+  .busy(w9),
+  .ena(w10),
+  .debbug_scl_clk(w12),
+  .debbug_scl_ena(w13),
+  .debbug_data_clk(w14),
+  .i2c_clk(w16),
+  .debbug_slv_Addr(w18),
+  .clk(w24),
+  .scl_I(w26),
+  .rstn(w31),
+  .sda_I(w43),
+  .rw(w47),
+  .slv_addr(w48),
+  .data_in(w49),
+  .data_rd(w52)
  );
 endmodule
 
@@ -7255,239 +7386,7 @@ endmodule
 //-- Periférico encargado de la comunicación a través del bus I2C.
 //---------------------------------------------------
 
-module v4cb9bb_vb9f55b (
- input clk,
- input rst_n,
- input a,
- input b,
- input [31:0] c,
- input [6:0] slave_out,
- input rw_out,
- output x,
- output y,
- output z,
- output [6:0] slave__out
-);
- reg         reg_x = 0;    // ahora es reg
- reg         reg_y = 0;    // ahora es reg
- reg         reg_z = 0;     // ahora es reg
- 
- reg [6:0] slave_addr = 7'd0;   
- 
- assign x = reg_x;
- assign y = reg_y;
- assign z = reg_z;
- assign slave__out = slave_addr;
- always @(posedge clk or negedge rst_n) begin
- 
-     
-     if (!rst_n) begin
-         // Reset: vuelven a 0
-         reg_x <= 1'b0;
-         reg_y <= 1'b0;
-         reg_z <= 1'b0;
-         slave_addr <= 8'd0;   
-         
-     end else begin
-         // Al primer 1 en 'a', si aún no lo habíamos detectado
-         if (a && !reg_x)
-             reg_x <= 1'b1;
- 
-         // Al primer 1 en 'b'
-         if (b && !reg_y)
-             reg_y <= 1'b1;
- 
-         // Al primer 1 en cualquier bit de 'c' (reducción OR)
-         if (c && !reg_z)
-             reg_z <= 1'b1;
-         
-         if(slave_out && !slave_addr)
-             slave_addr <= slave_out;
-     end
- end
- 
-endmodule
-
-module v4cb9bb_v626e75 (
- input clk,
- input rstn,
- input enable,
- input rw,
- input [6:0] slv_addr,
- input [31:0] data_in,
- input [2:0] n_paquetes,
- input I2C_SDA,
- output [3:0] state_out,
- output busy_out,
- output [7:0] data_out,
- output I2C_SCL
-);
- // Definir los estados de la máquina de estados
- localparam READY       = 4'd0;
- localparam START       = 4'd1;
- localparam COMMAND     = 4'd2;
- localparam SLV_OBJ_ACK = 4'd3;
- localparam WRITE_DATA  = 4'd4;
- localparam WRITE_ACK   = 4'd5;
- localparam READ_DATA   = 4'd6;
- localparam READ_ACK    = 4'd7;
- localparam STOP        = 4'd8;
- 
- // Bit más significativos
- localparam max_slv_Addr = 7;
- localparam max_data_wr = 31;
- 
- // Registros internos
- reg [3:0] state = READY;            // Estado actual
- reg [2:0] counter = 3'd0;           // Contador local. Cuenta hasta 8 bits de un envío
- reg [2:0] num_paquetes = 3'd0;      // Contador de paquetes a enviar.
- reg [7:0] slave_addr = 8'd0;        // Dirección del esclavo
- reg read_write = 1'd0;              // Lectura o escritura
- reg [31:0] wt_buffer = 32'b0;       // Buffer de escritura. Mensaje a enviar
- reg [7:0] rd_buffer = 8'd0;         // Buffer de lectura. Mensaje recibido
- reg sda_out = 1'd0;                 // Salida de SDA
- reg write_enable = 1'd0;            // Habilitación de SDA
- reg enable_reg = 1'd0;
- reg clk_enable;
- reg busy = 1'd0;                    // Flag de bus ocupado
- reg reg_data_ready = 1'b0;
- 
- // Asignaciones
- assign busy_out = busy;
- assign data_out = rd_buffer;
- assign I2C_SCL = clk_enable ? clk : 1'b1;       // Pin de SCL
- assign I2C_SDA = write_enable ? 1'b0 : 1'bz;    // Pin de SDA
- 
- //always @(posedge enable) begin
- //    enable_reg <= 1'b1;
- //end
- 
- // Máquina de estados I2C
- always @(posedge clk or negedge rstn) begin
-     if (!rstn) begin
-         state <= READY;        
-         counter <= 3'd0;
-         num_paquetes <= 2'd0;  
-         sda_out <= 1'b1;
-         slave_addr <= 8'd0;       
-         read_write <= 1'd0;
-         wt_buffer <= 24'b0;       
-         rd_buffer <= 8'd0;                
-         write_enable <= 1'd0;           
-         busy <= 1'd0;
-         reg_data_ready <= 1'b0;
-         enable_reg <= 1'b0;
-     end else begin
-         case (state)
-             READY: begin
-                 reg_data_ready <= 1'b0;
-                 write_enable <= 1'b0;
-                 busy <= enable;
-                 if (enable && !enable_reg) begin
-                     enable_reg <= 1'b1;
-                 end
-                 if (enable_reg) begin
-                     num_paquetes <= n_paquetes;
-                     read_write <= rw;
-                     slave_addr <= {slv_addr, rw};
-                     wt_buffer <= data_in;
-                     enable_reg <= 1'b0;
-                     state <= START;
-                 end
-             end
-             START: begin
-                 busy <= 1'b1;
-                 write_enable <= 1'b1;
-                 counter <= 3'd7;
-                 sda_out <= slave_addr[max_slv_Addr];               
-                 state <= COMMAND;  
-             end
-             COMMAND: begin
-                 if (counter == 3'd0) begin
-                     //write_enable <= 1'b0;
-                     sda_out <= 1'b0;  // Finaliza el envío de la dirección
-                     state <= SLV_OBJ_ACK;
-                 end else begin
-                     counter <= counter - 1;
-                     slave_addr <= slave_addr << 1; // Desplaza la dirección del esclavo
-                     sda_out <= slave_addr[max_slv_Addr];
-                 end
-             end
-             SLV_OBJ_ACK: begin
-                 // Chequear ACK del esclavo. No está en el verilog
-                 if (I2C_SDA == 1'b1) begin  // Write
-                     counter <= 3'd7;
-                     write_enable <= 1'b1;
-                     sda_out <= wt_buffer[max_data_wr];
-                     state <= WRITE_DATA;
-                 end else begin               // Read
-                     counter <= 3'd7;
-                     write_enable <= 1'b0;
-                     state <= READ_DATA;
-                 end
-             end
-             WRITE_DATA: begin
-                 busy <= 1'b1;
-                 if (counter == 3'd0) begin
-                     write_enable <= 1'b0;
-                     num_paquetes <= num_paquetes - 1'b1;
-                     sda_out <= 1'b0;
-                     state <= WRITE_ACK;
-                 end else begin
-                     counter <= counter - 1;
-                     wt_buffer <= wt_buffer << 1;
-                     sda_out <= wt_buffer[max_data_wr];
-                 end
-             end
-             READ_DATA: begin
-                 rd_buffer[counter] <= I2C_SDA;
-                 if (counter == 3'd0) begin
-                     state <= READ_ACK;
-                 end else begin 
-                     counter <= counter - 1;
-                 end
-             end
-             WRITE_ACK: begin
-                 if (enable == 1'b1) begin
-                     if (num_paquetes > 2'b0) begin
-                         counter <= 3'd7;
-                         write_enable <= 1'b1;
-                         sda_out <= wt_buffer[max_data_wr];
-                         state <= WRITE_DATA;
-                     end else begin
-                         state <= STOP;
-                     end
-                 end else begin 
-                     state <= STOP;
-                 end
-             end
-             READ_ACK: begin
-                 busy <= 1'b0;
-                 write_enable <= 1'b1;
-                 sda_out <= 1'b0;
-                 reg_data_ready <= 1'b1;
-                 state <= STOP;
-             end
-             STOP: begin
-                 write_enable <= 1'b1;
-                 sda_out <= 1'b1;
-                 busy <= 1'b0;
-                 state <= READY;
-             end
-         endcase
-     end
- end
- 
- // Control síncrono de SCL enable
- always @(posedge clk) begin
-     if (!rstn)
-         clk_enable <= 1'b0;
-     else
-         clk_enable <= (state != READY) && (state != START) && (state != STOP);
- end
-endmodule
-
-module v4cb9bb_vadbda8 #(
+module vce42df_vadbda8 #(
  parameter Addr = 0
 ) (
  input [31:0] addr_in,
@@ -7497,7 +7396,7 @@ module v4cb9bb_vadbda8 #(
  assign i2c_cs = (addr_in[31:6] == Addr[31:6]) & bit_valid;
 endmodule
 
-module v4cb9bb_vecfcb9 (
+module vce42df_vecfcb9 (
  input clk,
  input rstn,
  input valid,
@@ -7511,149 +7410,167 @@ module v4cb9bb_vecfcb9 (
  output enable_start,
  output rw,
  output [6:0] slv_addr,
- output [31:0] data_write,
+ output [7:0] data_write,
  output [2:0] n_paquetes,
  output bus_data_enable,
- output [31:0] bus_data_out,
- output [7:0] check,
- output data_ready
+ output [31:0] bus_data_out
 );
  parameter W_SLV_ADDR        = 3'b000;  // 0x04000000
- parameter W_RW              = 3'b001;  // 0x04000004
- parameter W_N_PQTS          = 3'b010;  // 0x04000008
- parameter R_STATE           = 3'b011;  // 0x0400000C
- parameter R_BUSY            = 3'b100;  // 0x04000010
- parameter R_DATA_OUT        = 3'b101;  // 0x04000014
- parameter S_ENABLE          = 3'b110;  // 0x04000018
- parameter W_DATA_WRITE      = 3'b111;  // 0x0400001C
- 
- // Índice en el array de registros
- parameter slv_addr_register         = 0;
- parameter rw_register               = 1;
- parameter num_pqts_register         = 2;
- parameter state_register            = 3;
- parameter busy_register             = 4;
- parameter data_out_register         = 5;
- parameter enable_register           = 6;
- 
- 
- //Entrada desde bus de datos
- reg [7:0] dataArray [7:0];
- reg [31:0] buffer_data_out;
- reg [31:0] data_wr = 32'b0;
- 
- reg ack_r;          // pulso a CLK del bus
- assign bus_data_enable = ack_r;
- 
- 
- assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      
- assign rw = dataArray[rw_register][0];                   
- assign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    
- 
- assign enable_start = dataArray[enable_register][0];                 
- 
- assign data_write = data_wr;             
- assign bus_data_out = buffer_data_out;     
- assign check = dataArray[W_N_PQTS];
- 
- wire serdat_write = serdat_cs & |mem_wstrb;     
- 
- always @(posedge clk or negedge rstn) begin
-     if (!rstn) begin
-         // Reset completo de los registros
-         dataArray[0] <= 8'b0;
-         dataArray[1] <= 8'b0;
-         dataArray[2] <= 8'b0;
-         dataArray[3] <= 8'b0;
-         dataArray[4] <= 8'b0;
-         dataArray[5] <= 8'b0;
-         dataArray[6] <= 8'b0;
-         dataArray[7] <= 8'b0;
-         buffer_data_out <= 32'b0;
-         data_wr <= 32'b0;
-         ack_r <= 1'b0;
-     end else begin
-         // Registros actualizados por hardware (FSM)
-         dataArray[state_register]    <= {4'b0, I2C_State};
-         dataArray[busy_register]     <= {7'b0, I2C_Busy};
-         dataArray[data_out_register] <= data_out;
-         
- 
-         // Interfaz externa desde CPU
-         if (serdat_cs) begin
-         ack_r <= 1'b1;
-             if (serdat_write) begin
-                 // ----------- ESCRITURA -----------
-                 if (Bus_addr[4:2] == W_DATA_WRITE) begin
-                     data_wr <= Bus_data;
-                 end else begin
-                     dataArray[Bus_addr[4:2]] <= Bus_data[7:0];
-                 end
-             end else begin
-                 // ----------- LECTURA -----------
-                 buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
-             end 
-         end else begin
-             ack_r <= 1'b0;       // al siguiente ciclo vuelve a 0
-         end
- 
-         // Limpieza de registros de un solo ciclo
-         dataArray[enable_register] <= 8'b0;
-     end
- 
- end
- 
- always @(posedge clk or negedge rstn) begin
-     if (!rstn)
-         ack_r <= 1'b0;
-     else
-         ack_r <= serdat_cs;        // alto mientras dure la transacción
- end
- 
+   parameter W_RW              = 3'b001;  // 0x04000004
+   parameter W_N_PQTS          = 3'b010;  // 0x04000008
+   parameter R_STATE           = 3'b011;  // 0x0400000C
+   parameter R_BUSY            = 3'b100;  // 0x04000010
+   parameter R_DATA_OUT        = 3'b101;  // 0x04000014
+   parameter S_ENABLE          = 3'b110;  // 0x04000018
+   parameter W_DATA_WRITE      = 3'b111;  // 0x0400001C
+   
+   //Estados i2c
+   localparam READY        = 4'd0;
+   localparam START        = 4'd1;
+   localparam COMMAND      = 4'd2;
+   localparam SLV_ACK_1    = 4'd3;
+   localparam WR           = 4'd4;
+   localparam RD           = 4'd5;
+   localparam SLV_ACK_2    = 4'd6;
+   localparam MSTR_ACK     = 4'd7;
+   localparam STOP         = 4'd8;
+   
+   // Índice en el array de registros
+   parameter slv_addr_register         = 0;
+   parameter rw_register               = 1;
+   parameter num_pqts_register         = 2;
+   parameter state_register            = 3;
+   parameter busy_register             = 4;
+   parameter data_out_register         = 5;
+   parameter enable_register           = 6;
+   
+   
+   //Entrada desde bus de datos
+   reg [7:0] dataArray [7:0];
+   reg [31:0] buffer_data_out;
+   reg [31:0] data_wr = 32'b0;
+   reg [3:0] prev_i2c_state = 4'd0;
+   
+   reg ack_r;          // pulso a CLK del bus
+   assign bus_data_enable = ack_r;
+   
+   
+   assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      
+   assign rw = dataArray[rw_register][0];                   
+   assign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    
+   
+   assign enable_start = dataArray[enable_register][0];                 
+   
+   assign data_write = data_wr[7:0];             
+   assign bus_data_out = buffer_data_out;     
+   
+   wire serdat_write = serdat_cs & |mem_wstrb;     
+   
+   always @(posedge clk or negedge rstn) begin
+       if (!rstn) begin
+           // Reset completo de los registros
+           dataArray[0] <= 8'b0;
+           dataArray[1] <= 8'b0;
+           dataArray[2] <= 8'b0;
+           dataArray[3] <= 8'b0;
+           dataArray[4] <= 8'b0;
+           dataArray[5] <= 8'b0;
+           dataArray[6] <= 8'b0;
+           dataArray[7] <= 8'b0;
+           buffer_data_out <= 32'b0;
+           data_wr <= 32'b0;
+           ack_r <= 1'b0;
+           prev_i2c_state <= READY;
+       end else begin
+           // Registros actualizados por hardware (FSM)
+           dataArray[state_register]    <= {4'b0, I2C_State};
+           dataArray[busy_register]     <= {7'b0, I2C_Busy};
+           dataArray[data_out_register] <= data_out;
+           //dataArray[enable_register] <= 8'b0;
+           if(I2C_State != STOP) begin
+               dataArray[enable_register] <= 8'b0;
+           end
+   
+           // Interfaz externa desde CPU
+           if (serdat_cs) begin
+               ack_r <= 1'b1;
+               if (serdat_write) begin
+                   // ----------- ESCRITURA -----------
+                   if(Bus_addr[4:2] == W_DATA_WRITE) begin
+                      data_wr <= Bus_data;
+                   end else begin
+                      dataArray[Bus_addr[4:2]] <= Bus_data[7:0];
+                   end
+               end else begin
+                   // ----------- LECTURA -----------
+                   if (Bus_addr[4:2] == W_DATA_WRITE) begin
+                       buffer_data_out <= data_wr;
+                   end else begin
+                       buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
+                   end
+               end
+               // Limpieza de registros de un solo ciclo
+               //dataArray[enable_register] <= 8'b0;
+           end else begin
+               ack_r <= 1'b0; // al siguiente ciclo vuelve a 0
+           end
+          //Desplazamos un byte a la derecha una sola vez al entrar en SLV_ACK_2
+          if(prev_i2c_state != SLV_ACK_2 && I2C_State == SLV_ACK_2) begin
+             data_wr <= data_wr >> 8;
+          end
+          prev_i2c_state <= I2C_State;
+       end
+   end
 endmodule
-//---- Top entity
-module v0e64bc #(
- parameter v207e0d = 1
-) (
- input v531e20,
- output v8337bc
+
+module vce42df_vfe0356 (
+ input clk,
+ input rstn,
+ input ena,
+ input busy,
+ output ena_out
 );
- localparam p2 = v207e0d;
- wire w0;
- wire w1;
- assign v8337bc = w0;
- assign w1 = v531e20;
- v0e64bc_v94c6d7 #(
-  .HZ(p2)
- ) v94c6d7 (
-  .clk_o(w0),
-  .clk(w1)
- );
+ //Reset de enable cuando busy empieza
+ 
+ reg ena_output;
+ 
+ assign ena_out = ena_output;
+ 
+ always @(posedge clk or negedge rstn) begin
+     if(!rstn) begin
+         ena_output = 1'b0;
+     end else begin
+         if(busy)begin
+             ena_output = 1'b0;
+         end else begin
+             if(ena)begin
+                 ena_output <= 1'b1;
+             end
+         end
+     end
+ end
+     
 endmodule
 
-//---------------------------------------------------
-//-- Corazon_Hz
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Corazon genérico para bombear bits a la frecuencia fijada en Hz (por defecto 1Hz)
-//---------------------------------------------------
-
-module v0e64bc_v94c6d7 #(
- parameter HZ = 0
+module vce42df_v6d4014 #(
+ parameter Hz = 0
 ) (
  input clk,
  output clk_o
 );
+ //Este módulo no está en uso. 
+ //Era el divisor de frecuencias antiguo
  
  //parameter HZ=1;
  
  //-- Constante para dividir y obtener una frecuencia de 1Hz
- localparam M = 12000000/HZ;
+ localparam M = 12000000/Hz;
  
  //-- Calcular el numero de bits para almacenar M
  localparam N = $clog2(M);
  
  //-- Registro del divisor
- reg [N-1:0] divcounter;
+ reg [N-1:0] divcounter = 0;
  
  //-- Temporal clock
  reg clk_t = 0;
@@ -7684,6 +7601,321 @@ module v0e64bc_v94c6d7 #(
  
 endmodule
 
+module vce42df_v6e0755 (
+ input clk,
+ input resetn,
+ input sda_O,
+ input sda_T,
+ output sda_I,
+ output sda
+);
+ wire sda_pad_in;
+ SB_IO #(
+         .PIN_TYPE(6'b1010_01), 
+         .PULLUP(1'b0)          
+     ) sda_tri (
+         .PACKAGE_PIN(sda),     
+         .OUTPUT_ENABLE(~sda_T),
+         .D_OUT_0(1'b0),        
+         .D_IN_0(sda_pad_in)    
+     );
+ assign sda_I = sda_pad_in;
+endmodule
+
+module vce42df_v0e7a2b (
+ input clk,
+ input resetn,
+ input scl_O,
+ input scl_T,
+ output scl_I,
+ inout scl
+);
+ //Copro
+ wire scl_pad_in;
+  
+ SB_IO #(
+         .PIN_TYPE(6'b1010_01), // Pin como E/S simple, sin registros internos
+         .PULLUP(1'b0)          // Pull-up interno desactivado (usar resistencias externas para I²C)
+     ) scl_tri(
+         .PACKAGE_PIN(scl),     // Conecta al pin físico SCL
+         .OUTPUT_ENABLE(~scl_T),// '1' = conduce (saca 0), '0' = Hi-Z (línea libre)
+         .D_OUT_0(1'b0),        // Valor a sacar cuando conduce (siempre 0 en open-drain)
+         .D_IN_0(scl_pad_in)    // Valor leído del pin SCL (estado real de la línea)
+     );
+ assign scl_I = scl_pad_in;
+ //assign sda = (sda_T == 1'b0) ? sda_O : 1'bz;
+ //assign sda_I = sda;
+ 
+ //assign scl = (scl_T == 1'b0) ? scl_O : 1'bz;
+ //assign scl_I = scl;
+endmodule
+
+module vce42df_vd61014 #(
+ parameter DIVIDER = 0
+) (
+ input i2c_clk,
+ input clk,
+ input rstn,
+ input ena,
+ input [6:0] slv_addr,
+ input rw,
+ input [7:0] data_in,
+ input scl_I,
+ input sda_I,
+ output busy,
+ output [7:0] data_rd,
+ output ack_error,
+ output sda_O,
+ output sda_T,
+ output scl_O,
+ output scl_T,
+ output [3:0] states,
+ output [3:0] bit_cnts,
+ output data_clkp,
+ output streetchip,
+ output debbug_scl_clk,
+ output debbug_scl_ena,
+ output debbug_data_clk,
+ output [7:0] debbug_slv_Addr
+);
+ // Estados como en el VHDL
+   localparam READY        = 4'd0;
+   localparam START        = 4'd1;
+   localparam START_HOLD   = 4'd2;
+   localparam COMMAND      = 4'd3;
+   localparam SLV_ACK_1    = 4'd4;
+   localparam WR           = 4'd5;
+   localparam RD           = 4'd6;
+   localparam SLV_ACK_2    = 4'd7;
+   localparam MSTR_ACK     = 4'd8;
+   localparam STOP         = 4'd9;
+ 
+   localparam CNT_W = $clog2(DIVIDER*4);
+ 
+   // Registros “VHDL-like”
+   reg [3:0] state = READY;
+   reg [2:0] bit_cnt;
+   reg       data_clk;                // 0: Q1/Q4, 1: Q2/Q3
+   reg       scl_clk;                 // 0: forzar 0, 1: soltar (Hi-Z via T)
+   reg       scl_ena;
+   reg       sda_int;                 // 0=conducir 0, 1=soltar (open-drain)
+   reg [7:0] data_tx, data_rx;
+   reg [7:0] addr_rw;
+   reg [7:0] reg_data_rd;
+   reg       reg_busy;
+   reg       reg_ack_error;
+   reg       stretch;
+   reg [CNT_W-1:0] cuenta;
+ 
+   // --- Generador de cuadrantes (idéntico en concepto al VHDL) ---
+   always @(posedge clk or negedge rstn) begin
+     if (!rstn) begin
+       cuenta   <= {CNT_W{1'b0}};
+       data_clk <= 1'b0;
+       scl_clk  <= 1'b0;
+       stretch  <= 1'b0;
+     end else begin
+       // hold si hay stretching (solo cuando pretendemos SCL alto)
+       if (cuenta == DIVIDER*4-1)          cuenta <= {CNT_W{1'b0}};
+       else if (!stretch)                  cuenta <= cuenta + 1'b1;
+ 
+       // Q1: SCL=0, data_clk=0
+       if (cuenta < DIVIDER) begin
+         scl_clk  <= 1'b0;
+         data_clk <= 1'b0;
+       end
+       // Q2: SCL=0, data_clk=1 (aquí sube data_clk)
+       else if (cuenta < DIVIDER*2) begin
+         scl_clk  <= 1'b0;
+         data_clk <= 1'b1;
+       end
+       // Q3: SCL liberado, data_clk=1 (leer ACK/datos; detectar stretching)
+       else if (cuenta < DIVIDER*3) begin
+         scl_clk  <= 1'b1;                // liberar (tri-state mediante T)
+         data_clk <= 1'b1;
+         // stretching si intentamos alto pero el pin sigue bajo
+         if (scl_I == 1'b0) stretch <= 1'b1;
+         else               stretch <= 1'b0;
+       end
+       // Q4: SCL liberado, data_clk=0
+       else begin
+         scl_clk  <= 1'b1;
+         data_clk <= 1'b0;
+         stretch  <= 1'b0;
+       end
+     end
+   end
+ 
+   // --- FSM: escribir SDA con SCL bajo (posedge data_clk) ---
+   always @(posedge data_clk or negedge rstn) begin
+     if (!rstn) begin
+       state        <= READY;
+       reg_busy     <= 1'b1;
+       scl_ena      <= 1'b0;
+       sda_int      <= 1'b1;
+       bit_cnt      <= 3'd7;
+       reg_data_rd  <= 8'd0;
+       addr_rw      <= 8'd0;
+       data_tx      <= 8'd0;
+     end else begin
+       case (state)
+         READY: begin
+           if (ena) begin
+             reg_busy <= 1'b1;
+             addr_rw  <= {slv_addr, rw};
+             data_tx  <= data_in;
+             sda_int  <= 1'b0;        // preparar START (SDA baja)
+             state    <= START_HOLD;
+           end else begin
+             reg_busy <= 1'b0;
+             scl_ena  <= 1'b0;
+           end
+         end
+ 
+         START_HOLD: begin
+           reg_busy <= 1'b1;
+           scl_ena  <= 1'b1;          // habilita SCL
+           sda_int  <= 1'b0;          // mantener SDA baja un cuarto
+           state    <= START;
+         end
+ 
+         START: begin
+           sda_int <= addr_rw[bit_cnt]; // primer bit (MSB)
+           state   <= COMMAND;
+         end
+ 
+         COMMAND: begin
+           if (bit_cnt == 0) begin
+             sda_int <= 1'b1;         // soltar para ACK del esclavo
+             bit_cnt <= 3'd7;
+             state   <= SLV_ACK_1;
+           end else begin
+             bit_cnt <= bit_cnt - 1'b1;
+             sda_int <= addr_rw[bit_cnt-1]; // **ojo**: -1 como en VHDL
+           end
+         end
+ 
+         SLV_ACK_1: begin
+           if (!addr_rw[0]) begin      // write
+             sda_int <= data_tx[bit_cnt];
+             state   <= WR;
+           end else begin              // read
+             sda_int <= 1'b1;          // soltar para leer
+             state   <= RD;
+           end
+         end
+ 
+         WR: begin
+           reg_busy <= 1'b1;
+           if (bit_cnt == 0) begin
+             sda_int <= 1'b1;          // soltar para ACK del esclavo
+             bit_cnt <= 3'd7;
+             state   <= SLV_ACK_2;
+           end else begin
+             bit_cnt <= bit_cnt - 1'b1;
+             sda_int <= data_tx[bit_cnt-1]; // **ojo**: -1
+           end
+         end
+ 
+         RD: begin
+           reg_busy <= 1'b1;
+           if (bit_cnt == 0) begin
+             sda_int     <= (ena && rw) ? 1'b0 : 1'b1; // ACK (0) si seguimos leyendo
+             bit_cnt     <= 3'd7;
+             reg_data_rd <= data_rx;
+             state       <= MSTR_ACK;
+           end else begin
+             bit_cnt <= bit_cnt - 1'b1;
+             // sda_int permanece soltada (ya viene de SLV_ACK_1)
+           end
+         end
+ 
+         SLV_ACK_2: begin
+           if (ena) begin
+             reg_busy <= 1'b0;         // “acepta” continuar (como VHDL)
+             addr_rw  <= {slv_addr, rw};
+             data_tx  <= data_in;
+             if (rw) begin
+               state <= START_HOLD;    // repeated START hacia lectura
+             end else begin
+               sda_int <= data_tx[bit_cnt];
+               state   <= WR;
+             end
+           end else begin
+             scl_ena <= 1'b0;
+             state   <= STOP;
+           end
+         end
+ 
+         MSTR_ACK: begin
+           if (ena) begin
+             reg_busy <= 1'b0;         // “acepta” continuar
+             addr_rw  <= {slv_addr, rw};
+             data_tx  <= data_in;
+             if (!rw) begin
+               state <= START_HOLD;    // repeated START hacia escritura
+             end else begin
+               sda_int <= 1'b0;        // ACK para más lectura
+               state   <= RD;
+             end
+           end else begin
+             scl_ena <= 1'b0;
+             state   <= STOP;
+           end
+         end
+ 
+         STOP: begin
+           reg_busy <= 1'b0;
+           scl_ena  <= 1'b0;
+           sda_int  <= 1'b1;           // STOP (SDA sube con SCL alto en Q3)
+           state    <= READY;
+         end
+ 
+         default: state <= READY;
+       endcase
+     end
+   end
+ 
+   // --- Muestreo con SCL alto (negedge data_clk) ---
+   always @(negedge data_clk or negedge rstn) begin
+     if (!rstn) begin
+       reg_ack_error <= 1'b0;
+       data_rx       <= 8'd0;
+     end else begin
+       case (state)
+         START:      reg_ack_error <= 1'b0;                    // limpia flag al iniciar
+         SLV_ACK_1:  reg_ack_error <= sda_I | reg_ack_error;   // 0=ACK, 1=NACK
+         RD:         data_rx[bit_cnt] <= sda_I;                // lee bit
+         SLV_ACK_2:  reg_ack_error <= sda_I | reg_ack_error;
+       endcase
+     end
+   end
+ 
+   // --- Mapeo de salidas (igual filosofía al VHDL) ---
+   // START/STOP forman la condición usando data_clk (Q2/Q3)
+   wire sda_ena_n = (state == START) ? data_clk :
+                    (state == STOP)  ? ~data_clk :
+                                        sda_int;
+ 
+   assign scl_O = scl_clk;                          // valor “no importa” cuando T=1
+   assign scl_T = ~(scl_ena & ~scl_clk);            // T=0 cuando scl_ena=1 y scl_clk=0
+   assign sda_O = 1'b0;                             // open-drain puro
+   assign sda_T = sda_ena_n;
+ 
+   // debug
+   assign busy            = reg_busy;
+   assign data_rd         = reg_data_rd;
+   assign ack_error       = reg_ack_error;
+   assign states          = state;
+   assign bit_cnts        = {1'b0, bit_cnt};
+   assign data_clkp       = data_clk;
+   assign streetchip      = stretch;
+   assign debbug_scl_clk  = scl_clk;
+   assign debbug_scl_ena  = scl_ena;
+   assign debbug_data_clk = data_clk;
+ 
+endmodule
+
 module main_v4cf70b (
  input rst,
  input a,
@@ -7700,4 +7932,39 @@ module main_v4cf70b (
              if (!salida)
                  salida <= 1'b1;
      end
+endmodule
+
+module main_v1f47ad (
+ input [7:0] a,
+ input rstn,
+ input clk,
+ output led0_out,
+ output led1_out,
+ output led2_out,
+ output led3_out,
+ output led4_out,
+ output led5_out,
+ output led6_out,
+ output led7_out
+);
+ reg [7:0] max_reg;      // almacena el máximo histórico (desde el último reset)
+ 
+ //assign b = max_reg;
+ assign led0_out = max_reg[0];
+ assign led1_out = max_reg[1];
+ assign led2_out = max_reg[2];
+ assign led3_out = max_reg[3];
+ assign led4_out = max_reg[4];
+ assign led5_out = max_reg[5];
+ assign led6_out = max_reg[6];
+ assign led7_out = max_reg[7];
+ always @(posedge clk or negedge rstn) begin
+     if (!rstn) begin
+         max_reg <= 0;          // arranca en 0
+     end else begin
+         if (max_reg < a)
+             max_reg <= a;
+     end
+ end
+ 
 endmodule

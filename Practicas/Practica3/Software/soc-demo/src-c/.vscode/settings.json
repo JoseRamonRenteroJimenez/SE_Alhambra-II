@@ -2,6 +2,7 @@
     "files.associations": {
         "i2c_ads7924.h": "c",
         "stdint.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "auxiliar.h": "c"
     }
 }

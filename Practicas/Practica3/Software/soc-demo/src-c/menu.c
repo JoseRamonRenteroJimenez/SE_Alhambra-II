@@ -1,30 +1,24 @@
 #include <stdint.h>
 #include "UART.h"
 #include "i2c_ADS7924.h"
-#include "auxiliar.c"
+#include "auxiliar.h"
 
 // Dirección base del I2C
-#define reg_uart_data  (*(volatile uint32_t*)0x02000008)
-#define reg_leds       (*(volatile uint32_t*)0x03000000)
+//#define reg_uart_data  (*(volatile uint32_t*)0x02000008)
+//#define reg_leds       (*(volatile uint32_t*)0x03000000)
 //#define-I2C_BASE       (*(volatile uint32_t*)0x04000000)
-#define rw             (*(volatile uint32_t*)0x04000024) // Registro de lectura/escritura
-#define npqts             (*(volatile uint32_t*)0x04000008) // Registro de lectura/escritura
-#define cosi             (*(volatile uint32_t*)0x00000055) // Registro de lectura/escritura
-
-// Direcciones dentro del I2C
-#define I2C_ADC_DIRECTION 0X48  // 1001 0001B // Dirección de ADS7924
+//#define rw             (*(volatile uint32_t*)0x04000024) // Registro de lectura/escritura
+//#define npqts             (*(volatile uint32_t*)0x04000008) // Registro de lectura/escritura
+//#define cosi             (*(volatile uint32_t*)0x00000055) // Registro de lectura/escritura
 
 void printMenu();
 void i2c_submenu(void);
+void lecturaRegistroObj();
 
 
 int main(void) {
     char c;
     print("Booting...\n\n");
-    reg_leds = 0xFF;
-    reg_leds = 0x00;
-    reg_leds = 0xFF;
-    
     print("Prueba número");
     do { c = getchar(); } while (c == '\r' || c == '\n');
     print("\n");
@@ -32,39 +26,55 @@ int main(void) {
     print("\n");
     putchar(c);
     print("\r\n");
-    npqts = 0x01; // Inicializamos el registro rw a 0
     printMenu();
     while (1) {
         do { c = getchar(); } while (c == '\r' || c == '\n');
         switch (c) {
             case '1': printMenu(); break;
             case '2': i2c_submenu(); break;
-            case '3': config(); break;
-            case '4':
-                // Envío de 10101001 al registro 00
-                print("Enviando 0b10101001 al registro 0xAA...\r\n");
-                uint32_t payload = (0xFF << 24) | (0xFF << 16) | (0xFF << 8) | (0xFF << 0);
-                int n_bytes_dato = 2;
-                i2c_send_toReg(I2C_ADC_DIRECTION, 1, payload, n_bytes_dato);
-                print("Envío completado.\r\n");
-                break;
+            case '3': config();printMenu();break;
+            case '4': lecturaRegistroObj(); printMenu(); break;
             default: print("Opción inválida.\r\n"); break;
         }
     }
 }
 
+void lecturaRegistroObj(){
+    print("¿Qué registro desea leer? (0-7): ");
+    char c1;
+    uint32_t read_back = 0;
+    do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+    print("\r\n");
+    uint32_t regObj = 0;
+    switch (c1) {
+        case '0': regObj = 0b00000000; break;
+        case '1': regObj = 0b00000001; break;
+        case '2': regObj = 0b00000010; break;
+        case '3': regObj = 0b00000011; break;
+        case '4': regObj = 0b00000100; break;
+        case '5': regObj = 0b00000101; break;
+        case '6': regObj = 0b00000110; break;
+        case '7': regObj = 0b00000111; break;
+        default: print("Selección inválida.\r\n"); return;
+    }
+
+    print("Usted seleccionó el registro: ");
+    putchar(c1);
+    print("\r\n");
+    volatile uint32_t* reg_addr = (volatile uint32_t*)(I2C_BASE + (regObj<<2));
+    i2c_read(reg_addr, &read_back);
+    print("El contenido del registro es: ");
+    print_hex32(read_back);
+    print("Lectura del registro completada.\r\n");
+}
+
 void printMenu() {
-    int numPrueba = 1; // Número de prueba inicializado a 1
     print("\n");
     print("I2C Test Menu:\n");
     print("1. Mostrar menu\n");
     print("2. Interfaz I2C sub-menú\n");
     print("3. Autoconfiguración de ADC 7924\n");
-    print("4. Envío de 10101001 al registro AA\n");
-    npqts = npqts << 1; // Incrementa el registro npqts para simular un cambio
-    numPrueba = npqts & 0xFF; // Asegura que numPrueba sea un valor válido
-    print("Número de prueba: ");
-    print_hex_byte(numPrueba);
+    print("4. Leer registro de ADC 7924\n");
     print("\n");}
 
 void i2c_submenu(void) {
@@ -82,7 +92,6 @@ void i2c_submenu(void) {
     print("  5: Registro SLPCONFIG\r\n");
     print("  6: Registro ACKCONFIG\r\n");
     print("  7: Registro PWDRCONFIG\r\n");
-    print("  8: Registro RESET\r\n");
     print("Registro> ");
 
     // 1) Ignora CR/LF que pudieran quedar
@@ -175,7 +184,7 @@ void i2c_submenu(void) {
         payload = (0 << 24) | (regObj << 16) | (0 << 8) | (0 << 0);
         i2c_recieve_fromReg(I2C_ADC_DIRECTION, 1, payload, &val);
         print("Dato leído: ");
-        //print(val);
+        print_hex_byte(val);
         print("\r\n");
     } else if (op == '2') {
         // Escritura
@@ -257,7 +266,7 @@ void i2c_submenu(void) {
         print("n_bytes_dato: ");
         print_hex_byte(n_bytes_dato);
         print("\r\n");
-        i2c_send_toReg(I2C_ADC_DIRECTION, 1, payload, n_bytes_dato);
+        i2c_send_toReg(I2C_ADC_DIRECTION, 0, payload, n_bytes_dato);
         print("Escritura completada.\r\n");
     } else if (op == 'r' || op == 'R') {
         print("Volviendo al menú principal...\r\n");
