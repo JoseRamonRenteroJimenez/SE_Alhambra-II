@@ -35,6 +35,7 @@ set_io v504d16[3]
 set_io v504d16[2] 
 set_io v504d16[1] 
 set_io v504d16[0] 
+set_io v10383b 
 set_io v867561[31] 
 set_io v867561[30] 
 set_io v867561[29] 
@@ -105,6 +106,7 @@ set_io v1c4ad8[3]
 set_io v1c4ad8[2] 
 set_io v1c4ad8[1] 
 set_io v1c4ad8[0] 
+set_io v84b29c 
 set_io v6858be 
 set_io v12290d 
 set_io vacc282[6] 

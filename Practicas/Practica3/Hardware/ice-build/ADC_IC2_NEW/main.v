@@ -17,6 +17,8 @@ module main #(
  input vclk,
  output vfe2384,
  output [31:0] v504d16,
+ output v10383b,
+ output v84b29c,
  output v6858be,
  output [6:0] vacc282,
  output va93703,
@@ -34,21 +36,21 @@ module main #(
 );
  localparam p0 = vec4673;
  localparam p1 = v57fab4;
- localparam p15 = vc4dd14;
+ localparam p16 = vc4dd14;
  wire [0:6] w2;
  wire w3;
  wire w4;
  wire w5;
  wire w6;
- wire [0:3] w7;
- wire w8;
+ wire w7;
+ wire [0:3] w8;
  wire w9;
  wire w10;
  wire w11;
  wire w12;
  wire w13;
  wire w14;
- wire w16;
+ wire w15;
  wire w17;
  wire w18;
  wire w19;
@@ -63,167 +65,174 @@ module main #(
  wire w28;
  wire w29;
  wire w30;
- wire [0:31] w31;
- wire [0:31] w32;
+ wire w31;
+ wire w32;
  wire [0:31] w33;
- wire w34;
- wire w35;
+ wire [0:31] w34;
+ wire [0:31] w35;
  wire w36;
  wire w37;
  wire w38;
- wire [0:31] w39;
- wire [0:3] w40;
- wire w41;
- wire w42;
+ wire w39;
+ wire w40;
+ wire [0:31] w41;
+ wire [0:3] w42;
  wire w43;
  wire w44;
  wire w45;
- wire [0:6] w46;
- wire [0:7] w47;
- wire w48;
- wire w49;
- wire [0:7] w50;
- wire [0:3] w51;
+ wire w46;
+ wire w47;
+ wire [0:6] w48;
+ wire [0:7] w49;
+ wire w50;
+ wire w51;
+ wire [0:7] w52;
+ wire [0:3] w53;
+ wire [0:2] w54;
  assign vacc282 = w2;
- assign v4ecea0 = w3;
- assign v8d37ee = w4;
- assign va45fa7 = w5;
- assign vf6b416 = w6;
- assign vabd030 = w7;
- assign v6858be = w8;
- assign va93703 = w9;
- assign v3e4632 = w11;
- assign va71e9d = w12;
- assign v873e47 = w13;
- assign v93941f = w14;
- assign v12290d = w17;
- assign w18 = vclk;
- assign w19 = v87186f;
- assign w20 = v87186f;
- assign w21 = v87186f;
+ assign v4ecea0 = w4;
+ assign v8d37ee = w5;
+ assign va45fa7 = w6;
+ assign vf6b416 = w7;
+ assign vabd030 = w8;
+ assign v6858be = w9;
+ assign va93703 = w10;
+ assign v3e4632 = w12;
+ assign va71e9d = w13;
+ assign v873e47 = w14;
+ assign v93941f = w15;
+ assign v12290d = w18;
+ assign v84b29c = w19;
+ assign v10383b = w20;
+ assign w21 = vclk;
  assign w22 = v87186f;
  assign w23 = v87186f;
- assign vfe2384 = w25;
- assign w26 = v4dc0ee;
- assign w27 = v4dc0ee;
- assign w28 = v4dc0ee;
+ assign w24 = v87186f;
+ assign w25 = v87186f;
+ assign w26 = v87186f;
+ assign vfe2384 = w28;
  assign w29 = v4dc0ee;
  assign w30 = v4dc0ee;
- assign v504d16 = w31;
- assign w32 = v867561;
- assign w33 = v867561;
- assign w35 = v8859f4;
- assign w36 = v8859f4;
- assign w39 = v23504b;
- assign w40 = v1c4ad8;
- assign w20 = w19;
- assign w21 = w19;
- assign w21 = w20;
- assign w22 = w19;
- assign w22 = w20;
- assign w22 = w21;
- assign w23 = w19;
- assign w23 = w20;
- assign w23 = w21;
+ assign w31 = v4dc0ee;
+ assign w32 = v4dc0ee;
+ assign v504d16 = w33;
+ assign w34 = v867561;
+ assign w35 = v867561;
+ assign w37 = v8859f4;
+ assign w38 = v8859f4;
+ assign w41 = v23504b;
+ assign w42 = v1c4ad8;
+ assign w10 = w3;
  assign w23 = w22;
- assign w27 = w26;
- assign w28 = w26;
- assign w28 = w27;
- assign w29 = w26;
- assign w29 = w27;
- assign w29 = w28;
- assign w30 = w26;
- assign w30 = w27;
- assign w30 = w28;
+ assign w24 = w22;
+ assign w24 = w23;
+ assign w25 = w22;
+ assign w25 = w23;
+ assign w25 = w24;
+ assign w26 = w22;
+ assign w26 = w23;
+ assign w26 = w24;
+ assign w26 = w25;
+ assign w27 = w20;
  assign w30 = w29;
- assign w33 = w32;
- assign w34 = w5;
- assign w36 = w35;
- assign w37 = w6;
- assign w42 = w3;
- assign w43 = w8;
+ assign w31 = w29;
+ assign w31 = w30;
+ assign w32 = w29;
+ assign w32 = w30;
+ assign w32 = w31;
+ assign w35 = w34;
+ assign w36 = w6;
+ assign w38 = w37;
+ assign w39 = w7;
+ assign w43 = w19;
  assign w44 = w4;
- assign w46 = w2;
- assign w48 = w9;
- assign w49 = w9;
- assign w49 = w48;
- assign w51 = w7;
+ assign w45 = w9;
+ assign w46 = w5;
+ assign w48 = w2;
+ assign w50 = w3;
+ assign w50 = w10;
+ assign w51 = w3;
+ assign w51 = w10;
+ assign w51 = w50;
+ assign w53 = w8;
  main_vadbda8 #(
   .Addr(p0)
  ) vadbda8 (
-  .addr_in(w32),
-  .bit_valid(w35),
-  .i2c_cs(w38)
- );
- main_vecfcb9 vecfcb9 (
-  .slv_addr(w2),
-  .enable_start(w8),
-  .clk(w21),
-  .bus_data_enable(w25),
-  .rstn(w28),
-  .bus_data_out(w31),
-  .Bus_addr(w33),
-  .valid(w36),
-  .serdat_cs(w38),
-  .Bus_data(w39),
-  .mem_wstrb(w40),
-  .rw(w45),
-  .data_write(w47),
-  .I2C_Busy(w48),
-  .data_out(w50),
-  .I2C_State(w51)
+  .addr_in(w34),
+  .bit_valid(w37),
+  .i2c_cs(w40)
  );
  main_vfe0356 vfe0356 (
-  .ena_out(w10),
-  .clk(w23),
-  .rstn(w30),
-  .ena(w43),
-  .busy(w49)
+  .ena_out(w11),
+  .clk(w26),
+  .rstn(w32),
+  .ena(w45),
+  .busy(w51)
  );
  main_v6d4014 #(
-  .Hz(p15)
+  .Hz(p16)
  ) v6d4014 (
-  .clk_o(w16),
-  .clk(w18)
+  .clk_o(w17),
+  .clk(w21)
  );
  main_v6e0755 v6e0755 (
-  .sda(w17),
-  .clk(w20),
-  .resetn(w27),
-  .sda_I(w41),
-  .sda_O(w42),
-  .sda_T(w44)
+  .sda(w18),
+  .sda_I(w19),
+  .clk(w23),
+  .resetn(w30),
+  .sda_O(w44),
+  .sda_T(w46)
  );
  main_v0e7a2b v0e7a2b (
-  .scl(w11),
-  .clk(w19),
-  .scl_I(w24),
-  .resetn(w26),
-  .scl_O(w34),
-  .scl_T(w37)
+  .scl(w12),
+  .scl_I(w20),
+  .clk(w22),
+  .resetn(w29),
+  .scl_O(w36),
+  .scl_T(w39)
  );
  main_vd61014 #(
   .DIVIDER(p1)
  ) vd61014 (
-  .sda_O(w3),
-  .sda_T(w4),
-  .scl_O(w5),
-  .scl_T(w6),
-  .states(w7),
-  .busy(w9),
-  .ena(w10),
-  .debbug_scl_clk(w12),
-  .debbug_scl_ena(w13),
-  .debbug_data_clk(w14),
-  .i2c_clk(w16),
-  .clk(w22),
-  .scl_I(w24),
-  .rstn(w29),
-  .sda_I(w41),
-  .rw(w45),
-  .slv_addr(w46),
-  .data_in(w47),
-  .data_rd(w50)
+  .busy(w3),
+  .rstn(w3),
+  .sda_O(w4),
+  .sda_T(w5),
+  .scl_O(w6),
+  .scl_T(w7),
+  .states(w8),
+  .ena(w11),
+  .debbug_scl_clk(w13),
+  .debbug_scl_ena(w14),
+  .debbug_data_clk(w15),
+  .i2c_clk(w17),
+  .clk(w25),
+  .scl_I(w27),
+  .sda_I(w43),
+  .rw(w47),
+  .slv_addr(w48),
+  .data_in(w49),
+  .data_rd(w52),
+  .bit_cnt_signal(w54)
+ );
+ main_vecfcb9 vecfcb9 (
+  .slv_addr(w2),
+  .enable_start(w9),
+  .clk(w24),
+  .bus_data_enable(w28),
+  .rstn(w31),
+  .bus_data_out(w33),
+  .Bus_addr(w35),
+  .valid(w38),
+  .serdat_cs(w40),
+  .Bus_data(w41),
+  .mem_wstrb(w42),
+  .rw(w47),
+  .data_write(w49),
+  .I2C_Busy(w50),
+  .data_out(w52),
+  .I2C_State(w53),
+  .I2C_bit_count(w54)
  );
  assign vinit = 8'b00000000;
 endmodule
@@ -242,133 +251,6 @@ module main_vadbda8 #(
  output i2c_cs
 );
  assign i2c_cs = (addr_in[31:6] == Addr[31:6]) & bit_valid;
-endmodule
-
-module main_vecfcb9 (
- input clk,
- input rstn,
- input valid,
- input [3:0] mem_wstrb,
- input [31:0] Bus_addr,
- input [31:0] Bus_data,
- input serdat_cs,
- input [3:0] I2C_State,
- input I2C_Busy,
- input [7:0] data_out,
- output enable_start,
- output rw,
- output [6:0] slv_addr,
- output [7:0] data_write,
- output [2:0] n_paquetes,
- output bus_data_enable,
- output [31:0] bus_data_out
-);
- parameter W_SLV_ADDR        = 3'b000;  // 0x04000000
-   parameter W_RW              = 3'b001;  // 0x04000004
-   parameter W_N_PQTS          = 3'b010;  // 0x04000008
-   parameter R_STATE           = 3'b011;  // 0x0400000C
-   parameter R_BUSY            = 3'b100;  // 0x04000010
-   parameter R_DATA_OUT        = 3'b101;  // 0x04000014
-   parameter S_ENABLE          = 3'b110;  // 0x04000018
-   parameter W_DATA_WRITE      = 3'b111;  // 0x0400001C
-   
-   //Estados i2c
-   localparam READY        = 4'd0;
-   localparam START        = 4'd1;
-   localparam COMMAND      = 4'd2;
-   localparam SLV_ACK_1    = 4'd3;
-   localparam WR           = 4'd4;
-   localparam RD           = 4'd5;
-   localparam SLV_ACK_2    = 4'd6;
-   localparam MSTR_ACK     = 4'd7;
-   localparam STOP         = 4'd8;
-   
-   // Índice en el array de registros
-   parameter slv_addr_register         = 0;
-   parameter rw_register               = 1;
-   parameter num_pqts_register         = 2;
-   parameter state_register            = 3;
-   parameter busy_register             = 4;
-   parameter data_out_register         = 5;
-   parameter enable_register           = 6;
-   
-   
-   //Entrada desde bus de datos
-   reg [7:0] dataArray [7:0];
-   reg [31:0] buffer_data_out;
-   reg [31:0] data_wr = 32'b0;
-   reg [3:0] prev_i2c_state = 4'd0;
-   
-   reg ack_r;          // pulso a CLK del bus
-   assign bus_data_enable = ack_r;
-   
-   
-   assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];      
-   assign rw = dataArray[rw_register][0];                   
-   assign n_paquetes[2:0] = dataArray[num_pqts_register][2:0];    
-   
-   assign enable_start = dataArray[enable_register][0];                 
-   
-   assign data_write = data_wr[7:0];             
-   assign bus_data_out = buffer_data_out;     
-   
-   wire serdat_write = serdat_cs & |mem_wstrb;     
-   
-   always @(posedge clk or negedge rstn) begin
-       if (!rstn) begin
-           // Reset completo de los registros
-           dataArray[0] <= 8'b0;
-           dataArray[1] <= 8'b0;
-           dataArray[2] <= 8'b0;
-           dataArray[3] <= 8'b0;
-           dataArray[4] <= 8'b0;
-           dataArray[5] <= 8'b0;
-           dataArray[6] <= 8'b0;
-           dataArray[7] <= 8'b0;
-           buffer_data_out <= 32'b0;
-           data_wr <= 32'b0;
-           ack_r <= 1'b0;
-           prev_i2c_state <= READY;
-       end else begin
-           // Registros actualizados por hardware (FSM)
-           dataArray[state_register]    <= {4'b0, I2C_State};
-           dataArray[busy_register]     <= {7'b0, I2C_Busy};
-           dataArray[data_out_register] <= data_out;
-           //dataArray[enable_register] <= 8'b0;
-           if(I2C_State != STOP) begin
-               dataArray[enable_register] <= 8'b0;
-           end
-   
-           // Interfaz externa desde CPU
-           if (serdat_cs) begin
-               ack_r <= 1'b1;
-               if (serdat_write) begin
-                   // ----------- ESCRITURA -----------
-                   if(Bus_addr[4:2] == W_DATA_WRITE) begin
-                      data_wr <= Bus_data;
-                   end else begin
-                      dataArray[Bus_addr[4:2]] <= Bus_data[7:0];
-                   end
-               end else begin
-                   // ----------- LECTURA -----------
-                   if (Bus_addr[4:2] == W_DATA_WRITE) begin
-                       buffer_data_out <= data_wr;
-                   end else begin
-                       buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
-                   end
-               end
-               // Limpieza de registros de un solo ciclo
-               //dataArray[enable_register] <= 8'b0;
-           end else begin
-               ack_r <= 1'b0; // al siguiente ciclo vuelve a 0
-           end
-          //Desplazamos un byte a la derecha una sola vez al entrar en SLV_ACK_2
-          if(prev_i2c_state != SLV_ACK_2 && I2C_State == SLV_ACK_2) begin
-             data_wr <= data_wr >> 8;
-          end
-          prev_i2c_state <= I2C_State;
-       end
-   end
 endmodule
 
 module main_vfe0356 (
@@ -518,7 +400,7 @@ module main_vd61014 #(
  output scl_O,
  output scl_T,
  output [3:0] states,
- output [3:0] bit_cnts,
+ output [2:0] bit_cnt_signal,
  output data_clkp,
  output streetchip,
  output debbug_scl_clk,
@@ -527,239 +409,374 @@ module main_vd61014 #(
  output [7:0] debbug_slv_Addr
 );
  // Estados como en el VHDL
-   localparam READY        = 4'd0;
-   localparam START        = 4'd1;
-   localparam START_HOLD   = 4'd2;
-   localparam COMMAND      = 4'd3;
-   localparam SLV_ACK_1    = 4'd4;
-   localparam WR           = 4'd5;
-   localparam RD           = 4'd6;
-   localparam SLV_ACK_2    = 4'd7;
-   localparam MSTR_ACK     = 4'd8;
-   localparam STOP         = 4'd9;
+ localparam READY        = 4'd0;
+ localparam START        = 4'd1;
+ localparam START_HOLD   = 4'd2;
+ localparam COMMAND      = 4'd3;
+ localparam SLV_ACK_1    = 4'd4;
+ localparam WR           = 4'd5;
+ localparam RD           = 4'd6;
+ localparam SLV_ACK_2    = 4'd7;
+ localparam MSTR_ACK     = 4'd8;
+ localparam STOP         = 4'd9;
+ localparam CNT_W = $clog2(DIVIDER*4);
  
-   localparam CNT_W = $clog2(DIVIDER*4);
+ // Registros “VHDL-like”
+ reg [3:0] state = READY;
+ reg [2:0] bit_cnt;
+ reg       data_clk;                // 0: Q1/Q4, 1: Q2/Q3
+ reg       scl_clk;                 // 0: forzar 0, 1: soltar (Hi-Z via T)
+ reg       scl_ena;
+ reg       sda_int;                 // 0=conducir 0, 1=soltar (open-drain)
+ reg [7:0] data_tx, data_rx;
+ reg [7:0] addr_rw;
+ reg [7:0] reg_data_rd;
+ reg       reg_busy;
+ reg       reg_ack_error;
+ reg       stretch;
+ reg [CNT_W-1:0] cuenta;
  
-   // Registros “VHDL-like”
-   reg [3:0] state = READY;
-   reg [2:0] bit_cnt;
-   reg       data_clk;                // 0: Q1/Q4, 1: Q2/Q3
-   reg       scl_clk;                 // 0: forzar 0, 1: soltar (Hi-Z via T)
-   reg       scl_ena;
-   reg       sda_int;                 // 0=conducir 0, 1=soltar (open-drain)
-   reg [7:0] data_tx, data_rx;
-   reg [7:0] addr_rw;
-   reg [7:0] reg_data_rd;
-   reg       reg_busy;
-   reg       reg_ack_error;
-   reg       stretch;
-   reg [CNT_W-1:0] cuenta;
- 
-   // --- Generador de cuadrantes (idéntico en concepto al VHDL) ---
-   always @(posedge clk or negedge rstn) begin
-     if (!rstn) begin
-       cuenta   <= {CNT_W{1'b0}};
-       data_clk <= 1'b0;
+ always @(posedge clk or negedge rstn) begin
+   if (!rstn) begin
+     cuenta   <= {CNT_W{1'b0}};
+     data_clk <= 1'b0;
+     scl_clk  <= 1'b0;
+     stretch  <= 1'b0;
+   end else begin
+     // hold si hay stretching (solo cuando pretendemos SCL alto)
+     if (cuenta == DIVIDER*4-1)          cuenta <= {CNT_W{1'b0}};
+     else if (!stretch)                  cuenta <= cuenta + 1'b1;
+     // Q1: SCL=0, data_clk=0
+     if (cuenta < DIVIDER) begin
        scl_clk  <= 1'b0;
+       data_clk <= 1'b0;
+     end
+     // Q2: SCL=0, data_clk=1 (aquí sube data_clk)
+     else if (cuenta < DIVIDER*2) begin
+       scl_clk  <= 1'b0;
+       data_clk <= 1'b1;
+     end
+     // Q3: SCL liberado, data_clk=1 (leer ACK/datos; detectar stretching)
+     else if (cuenta < DIVIDER*3) begin
+       scl_clk  <= 1'b1;                // liberar (tri-state mediante T)
+       data_clk <= 1'b1;
+       // stretching si intentamos alto pero el pin sigue bajo
+       if (scl_I == 1'b0) stretch <= 1'b1;
+       else               stretch <= 1'b0;
+     end
+     // Q4: SCL liberado, data_clk=0
+     else begin
+       scl_clk  <= 1'b1;
+       data_clk <= 1'b0;
        stretch  <= 1'b0;
-     end else begin
-       // hold si hay stretching (solo cuando pretendemos SCL alto)
-       if (cuenta == DIVIDER*4-1)          cuenta <= {CNT_W{1'b0}};
-       else if (!stretch)                  cuenta <= cuenta + 1'b1;
- 
-       // Q1: SCL=0, data_clk=0
-       if (cuenta < DIVIDER) begin
-         scl_clk  <= 1'b0;
-         data_clk <= 1'b0;
-       end
-       // Q2: SCL=0, data_clk=1 (aquí sube data_clk)
-       else if (cuenta < DIVIDER*2) begin
-         scl_clk  <= 1'b0;
-         data_clk <= 1'b1;
-       end
-       // Q3: SCL liberado, data_clk=1 (leer ACK/datos; detectar stretching)
-       else if (cuenta < DIVIDER*3) begin
-         scl_clk  <= 1'b1;                // liberar (tri-state mediante T)
-         data_clk <= 1'b1;
-         // stretching si intentamos alto pero el pin sigue bajo
-         if (scl_I == 1'b0) stretch <= 1'b1;
-         else               stretch <= 1'b0;
-       end
-       // Q4: SCL liberado, data_clk=0
-       else begin
-         scl_clk  <= 1'b1;
-         data_clk <= 1'b0;
-         stretch  <= 1'b0;
-       end
      end
    end
+ end
  
-   // --- FSM: escribir SDA con SCL bajo (posedge data_clk) ---
-   always @(posedge data_clk or negedge rstn) begin
-     if (!rstn) begin
-       state        <= READY;
-       reg_busy     <= 1'b1;
-       scl_ena      <= 1'b0;
-       sda_int      <= 1'b1;
-       bit_cnt      <= 3'd7;
-       reg_data_rd  <= 8'd0;
-       addr_rw      <= 8'd0;
-       data_tx      <= 8'd0;
-     end else begin
-       case (state)
-         READY: begin
-           if (ena) begin
-             reg_busy <= 1'b1;
-             addr_rw  <= {slv_addr, rw};
-             data_tx  <= data_in;
-             sda_int  <= 1'b0;        // preparar START (SDA baja)
-             state    <= START_HOLD;
-           end else begin
-             reg_busy <= 1'b0;
-             scl_ena  <= 1'b0;
-           end
-         end
- 
-         START_HOLD: begin
+ // --- FSM: escribir SDA con SCL bajo (posedge data_clk) ---
+ always @(posedge data_clk or negedge rstn) begin
+   if (!rstn) begin
+     state        <= READY;
+     reg_busy     <= 1'b1;
+     scl_ena      <= 1'b0;
+     sda_int      <= 1'b1;
+     bit_cnt      <= 3'd7;
+     reg_data_rd  <= 8'd0;
+     addr_rw      <= 8'd0;
+     data_tx      <= 8'd0;
+   end else begin
+     case (state)
+       READY: begin
+         if (ena) begin
            reg_busy <= 1'b1;
-           scl_ena  <= 1'b1;          // habilita SCL
-           sda_int  <= 1'b0;          // mantener SDA baja un cuarto
-           state    <= START;
-         end
- 
-         START: begin
-           sda_int <= addr_rw[bit_cnt]; // primer bit (MSB)
-           state   <= COMMAND;
-         end
- 
-         COMMAND: begin
-           if (bit_cnt == 0) begin
-             sda_int <= 1'b1;         // soltar para ACK del esclavo
-             bit_cnt <= 3'd7;
-             state   <= SLV_ACK_1;
-           end else begin
-             bit_cnt <= bit_cnt - 1'b1;
-             sda_int <= addr_rw[bit_cnt-1]; // **ojo**: -1 como en VHDL
-           end
-         end
- 
-         SLV_ACK_1: begin
-           if (!addr_rw[0]) begin      // write
-             sda_int <= data_tx[bit_cnt];
-             state   <= WR;
-           end else begin              // read
-             sda_int <= 1'b1;          // soltar para leer
-             state   <= RD;
-           end
-         end
- 
-         WR: begin
-           reg_busy <= 1'b1;
-           if (bit_cnt == 0) begin
-             sda_int <= 1'b1;          // soltar para ACK del esclavo
-             bit_cnt <= 3'd7;
-             state   <= SLV_ACK_2;
-           end else begin
-             bit_cnt <= bit_cnt - 1'b1;
-             sda_int <= data_tx[bit_cnt-1]; // **ojo**: -1
-           end
-         end
- 
-         RD: begin
-           reg_busy <= 1'b1;
-           if (bit_cnt == 0) begin
-             sda_int     <= (ena && rw) ? 1'b0 : 1'b1; // ACK (0) si seguimos leyendo
-             bit_cnt     <= 3'd7;
-             reg_data_rd <= data_rx;
-             state       <= MSTR_ACK;
-           end else begin
-             bit_cnt <= bit_cnt - 1'b1;
-             // sda_int permanece soltada (ya viene de SLV_ACK_1)
-           end
-         end
- 
-         SLV_ACK_2: begin
-           if (ena) begin
-             reg_busy <= 1'b0;         // “acepta” continuar (como VHDL)
-             addr_rw  <= {slv_addr, rw};
-             data_tx  <= data_in;
-             if (rw) begin
-               state <= START_HOLD;    // repeated START hacia lectura
-             end else begin
-               sda_int <= data_tx[bit_cnt];
-               state   <= WR;
-             end
-           end else begin
-             scl_ena <= 1'b0;
-             state   <= STOP;
-           end
-         end
- 
-         MSTR_ACK: begin
-           if (ena) begin
-             reg_busy <= 1'b0;         // “acepta” continuar
-             addr_rw  <= {slv_addr, rw};
-             data_tx  <= data_in;
-             if (!rw) begin
-               state <= START_HOLD;    // repeated START hacia escritura
-             end else begin
-               sda_int <= 1'b0;        // ACK para más lectura
-               state   <= RD;
-             end
-           end else begin
-             scl_ena <= 1'b0;
-             state   <= STOP;
-           end
-         end
- 
-         STOP: begin
+           addr_rw[7:1] <= addr_rw[6:0]; // copiar dirección sin RW
+           addr_rw[0] <= rw; // RW=0: write, RW=1: read
+           data_tx  <= data_in;
+           sda_int  <= 1'b0;        // preparar START (SDA baja)
+           state    <= START_HOLD;
+         end else begin
            reg_busy <= 1'b0;
            scl_ena  <= 1'b0;
-           sda_int  <= 1'b1;           // STOP (SDA sube con SCL alto en Q3)
-           state    <= READY;
          end
- 
-         default: state <= READY;
-       endcase
-     end
+       end
+       START_HOLD: begin
+         reg_busy <= 1'b1;
+         scl_ena  <= 1'b1;          // habilita SCL
+         sda_int  <= 1'b0;          // mantener SDA baja un cuarto
+         state    <= START;
+       end
+       START: begin
+         sda_int <= addr_rw[bit_cnt]; // primer bit (MSB)
+         state   <= COMMAND;
+       end
+       COMMAND: begin
+         if (bit_cnt == 0) begin
+           sda_int <= 1'b1;         // soltar para ACK del esclavo
+           bit_cnt <= 3'd7;
+           state   <= SLV_ACK_1;
+         end else begin
+           bit_cnt <= bit_cnt - 1'b1;
+           sda_int <= addr_rw[bit_cnt-1]; // **ojo**: -1 como en VHDL
+         end
+       end
+       SLV_ACK_1: begin
+         if (!addr_rw[0]) begin      // write
+           sda_int <= data_tx[bit_cnt];
+           state   <= WR;
+         end else begin              // read
+           sda_int <= 1'b1;          // soltar para leer
+           state   <= RD;
+         end
+       end
+       WR: begin
+         reg_busy <= 1'b1;
+         if (bit_cnt == 0) begin
+           sda_int <= 1'b1;          // soltar para ACK del esclavo
+           bit_cnt <= 3'd7;
+           state   <= SLV_ACK_2;
+         end else begin
+           bit_cnt <= bit_cnt - 1'b1;
+           sda_int <= data_tx[bit_cnt-1]; // **ojo**: -1
+         end
+       end
+       RD: begin
+         reg_busy <= 1'b1;
+         if (bit_cnt == 0) begin
+           sda_int     <= (ena && rw) ? 1'b0 : 1'b1; // ACK (0) si seguimos leyendo
+           bit_cnt     <= 3'd7;
+           reg_data_rd <= data_rx;
+           state       <= MSTR_ACK;
+         end else begin
+           bit_cnt <= bit_cnt - 1'b1;
+           // sda_int permanece soltada (ya viene de SLV_ACK_1)
+         end
+       end
+       SLV_ACK_2: begin
+         if (ena) begin
+           reg_busy <= 1'b0;         // “acepta” continuar (como VHDL)
+           addr_rw  <= {slv_addr, rw};
+           data_tx  <= data_in;
+           if (rw) begin
+             state <= START_HOLD;    // repeated START hacia lectura
+           end else begin
+             sda_int <= data_tx[bit_cnt];
+             state   <= WR;
+           end
+         end else begin
+           scl_ena <= 1'b0;
+           state   <= STOP;
+         end
+       end
+       MSTR_ACK: begin
+         if (ena) begin
+           reg_busy <= 1'b0;         // “acepta” continuar
+           addr_rw  <= {slv_addr, rw};
+           data_tx  <= data_in;
+           if (!rw) begin
+             state <= START_HOLD;    // repeated START hacia escritura
+           end else begin
+             sda_int <= 1'b0;        // ACK para más lectura
+             state   <= RD;
+           end
+         end else begin
+           scl_ena <= 1'b0;
+           state   <= STOP;
+         end
+       end
+       STOP: begin
+         reg_busy <= 1'b0;
+         scl_ena  <= 1'b0;
+         sda_int  <= 1'b1;           // STOP (SDA sube con SCL alto en Q3)
+         state    <= READY;
+       end
+       default: state <= READY;
+     endcase
    end
+ end
  
-   // --- Muestreo con SCL alto (negedge data_clk) ---
-   always @(negedge data_clk or negedge rstn) begin
-     if (!rstn) begin
-       reg_ack_error <= 1'b0;
-       data_rx       <= 8'd0;
-     end else begin
-       case (state)
-         START:      reg_ack_error <= 1'b0;                    // limpia flag al iniciar
-         SLV_ACK_1:  reg_ack_error <= sda_I | reg_ack_error;   // 0=ACK, 1=NACK
-         RD:         data_rx[bit_cnt] <= sda_I;                // lee bit
-         SLV_ACK_2:  reg_ack_error <= sda_I | reg_ack_error;
-       endcase
-     end
+ // --- Muestreo con SCL alto (negedge data_clk) ---
+ always @(negedge data_clk or negedge rstn) begin
+   if (!rstn) begin
+     reg_ack_error <= 1'b0;
+     data_rx       <= 8'd0;
+   end else begin
+     case (state)
+       START:      reg_ack_error <= 1'b0;                    // limpia flag al iniciar
+       SLV_ACK_1:  reg_ack_error <= sda_I | reg_ack_error;   // 0=ACK, 1=NACK
+       RD:         data_rx[bit_cnt] <= sda_I;                // lee bit
+       SLV_ACK_2:  reg_ack_error <= sda_I | reg_ack_error;
+     endcase
    end
+ end
  
-   // --- Mapeo de salidas (igual filosofía al VHDL) ---
-   // START/STOP forman la condición usando data_clk (Q2/Q3)
-   wire sda_ena_n = (state == START) ? data_clk :
-                    (state == STOP)  ? ~data_clk :
-                                        sda_int;
+ // --- Mapeo de salidas (igual filosofía al VHDL) ---
+ // START/STOP forman la condición usando data_clk (Q2/Q3)
+ wire sda_ena_n = (state == START) ? data_clk :
+                  (state == STOP)  ? ~data_clk :
+                                      sda_int;
+ assign scl_O = scl_clk;                          // valor “no importa” cuando T=1
+ assign scl_T = ~(scl_ena & ~scl_clk);            // T=0 cuando scl_ena=1 y scl_clk=0
+ assign sda_O = 1'b0;                             // open-drain puro
+ assign sda_T = sda_ena_n;
  
-   assign scl_O = scl_clk;                          // valor “no importa” cuando T=1
-   assign scl_T = ~(scl_ena & ~scl_clk);            // T=0 cuando scl_ena=1 y scl_clk=0
-   assign sda_O = 1'b0;                             // open-drain puro
-   assign sda_T = sda_ena_n;
+ // debug
+ assign busy            = reg_busy;
+ assign data_rd         = reg_data_rd;
+ assign ack_error       = reg_ack_error;
+ assign states          = state;
+ assign bit_cnt_signal        = bit_cnt;
+ assign data_clkp       = data_clk;
+ assign streetchip      = stretch;
+ assign debbug_scl_clk  = scl_clk;
+ assign debbug_scl_ena  = scl_ena;
+ assign debbug_data_clk = data_clk;
  
-   // debug
-   assign busy            = reg_busy;
-   assign data_rd         = reg_data_rd;
-   assign ack_error       = reg_ack_error;
-   assign states          = state;
-   assign bit_cnts        = {1'b0, bit_cnt};
-   assign data_clkp       = data_clk;
-   assign streetchip      = stretch;
-   assign debbug_scl_clk  = scl_clk;
-   assign debbug_scl_ena  = scl_ena;
-   assign debbug_data_clk = data_clk;
- 
+endmodule
+
+module main_vecfcb9 (
+ input clk,
+ input rstn,
+ input valid,
+ input [3:0] mem_wstrb,
+ input [31:0] Bus_addr,
+ input [31:0] Bus_data,
+ input serdat_cs,
+ input [3:0] I2C_State,
+ input I2C_Busy,
+ input [7:0] data_out,
+ input [2:0] I2C_bit_count,
+ output enable_start,
+ output rw,
+ output [6:0] slv_addr,
+ output [7:0] data_write,
+ output [2:0] n_paquetes,
+ output bus_data_enable,
+ output [31:0] bus_data_out
+);
+ // Direcciones internas (como ya tenías)
+    localparam READY        = 4'd0;
+    localparam START        = 4'd1;
+    localparam COMMAND      = 4'd2;
+    localparam SLV_ACK_1    = 4'd3;
+    localparam WR           = 4'd4;
+    localparam RD           = 4'd5;
+    localparam SLV_ACK_2    = 4'd6;
+    localparam MSTR_ACK     = 4'd7;
+    localparam STOP         = 4'd8;
+  
+    parameter W_SLV_ADDR   = 3'b000;
+    parameter W_RW         = 3'b001;
+    parameter W_N_PQTS     = 3'b010;
+    parameter R_STATE      = 3'b011;
+    parameter R_BUSY       = 3'b100;
+    parameter R_DATA_OUT   = 3'b101;
+    parameter S_ENABLE     = 3'b110;
+    parameter W_DATA_WRITE = 3'b111;
+  
+    // Índices
+    localparam slv_addr_register   = 0;
+    localparam rw_register         = 1;
+    localparam num_pqts_register   = 2;
+    localparam state_register      = 3;
+    localparam busy_register       = 4;
+    localparam data_out_register   = 5;
+    localparam enable_register     = 6;
+  
+    // Registros visibles + buffers
+    reg [7:0]  dataArray [7:0];
+    reg [31:0] buffer_data_out;
+    reg [31:0] data_wr;                 // lo mantiene la CPU (hasta 4 bytes)
+    reg        ack_r;
+    assign bus_data_enable = ack_r;
+  
+    assign slv_addr[6:0] = dataArray[slv_addr_register][6:0];
+    assign rw            = dataArray[rw_register][0];
+    assign n_paquetes    = dataArray[num_pqts_register][2:0];
+    assign bus_data_out  = buffer_data_out;
+  
+    wire serdat_write = serdat_cs & |mem_wstrb;
+  
+    reg [3:0]   prev_i2c_state;
+    reg alreadyWritten = 1'b0; // para evitar escribir en el registro de estado
+  
+    assign data_write    = data_wr[7:0];;
+    assign enable_start  = dataArray[enable_register][0];
+    
+    always @(posedge clk or negedge rstn) begin
+      if (!rstn) begin
+        // reset visible
+        // Reset completo de los registros
+         dataArray[0] <= 8'b0;
+         dataArray[1] <= 8'b0;
+         dataArray[2] <= 8'b0;
+         dataArray[3] <= 8'b0;
+         dataArray[4] <= 8'b0;
+         dataArray[5] <= 8'b0;
+         dataArray[6] <= 8'b0;
+         dataArray[7] <= 8'b0;
+         alreadyWritten <= 1'b0; // no se ha escrito en el registro de estado
+        buffer_data_out <= 32'b0;
+        data_wr         <= 32'b0;
+        ack_r           <= 1'b0;
+  
+        dataArray[num_pqts_register]      <= 3'd0;
+        prev_i2c_state  <= READY;
+      end else begin
+        // Actualización “status” desde el core (solo lectura por CPU)
+        dataArray[state_register]    <= {4'b0, I2C_State};
+        dataArray[busy_register]     <= {7'b0, I2C_Busy};
+        dataArray[data_out_register] <= data_out;
+        
+        //if (I2C_State == WR && I2C_bit_count == 3'd0) begin
+         //if (dataArray[num_pqts_register] != 3'd0 && !alreadyWritten) begin
+           //data_wr <= data_wr >> 8; // desplaza el byte leído
+           //dataArray[num_pqts_register] <= dataArray[num_pqts_register] - 3'd1;
+           //if(dataArray[num_pqts_register] == 3'd1)begin
+           
+           //dataArray[enable_register] <= 8'b0; // Estamos enviando el último paquete. Tras esto no se manda más
+           //end else begin
+           
+           //dataArray[enable_register] <= 8'b1; // habilita el core
+           //end
+           //alreadyWritten <= 1'b1; // ya hemos escrito en el registro de estado
+         //end
+         //else begin 
+           //alreadyWritten <= 1'b0; // no hemos escrito en el registro de estado
+           //dataArray[enable_register] <= 8'b0;
+         //end
+       //end
+  
+        // -------------------------
+        //  Interfaz CPU (R/W)
+        // -------------------------
+        ack_r <= 1'b0;
+        if (serdat_cs) begin
+          ack_r <= 1'b1;
+          if (serdat_write) begin
+            // ESCRITURA
+            if (Bus_addr[4:2] == W_DATA_WRITE) begin
+              data_wr      <= Bus_data;           // guarda los 4 bytes
+            end else begin
+              dataArray[Bus_addr[4:2]] <= Bus_data[7:0];
+              // Si la CPU escribe N_PQTS, no pasa nada más aquí.
+            end
+          end else begin
+            // LECTURA
+            if (Bus_addr[4:2] == W_DATA_WRITE)
+              buffer_data_out <= data_wr;
+            else
+              buffer_data_out <= {24'b0, dataArray[Bus_addr[4:2]]};
+          end
+        end
+        
+        if(dataArray[busy_register][0])begin
+        dataArray[enable_register][0] <= 1'b0;
+        end
+  
+        
+  
+  
+        prev_i2c_state <= I2C_State;
+      end
+    end
 endmodule
