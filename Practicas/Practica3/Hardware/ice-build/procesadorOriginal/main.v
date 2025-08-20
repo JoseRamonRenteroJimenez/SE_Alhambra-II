@@ -7937,7 +7937,7 @@ module vce42df_vecfcb9 (
        dataArray[ENABLE_REG] <= 8'b0;
      end
  
-     if (I2C_State != WR) begin
+     if (I2C_State != WR && I2C_State != RD) begin
        alreadyWritten <= 1'b0;
      end
  
@@ -7948,6 +7948,12 @@ module vce42df_vecfcb9 (
            alreadyWritten <= 1'b1;
            data_wr <= {8'b0, data_wr[31:8]}; // desplaza el byte leído
            dataArray[N_PQTS_REG] <= dataArray[N_PQTS_REG] - 8'b1; 
+         end
+       end
+       RD: begin
+         if (dataArray[N_PQTS_REG] > 8'b0 && !alreadyWritten)begin
+             dataArray[N_PQTS_REG] <= dataArray[N_PQTS_REG] - 8'b1;
+             alreadyWritten <= 1'b1;
          end
        end
        STOP: begin
