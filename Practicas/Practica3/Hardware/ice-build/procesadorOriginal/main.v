@@ -7663,7 +7663,7 @@ module vce42df_vd61014 #(
            addr_rw  <= {slv_addr, rw};
            reg_rw   <= rw;
            data_tx  <= data_in;
-           sda_int  <= 1'b0;     // preparar START (SDA baja)
+           sda_int  <= 1'b1;     // preparar START (SDA baja)
            state    <= START_HOLD;
          end else begin
            reg_busy <= 1'b0;
@@ -7674,7 +7674,7 @@ module vce42df_vd61014 #(
        START_HOLD: begin
          reg_busy <= 1'b1;
          scl_ena  <= 1'b1;       // habilita SCL
-         sda_int  <= 1'b0;       // mantener SDA baja un cuarto
+         sda_int  <= 1'b1;       // mantener SDA baja un cuarto
          state    <= START;
        end
  
