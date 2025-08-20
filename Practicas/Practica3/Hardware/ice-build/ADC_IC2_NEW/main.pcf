@@ -128,6 +128,7 @@ set_io vabd030[0]
 set_io va71e9d 
 set_io v873e47 
 set_io v93941f 
+set_io v889e40 
 set_io vclk 49
 set_io vinit[0] 45
 set_io vinit[1] 44

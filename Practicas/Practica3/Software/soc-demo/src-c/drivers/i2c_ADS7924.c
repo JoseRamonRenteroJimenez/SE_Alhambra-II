@@ -5,8 +5,8 @@
 void config(){
     uint8_t slave_addr = I2C_ADC_DIRECTION; // Dirección del esclavo
     uint8_t rw = 0; // 0 para escritura, 1 para lectura
-    uint32_t data_in = 0x07AAAA01; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
-    uint8_t n_bytes_dato = 0b00000010; // Número de bytes a enviar (2 bytes en este caso)
+    uint32_t data_in = 0x074B2F11; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
+    uint8_t n_bytes_dato = 0b00000100; // Número de bytes a enviar (4 bytes en este caso)
     uint32_t read_back;
     // Escritura en registro de control
     print("Configurando ADC 7924...\r\n");
