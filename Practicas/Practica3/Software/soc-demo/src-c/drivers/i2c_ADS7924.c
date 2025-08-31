@@ -337,27 +337,33 @@ void ads7924_config_manual(void) {
 }
 
 void ads7924_lecturaRegistroObj(void){
-    print("¿Qué registro desea leer? (0-7): ");
-    char c1;
+    print("Registro a leer (hex, 00–16): ");
+    char c1, c2;
     uint32_t read_back = 0;
     do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+    do { c2 = getchar(); } while (c2 == '\r' || c2 == '\n');
     print("\r\n");
-    uint32_t regObj = 0;
-    switch (c1) {
-        case '0': regObj = 0b00000000; break;
-        case '1': regObj = 0b00000001; break;
-        case '2': regObj = 0b00000010; break;
-        case '3': regObj = 0b00000011; break;
-        case '4': regObj = 0b00000100; break;
-        case '5': regObj = 0b00000101; break;
-        case '6': regObj = 0b00000110; break;
-        case '7': regObj = 0b00000111; break;
-        default: print("Selección inválida.\r\n"); return;
+    
+
+    // Convertir a nibble y validar
+    uint8_t hi = hexval(c1);
+    uint8_t lo = hexval(c2);
+    if (hi > 0x0F || lo > 0x0F) {
+        print("Entrada inválida (use 0-9/A-F).\r\n");
+        return;
     }
 
-    print("Usted seleccionó el registro: ");
-    putchar(c1);
+    uint32_t regObj = 0;
+    regObj = (hi << 4) | lo;
+    if (regObj > 0x16) {
+        print("Registro inválido. Debe estar entre 00 y 16.\r\n");
+        return;
+    }
+
+    print("Leyendo registro 0x");
+    print_hex_byte(regObj);
     print("\r\n");
+
     
     uint32_t payload = (uint32_t)(regObj & 0xFF);
     uint8_t val = 0;
