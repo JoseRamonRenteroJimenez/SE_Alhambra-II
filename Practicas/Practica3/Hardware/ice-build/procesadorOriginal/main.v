@@ -7733,9 +7733,9 @@ module vce42df_vd61014 #(
  
        SLV_ACK_2: begin
          if (ena) begin
-             reg_busy <= 1'b0;     // “acepta” continuar
-             bit_cnt      <= 3'd7;
-           data_tx  <= data_in;
+             data_tx  = data_in;
+             reg_busy = 1'b0;     // “acepta” continuar
+             bit_cnt  = 3'd7;
            if (rw == 1 || addr_rw[7:1] != slv_addr) begin
              addr_rw <= {slv_addr, rw};
              reg_rw  <= rw;
@@ -7744,8 +7744,8 @@ module vce42df_vd61014 #(
              
            end else begin
              flag_debbug = 1'b1;
-             sda_int <= data_tx[bit_cnt];
-             state   <= WR;
+             state   = WR;
+             sda_int = data_tx[bit_cnt];
            end
          end else begin
            scl_ena <= 1'b0;

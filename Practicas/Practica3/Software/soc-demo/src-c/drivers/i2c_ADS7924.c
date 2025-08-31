@@ -1,21 +1,49 @@
 //Firmware para el ADS7924
 #include "i2c_ADS7924.h"
 
+int debbug_ADC = 0; 
+
+void ads7924_menu(void) {
+    char op;
+    print("\n-- Submenú I2C: ADC ADS7924 --\r\n");
+    print("Opciones:\r\n");
+    print(" 1: Configuración automática\r\n");
+    print(" 2: Configuración manual\r\n");
+    print(" 3: Lectura de un registro\r\n");
+    print(" r: Volver al menú principal\r\n");
+    print("Seleccione una opción: ");
+    do {
+        op = getchar();
+    } while (op == '\r' || op == '\n');
+    putchar(op);
+    print("\r\n");
+    if (op == '1') {
+        ads7924_autoconfig();
+    } else if (op == '2') {
+        ads7924_config_manual();
+    } else if (op == '3') {
+        ads7924_lecturaRegistroObj();
+    } else if (op == 'r' || op == 'R') {
+        print("Volviendo al menú principal...\r\n");
+    } else {
+        print("Operación inválida.\r\n");
+    }
+}
+
 // Función configuración automática
-void config(){
-    int debbug = 0; 
-    uint8_t slave_addr = I2C_ADC_DIRECTION; // Dirección del esclavo
+void ads7924_autoconfig(void){
+    uint8_t slave_addr = ADS7924_DIRECTION; // Dirección del esclavo
     uint8_t rw = 0; // 0 para escritura, 1 para lectura
     uint8_t rw_read = 1; // 0 para escritura, 1 para lectura
     uint8_t rw_write = 0; // 0 para escritura, 1 para lectura
     uint8_t register_obj = 0b00000000; // Registro objetivo, inicializado a 0
-    uint32_t data_in = 0x074B2F11; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
-    uint8_t n_bytes_dato = 0b00000100; // Número de bytes a enviar (4 bytes en este caso)
+    uint32_t data_in = 0x074BAA15; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
+    uint8_t n_bytes_dato = 0b00000010; // Número de bytes a enviar (4 bytes en este caso)
     uint32_t read_back;
     // Escritura en registro de control
     print("Configurando ADC 7924...\r\n");
 
-    if(debbug) {
+    if(debbug_ADC) {
         // Modo depuración: muestra el contenido de los registros tras cada operación
         print("Escribiendo en el registro de lectura/escritura...\r\n");
         i2c_write(RW_REG, rw); // Mandamos si es lectura o escritura 
@@ -110,80 +138,232 @@ void config(){
     }
 }
 
-// Función de escritura
-void i2c_write(volatile uint32_t* addr, uint32_t data){
-    int debbug = 0;
-    if (debbug) {
-        print("Escribiendo en la interfaz I2C...\r\n");
-        print("Dirección: ");
-        print_hex32((uint32_t)addr);
+void ads7924_config_manual(void) {
+    uint32_t regObj = 0b0; // Variable regObj inicializada en binario, utilizada para almacenar un registro en formato binario
+    char c1, op;           // c1: carácter de entrada, op: operación seleccionada por el usuario
+    int n_reg = 0;         // Número total de registros disponibles
+
+    print("\n-- Submenú I2C: Seleccione registro --\r\n");
+    print("Opciones:\r\n");
+    print("  0: Registro MODECNTRL\r\n");
+    print("  1: Registro INTCNTRL\r\n");
+    print("  2: Uno de los registros DATA\r\n");
+    print("  3: Uno de los registros LR\r\n");
+    print("  4: Registro INTCONFIG\r\n");
+    print("  5: Registro SLPCONFIG\r\n");
+    print("  6: Registro ACKCONFIG\r\n");
+    print("  7: Registro PWDRCONFIG\r\n");
+    print("Registro> ");
+
+    // 1) Ignora CR/LF que pudieran quedar
+    do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+
+    // 2) Eco y mensaje
+    print("\r\nUsted seleccionó el registro: ");
+    putchar(c1);
+    print("\r\n");
+    n_reg = 1;
+    switch (c1) {
+        case '0': regObj = 0b00000000; break;
+        case '1': regObj = 0b00000001; break;
+        case '2':
+            n_reg = 2;
+            print("Seleccione el registro DATA: ");
+            do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+            print("Opciones\n");
+            print("  0: DATA0_U\r\n");
+            print("  1: DATA0_L\r\n");
+            print("  2: DATA1_U\r\n");
+            print("  3: DATA1_L\r\n");
+            print("  4: DATA2_U\r\n");
+            print("  5: DATA2_L\r\n");
+            print("  6: DATA3_U\r\n");
+            print("  7: DATA3_L\r\n");
+            putchar(c1);
+            print("\r\n");
+            if (!(c1 >= '0' && c1 <= '7')) { print("Selección inválida.\r\n"); return; }
+            switch (c1) {
+                case '0': regObj = 0b00000010; break;
+                case '1': regObj = 0b00000011; break;
+                case '2': regObj = 0b00000100; break;
+                case '3': regObj = 0b00000101; break;
+                case '4': regObj = 0b00000110; break;
+                case '5': regObj = 0b00000111; break;
+                case '6': regObj = 0b00001000; break;
+                case '7': regObj = 0b00001001; break;
+                default: print("Selección inválida.\r\n"); return;
+            }
+            break;
+        case '3':
+            n_reg = 2;
+            print("Seleccione un registro LR: ");
+            do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+            print("Opciones\n");
+            print("  0: ULR0\r\n");
+            print("  1: LLR0\r\n");
+            print("  2: ULR1\r\n");
+            print("  3: LLR1\r\n");
+            print("  4: ULR2\r\n");
+            print("  5: LLR2\r\n");
+            print("  6: ULR3\r\n");
+            print("  7: LLR3\r\n");
+            putchar(c1);
+            print("\r\n");
+            if (!(c1 >= '0' && c1 <= '7')) { print("Selección inválida.\r\n"); return; }
+            switch (c1) {
+                case '0': regObj = 0b00001010; break;
+                case '1': regObj = 0b00001011; break;
+                case '2': regObj = 0b00001100; break;
+                case '3': regObj = 0b00001101; break;
+                case '4': regObj = 0b00001110; break;
+                case '5': regObj = 0b00001111; break;
+                case '6': regObj = 0b00010000; break;
+                case '7': regObj = 0b00010001; break;
+                default: print("Selección inválida.\r\n"); return;
+            }
+            break;
+        case '4': regObj = 0b00010010; break;
+        case '5': regObj = 0b00010011; break;
+        case '6': regObj = 0b00010100; break;
+        case '7': regObj = 0b00010101; break;
+        case '8': regObj = 0b00010110; break;
+        case 'r':
+        case 'R': print("Volviendo al menú principal...\r\n"); return;
+        default: print("Selección inválida.\r\n"); return;
+    }
+
+    // 4) Pide operación
+    print("Operación: 1=Leer, 2=Escribir, r=volver> ");
+    do { op = getchar(); } while (op == '\r' || op == '\n');
+    putchar(op);
+    print("\r\n");
+
+    if (op == '1') {
+        // Lectura
+        uint32_t payload = 0;
+        uint8_t val;
+        payload = (0 << 24) | (regObj << 16) | (0 << 8) | (0 << 0);
+        i2c_recieve_fromReg(ADS7924_DIRECTION, 1, payload, &val);
+        print("Dato leído: ");
+        print_hex_byte(val);
         print("\r\n");
+    } else if (op == '2') {
+        // Escritura
+        uint32_t payload = 0;
+        char h[4] = {0};
+        int n_bytes_dato = 1;
+        print("¿Quiere escribir un byte? (y/n): ");
+        do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+        if (c1 == 'y' || c1 == 'Y') {
+            print("\r\n");
+            print("Dato (hex 2 dígitos)\r\n");
+            print("Más significativo: ");
+            do { h[0] = getchar(); } while (h[0] == '\r' || h[0] == '\n');
+            print("\r\n");
+            print("Más significativo en binario: ");
+            print_hex_nibble(hexval(h[0]));
+            print("\r\n");
+            print("Menos significativo: ");
+            do { h[1] = getchar(); } while (h[1] == '\r' || h[1] == '\n');
+            print("\r\n");
+            print("Menos significativo en binario: ");
+            print_hex_nibble(hexval(h[1]));
+            print("\r\n");
+            print("¿Quiere escribir un segundo byte? (y/n): ");
+            do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+            if (c1 == 'y' || c1 == 'Y') {
+                print("Dato (hex 2 dígitos)\r\n");
+                print("Más significativo: ");
+                do { h[2] = getchar(); } while (h[2] == '\r' || h[2] == '\n');
+                print("\r\n");
+                print("Mas significativo en binario: ");
+                print_hex_nibble(h[2]);
+                print("\r\n");
+                print("Menos significativo: ");
+                do { h[3] = getchar(); } while (h[3] == '\r' || h[3] == '\n');
+                print("\r\n");
+                print("Menos significativo en binario: ");
+                print_hex_nibble(h[3]);
+                print("\r\n");
+            } else {
+                h[2] = '0';
+                h[3] = '0';
+            }
+        } else {
+            h[0] = '0';
+            h[1] = '0';
+        }
+        print("Registro objetivo: ");
+        print_bin_byte(regObj);
+        print("\r\n");
+        uint8_t segundoByte = (hexval(h[0]) << 4) | hexval(h[1]);
+        print("Segundo byte: ");
+        print_bin_byte(segundoByte);
+        print("\r\n");
+        uint8_t tercerByte = (hexval(h[2]) << 4) | hexval(h[3]);
+        print("Tercer byte: ");
+        print_bin_byte(tercerByte);
+        print("\r\n");
+        payload = (0 << 24) | (regObj << 16) | (segundoByte << 8) | (tercerByte << 0);
+        if (segundoByte != 0) {
+            n_bytes_dato++;
+            if (tercerByte != 0) {
+                n_bytes_dato++;
+            }
+        }
+        print("Escribiendo...\r\n");
+        print("ADS7924_DIRECTION: ");
+        print_bin_byte(ADS7924_DIRECTION);
+        print("\r\n");
+        print("R/W: ");
+        print_bin_byte(0); // 0 for write operation
+        print("\r\n");
+        print("Payload: ");
+        print_hex32(payload);
+        print("\r\n");
+        print("Payload en binario: ");
+        print_bin32(payload);
+        print("\r\n");
+        print("n_bytes_dato: ");
+        print_hex_byte(n_bytes_dato);
+        print("\r\n");
+        i2c_send_toReg(ADS7924_DIRECTION, 0, payload, n_bytes_dato);
+        print("Escritura completada.\r\n");
+    } else if (op == 'r' || op == 'R') {
+        print("Volviendo al menú principal...\r\n");
+    } else {
+        print("Operación inválida.\r\n");
     }
-    *addr = data;
 }
 
-// Función de lectura
-void i2c_read(volatile uint32_t* addr, uint32_t* data){
-    *data = *addr;  
-}
-
-
-// Espera hasta que la máquina de estados esté en READY
-void wait_i2c(void)
-{
-    const uint32_t TIMEOUT_LIMIT = 50000;  // Ajusta este valor según tu reloj y necesidades
-    uint32_t counter = 0;
-
-    while ( (*(volatile uint32_t*)BUSY_REG & 0x1) && counter < TIMEOUT_LIMIT ){
-        counter++;
+void ads7924_lecturaRegistroObj(void){
+    print("¿Qué registro desea leer? (0-7): ");
+    char c1;
+    uint32_t read_back = 0;
+    do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+    print("\r\n");
+    uint32_t regObj = 0;
+    switch (c1) {
+        case '0': regObj = 0b00000000; break;
+        case '1': regObj = 0b00000001; break;
+        case '2': regObj = 0b00000010; break;
+        case '3': regObj = 0b00000011; break;
+        case '4': regObj = 0b00000100; break;
+        case '5': regObj = 0b00000101; break;
+        case '6': regObj = 0b00000110; break;
+        case '7': regObj = 0b00000111; break;
+        default: print("Selección inválida.\r\n"); return;
     }
-}
 
-// Comprobamos si el i2c está ocupado
-uint8_t status_i2c(void)
-{
-    return (*(volatile uint8_t*)BUSY_REG);          
-}
+    print("Usted seleccionó el registro: ");
+    putchar(c1);
+    print("\r\n");
+    
+    uint32_t payload = (uint32_t)(regObj & 0xFF);
+    uint8_t val = 0;
+    i2c_recieve_fromReg(ADS7924_DIRECTION, 1, payload, &val);
 
-// Mando datos al registro de un esclavo por i2c. slave_addr es la direcciíon del esclavo, rw diferencia entre lectura y escritura
-//  y data_in son los datos que se van a mandar. 
-// NOTA -> data_in escritura {registro objetivo, datos ...}, lectura {registro objetivo}
-// Orden de lectura de data_in es de izquierda a dereche en grupos de 8. Max 3. Serán leidos los 24 bits menos significativos
-void i2c_send_toReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, int n_bytes_dato){
-    uint32_t read_back;
-    print("Enviando a la interfaz I2C\r\n");
-    i2c_write(RW_REG, rw);                  // Mandamos si es lectura o escritura    
-    wait_i2c();
-
-    i2c_write(DATA_WRITE_REG, data_in);     // Mandamos los datos al esclavo
-    wait_i2c();
-    i2c_write(N_PQTS_REG, n_bytes_dato);        // Mandamos el número de paquetes a enviar                     
-    wait_i2c();
-    i2c_write(SLV_ADDR_REG, slave_addr);    // Mandamos la dirección del esclavo
-    wait_i2c();
-    i2c_write(ENABLE_REG, 0x01);            // Activamos la señal de start
-    wait_i2c();
-}
-
-void i2c_recieve_fromReg(uint8_t slave_addr, uint8_t rw, uint32_t data_in, uint8_t* data_out){
-    uint32_t data_out_temp = 0;
-    i2c_send_toReg(slave_addr, 0, data_in, 1); // Escritura vacía. Reubicamos el puntero interno del ads
-    wait_i2c();
-    i2c_write(RW_REG, rw);                  // Mandamos si es lectura o escritura
-    wait_i2c();
-    i2c_write(DATA_WRITE_REG, data_in);     // Mandamos los datos al esclavo
-    wait_i2c();
-    i2c_write(N_PQTS_REG, 0x01);        // Mandamos el número de paquetes a enviar (1 byte)
-    wait_i2c();
-    i2c_write(SLV_ADDR_REG, slave_addr);    // Mandamos la dirección del esclavo || Trigger
-    wait_i2c();
-    i2c_write(ENABLE_REG, 0x01);            // Activamos la señal de start
-    wait_i2c();
- 
-    //Espera bloqueante
-    uint32_t guard = 100000;
-    while (status_i2c() == 1 && guard--) ;
-
-    i2c_read(DATA_OUT_REG, &data_out_temp);       // Leemos el dato
-    *data_out = (uint8_t)(data_out_temp & 0xFF);  // Solo los 8 bits menos significativos
+    print("Valor leído del ADC: 0x");
+    print_hex_byte(val);
+    print("\r\n");
 }
