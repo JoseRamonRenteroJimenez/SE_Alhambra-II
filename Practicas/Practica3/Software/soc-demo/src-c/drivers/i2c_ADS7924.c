@@ -1,7 +1,6 @@
 //Firmware para el ADS7924
 #include "i2c_ADS7924.h"
 
-int debbug_ADC = 0; 
 
 void ads7924_menu(void) {
     char op;
@@ -37,13 +36,13 @@ void ads7924_autoconfig(void){
     uint8_t rw_read = 1; // 0 para escritura, 1 para lectura
     uint8_t rw_write = 0; // 0 para escritura, 1 para lectura
     uint8_t register_obj = 0b00000000; // Registro objetivo, inicializado a 0
-    uint32_t data_in = 0x074BAA15; // Datos a enviar al registro de control (todos a 1); // Datos a enviar al registro de control
-    uint8_t n_bytes_dato = 0b00000010; // Número de bytes a enviar (4 bytes en este caso)
+    uint32_t data_in = 0x074BAA15; // Datos a enviar al registro de control
+    uint8_t n_bytes_dato = 0b00000010; // Número de bytes a enviar
     uint32_t read_back;
     // Escritura en registro de control
     print("Configurando ADC 7924...\r\n");
 
-    if(debbug_ADC) {
+    if(0) {
         // Modo depuración: muestra el contenido de los registros tras cada operación
         print("Escribiendo en el registro de lectura/escritura...\r\n");
         i2c_write(RW_REG, rw); // Mandamos si es lectura o escritura 
@@ -123,8 +122,9 @@ void ads7924_autoconfig(void){
         print("data_in: ");
         print_hex32(data_in);
         print("\r\n");
-        print("n_bytes_dato: ");
+        print("Número de bytes a enviar: ");
         print_hex32(n_bytes_dato);
+        print("\r\n");
         print("registro objetivo: ");
         print_hex32(register_obj);
         print("\r\n");
