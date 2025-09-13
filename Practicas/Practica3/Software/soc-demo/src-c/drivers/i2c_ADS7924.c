@@ -6,9 +6,11 @@ void ads7924_menu(void) {
     char op;
     print("\n-- Submenú I2C: ADC ADS7924 --\r\n");
     print("Opciones:\r\n");
-    print(" 1: Configuración automática\r\n");
-    print(" 2: Configuración manual\r\n");
-    print(" 3: Lectura de un registro\r\n");
+    print(" 1: Reset del ADC\r\n");
+    print(" 2: Configuración automática\r\n");
+    print(" 3: Configuración manual\r\n");
+    print(" 4: Lectura de un registro\r\n");
+    print(" 5: Lectura de un canal\r\n");
     print(" r: Volver al menú principal\r\n");
     print("Seleccione una opción: ");
     do {
@@ -17,11 +19,15 @@ void ads7924_menu(void) {
     putchar(op);
     print("\r\n");
     if (op == '1') {
-        ads7924_autoconfig();
+        ads7924_reset();
     } else if (op == '2') {
-        ads7924_config_manual();
+        ads7924_autoconfig();
     } else if (op == '3') {
+        ads7924_config_manual();
+    } else if (op == '4') {
         ads7924_lecturaRegistroObj();
+    } else if (op == '5') {
+        ads7924_read_channel_once();
     } else if (op == 'r' || op == 'R') {
         print("Volviendo al menú principal...\r\n");
     } else {
@@ -372,4 +378,104 @@ void ads7924_lecturaRegistroObj(void){
     print("Valor leído del ADC: 0x");
     print_hex_byte(val);
     print("\r\n");
+}
+
+void ads7924_reset(void) {
+
+    int debbug = 1;
+
+    const uint8_t RESET_VALUE = 0xAA;
+
+    uint32_t payload = (0u << 24) | ((uint32_t)REG_RESET << 16) | ((uint32_t) RESET_VALUE << 8) | 0u;
+
+    i2c_send_toReg(ADS7924_DIRECTION, /*rw=*/0, payload, /*n_bytes_dato=*/1);
+    wait_i2c();
+
+    if(debbug){
+
+        uint8_t actualResetValue = 0;
+        
+        uint32_t regPtr = (uint32_t)REG_RESET;
+        i2c_recieve_fromReg(ADS7924_DIRECTION, /*rw=*/1, regPtr, &actualResetValue);
+        
+        print("RESET (0x18) = 0x");
+        print_hex_byte(actualResetValue);
+        print("\r\n");
+
+        // Check de valores
+        
+        uint8_t v = 0;
+
+        regPtr = 0x00;
+        i2c_recieve_fromReg(ADS7924_DIRECTION, 1, regPtr, &v);
+        print("MODECNTRL (0x00) = 0x"); print_hex_byte(v); print("\r\n");
+
+        regPtr = 0x12;
+        i2c_recieve_fromReg(ADS7924_DIRECTION, 1, regPtr, &v);
+        print("INTCONFIG (0x12) = 0x"); print_hex_byte(v); print("\r\n");
+    }
+}
+
+void ads7924_read_channel_once(){
+    
+    print("¿Qué canal desea leer? (0-3): ");
+    char c1;
+    do { c1 = getchar(); } while (c1 == '\r' || c1 == '\n');
+    print("\r\n");  
+    if (!(c1 >= '0' && c1 <= '3')) { print("Selección inválida.\r\n"); return; }
+
+    uint32_t payload = 0;
+
+    //Awake channel
+
+    uint8_t aux = c1 - '0'; // Convertir carácter a número
+
+    aux = REG_MODECNTRL;  
+    payload |= ((uint32_t)aux << 0);
+
+    aux = MODECNTRL_AWAKE | (aux << 2); // Modo awake y canal
+    payload |= ((uint32_t)aux << 8);
+
+    i2c_send_toReg(ADS7924_DIRECTION, 0, payload, 2);
+
+    wait_i2c();
+
+    //Fijar teimpo de adquisición
+    payload = 0;
+    aux = REG_ACQCONFIG;
+    payload |= ((uint32_t)aux << 0);
+
+    aux = 0b00000100; // Tiempo de adquisición 1.6us
+    payload |= ((uint32_t)aux << 8);
+
+    i2c_send_toReg(ADS7924_DIRECTION, 0, payload, 2);
+
+    wait_i2c();
+
+    //Pedir conversión
+
+    payload = 0;
+    aux = REG_MODECNTRL;
+    payload |= ((uint32_t)aux << 0);
+
+    aux = MODECNTRL_MANUAL_SINGLE | (aux << 2); // Modo awake y canal
+    payload |= ((uint32_t)aux << 8);
+
+    i2c_send_toReg(ADS7924_DIRECTION, 0, payload, 2);
+
+    wait_i2c(); 
+    
+    //Lectura del canal
+    payload = (uint32_t)(REG_DATA0_U & 0xFF);
+    uint8_t valU = 0;
+    uint8_t valL = 0;
+    i2c_recieve_fromReg(ADS7924_DIRECTION, 1, payload, &valU);
+    payload = (uint32_t)(REG_DATA0_L & 0xFF);
+    i2c_recieve_fromReg(ADS7924_DIRECTION, 1, payload, &valL);
+    uint16_t val = ((uint16_t)valU << 8) | (uint16_t)valL;
+    print("Valor leído del canal ");
+    putchar(c1);
+    print(": 0x");
+    print_hex16(val);
+    print(")\r\n");
 }
