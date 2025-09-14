@@ -108,25 +108,6 @@
           }
         },
         {
-          "id": "d9ba871f-bcee-4833-8109-b6be5163b4ff",
-          "type": "basic.output",
-          "data": {
-            "name": "",
-            "virtual": false,
-            "pins": [
-              {
-                "index": "0",
-                "name": "D4",
-                "value": "8"
-              }
-            ]
-          },
-          "position": {
-            "x": 2160,
-            "y": 352
-          }
-        },
-        {
           "id": "a8ef080d-b9ef-4388-a6f0-d1e0d2643dca",
           "type": "basic.input",
           "data": {
@@ -5387,16 +5368,6 @@
           },
           "target": {
             "block": "398e0383-8cc8-4a5a-a64a-b7c816125dc9",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
-            "block": "6cb8af03-d3e6-4f0c-b76d-8451d756f626",
-            "port": "7f388394-5a5f-46e1-8006-43cecdb72214"
-          },
-          "target": {
-            "block": "d9ba871f-bcee-4833-8109-b6be5163b4ff",
             "port": "in"
           }
         }
@@ -30049,19 +30020,6 @@
               }
             },
             {
-              "id": "4cb94f56-5368-4ce2-b967-1e2f5c80c866",
-              "type": "basic.output",
-              "data": {
-                "name": "Data_Out",
-                "range": "[7:0]",
-                "size": 8
-              },
-              "position": {
-                "x": 1384,
-                "y": 280
-              }
-            },
-            {
               "id": "cce45f61-dc34-4ee0-9dab-77c70a0b60da",
               "type": "basic.input",
               "data": {
@@ -30118,6 +30076,19 @@
               }
             },
             {
+              "id": "4cb94f56-5368-4ce2-b967-1e2f5c80c866",
+              "type": "basic.output",
+              "data": {
+                "name": "Data_Out",
+                "range": "[7:0]",
+                "size": 8
+              },
+              "position": {
+                "x": 1360,
+                "y": 448
+              }
+            },
+            {
               "id": "18b12159-6f7e-4351-92cc-c3d02c086b86",
               "type": "basic.outputLabel",
               "data": {
@@ -30147,25 +30118,6 @@
               "position": {
                 "x": 112,
                 "y": 544
-              }
-            },
-            {
-              "id": "7f388394-5a5f-46e1-8006-43cecdb72214",
-              "type": "basic.output",
-              "data": {
-                "name": "testOut",
-                "virtual": true,
-                "pins": [
-                  {
-                    "index": "0",
-                    "name": "NULL",
-                    "value": "NULL"
-                  }
-                ]
-              },
-              "position": {
-                "x": 1384,
-                "y": 600
               }
             },
             {
@@ -30258,14 +30210,11 @@
                       "name": "Data_Out",
                       "range": "[7:0]",
                       "size": 8
-                    },
-                    {
-                      "name": "test"
                     }
                   ]
                 },
                 "params": [],
-                "code": "reg [7:0] opA;\nreg [7:0] opB;\nreg [7:0] op;\nreg [7:0] result;\nreg [1:0] counter;\nreg [7:0] lastValue;\nreg [7:0] showReg;\nreg flag;\n\nreg res_valid; \n\nalways @(posedge Starter or negedge rstn) begin\n    if(!rstn) begin\n        opA <= 0; \n        opB <= 0; \n        op <= 0; \n        counter <= 0; \n        lastValue <= 8'h00;\n        showReg <= 0;\n    end else begin\n        if(counter == 2'd0) begin\n            opA = Data_In;\n            showReg = opA;\n            counter = 2'd1;\n        end else if (counter == 2'd1) begin\n            opB = Data_In;\n            showReg = opB;\n            counter = 2'd2;\n        end else if (counter == 2'd2) begin\n            op = Data_In;\n            showReg = op;\n            counter = 2'd3;\n        end else begin\n            opA <= 0; \n            opB <= 0; \n            op <= 0; \n            result <= 0; \n            counter <= 0; \n            lastValue <= 8'h00;\n        end\n    end\nend\n\nalways @(posedge Trigger or negedge rstn) begin\n    if(!rstn) begin\n        res_valid = 0;\n        result = 0; \n    end else begin\n        res_valid = 1'b1; \n        if (op == 8'd1) begin\n            result = opA + opB;\n        end else if (op == 8'd2) begin\n            result = opA - opB;\n        end else if (op == 8'd3) begin\n            result = opA * opB;\n        end else if (op == 8'd4) begin\n            if (opB != 0)\n                result = opA / opB;\n            else\n                result = 8'd0;\n        end else begin\n            result = 8'd15;\n        end\n    end\nend\n\n//assign Data_Out = result;\n\nassign Data_Out = res_valid ? result : showReg;\n\nassign test = res_valid;"
+                "code": "reg [7:0] opA;\nreg [7:0] opB;\nreg [7:0] op;\nreg [7:0] result;\nreg [1:0] counter;\nreg [7:0] lastValue;\nreg [7:0] showReg;\nreg flag;\n\nreg res_valid; \n\nalways @(posedge Starter or negedge rstn) begin\n    if(!rstn) begin\n        opA <= 0; \n        opB <= 0; \n        op <= 0; \n        counter <= 0; \n        lastValue <= 8'h00;\n        showReg <= 0;\n    end else begin\n        if(counter == 2'd0) begin\n            opA = Data_In;\n            showReg = opA;\n            counter = 2'd1;\n        end else if (counter == 2'd1) begin\n            opB = Data_In;\n            showReg = opB;\n            counter = 2'd2;\n        end else if (counter == 2'd2) begin\n            op = Data_In;\n            showReg = op;\n            counter = 2'd3;\n        end\n    end\nend\n\nalways @(posedge Trigger or negedge rstn) begin\n    if(!rstn) begin\n        res_valid = 0;\n        result = 0; \n    end else begin\n        if (op == 8'd1) begin\n            result <= opA + opB;\n        end else if (op == 8'd2) begin\n            result <= opA - opB;\n        end else if (op == 8'd3) begin\n            result <= opA * opB;\n        end else if (op == 8'd4) begin\n            result <= (opB != 0) ? (opA / opB) : 8'd0;\n        end else begin\n            result <= 8'd15;\n        end\n        res_valid = 1'b1; \n    end\nend\n\n//assign Data_Out = result;\n\nassign Data_Out = res_valid ? result : showReg;"
               },
               "position": {
                 "x": 488,
@@ -30378,16 +30327,6 @@
               "target": {
                 "block": "9cb342a3-b32d-4dd4-abce-62529e91a9e5",
                 "port": "Starter"
-              }
-            },
-            {
-              "source": {
-                "block": "9cb342a3-b32d-4dd4-abce-62529e91a9e5",
-                "port": "test"
-              },
-              "target": {
-                "block": "7f388394-5a5f-46e1-8006-43cecdb72214",
-                "port": "in"
               }
             }
           ]
