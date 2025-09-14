@@ -49,6 +49,8 @@
 #define MODECNTRL_AUTO_SCAN_SLEEP   0b111011
 #define MODECNTRL_AUTO_BURST        0b111111
 
+void ads7924_reset();
+void ads7924_read_channel_once();
 void ads7924_menu(void);
 void ads7924_autoconfig(void);
 void ads7924_config_manual(void);

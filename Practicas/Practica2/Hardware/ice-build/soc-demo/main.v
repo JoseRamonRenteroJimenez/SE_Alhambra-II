@@ -10,43 +10,46 @@ module main #(
  parameter v9de176 = 'h0200_0008,
  parameter v051dbb = 'h03000000
 ) (
+ input v220cec,
+ input vbb831a,
  input v4922c7,
  input v013906,
  input vclk,
  output [7:0] v1e554b,
+ output v35ae1e,
+ output vaf43ba,
  output vc267e1,
  output v7abb98,
  output vda2c07,
  output v55f1ca,
  output v97f0aa,
  output v5ec250,
- output v5100fa,
- output [0:0] vinit
+ output v5100fa
 );
  localparam p6 = vafbbea;
  localparam p7 = v8c97ba;
- localparam p9 = v9217e8;
- localparam p11 = v051dbb;
- localparam p12 = v9de176;
+ localparam p8 = v9217e8;
+ localparam p9 = v051dbb;
+ localparam p10 = v9de176;
  wire [0:31] w0;
  wire w1;
  wire w2;
  wire w3;
  wire w4;
  wire w5;
- wire w8;
- wire [0:7] w10;
+ wire w11;
+ wire w12;
  wire w13;
  wire w14;
  wire w15;
  wire w16;
- wire w17;
- wire w18;
- wire [0:7] w19;
- wire [0:3] w20;
- wire [0:3] w21;
+ wire [0:7] w17;
+ wire [0:3] w18;
+ wire [0:3] w19;
+ wire w20;
+ wire [0:7] w21;
  wire w22;
- wire w23;
+ wire [0:7] w23;
  wire w24;
  wire w25;
  wire w26;
@@ -59,189 +62,210 @@ module main #(
  wire w33;
  wire w34;
  wire w35;
- wire [0:31] w36;
- wire [0:31] w37;
- wire [0:31] w38;
- wire [0:31] w39;
+ wire w36;
+ wire w37;
+ wire w38;
+ wire w39;
  wire w40;
  wire w41;
- wire [0:3] w42;
- wire [0:3] w43;
- wire [0:3] w44;
- wire w45;
- wire [0:31] w46;
- wire [0:31] w47;
- wire [0:31] w48;
- wire w49;
- wire w50;
- wire [0:31] w51;
+ wire [0:31] w42;
+ wire [0:31] w43;
+ wire [0:31] w44;
+ wire [0:31] w45;
+ wire w46;
+ wire w47;
+ wire [0:3] w48;
+ wire [0:3] w49;
+ wire [0:3] w50;
+ wire w51;
  wire [0:31] w52;
  wire [0:31] w53;
  wire [0:31] w54;
  wire w55;
  wire w56;
- wire w57;
- wire w58;
+ wire [0:31] w57;
+ wire [0:31] w58;
+ wire [0:31] w59;
+ wire [0:31] w60;
+ wire w61;
+ wire w62;
+ wire w63;
+ wire w64;
  assign w2 = v013906;
  assign v5100fa = w3;
  assign v5ec250 = w4;
  assign v97f0aa = w5;
- assign v1e554b = w10;
- assign w13 = v4922c7;
- assign v55f1ca = w14;
- assign vda2c07 = w15;
- assign v7abb98 = w16;
- assign vc267e1 = w17;
- assign w22 = vclk;
- assign w23 = vclk;
- assign w24 = vclk;
- assign w25 = vclk;
+ assign w11 = v4922c7;
+ assign v55f1ca = w12;
+ assign vda2c07 = w13;
+ assign v7abb98 = w14;
+ assign vc267e1 = w15;
+ assign w20 = v220cec;
+ assign w22 = vbb831a;
+ assign v1e554b = w23;
+ assign w24 = vbb831a;
+ assign v35ae1e = w24;
+ assign w25 = v220cec;
+ assign vaf43ba = w25;
  assign w26 = vclk;
  assign w27 = vclk;
  assign w28 = vclk;
- assign w19 = w10;
- assign w23 = w22;
+ assign w29 = vclk;
+ assign w30 = vclk;
+ assign w31 = vclk;
+ assign w32 = vclk;
+ assign w33 = vclk;
+ assign w21 = w17;
  assign w24 = w22;
- assign w24 = w23;
- assign w25 = w22;
- assign w25 = w23;
- assign w25 = w24;
- assign w26 = w22;
- assign w26 = w23;
- assign w26 = w24;
- assign w26 = w25;
- assign w27 = w22;
- assign w27 = w23;
- assign w27 = w24;
- assign w27 = w25;
+ assign w25 = w20;
  assign w27 = w26;
- assign w28 = w22;
- assign w28 = w23;
- assign w28 = w24;
- assign w28 = w25;
  assign w28 = w26;
  assign w28 = w27;
+ assign w29 = w26;
+ assign w29 = w27;
+ assign w29 = w28;
+ assign w30 = w26;
+ assign w30 = w27;
+ assign w30 = w28;
  assign w30 = w29;
+ assign w31 = w26;
+ assign w31 = w27;
+ assign w31 = w28;
  assign w31 = w29;
  assign w31 = w30;
+ assign w32 = w26;
+ assign w32 = w27;
+ assign w32 = w28;
+ assign w32 = w29;
+ assign w32 = w30;
+ assign w32 = w31;
+ assign w33 = w26;
+ assign w33 = w27;
+ assign w33 = w28;
+ assign w33 = w29;
+ assign w33 = w30;
+ assign w33 = w31;
  assign w33 = w32;
- assign w34 = w32;
- assign w34 = w33;
- assign w35 = w32;
- assign w35 = w33;
  assign w35 = w34;
+ assign w36 = w34;
+ assign w36 = w35;
+ assign w37 = w34;
+ assign w37 = w35;
  assign w37 = w36;
- assign w38 = w36;
- assign w38 = w37;
- assign w39 = w36;
- assign w39 = w37;
  assign w39 = w38;
+ assign w40 = w38;
+ assign w40 = w39;
+ assign w41 = w38;
+ assign w41 = w39;
  assign w41 = w40;
  assign w43 = w42;
  assign w44 = w42;
  assign w44 = w43;
+ assign w45 = w42;
+ assign w45 = w43;
+ assign w45 = w44;
  assign w47 = w46;
- assign w48 = w46;
- assign w48 = w47;
+ assign w49 = w48;
+ assign w50 = w48;
  assign w50 = w49;
+ assign w53 = w52;
+ assign w54 = w52;
+ assign w54 = w53;
  assign w56 = w55;
+ assign w62 = w61;
  v35f267 vc8f159 (
   .v0e28cb(w1),
-  .vcbab45(w29)
- );
- v21cfcc v52b6dd (
-  .v9fb85f(w8)
+  .vcbab45(w34)
  );
  v725d0b vcd95a5 (
   .v9b328c(w0)
  );
  v87abc9 v7eb25a (
-  .vcbab45(w40),
-  .v814e6e(w45),
-  .v3ca442(w49),
-  .v0e28cb(w55),
-  .v132c67(w57)
+  .vcbab45(w46),
+  .v814e6e(w51),
+  .v3ca442(w55),
+  .v0e28cb(w61),
+  .v132c67(w63)
  );
  v604573 #(
-  .v4fde05(p12)
+  .v4fde05(p10)
  ) v72b9aa (
-  .vb6935e(w13),
-  .v2ab975(w14),
-  .v34e785(w22),
-  .v866d25(w30),
-  .vad40e9(w34),
-  .v9f8bfb(w38),
-  .vd996e9(w44),
-  .v0fa3a4(w48),
-  .v62ea55(w54),
-  .vdc4800(w57),
-  .vf3ed26(w58)
+  .vb6935e(w11),
+  .v2ab975(w12),
+  .v34e785(w26),
+  .v866d25(w36),
+  .vad40e9(w40),
+  .v9f8bfb(w44),
+  .vd996e9(w50),
+  .v0fa3a4(w54),
+  .v62ea55(w60),
+  .vdc4800(w63),
+  .vf3ed26(w64)
  );
  vdccd52 vb4539a (
  
  );
  v73403c vbe815f (
-  .v595263(w19),
-  .v85accc(w20),
-  .vf9119c(w21)
+  .v595263(w17),
+  .v85accc(w18),
+  .vf9119c(w19)
  );
  vaad680 v62d839 (
   .v29fe33(w0),
-  .vba7c72(w23),
-  .v5d0f7b(w29),
-  .v006d37(w32),
-  .vd67338(w36),
-  .v9b0ff0(w40),
-  .v83dbbe(w42),
-  .ve61aa7(w46),
-  .v8fd87d(w51)
+  .vba7c72(w27),
+  .v5d0f7b(w35),
+  .v006d37(w38),
+  .vd67338(w42),
+  .v9b0ff0(w46),
+  .v83dbbe(w48),
+  .ve61aa7(w52),
+  .v8fd87d(w57)
  );
  v55b120 v7b9433 (
-  .v47023d(w15),
-  .v7aeba1(w16),
-  .v92ad22(w17),
-  .v1cd63b(w18),
-  .v9119d0(w20),
-  .v3d0cdd(w21),
-  .v379e9e(w24)
+  .v47023d(w13),
+  .v7aeba1(w14),
+  .v92ad22(w15),
+  .v1cd63b(w16),
+  .v9119d0(w18),
+  .v3d0cdd(w19),
+  .v379e9e(w28)
  );
  v6c0c4a #(
-  .vf2d743(p11)
+  .vf2d743(p9)
  ) v6500fa (
-  .v9d3deb(w10),
-  .v980561(w18),
-  .v1002e2(w25),
-  .v8fadcd(w32),
-  .vd5de6b(w36),
-  .va57c44(w43),
-  .vb21f3c(w45),
-  .v6d05a9(w46)
+  .v980561(w16),
+  .v9d3deb(w17),
+  .v1002e2(w29),
+  .v8fadcd(w38),
+  .vd5de6b(w42),
+  .va57c44(w49),
+  .vb21f3c(w51),
+  .v6d05a9(w52)
  );
  v5242e2 v447d62 (
-  .vec88a9(w8),
-  .ve3469f(w50),
-  .v493538(w51),
-  .v918400(w52),
-  .v5664d9(w53),
-  .vae8a69(w54),
-  .v76f74e(w56),
-  .v58d02d(w58)
+  .ve3469f(w56),
+  .v493538(w57),
+  .v918400(w58),
+  .v5664d9(w59),
+  .vae8a69(w60),
+  .v76f74e(w62),
+  .v58d02d(w64)
  );
  vaba674 #(
-  .v6478b6(p9)
+  .v6478b6(p8)
  ) v2bbe2d (
-  .v04ad7a(w26),
-  .vd7d395(w33),
-  .v387cca(w37),
-  .v22c516(w41),
-  .vd728f0(w42),
-  .v8d6432(w47),
-  .v69f1ab(w49),
-  .v13ce3e(w52)
+  .v04ad7a(w30),
+  .vd7d395(w39),
+  .v387cca(w43),
+  .v22c516(w47),
+  .vd728f0(w48),
+  .v8d6432(w53),
+  .v69f1ab(w55),
+  .v13ce3e(w58)
  );
  v2b4233 v1314aa (
   .v6d0651(w1),
-  .v4c8225(w27)
+  .v4c8225(w31)
  );
  v372366 #(
   .vbce3f7(p6),
@@ -251,14 +275,21 @@ module main #(
   .v40049a(w3),
   .v0da91a(w4),
   .v9b4033(w5),
-  .v84763f(w28),
-  .v17983a(w31),
-  .vba8655(w35),
-  .vbee9aa(w39),
-  .v202123(w53),
-  .vbe14dd(w55)
+  .v84763f(w32),
+  .v17983a(w37),
+  .vba8655(w41),
+  .vbee9aa(w45),
+  .v202123(w59),
+  .vbe14dd(w61)
  );
- assign vinit = 1'b0;
+ v984e6d v797370 (
+  .vd52192(w20),
+  .vc9047c(w21),
+  .va1dccf(w22),
+  .veab9f9(w23),
+  .v2c38e3(w33),
+  .vd4696f(w34)
+ );
 endmodule
 
 //---- Top entity
@@ -295,31 +326,6 @@ module v35f267_vd54ca1 (
  
  
  //-- endmodule
- 
-endmodule
-//---- Top entity
-module v21cfcc (
- output v9fb85f
-);
- wire w0;
- assign v9fb85f = w0;
- v21cfcc_vb2eccd vb2eccd (
-  .q(w0)
- );
-endmodule
-
-//---------------------------------------------------
-//-- 0
-//-- - - - - - - - - - - - - - - - - - - - - - - - --
-//-- Un bit constante a 0
-//---------------------------------------------------
-
-module v21cfcc_vb2eccd (
- output q
-);
- //-- Bit constante a 0
- assign q = 1'b0;
- 
  
 endmodule
 //---- Top entity
@@ -3680,6 +3686,31 @@ endmodule
 //-- SPI master. Realiza una transacción
 //---------------------------------------------------
 //---- Top entity
+module v21cfcc (
+ output v9fb85f
+);
+ wire w0;
+ assign v9fb85f = w0;
+ v21cfcc_vb2eccd vb2eccd (
+  .q(w0)
+ );
+endmodule
+
+//---------------------------------------------------
+//-- 0
+//-- - - - - - - - - - - - - - - - - - - - - - - - --
+//-- Un bit constante a 0
+//---------------------------------------------------
+
+module v21cfcc_vb2eccd (
+ output q
+);
+ //-- Bit constante a 0
+ assign q = 1'b0;
+ 
+ 
+endmodule
+//---- Top entity
 module v58ed2b #(
  parameter v71e305 = 0
 ) (
@@ -6991,4 +7022,182 @@ module vd7e6ff_v43ad2d (
        .D_OUT_0(dout),
        .D_IN_0(din)
    );
+endmodule
+//---- Top entity
+module v984e6d (
+ input v2c38e3,
+ input vd4696f,
+ input [7:0] vc9047c,
+ input vd52192,
+ input va1dccf,
+ output [7:0] veab9f9
+);
+ wire [0:7] w0;
+ wire w1;
+ wire w2;
+ wire w3;
+ wire [0:7] w4;
+ wire w5;
+ wire w6;
+ wire w7;
+ wire w8;
+ assign veab9f9 = w0;
+ assign w1 = vd4696f;
+ assign w2 = vd52192;
+ assign w4 = vc9047c;
+ assign w5 = va1dccf;
+ assign w7 = v2c38e3;
+ assign w8 = v2c38e3;
+ assign w8 = w7;
+ v10d933 v079a17 (
+  .v6a82dd(w2),
+  .vd4e5d7(w3),
+  .v444878(w7)
+ );
+ v10d933 vf881ee (
+  .v6a82dd(w5),
+  .vd4e5d7(w6),
+  .v444878(w8)
+ );
+ v984e6d_v9ec891 v9ec891 (
+  .Data_Out(w0),
+  .rstn(w1),
+  .Trigger(w3),
+  .Data_In(w4),
+  .Starter(w6)
+ );
+endmodule
+
+
+module v984e6d_v9ec891 (
+ input rstn,
+ input [7:0] Data_In,
+ input Trigger,
+ input Starter,
+ output [7:0] Data_Out
+);
+ reg [7:0] opA;
+ reg [7:0] opB;
+ reg [7:0] op;
+ reg [7:0] result;
+ reg [1:0] counter;
+ reg [7:0] lastValue;
+ reg [7:0] showReg;
+ reg flag;
+ 
+ reg res_valid; 
+ 
+ always @(posedge Starter or negedge rstn) begin
+     if(!rstn) begin
+         opA <= 0; 
+         opB <= 0; 
+         op <= 0; 
+         counter <= 0; 
+         lastValue <= 8'h00;
+         showReg <= 0;
+     end else begin
+         if(counter == 2'd0) begin
+             opA = Data_In;
+             showReg = opA;
+             counter = 2'd1;
+         end else if (counter == 2'd1) begin
+             opB = Data_In;
+             showReg = opB;
+             counter = 2'd2;
+         end else if (counter == 2'd2) begin
+             op = Data_In;
+             showReg = op;
+             counter = 2'd3;
+         end
+     end
+ end
+ 
+ always @(posedge Trigger or negedge rstn) begin
+     if(!rstn) begin
+         res_valid = 0;
+         result = 0; 
+     end else begin
+         if (op == 8'd1) begin
+             result <= opA + opB;
+         end else if (op == 8'd2) begin
+             result <= opA - opB;
+         end else if (op == 8'd3) begin
+             result <= opA * opB;
+         end else if (op == 8'd4) begin
+             result <= (opB != 0) ? (opA / opB) : 8'd0;
+         end else begin
+             result <= 8'd15;
+         end
+         res_valid = 1'b1; 
+     end
+ end
+ 
+ //assign Data_Out = result;
+ 
+ assign Data_Out = res_valid ? result : showReg;
+endmodule
+//---- Top entity
+module v10d933 (
+ input v444878,
+ input v6a82dd,
+ output vd4e5d7
+);
+ wire w0;
+ wire w1;
+ wire w2;
+ assign vd4e5d7 = w0;
+ assign w1 = v444878;
+ assign w2 = v6a82dd;
+ v10d933_va7041c va7041c (
+  .out(w0),
+  .clk(w1),
+  .in(w2)
+ );
+endmodule
+
+//---------------------------------------------------
+//-- Debouncer
+//-- - - - - - - - - - - - - - - - - - - - - - - - --
+//-- Remove the rebound on a mechanical switch
+//---------------------------------------------------
+
+module v10d933_va7041c (
+ input clk,
+ input in,
+ output out
+);
+ //-- Debouncer Circuit
+ //-- It produces a stable output when the
+ //-- input signal is bouncing
+ 
+ reg btn_prev = 0;
+ reg btn_out_r = 0;
+ 
+ reg [16:0] counter = 0;
+ 
+ 
+ always @(posedge clk) begin
+ 
+   //-- If btn_prev and btn_in are differents
+   if (btn_prev ^ in == 1'b1) begin
+     
+       //-- Reset the counter
+       counter <= 0;
+       
+       //-- Capture the button status
+       btn_prev <= in;
+   end
+     
+   //-- If no timeout, increase the counter
+   else if (counter[16] == 1'b0)
+       counter <= counter + 1;
+       
+   else
+     //-- Set the output to the stable value
+     btn_out_r <= btn_prev;
+ 
+ end
+ 
+ assign out = btn_out_r;
+ 
 endmodule

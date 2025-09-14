@@ -382,13 +382,13 @@ void ads7924_lecturaRegistroObj(void){
 
 void ads7924_reset(void) {
 
-    int debbug = 1;
+    int debbug = 0;
 
     const uint8_t RESET_VALUE = 0xAA;
 
-    uint32_t payload = (0u << 24) | ((uint32_t)REG_RESET << 16) | ((uint32_t) RESET_VALUE << 8) | 0u;
+    uint32_t payload = ((uint32_t) RESET_VALUE << 8) | (uint32_t)REG_RESET;
 
-    i2c_send_toReg(ADS7924_DIRECTION, /*rw=*/0, payload, /*n_bytes_dato=*/1);
+    i2c_send_toReg(ADS7924_DIRECTION, /*rw=*/0, payload, /*n_bytes_dato=*/2);
     wait_i2c();
 
     if(debbug){
@@ -476,6 +476,6 @@ void ads7924_read_channel_once(){
     print("Valor leído del canal ");
     putchar(c1);
     print(": 0x");
-    print_hex16(val);
+    print_hex32(val);
     print(")\r\n");
 }

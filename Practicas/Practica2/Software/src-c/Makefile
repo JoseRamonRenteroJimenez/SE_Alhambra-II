@@ -1,5 +1,5 @@
 ##-- Riscv toolchain path
-FIRMWARE = Practica1
+FIRMWARE = Practica2
 RISCV=/usr/bin
 
 
