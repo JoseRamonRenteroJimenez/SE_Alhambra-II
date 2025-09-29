@@ -191,6 +191,28 @@ void main() {
         }
         print("Calculando...\n");
 
+        print("Resultado: ");
+        switch (operacion) {
+            case 1:
+                valor1 = valor1 + valor2;
+                break;
+            case 2:
+                valor1 = valor1 - valor2;
+                break;
+            case 3:
+                valor1 = valor1 * valor2;
+                break;
+            case 4:
+                valor1 = valor1 / valor2;
+                break;
+        }
+        { char buf[3]; mini_sprintf(buf, "%X", valor1); print2(buf); print("\n\n");}
 
+        print("¿Quiere realizar otra operación? (s/n): ");
+        c = getchar();
+        while (c != 's' && c != 'n') {
+            print("Opción no válida. Introduzca 's' para sí o 'n' para no: ");
+            c = getchar();
+        }
     }
 }

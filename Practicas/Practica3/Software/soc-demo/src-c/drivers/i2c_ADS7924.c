@@ -428,13 +428,12 @@ void ads7924_read_channel_once(){
 
     //Awake channel
 
-    uint8_t aux = c1 - '0'; // Convertir carácter a número
+        uint8_t aux = c1 - '0'; // Convertir carácter a número
 
-    aux = REG_MODECNTRL;  
-    payload |= ((uint32_t)aux << 0);
-
-    aux = MODECNTRL_AWAKE | (aux << 2); // Modo awake y canal
-    payload |= ((uint32_t)aux << 8);
+        payload |= (uint32_t)REG_MODECNTRL;
+        aux = (uint8_t)((MODECNTRL_AWAKE << 2) | (aux & 0x03));
+        payload |= ((uint32_t)aux << 8);
+        aux = REG_MODECNTRL;  
 
     i2c_send_toReg(ADS7924_DIRECTION, 0, payload, 2);
 
@@ -453,13 +452,12 @@ void ads7924_read_channel_once(){
     wait_i2c();
 
     //Pedir conversión
-
     payload = 0;
-    aux = REG_MODECNTRL;
-    payload |= ((uint32_t)aux << 0);
+    aux = REG_MODECNTRL;                      // Dirección del registro
+    payload |= (uint32_t)aux;                 // Byte bajo = dirección
 
-    aux = MODECNTRL_MANUAL_SINGLE | (aux << 2); // Modo awake y canal
-    payload |= ((uint32_t)aux << 8);
+    aux = (uint8_t)((MODECNTRL_MANUAL_SINGLE << 2) | ( (c1 - '0') & 0x03 ));
+    payload |= ((uint32_t)aux << 8);          // Byte alto = valor del registro
 
     i2c_send_toReg(ADS7924_DIRECTION, 0, payload, 2);
 

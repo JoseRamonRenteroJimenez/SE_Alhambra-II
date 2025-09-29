@@ -8,10 +8,8 @@ set_io v1e554b[3] 42
 set_io v1e554b[2] 43
 set_io v1e554b[1] 44
 set_io v1e554b[0] 45
-set_io v220cec 33
-set_io vbb831a 34
-set_io v35ae1e 2
-set_io vaf43ba 9
+set_io v220cec 34
+set_io vbb831a 33
 set_io vc267e1 64
 set_io v7abb98 63
 set_io vda2c07 21
