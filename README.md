@@ -1,5 +1,7 @@
 # SE_Alhambra-II
 
+Proyecto de Final de Grado
+
 Autores:
     Javier Daza Justo
     José Ramón Rentero Jiménez
